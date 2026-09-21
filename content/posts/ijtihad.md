@@ -6,6 +6,8 @@ published: "2024-07-14T09:36:02.000Z"
 updated: "2025-11-04T02:52:28.000Z"
 feature_image: >-
   /images/2024/07/Blue-and-Grey-Illustrative-Creative-Mind-Map--Instagram-Post---1-.png
+track: usul-al-fiqh
+track_order: 8
 tags:
   - fiqh
 authors:

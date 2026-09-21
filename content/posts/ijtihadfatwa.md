@@ -6,6 +6,8 @@ published: "2025-10-22T09:30:09.000Z"
 updated: "2025-11-04T02:55:19.000Z"
 excerpt: Ijtihaad, Mujtahid, Fatwaa and Mufti explained
 feature_image: /images/2025/10/Screenshot-2025-10-18-at-2.14.25---AM.png
+track: usul-al-fiqh
+track_order: 23
 tags:
   - fiqh
 authors:

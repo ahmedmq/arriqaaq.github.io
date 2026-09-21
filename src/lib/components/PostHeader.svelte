@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { getTagById, getAuthorById } from '$lib/content';
+	import { getTagById, getAuthorById, getTrack } from '$lib/content';
 	import { resolveImage } from '$lib/content';
 	import type { Post } from '$lib/types';
 
@@ -9,6 +9,7 @@
 
 	const primaryTag = $derived(post.primary_tag ? getTagById(post.primary_tag) : null);
 	const primaryAuthor = $derived(post.primary_author ? getAuthorById(post.primary_author) : null);
+	const track = $derived(post.track ? getTrack(post.track) : null);
 	const featureImg = $derived(resolveImage(post.feature_image, base));
 	const avatar = $derived(resolveImage(primaryAuthor?.profile_image ?? null, base));
 	const dateLabel = $derived(
@@ -37,6 +38,13 @@
 	<time datetime={post.published_at.slice(0, 10)}>{dateLabel}</time>
 	<span>{post.reading_time} min read</span>
 </header>
+{#if track}
+	<a class="post-track-banner" href={`${base}/track/${track.slug}/`}>
+		<span>Learning path</span>
+		<strong>{track.title}</strong>
+		<em>Lesson {post.track_order} of {track.posts.length} →</em>
+	</a>
+{/if}
 <h1 class="reading-title">{post.title}</h1>
 {#if post.custom_excerpt}
 	<p class="reading-subtitle">{post.custom_excerpt}</p>

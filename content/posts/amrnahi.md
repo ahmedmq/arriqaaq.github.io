@@ -6,6 +6,8 @@ published: "2025-10-11T05:30:57.000Z"
 updated: "2025-11-04T02:54:28.000Z"
 excerpt: Understanding Amr and Nahi
 feature_image: /images/2025/10/Screenshot-2025-10-08-at-4.49.57---PM.png
+track: usul-al-fiqh
+track_order: 19
 tags:
   - fiqh
 authors:

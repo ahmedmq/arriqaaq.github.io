@@ -9,7 +9,7 @@
 	const breadcrumb = $derived(page.data.breadcrumb ?? '');
 </script>
 
-<div class="app panel-collapsed">
+<div class="app panel-collapsed" class:reading-layout={page.data.post?.type === 'post'}>
 	<Sidebar />
 	<TagPanel />
 	<Topbar {breadcrumb} />

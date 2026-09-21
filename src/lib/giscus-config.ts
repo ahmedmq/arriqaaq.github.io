@@ -1,13 +1,8 @@
-import {
-	PUBLIC_GISCUS_REPO,
-	PUBLIC_GISCUS_REPO_ID,
-	PUBLIC_GISCUS_CATEGORY,
-	PUBLIC_GISCUS_CATEGORY_ID
-} from '$env/static/public';
+import { env } from '$env/dynamic/public';
 
 export const GISCUS = {
-	repo: PUBLIC_GISCUS_REPO || '',
-	repoId: PUBLIC_GISCUS_REPO_ID || '',
-	category: PUBLIC_GISCUS_CATEGORY || 'General',
-	categoryId: PUBLIC_GISCUS_CATEGORY_ID || ''
+	repo: env.PUBLIC_GISCUS_REPO || '',
+	repoId: env.PUBLIC_GISCUS_REPO_ID || '',
+	category: env.PUBLIC_GISCUS_CATEGORY || 'General',
+	categoryId: env.PUBLIC_GISCUS_CATEGORY_ID || ''
 };

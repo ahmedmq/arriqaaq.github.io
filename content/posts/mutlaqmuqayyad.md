@@ -8,6 +8,8 @@ published: "2025-10-08T12:04:52.000Z"
 updated: "2025-11-04T02:54:16.000Z"
 excerpt: Understanding Absolute (Mutlaq) and Restricted (Muqayyad)
 feature_image: /images/2025/10/Screenshot-2025-10-08-at-7.07.48---AM.png
+track: usul-al-fiqh
+track_order: 18
 tags:
   - fiqh
 authors:

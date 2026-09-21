@@ -6,6 +6,8 @@ published: "2025-04-26T02:22:05.000Z"
 updated: "2025-11-04T02:53:24.000Z"
 excerpt: Understanding Istishab
 feature_image: /images/2025/04/Screenshot-2025-04-26-at-8.04.09-AM.png
+track: usul-al-fiqh
+track_order: 12
 tags:
   - fiqh
 authors:

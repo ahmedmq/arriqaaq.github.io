@@ -6,6 +6,8 @@ published: "2025-08-30T04:52:58.000Z"
 updated: "2025-11-04T02:54:00.000Z"
 excerpt: What role do customs play in a ruling?
 feature_image: /images/2025/08/Screenshot-2025-08-30-at-10.21.36---AM.png
+track: usul-al-fiqh
+track_order: 16
 tags:
   - fiqh
 authors:

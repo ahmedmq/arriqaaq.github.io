@@ -6,6 +6,8 @@ published: "2024-02-26T16:10:34.000Z"
 updated: "2025-11-04T02:51:40.000Z"
 excerpt: Understanding Fard, Mandoob (or Mustahab), Mubah (or Halal), Makrooh and Haram
 feature_image: /images/2024/02/usul-al-fiqh--5-.png
+track: usul-al-fiqh
+track_order: 5
 tags:
   - fiqh
 authors:

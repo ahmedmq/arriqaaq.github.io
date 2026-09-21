@@ -6,6 +6,8 @@ published: "2025-10-19T09:30:41.000Z"
 updated: "2025-11-04T02:54:57.000Z"
 excerpt: Istinbaat, Istidlal and the application of it
 feature_image: /images/2025/10/Screenshot-2025-10-18-at-12.36.44---AM.png
+track: usul-al-fiqh
+track_order: 21
 tags:
   - fiqh
 authors:

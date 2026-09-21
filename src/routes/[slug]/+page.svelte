@@ -9,6 +9,8 @@
 	import ReadingProgress from '$lib/components/ReadingProgress.svelte';
 	import Newsletter from '$lib/components/Newsletter.svelte';
 	import Giscus from '$lib/components/Giscus.svelte';
+	import ReadingRoles from '$lib/components/ReadingRoles.svelte';
+	import ReadingRoute from '$lib/components/ReadingRoute.svelte';
 	import { themeClass } from '$lib/themeForTag';
 
 	let { data } = $props();
@@ -100,9 +102,13 @@
 			</ol>
 		</nav>
 	{/if}
+	{#if isPost && data.post.toc?.length}
+		<ReadingRoute entries={data.post.toc} />
+	{/if}
 	<div class="reading-body">
 		{@html data.html}
 	</div>
+	<ReadingRoles />
 	{#if isPost}
 		<PostShare title={data.post.title} slug={data.post.slug} />
 	{/if}

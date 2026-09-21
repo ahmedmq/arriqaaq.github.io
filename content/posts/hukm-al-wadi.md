@@ -6,6 +6,8 @@ published: "2024-03-30T02:22:06.000Z"
 updated: "2025-11-04T02:52:01.000Z"
 excerpt: Understanding Hukm Al Wad'i
 feature_image: /images/2024/03/Usul-al-fiqh-1--1-.png
+track: usul-al-fiqh
+track_order: 6
 tags:
   - fiqh
 authors:

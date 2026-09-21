@@ -33,6 +33,7 @@ const REPORTS_DIR = resolve(ROOT, 'content/reports');
 const TAGS_FILE = resolve(ROOT, 'content/tags.yaml');
 const AUTHORS_FILE = resolve(ROOT, 'content/authors.yaml');
 const SETTINGS_FILE = resolve(ROOT, 'content/settings.yaml');
+const TRACKS_FILE = resolve(ROOT, 'content/tracks.yaml');
 const OUT_DIR = resolve(ROOT, 'src/lib/generated');
 
 const RESERVED_SLUGS = new Set([
@@ -72,6 +73,8 @@ type ParsedPost = {
 	words: number;
 	diagram_count: number;
 	widgets: string[];
+	track: string | null;
+	track_order: number | null;
 };
 
 function createProcessor(embedState: EmbedState, headingState: { toc: TocEntry[] }) {
@@ -214,6 +217,7 @@ async function main() {
 	const tagsRaw = loadYaml<Record<string, any>>(TAGS_FILE, {});
 	const authorsRaw = loadYaml<Record<string, any>>(AUTHORS_FILE, {});
 	const settingsRaw = loadYaml<any>(SETTINGS_FILE, {});
+	const tracksRaw = loadYaml<Record<string, any>>(TRACKS_FILE, {});
 	const siteUrl = String(settingsRaw.url ?? 'https://arriqaaq.com').replace(/\/+$/, '');
 
 	const tags = Object.entries(tagsRaw).map(([slug, t]: [string, any]) => ({
@@ -281,7 +285,9 @@ async function main() {
 			toc: rec.toc,
 			words: rec.words,
 			diagram_count: rec.diagram_count,
-			widgets: rec.widgets
+			widgets: rec.widgets,
+			track: typeof fm.track === 'string' ? fm.track : null,
+			track_order: typeof fm.track_order === 'number' ? fm.track_order : null
 		};
 	}
 
@@ -539,6 +545,14 @@ async function main() {
 		navigation: settingsRaw.navigation ?? [],
 		secondary_navigation: settingsRaw.secondary_navigation ?? []
 	};
+	const tracks = Object.entries(tracksRaw).map(([slug, track]) => ({
+		slug,
+		title: track.title ?? slug,
+		description: track.description ?? '',
+		eyebrow: track.eyebrow ?? 'Learning path',
+		color: track.color ?? '#f7d8e2',
+		accent: track.accent ?? '#a83f63'
+	}));
 
 	writeFileSync(resolve(OUT_DIR, 'posts.json'), JSON.stringify(posts, null, '\t'));
 	writeFileSync(resolve(OUT_DIR, 'pages.json'), JSON.stringify(pages, null, '\t'));
@@ -546,6 +560,7 @@ async function main() {
 	writeFileSync(resolve(OUT_DIR, 'authors.json'), JSON.stringify(authors, null, '\t'));
 	writeFileSync(resolve(OUT_DIR, 'settings.json'), JSON.stringify(settings, null, '\t'));
 	writeFileSync(resolve(OUT_DIR, 'reports.json'), JSON.stringify(reports, null, '\t'));
+	writeFileSync(resolve(OUT_DIR, 'tracks.json'), JSON.stringify(tracks, null, '\t'));
 	writeFileSync(resolve(OUT_DIR, 'markdown.json'), JSON.stringify(markdown, null, '\t'));
 
 	console.log(

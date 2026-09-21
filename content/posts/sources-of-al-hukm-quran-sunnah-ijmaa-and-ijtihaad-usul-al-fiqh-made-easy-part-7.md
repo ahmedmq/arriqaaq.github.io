@@ -8,6 +8,8 @@ type: post
 published: "2024-05-22T17:26:31.000Z"
 updated: "2025-11-04T02:52:13.000Z"
 feature_image: /images/2024/05/Cream-Pink-Digital-Marketing-Funnel-Graph--4-.png
+track: usul-al-fiqh
+track_order: 7
 tags:
   - fiqh
 authors:

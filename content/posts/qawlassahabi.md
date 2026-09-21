@@ -6,6 +6,8 @@ published: "2025-07-08T00:43:12.000Z"
 updated: "2025-11-04T02:53:52.000Z"
 excerpt: Is Qawl as Sahabi a proof in religion?
 feature_image: /images/2025/07/Screenshot-2025-07-08-at-3.54.29---AM.png
+track: usul-al-fiqh
+track_order: 15
 tags:
   - fiqh
 authors:

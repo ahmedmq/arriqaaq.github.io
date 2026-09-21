@@ -6,6 +6,8 @@ published: "2025-04-14T07:30:38.000Z"
 updated: "2025-11-04T02:53:12.000Z"
 excerpt: Understanding Istihsan
 feature_image: /images/2025/04/Screenshot-2025-04-14-at-12.34.14-PM.png
+track: usul-al-fiqh
+track_order: 11
 tags:
   - fiqh
 authors:

@@ -7,6 +7,8 @@ type: post
 published: "2024-01-06T16:22:41.000Z"
 updated: "2025-11-04T02:50:28.000Z"
 feature_image: /images/2024/01/usul-al-fiqh--1-.png
+track: usul-al-fiqh
+track_order: 2
 tags:
   - fiqh
 authors:

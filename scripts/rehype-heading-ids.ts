@@ -16,6 +16,7 @@ export function createHeadingState(): HeadingState {
 }
 
 const HEADING = new Set(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']);
+const READING_ROLES = ['crane', 'parcel', 'toolbox', 'helmet'] as const;
 const CUSTOM_ID = /\s*\{#([A-Za-z0-9_-]+)\}\s*$/;
 
 function slugify(text: string): string {
@@ -48,6 +49,7 @@ function lastTextNode(node: any): any | null {
 export default function rehypeHeadingIds(state: HeadingState) {
 	return (tree: any) => {
 		const seen = new Set<string>();
+		let readingRoleIndex = 0;
 		visit(tree, 'element', (node: any) => {
 			if (!HEADING.has(node.tagName)) return;
 			let id: string | null = null;
@@ -66,6 +68,10 @@ export default function rehypeHeadingIds(state: HeadingState) {
 			seen.add(unique);
 
 			node.properties = { ...(node.properties ?? {}), id: unique };
+			if (node.tagName === 'h2' || node.tagName === 'h3') {
+				node.properties['data-reading-role'] = READING_ROLES[readingRoleIndex % READING_ROLES.length];
+				readingRoleIndex += 1;
+			}
 			if (node.tagName === 'h2') {
 				state.toc.push({ id: unique, text: textOf(node).trim() });
 			}

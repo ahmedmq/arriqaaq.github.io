@@ -43,6 +43,18 @@ export type Post = {
 	words: number;
 	diagram_count: number;
 	widgets: string[];
+	track: string | null;
+	track_order: number | null;
+};
+
+export type Track = {
+	slug: string;
+	title: string;
+	description: string;
+	eyebrow: string;
+	color: string;
+	accent: string;
+	posts: Post[];
 };
 
 export type SiteSettings = {

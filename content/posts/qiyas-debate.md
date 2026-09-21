@@ -6,6 +6,8 @@ published: "2025-04-06T14:59:42.000Z"
 updated: "2025-11-04T02:52:56.000Z"
 excerpt: Understanding the arguments for and against Qiyas
 feature_image: /images/2025/04/Screenshot-2025-04-06-at-8.29.00-PM.png
+track: usul-al-fiqh
+track_order: 10
 tags:
   - fiqh
 authors:

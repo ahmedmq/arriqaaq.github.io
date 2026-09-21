@@ -4,7 +4,8 @@ import tagsRaw from './generated/tags.json';
 import authorsRaw from './generated/authors.json';
 import settingsRaw from './generated/settings.json';
 import reportsRaw from './generated/reports.json';
-import type { Author, Post, Report, SiteSettings, Tag } from './types';
+import tracksRaw from './generated/tracks.json';
+import type { Author, Post, Report, SiteSettings, Tag, Track } from './types';
 
 export const posts = postsRaw as Post[];
 export const pages = pagesRaw as Post[];
@@ -12,6 +13,16 @@ export const tags = tagsRaw as Tag[];
 export const authors = authorsRaw as Author[];
 export const settings = settingsRaw as SiteSettings;
 export const reports = reportsRaw as Report[];
+
+type TrackDefinition = Omit<Track, 'posts'>;
+const trackDefinitions = tracksRaw as TrackDefinition[];
+
+export const tracks: Track[] = trackDefinitions.map((track) => ({
+	...track,
+	posts: posts
+		.filter((post) => post.track === track.slug)
+		.sort((a, b) => (a.track_order ?? Number.MAX_SAFE_INTEGER) - (b.track_order ?? Number.MAX_SAFE_INTEGER))
+}));
 
 export const POSTS_PER_PAGE = 9;
 
@@ -65,6 +76,10 @@ export function resolveImage(src: string | null | undefined, base: string): stri
 
 export function getReport(slug: string): Report | undefined {
 	return reportBySlug.get(slug);
+}
+
+export function getTrack(slug: string): Track | undefined {
+	return tracks.find((track) => track.slug === slug);
 }
 
 export function adjacentPosts(post: Post): { prev: Post | null; next: Post | null } {

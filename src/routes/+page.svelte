@@ -1,144 +1,48 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { settings, authors, getReport } from '$lib/content';
-	import { SITE_URL } from '$lib/site';
+	import { settings } from '$lib/content';
 	import Seo from '$lib/components/Seo.svelte';
 	import PostCard from '$lib/components/PostCard.svelte';
-	import PostCardLarge from '$lib/components/PostCardLarge.svelte';
-	import FeaturedHero from '$lib/components/FeaturedHero.svelte';
-	import KnowledgeStack from '$lib/components/KnowledgeStack.svelte';
 	import Newsletter from '$lib/components/Newsletter.svelte';
-	import ReportPage from '$lib/components/report/ReportPage.svelte';
-	import SectionHeader from '$lib/components/SectionHeader.svelte';
-	import TopicGlyphs from '$lib/components/TopicGlyphs.svelte';
-	import ReleaseStack from '$lib/components/ReleaseStack.svelte';
-	import ArchiveLines from '$lib/components/ArchiveLines.svelte';
-	import NewsletterMark from '$lib/components/NewsletterMark.svelte';
-	import { themeClass } from '$lib/themeForTag';
-
+	import HajjWorld from '$lib/components/HajjWorld.svelte';
+	import TrackCard from '$lib/components/TrackCard.svelte';
+	import HajjTopicIcon from '$lib/components/HajjTopicIcon.svelte';
 	let { data } = $props();
-
-	const introReport = getReport('arriqaaq-2026') ?? null;
-
-	const ordered = $derived([...data.featured, ...data.recent]);
-	const heroPost = $derived(ordered[0] ?? null);
-	const cardPosts = $derived(ordered.slice(1, 4));
-	const listPosts = $derived(ordered.slice(4));
-
-	const jsonLd = [
-		{
-			'@context': 'https://schema.org',
-			'@type': 'WebSite',
-			name: settings.title,
-			url: `${SITE_URL}/`,
-			description: settings.description
-		},
-		...authors.slice(0, 1).map((a) => ({
-			'@context': 'https://schema.org',
-			'@type': 'Person',
-			name: a.name,
-			url: `${SITE_URL}/author/${a.slug}/`
-		}))
-	];
+	const posts = $derived([...data.featured, ...data.recent]);
 </script>
 
-<Seo {jsonLd} markdownAlt />
+<Seo markdownAlt />
 
-{#if introReport}
-	{@const firstChapter =
-		introReport.chapters.find((c) => c.show_in_stepper) ?? introReport.chapters[0]}
-	<section
-		class="report-inline theme--tajweed"
-		class:u-theme-light={firstChapter?.theme === 'light'}
-		class:u-theme-dark={firstChapter?.theme === 'dark'}
-		style:--page-bg={firstChapter?.bg}
-	>
-		<ReportPage report={introReport} />
-	</section>
-{:else}
-	<section class="hero hero--centered">
-		<h1 class="hero-title">{settings.title}<span class="hero-title-accent">.</span></h1>
-		{#if settings.description}
-			<p class="hero-lede">{settings.description}</p>
-		{/if}
-	</section>
-{/if}
-
-<section class="focus-split theme--tajweed">
-	<SectionHeader
-		heading="What we focus on"
-		lede="The deen, from first principles. The six foundations we cover: Tajweed, Grammar, Aqeedah, Usul al-Hadith, Usul al-Fiqh, and Usul at-Tafsir — the roots before the branches."
-		rail
-	>
-		{#snippet visual()}
-			<KnowledgeStack />
-		{/snippet}
-	</SectionHeader>
-</section>
-
-<section class="topic-strip theme--tajweed">
-	<SectionHeader heading="Browse by discipline">
-		{#snippet visual()}
-			<TopicGlyphs />
-		{/snippet}
-	</SectionHeader>
-	<div class="topic-grid">
-		{#each data.tags as t}
-			<a href={`${base}/tag/${t.slug}/`} class="topic-card {themeClass(t.slug)}">
-				<span class="topic-name">{t.name}</span>
-				<span class="topic-count">{t.post_count}</span>
-			</a>
-		{/each}
+<section class="hajj-home-hero">
+	<div class="hajj-brand"><span>Arriqaaq</span><small>PLAYFUL PATHS TO SERIOUS LEARNING</small></div>
+	<div class="hajj-scene"><HajjWorld /></div>
+	<div class="hajj-hero-ticket">
+		<div><span class="hajj-label">WELCOME, SEEKER</span><h1>A bright place to learn, make and wonder.</h1></div>
+		<p>{settings.description}</p>
+		<a class="hajj-action" href="#journeys">Choose a journey <span>→</span></a>
 	</div>
 </section>
 
-<hr class="section-rule" id="latest" />
+<section class="hajj-marquee" aria-label="What you can explore"><div>FIQH ✦ QUR'AN ✦ HADITH ✦ ARABIC ✦ CRAFTS ✦ TECHNOLOGY ✦ REFLECTIONS ✦</div></section>
 
-{#if heroPost}
-	<FeaturedHero post={heroPost} />
-{/if}
-
-{#if cardPosts.length}
-	<section class="releases theme--tajweed">
-		<SectionHeader heading="Latest from the desk" rail>
-			{#snippet visual()}
-				<ReleaseStack />
-			{/snippet}
-		</SectionHeader>
-		<div class="releases-grid">
-			{#each cardPosts as p}
-				<PostCardLarge post={p} />
-			{/each}
-		</div>
-	</section>
-{/if}
-
-{#if listPosts.length}
-	<section class="intro-list theme--tajweed">
-		<SectionHeader heading="More reading" rail>
-			{#snippet visual()}
-				<ArchiveLines />
-			{/snippet}
-		</SectionHeader>
-		<div class="intro-list-feed">
-			{#each listPosts as p}
-				<PostCard post={p} />
-			{/each}
-		</div>
-	</section>
-{/if}
-
-{#if data.totalPages > 1}
-	<div class="pagination-wrap">
-		<a href={`${base}/page/2/`} class="btn">Older posts →</a>
-	</div>
-{/if}
-
-<section class="newsletter-callout theme--tajweed">
-	<SectionHeader heading="Get new posts in your inbox" lede={settings.description} rail>
-		{#snippet visual()}
-			<NewsletterMark />
-		{/snippet}
-	</SectionHeader>
-	<Newsletter />
+<section class="hajj-intro">
+	<div class="hajj-number">01</div><div><span class="hajj-label">THE LIBRARY</span><h2>Knowledge is a journey.<br />Take it one stop at a time.</h2></div>
+	<p>Follow ordered learning paths, wander through illustrated ideas, or pick up the newest piece from the journal.</p>
 </section>
+
+<section class="hajj-journeys" id="journeys">
+	<header class="hajj-section-head hajj-section-head--sky"><div><span class="hajj-label">GUIDED ROUTES</span><h2>Begin with a map</h2><p>Long-form subjects, arranged as a route rather than a pile.</p></div><span class="hajj-stamp">STUDY<br />AT YOUR<br />OWN PACE</span></header>
+	<div class="track-grid">{#each data.tracks as track}<TrackCard {track} />{/each}<a class="hajj-side-quest" href={`${base}/courses/`}><span>＋</span><strong>Side quests</strong><p>Short courses, workshops and practical projects.</p><em>Explore →</em></a></div>
+</section>
+
+<section class="hajj-topics">
+	<header class="hajj-section-head hajj-section-head--orange"><div><span class="hajj-label">PICK A LANDMARK</span><h2>Explore the library</h2><p>Each landmark opens a different corner of the collection.</p></div></header>
+	<div class="hajj-topic-map"><div class="hajj-topic-route" aria-hidden="true"></div><div class="hajj-topic-grid">{#each data.tags.slice(0, 8) as tag, i}<a href={`${base}/tag/${tag.slug}/`}><HajjTopicIcon name={tag.name} index={i} /><span class="hajj-topic-copy"><strong>{tag.name}</strong><small>{tag.post_count} pieces · visit →</small></span></a>{/each}</div></div>
+</section>
+
+<section class="hajj-latest" id="latest">
+	<header class="hajj-section-head hajj-section-head--green"><div><span class="hajj-label">NEW ARRIVALS</span><h2>From the journal</h2><p>Fresh notes, releases and field reports from Arriqaaq.</p></div><a href={`${base}/page/2/`}>Open the archive →</a></header>
+	<div class="hajj-post-feed">{#each posts.slice(0, 7) as post, i}<div class:featured={i===0}><span class="hajj-post-index">{String(i+1).padStart(2,'0')}</span><PostCard {post} /></div>{/each}</div>
+</section>
+
+<section class="hajj-newsletter"><div><span class="hajj-label">POSTCARD FROM ARRIQAAQ</span><h2>New lessons for your next stop.</h2></div><Newsletter /></section>

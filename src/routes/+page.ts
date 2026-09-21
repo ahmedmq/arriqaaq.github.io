@@ -1,4 +1,4 @@
-import { posts, tags, POSTS_PER_PAGE } from '$lib/content';
+import { posts, tags, tracks, POSTS_PER_PAGE } from '$lib/content';
 
 export const prerender = true;
 
@@ -12,6 +12,7 @@ export function load() {
 		hero: posts[0] ?? null,
 		featured,
 		recent,
+		tracks,
 		tags,
 		page: 1,
 		totalPages,

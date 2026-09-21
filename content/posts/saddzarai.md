@@ -5,6 +5,8 @@ type: post
 published: "2025-06-25T06:42:56.000Z"
 updated: "2025-11-04T02:53:42.000Z"
 feature_image: /images/2025/06/Screenshot-2025-06-25-at-7.01.18---AM.png
+track: usul-al-fiqh
+track_order: 14
 tags:
   - fiqh
 authors:
