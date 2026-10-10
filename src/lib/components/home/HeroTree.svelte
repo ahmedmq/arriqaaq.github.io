@@ -87,8 +87,7 @@
 </svg>
 
 <style>
-	/* A real feature, not a footnote: nearly edge to edge on phones,
-	   about 600px on desktop. */
+	/* A real feature, not a footnote: nearly edge to edge on phones. */
 	.tree {
 		--tw: min(620px, calc(100vw - 16px));
 		display: block;
@@ -98,6 +97,8 @@
 		   text column (phones), instead of overflowing to the right. */
 		justify-self: center;
 		margin: var(--s-6) calc((100% - var(--tw)) / 2) 0;
+		pointer-events: none;
+		overflow: visible;
 	}
 
 	/* Desktop: size by HEIGHT, as large as fits in one view below the header
@@ -111,8 +112,6 @@
 			max-width: 100%;
 			margin: var(--s-6) auto 0;
 		}
-		pointer-events: none;
-		overflow: visible;
 	}
 
 	.seg {
