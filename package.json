@@ -16,6 +16,7 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"og": "tsx scripts/generate-og.mts",
+		"instagram": "tsx scripts/generate-instagram.mts",
 		"check:links": "tsx scripts/check-links.ts",
 		"preview:diagrams": "tsx scripts/preview-diagrams.mts"
 	},
