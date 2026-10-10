@@ -390,4 +390,3 @@ We learned the principle of Mutlaq (Absolute) and Muqayyad (Restricted). A term 
 
 InshaAllah, in the next class we will move to the study of **Amr** (command).
 
-[https://twitter.com/intent/tweet?text=Usul-Al-Fiqh%20Made%20Easy%20(Part%2017)%20-%20What%20is%20Takhsees%20(Aam%20and%20Khaas)%3F&url=https://www.arriqaaq.com/aamkhaas/](https://twitter.com/intent/tweet?text=Usul-Al-Fiqh%20Made%20Easy%20(Part%2017)%20-%20What%20is%20Takhsees%20(Aam%20and%20Khaas)%3F&url=https://www.arriqaaq.com/aamkhaas/)[https://www.facebook.com/sharer/sharer.php?u=https://www.arriqaaq.com/aamkhaas/](https://www.facebook.com/sharer/sharer.php?u=https://www.arriqaaq.com/aamkhaas/)[]()

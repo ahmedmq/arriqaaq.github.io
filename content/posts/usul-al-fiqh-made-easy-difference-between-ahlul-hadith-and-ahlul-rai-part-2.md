@@ -249,7 +249,7 @@ An additional dissimilarity between Ahlul Hadith and Ahlul Rai in the realm of U
 
 - Imam Malik opposed the idea of enforcing his Muwatta as a binding law, emphasizing the diversity of views among the companions on secondary matters.
 
-Harun ar-Rashid, the Umayyad caliph, once considered hanging the Muwaṭṭaʾ on the Ka'bah and mandating all Muslims to adhere strictly to it. When he shared this idea with Imām Mālik, the Imam responded, "I advise against this. The Companions of the Messenger of Allah (ṣal Allāhu ʿalaihi wa sallam) held differing views on certain secondary matters, and they dispersed across various regions, yet they were all following the right path." Upon hearing this, Harun ar-Rashid said, "May Allah grant you success, O Abu Abdillah." (Hilyatul awliya 3326)
+Harun ar-Rashid, the Abbasid caliph, once considered hanging the Muwaṭṭaʾ on the Ka'bah and mandating all Muslims to adhere strictly to it. When he shared this idea with Imām Mālik, the Imam responded, "I advise against this. The Companions of the Messenger of Allah (ṣal Allāhu ʿalaihi wa sallam) held differing views on certain secondary matters, and they dispersed across various regions, yet they were all following the right path." Upon hearing this, Harun ar-Rashid said, "May Allah grant you success, O Abu Abdillah." (Hilyatul awliya 3326)
 
 - In contrast, Hanafi jurisprudence was implemented as civil law in the Ottoman Empire and Egypt (even until 1920), where adherence was mandatory for all citizens.
 

@@ -749,7 +749,7 @@ It refers to meanings implied by *necessity* to make the sentence rationally or 
 This was covered earlier under *Dalalat al-Iqtida.*
 - **Dalalah al-Nass** — also called *Mafhoom al-Muwafaqah* by the majority.  
 It refers to *understood meaning in agreement with the stated meaning.*  
-This was explained previously in the chapter on *Qiyas.*
+This was explained previously in Part 21, under *Mafhoom al-Muwafaqah.*
 
 ---
 
@@ -773,7 +773,7 @@ This was explained previously in the chapter on *Qiyas.*
           <strong>1. Mafhoom al-Sifah</strong> <em>(Based on description)</em>
         </td>
         <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">
-          <strong>Usool Fiqh 23</strong> – Section “Types of Mafhoom al-Mukhalafah”
+          <strong>Part 21</strong> – Section “Types of Mafhoom al-Mukhalafah”
         </td>
         <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">
           Under the heading <em>“Mafhoom al-Sifah (Based on Description)”</em>
@@ -787,7 +787,7 @@ This was explained previously in the chapter on *Qiyas.*
           <strong>2. Mafhoom al-Shart</strong> <em>(Based on condition)</em>
         </td>
         <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">
-          <strong>Usool Fiqh 23</strong> – Same section
+          <strong>Part 21</strong> – Same section
         </td>
         <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">
           <em>“If they are pregnant, then maintain them until they deliver.”</em>
@@ -801,7 +801,7 @@ This was explained previously in the chapter on *Qiyas.*
           <strong>3. Mafhoom al-Ghayah</strong> <em>(Based on limitation)</em>
         </td>
         <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">
-          <strong>Usool Fiqh 23</strong> – Same section
+          <strong>Part 21</strong> – Same section
         </td>
         <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">
           <em>“Then complete the fast until the night.”</em>
@@ -815,7 +815,7 @@ This was explained previously in the chapter on *Qiyas.*
           <strong>4. Mafhoom al-Adad</strong> <em>(Based on number)</em>
         </td>
         <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">
-          <strong>Usool Fiqh 23</strong> – Same section
+          <strong>Part 21</strong> – Same section
         </td>
         <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">
           <em>“Those who accuse chaste women ... eighty lashes.”</em>
@@ -829,4 +829,3 @@ This was explained previously in the chapter on *Qiyas.*
 </div>
 
 
-###

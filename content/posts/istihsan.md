@@ -245,7 +245,7 @@ In the next article inshaAllah, we will go over what Istishaab means
 
 ## 🌟 **Previous Articles in the Series:**
 
-1️⃣ [**History and Evolution Of Usual Al Fiqh (Part 1)**](/usul-al-fiqh-made-easy-introduction-part-1/)
+1️⃣ [**History and Evolution Of Usul Al Fiqh (Part 1)**](/usul-al-fiqh-made-easy-introduction-part-1/)
 
 📝 **Overview: An introduction to Usul Al Fiqh.**
 
@@ -273,7 +273,7 @@ In the next article inshaAllah, we will go over what Istishaab means
 
 📝 **Overview: Exploring the primary sources of Islamic law - Quran, Sunnah, Ijmaa, and Ijtihaad.**
 
-8️⃣ [**Understanding Ijtihaad (Part 1)**](/sources-of-al-hukm-quran-sunnah-ijmaa-and-ijtihaad-usul-al-fiqh-made-easy-part-7/)
+8️⃣ [**Understanding Ijtihaad (Part 8)**](/ijtihad/)
 
 📝 **Overview: Introduction to Ijtihaad, its process, and its role in deriving legal rulings.**
 

@@ -27,7 +27,7 @@ Our attachment to a particular school of thought is often based on cultural or f
 
 So, the goal of these blog posts is to simplify these complexities and explore the topic of usul al-fiqh in a clear and interesting way. It's not about following a specific madhab, but rather understanding the fundamental principles in Hadith and how they are applied in different situations.
 
-> **Note**: If you're coming across terms like Ijithaad, Qiyaas, Rai, or different types of hadith (ahaad, mutawaatir, etc.) for the first time in this article, it might be confusing. Don't get discouraged; this post is an introduction to the topic, aiming to provide a basic understanding of the subject's history, and the evolution of fiqh over time. InshaAllah, we will delve into each term more thoroughly in the upcoming posts.
+> **Note**: If you're coming across terms like Ijtihaad, Qiyaas, Rai, or different types of hadith (ahaad, mutawaatir, etc.) for the first time in this article, it might be confusing. Don't get discouraged; this post is an introduction to the topic, aiming to provide a basic understanding of the subject's history, and the evolution of fiqh over time. InshaAllah, we will delve into each term more thoroughly in the upcoming posts.
 
 ---
 
@@ -43,9 +43,9 @@ For example, in the era of our Prophet (ﷺ), all legal rulings of the Shariah w
 
 # **Definition**
 
-The definiton of Usul ul-Fiqh is understood in two ways: Firstly with regards to the first component “**Usul**” and the second “**Fiqh**”.
+The definition of Usul ul-Fiqh is understood in two ways: Firstly with regards to the first component “**Usul**” and the second “**Fiqh**”.
 
-“**Usul**” is the plural of the word “asl” and it means whatever can have something else built upon it, and from that we have the “asl” (foundation) of a wall which is in essence its base; likewise, the foundation of a tree which has many branches sprotuing form it. As Allah, The Most High says:
+“**Usul**” is the plural of the word “asl” and it means whatever can have something else built upon it, and from that we have the “asl” (foundation) of a wall which is in essence its base; likewise, the foundation of a tree which has many branches sprouting from it. As Allah, The Most High says:
 
 > See you not how Allâh sets forth a parable? A goodly word as a goodly tree, whose root is firmly fixed, and its branches (reach) to the sky (i.e. very high)). (Quran, 14:24)
 
@@ -110,7 +110,7 @@ In upcoming blog posts, we'll explore these terms in more detail, so if you find
 
 ***But to give some clarity on what the term Sunnah means***, it is the statements of our Prophet (ﷺ), his actions, and his approvals. As for his statements, then the matter is clear. As for his (ﷺ) actions, then the origin is that they are recommended. However, depending on the context, it can change towards an obligation or something specific to him (ﷺ). The exception to this are the actions which it is known he (ﷺ) did not perform due to the Legislation, such as the affairs which he did coincidently and not intending them in and of themselves. In this case, such actions are permissible. The origin is that he (ﷺ) is a role model for the Ummah in all rulings, except what is made specific for him by way of evidence. His (ﷺ) approvals of something indicate its permissibility except due to an evidence \[that proves otherwise\]. (The Finest Selection of Usul ul-Fiqh by Abdurrahman bin Naasir as-Sa’di)
 
-After our Prophet's death, the companions spread out to different parts of the world, handling diverse issues of people in their region based on their understanding of the Quran and Sunnah. Legal rulings emerged through consultative legislation, involving individual and collective ijithaad to resolve issues within the framework of the Sunnah. What we mean by the term "consultative legislation" is that the companions of our Prophet (ﷺ), who were knowledgeable about the Quran and Sunnah, also engaged in discussions and consultations to arrive at legal judgments. This consultative approach ensured that legal decisions were not arbitrary but based on the collective wisdom and knowledge of the companions.
+After our Prophet's death, the companions spread out to different parts of the world, handling diverse issues of people in their region based on their understanding of the Quran and Sunnah. Legal rulings emerged through consultative legislation, involving individual and collective ijtihaad to resolve issues within the framework of the Sunnah. What we mean by the term "consultative legislation" is that the companions of our Prophet (ﷺ), who were knowledgeable about the Quran and Sunnah, also engaged in discussions and consultations to arrive at legal judgments. This consultative approach ensured that legal decisions were not arbitrary but based on the collective wisdom and knowledge of the companions.
 
 Hence during this era, the necessity for developing the science of usul al-fiqh explicitly was minimal, as it coexisted with Fiqh. These principles were already in use by the sahabas, forming the basis for later generations.
 

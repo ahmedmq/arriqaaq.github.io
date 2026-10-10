@@ -145,7 +145,7 @@ The terms *al-Futyaa*, *al-Futwaa*, and *al-Fatwa* all denote the legal verdict 
 The act of seeking such a ruling or fatwaa is called *al-Istifta’a* — as in the Qur’an:
 
 > **يَسْتَفْتُونَكَ قُلِ اللَّهُ يُفْتِيكُمْ فِي الْكَلَالَةِ ۚ**  
-> They request from you a \[legal\] ruling. Say, "Allāh gives you a ruling concerning one having neither descendants nor ascendants \[as heirs\].” *(Quran 4:186)*
+> They request from you a \[legal\] ruling. Say, "Allāh gives you a ruling concerning one having neither descendants nor ascendants \[as heirs\].” *(Quran 4:176)*
 
 The one who gives a *Fatwa* is known as the **Mufti.**
 

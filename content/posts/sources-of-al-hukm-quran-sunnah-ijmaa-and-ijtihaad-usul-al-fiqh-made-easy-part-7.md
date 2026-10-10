@@ -31,7 +31,7 @@ The sources of Hukm are the following:
 1. Qur'an
 2. The Sunnah (the teachings and practices of Prophet Muhammad ﷺ) 
 3. Ijma (scholarly consensus)
-4. Ijithaad
+4. Ijtihaad
 
 ---
 
@@ -285,4 +285,3 @@ But the journey doesn't end here! In our next blog post, we will dive into the e
 
 **If you like our content, please subscribe to our blog!** *And Follow us on* [***Instagram***](https://www.instagram.com/arriqaaq/?ref=arriqaaq.com) *or* [***Telegram***](https://t.me/arriqaaq?ref=arriqaaq.com) *to stay up to date!*
 
-[https://twitter.com/intent/tweet?text=Usul-Al-Fiqh%20Made%20Easy%20(Part%201)-%20History%20And%20Evolution&url=https://www.arriqaaq.com/usul-al-fiqh-made-easy-introduction-part-1/](https://twitter.com/intent/tweet?text=Usul-Al-Fiqh%20Made%20Easy%20(Part%201)-%20History%20And%20Evolution&url=https://www.arriqaaq.com/usul-al-fiqh-made-easy-introduction-part-1/)[https://www.facebook.com/sharer/sharer.php?u=https://www.arriqaaq.com/usul-al-fiqh-made-easy-introduction-part-1/](https://www.facebook.com/sharer/sharer.php?u=https://www.arriqaaq.com/usul-al-fiqh-made-easy-introduction-part-1/)[]()

@@ -44,7 +44,7 @@ After taking you through an exciting journey through the historic landscape of u
 # **What is USUL?**
 
   
-“**Usul**” is the plural of the word “**Asl**” and linguistically it means whatever can have something else built upon it, and from that we have the “asl” (foundation) of a wall which is in essence its base; likewise, the foundation of a tree which has many branches sprotuing form it. As Allah, The Most High says:
+“**Usul**” is the plural of the word “**Asl**” and linguistically it means whatever can have something else built upon it, and from that we have the “asl” (foundation) of a wall which is in essence its base; likewise, the foundation of a tree which has many branches sprouting from it. As Allah, The Most High says:
 
 > See you not how Allâh sets forth a parable? A goodly word as a goodly tree, whose root is firmly fixed, and its branches (reach) to the sky (i.e. very high)). (Quran, 14:24)
 
@@ -60,7 +60,6 @@ This principle means that, in general, everything is considered permissible unle
   
 b) **الأصل في العبادات المنع (The default position regarding worship (Ibadaat) is that it is prohibited):**  
 This principle implies that any act of worship is considered prohibited unless there is clear evidence from the Quran or Sunnah allowing it.
-5. Another interpretation of Usul is as a continuous principle, such as the established rule that eating the meat of a dead animal is generally Haram (Asl) 
 
 ---
 

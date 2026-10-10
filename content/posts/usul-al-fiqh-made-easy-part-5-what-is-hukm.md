@@ -191,8 +191,11 @@ Here are the types of mandoob acts with examples:
 These are voluntary acts of worship that the Prophet Muhammad (peace be upon him) consistently performed and strongly encouraged.  
   
 Examples include:
-2. Offering the Sunnah prayers of Fajr and Sunan Rawatib.Sunan Rawatib, or the Rawatib prayers They consist of twelve rak'ahs spread across different times of the day: two before Fajr, four before Dhuhr, two after Dhuhr, two after Maghrib, and two after 'Isha prayers. Performing Witr prayer regularly.
-3. **Sunnah Ghair Mu'akkadah (Non-emphasized Sunnah)**:  
+
+- Offering the Sunnah prayers of Fajr and Sunan Rawatib. Sunan Rawatib, or the Rawatib prayers, consist of twelve rak'ahs spread across different times of the day: two before Fajr, four before Dhuhr, two after Dhuhr, two after Maghrib, and two after 'Isha prayers.
+- Performing Witr prayer regularly.
+
+2. **Sunnah Ghair Mu'akkadah (Non-emphasized Sunnah)**:  
 These are voluntary acts of worship that the Prophet Muhammad (peace be upon him) performed occasionally but not persistently.  
   
 Examples include: Sunnah prayers before Asr and Isha.
