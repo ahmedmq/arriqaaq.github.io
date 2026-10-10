@@ -69,7 +69,10 @@ Rules:
   series, decorations or one-off components.
 - There is no orange. The source palette's orange was replaced by green.
 - Text on a `--subject` fill uses `--subject-on` (ink on amber, green and pink;
-  white on purple and blue).
+  white on purple and blue). **Exception, by owner rule: in diagrams, widgets
+  and the Mustalah Hadith course, text inside any colour is white** (black on
+  colour looks bad). Amber is avoided in new diagrams and widgets because the owner reads it as
+  orange; use pink, purple, blue and green.
 - Light theme only.
 - **The one exception is the diagram language:** SurrealDB's purple ramp (`--ramp-0…3`) and lavender (`--lavender`) are used inside diagrams and course chrome, exactly as specified under Diagram language. Nowhere else.
 
@@ -200,6 +203,20 @@ like a list of separate cards joined by rails, re-lay it out.
 | Group label | Inter 14px uppercase in brand purple, naming the blocks below it (`AGENT MEMORY`). `group()` |
 | Caption | Below the figure, Inter, `--ink-3`, left-aligned |
 
+**Free-form diagrams.** Not every idea is a stack of blocks. When the idea is
+a path, a hub, a comparison or a timeline, draw that instead, with
+`scripts/diagram-free.ts` (modelled on the hifz slides): rounded nodes with a
+1.5px ink outline and a full palette fill (or plain white), dashed ink arrows
+with a small arrowhead, white pill labels sitting on the lines, small
+uppercase mono captions, and plenty of white space. Default to pink and
+purple; use blue and green confidently when a diagram has several
+categories (not amber: the owner reads it as orange, so avoid it in new
+diagrams and widgets), and keep a colour meaning the same thing everywhere in one post
+(the Mustalah history path, hub, timeline and works widget all share one
+colour per period). Text inside any colour is white. Mix shapes across a post;
+never repeat the same layout back to back. The block kit below stays for
+layered structures.
+
 **Layouts** (pick one; don't invent ornament):
 
 - **Layer stack.** Full-width slabs, darkening toward the subject, for "X is built on Y". It's the SurrealDB six-parts shape: context blocks on top, a chip on the connector, then purple layers.
@@ -243,6 +260,18 @@ Anything below can go straight into a post's markdown:
 Every rich element must work at 375px, respect reduced motion, and render
 something meaningful before JS runs (a caption or a static frame).
 
+**Widget precedent (Mustalah Hadith, Part 1).** Keep a widget's data in one
+module under `src/lib/widgets/data/` and give the registry entry an `f`
+fallback that renders the same data as plain HTML at build time, so readers
+without JavaScript get the full content and the widget replaces it when it
+starts. Styles live in `src/lib/styles/widgets.css` (`.wd`, a `.wd-hue--*` class
+per palette colour, `--h` fill and `--h-on` text). Controls follow the step,
+play and scrub pattern: Back / Play / Next buttons plus a range slider, a
+graph that moves with them, and a card that shows the current item. Other
+patterns there: filter chips, tabs, a tap-to-break chain, a stepper, and a quiz
+that turns answers green or pink and explains each one. Widgets use only
+existing classes (`.chip`, `.tabs`, `.btn`, `.scroll-x`) for controls.
+
 ## Covers
 
 - **Article lists and the carousel:** a pixel-field thumbnail (`PixelCover`, the arriqaaqlabs dotted pattern) on a grey ground, in a **per-post palette colour** (`accentForPost(slug)`), so neighbouring rows differ. The topic label takes the same colour.
@@ -278,7 +307,7 @@ A course is an ordered route over existing posts, defined in
 slug: usul-al-fiqh
 title: Usul al-Fiqh Made Easy
 arabic: أصول الفقه
-subject: fiqh            # tajweed | nahw | aqeedah | hadith | fiqh | tafsir
+subject: fiqh            # tajweed | nahw | aqeedah | hadith | fiqh | tafsir (hadith = purple, Mustalah Hadith Made Easy)
 tagline: One line for cards.
 outcome: What the learner can do at the end (roadmap outcome card).
 modules:                 # shown as STEP 01, STEP 02, … on the roadmap

@@ -45,7 +45,7 @@ function widgetMount(name: string, state: EmbedState): string {
 	}
 	const id = `w-${name}-${state.mounts.filter((m) => m.name === name).length + 1}`;
 	state.mounts.push({ name, id });
-	return `<figure class="fig fig-widget"><div class="widget-mount" data-widget="${name}" id="${id}"></div><figcaption>Interactive — ${w.t}</figcaption></figure>`;
+	return `<figure class="fig fig-widget"><div class="widget-mount" data-widget="${name}" id="${id}">${w.f ? w.f() : ''}</div><figcaption>Interactive — ${w.t}</figcaption></figure>`;
 }
 
 export default function remarkEmbedTokens(state: EmbedState) {

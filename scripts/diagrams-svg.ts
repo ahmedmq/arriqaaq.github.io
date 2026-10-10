@@ -11,6 +11,7 @@ import { diagrams as parts1to5 } from './diagrams/uf-parts-1-5.js';
 import { diagrams as istinbat } from './diagrams/uf-istinbat.js';
 import { diagrams as ilm } from './diagrams/ilm.js';
 import { diagrams as misc } from './diagrams/uf-misc.js';
+import { diagrams as mustalahHistory } from './diagrams/mh-history.js';
 
 export type { Diagram };
 
@@ -19,7 +20,8 @@ const modules: Record<string, Record<string, Diagram>> = {
 	'uf-parts-1-5': parts1to5,
 	'uf-istinbat': istinbat,
 	ilm,
-	'uf-misc': misc
+	'uf-misc': misc,
+	'mh-history': mustalahHistory
 };
 
 export const diagrams: Record<string, Diagram> = {};

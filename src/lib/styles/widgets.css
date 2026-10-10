@@ -1,0 +1,617 @@
+/* ==========================================================================
+   Interactive widgets ([[WIDGET:name]], DESIGN.md → Rich posts).
+   Built only from tokens. Every category wears one of four palette colours
+   (pink, purple, blue, green) at full strength; amber is not used because it
+   reads as orange: a .wd-hue--* class sets --h (the fill), --h-ink
+   (coloured text) and --h-on (text placed on the fill). Phone first: 375px.
+   ========================================================================== */
+
+.wd-hue--green { --h: var(--green); --h-ink: var(--green-ink); --h-on: #fff; --subject: var(--green); }
+.wd-hue--purple { --h: var(--purple); --h-ink: var(--purple-ink); --h-on: #fff; --subject: var(--purple); }
+.wd-hue--blue { --h: var(--blue); --h-ink: var(--blue-ink); --h-on: #fff; --subject: var(--blue); }
+.wd-hue--pink { --h: var(--pink); --h-ink: var(--pink-ink); --h-on: #fff; --subject: var(--pink); }
+
+.wd {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr); /* children may shrink; scroll rows scroll inside */
+	gap: var(--s-4);
+	padding: var(--s-4);
+	border-radius: var(--r-lg);
+	background: var(--page);
+	box-shadow: inset 0 0 0 1px var(--line);
+	text-align: left;
+	font-size: var(--fs-small);
+	line-height: 1.5;
+	letter-spacing: 0;
+	color: var(--ink);
+}
+
+@media (min-width: 640px) {
+	.wd {
+		padding: var(--s-5);
+	}
+}
+
+.prose .fig-widget {
+	max-width: var(--measure);
+}
+
+.prose .fig-widget figcaption {
+	text-align: left;
+}
+
+.wd :where(h4, h5, p, ol, ul) {
+	margin: 0;
+}
+
+.wd-mono {
+	font-family: var(--font-mono);
+	font-size: 11px;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--ink-3);
+}
+
+/* Square marker in a hue: the diagram language's block, small. */
+.wd-sq {
+	display: inline-block;
+	flex: 0 0 auto;
+	width: 10px;
+	height: 10px;
+	background: var(--h, var(--ink));
+}
+
+/* ---- Control row ---------------------------------------------------------- */
+
+.wd-bar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--s-3);
+}
+
+.wd-bar {
+	min-width: 0;
+}
+
+/* The shared .scroll-x bleeds to the page gutter; inside a widget it bleeds
+   to the card's own padding instead. */
+.wd .scroll-x {
+	min-width: 0;
+	margin-inline: calc(-1 * var(--s-4));
+	padding-inline: var(--s-4);
+	mask-image: linear-gradient(90deg, #000 calc(100% - var(--s-4)), transparent);
+}
+
+@media (min-width: 640px) {
+	.wd .scroll-x {
+		margin-inline: calc(-1 * var(--s-5));
+		padding-inline: var(--s-5);
+		mask-image: linear-gradient(90deg, #000 calc(100% - var(--s-5)), transparent);
+	}
+}
+
+.wd-bar .scroll-x {
+	flex: 1 1 100%;
+}
+
+.wd .chip {
+	min-height: 36px;
+	padding-inline: 14px;
+	font-size: var(--fs-small);
+	text-transform: none;
+}
+
+.wd .chip--subject::before {
+	width: 10px;
+	height: 10px;
+	border-radius: 0;
+	background: var(--subject);
+}
+
+
+.wd .chip--subject[aria-pressed='true'] {
+	background: var(--subject);
+	color: #fff;
+}
+
+.wd .chip--subject[aria-pressed='true']::before {
+	background: var(--h-on, #fff);
+}
+
+.wd .chip .wd-n {
+	font-family: var(--font-mono);
+	font-size: 11px;
+	font-variant-numeric: tabular-nums;
+}
+
+.wd .btn {
+	min-height: var(--tap);
+	padding-inline: 18px;
+	font-size: var(--fs-small);
+}
+
+.wd .tabs {
+	max-width: 100%;
+}
+
+.wd .tab {
+	text-transform: none;
+}
+
+/* ---- Progress road ---------------------------------------------------------- */
+
+.wd-road {
+	position: relative;
+	height: 4px;
+	background: var(--line);
+}
+
+.wd-road > i {
+	position: absolute;
+	inset: 0 auto 0 0;
+	width: var(--p, 0%);
+	background: var(--purple);
+	transition: width var(--dur) var(--ease-out);
+}
+
+/* ---- Timeline: dot plot, now card, controls, list -------------------------- */
+
+.wd-plot svg {
+	display: block;
+	width: 100%;
+	height: auto;
+	overflow: visible;
+}
+
+.wd-plot g[data-dot] {
+	-webkit-tap-highlight-color: transparent;
+}
+
+.wd-now {
+	display: grid;
+	gap: var(--s-1);
+	padding: var(--s-4);
+	border-radius: var(--r);
+	background: var(--h, var(--surface));
+	color: var(--h-on, var(--ink));
+	min-height: 188px;
+	align-content: start;
+}
+
+.wd-now .wd-mono {
+	color: inherit;
+}
+
+.wd-now strong {
+	font-size: 1.25rem;
+	font-weight: 600;
+	line-height: 1.25;
+	letter-spacing: -0.02em;
+	text-wrap: balance;
+}
+
+.wd-now .wd-who {
+	font-weight: 500;
+}
+
+.wd-now p {
+	margin-top: var(--s-2);
+}
+
+.wd-now .wd-pos {
+	margin-top: var(--s-2);
+	font-variant-numeric: tabular-nums;
+}
+
+.wd-ctl {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	gap: var(--s-2);
+	align-items: center;
+}
+
+.wd-ctl .wd-range {
+	grid-column: 1 / -1;
+}
+
+.wd-range {
+	width: 100%;
+	height: var(--tap);
+	margin: 0;
+	accent-color: var(--purple);
+	cursor: pointer;
+}
+
+.wd-tl {
+	display: grid;
+	gap: var(--s-2);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.wd-tl[hidden] {
+	display: none;
+}
+
+.wd-item {
+	display: block;
+	width: 100%;
+	min-height: var(--tap);
+	padding: var(--s-3) var(--s-4);
+	border: 0;
+	border-radius: var(--r-sm);
+	background: var(--surface);
+	box-shadow: inset 4px 0 0 var(--h);
+	text-align: left;
+	color: inherit;
+	font: inherit;
+	cursor: pointer;
+	transition: background var(--dur-fast) ease;
+}
+
+.wd-item:hover,
+.wd-item[aria-current='true'] {
+	background: var(--surface-2);
+}
+
+.wd-item .wd-mono {
+	display: block;
+	margin-bottom: 2px;
+}
+
+.wd-item strong {
+	display: block;
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	line-height: 1.35;
+}
+
+.wd-item .wd-who {
+	display: block;
+	color: var(--ink-2);
+}
+
+/* ---- Works (tabs of families) ------------------------------------------------ */
+
+.wd-panel {
+	display: grid;
+	gap: var(--s-3);
+}
+
+.wd-panel h4 {
+	font-size: var(--fs-h3);
+	font-weight: 600;
+	letter-spacing: -0.02em;
+	line-height: 1.25;
+}
+
+.wd-panel > p {
+	color: var(--ink-2);
+}
+
+.wd-group {
+	display: grid;
+	gap: var(--s-2);
+}
+
+.wd-group > .wd-mono {
+	display: flex;
+	align-items: center;
+	gap: var(--s-2);
+	color: var(--ink);
+}
+
+.wd-works {
+	display: grid;
+	gap: var(--s-2);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.wd-works li {
+	padding: var(--s-3) var(--s-4);
+	border-radius: var(--r-sm);
+	background: var(--surface);
+	box-shadow: inset 4px 0 0 var(--h);
+}
+
+.wd-works strong {
+	display: block;
+	font-weight: 600;
+	line-height: 1.35;
+}
+
+.wd-works .wd-who {
+	display: block;
+	color: var(--ink-2);
+}
+
+.wd-works .wd-note {
+	display: block;
+	margin-top: var(--s-1);
+	color: var(--ink);
+}
+
+/* ---- Chain ------------------------------------------------------------------------ */
+
+.wd-chain {
+	display: grid;
+	justify-items: center;
+	gap: 0;
+}
+
+.wd-node {
+	width: 100%;
+	max-width: 360px;
+	min-height: 64px;
+	padding: var(--s-3) var(--s-4);
+	border: 0;
+	border-radius: var(--r-sm);
+	background: var(--h);
+	color: var(--h-on);
+	font: inherit;
+	text-align: left;
+	cursor: pointer;
+	display: grid;
+	gap: 2px;
+	transition:
+		transform var(--dur) var(--ease-out),
+		background var(--dur-fast) ease;
+}
+
+.wd-node:active {
+	transform: scale(0.99);
+}
+
+.wd-node strong {
+	font-size: 16px;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+}
+
+.wd-node span {
+	font-size: var(--fs-xs);
+}
+
+.wd-node[aria-pressed='true'] {
+	background: var(--page);
+	color: var(--ink);
+	box-shadow: none;
+	outline: 2px dashed var(--ink-3);
+	outline-offset: -2px;
+}
+
+.wd-link {
+	position: relative;
+	width: 0;
+	height: 30px;
+	border-left: 1.5px dashed var(--ink);
+}
+
+.wd-link::after {
+	content: '';
+	position: absolute;
+	left: -6px;
+	bottom: -2px;
+	border: 5px solid transparent;
+	border-top: 8px solid var(--ink);
+	border-bottom: 0;
+}
+
+.wd-link.is-broken {
+	border-left-color: var(--pink);
+}
+
+.wd-link.is-broken::after {
+	border-top-color: var(--pink);
+}
+
+.wd-status {
+	padding: var(--s-3) var(--s-4);
+	border-radius: var(--r-sm);
+	background: var(--surface);
+	box-shadow: inset 4px 0 0 var(--h);
+}
+
+.wd-status p + p {
+	margin-top: var(--s-2);
+}
+
+.wd-status q {
+	quotes: '\201C' '\201D';
+	font-weight: 500;
+}
+
+/* ---- Stepper ----------------------------------------------------------------------- */
+
+.wd-step {
+	padding: var(--s-4);
+	border-radius: var(--r);
+	background: var(--h);
+	color: var(--h-on);
+	min-height: 168px;
+	display: grid;
+	align-content: space-between;
+	gap: var(--s-4);
+}
+
+.wd-step .wd-mono {
+	color: inherit;
+}
+
+.wd-step p {
+	font-size: 1.25rem;
+	font-weight: 500;
+	line-height: 1.35;
+	letter-spacing: -0.02em;
+	text-wrap: balance;
+}
+
+.wd-dots {
+	display: flex;
+	gap: var(--s-2);
+	align-items: center;
+}
+
+.wd-dots i {
+	width: 24px;
+	height: 6px;
+	background: var(--line-strong);
+}
+
+.wd-dots i.is-on {
+	background: var(--ink);
+}
+
+.wd-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--s-2);
+	align-items: center;
+	justify-content: space-between;
+}
+
+/* ---- Quiz --------------------------------------------------------------------------- */
+
+.wd-q {
+	display: grid;
+	gap: var(--s-3);
+}
+
+.wd-q h4 {
+	font-size: 1.1875rem;
+	font-weight: 600;
+	line-height: 1.35;
+	letter-spacing: -0.02em;
+	text-wrap: balance;
+}
+
+.wd-opts {
+	display: grid;
+	gap: var(--s-2);
+}
+
+.wd-opt {
+	display: block;
+	width: 100%;
+	min-height: var(--tap);
+	padding: var(--s-3) var(--s-4);
+	border: 0;
+	border-radius: var(--r-sm);
+	background: var(--surface);
+	box-shadow: inset 0 0 0 1px var(--line);
+	font: inherit;
+	font-size: 15px;
+	text-align: left;
+	color: var(--ink);
+	cursor: pointer;
+	transition: background var(--dur-fast) ease;
+}
+
+.wd-opt:hover:not(:disabled) {
+	background: var(--surface-2);
+}
+
+.wd-opt:disabled {
+	cursor: default;
+}
+
+.wd-opt.is-right {
+	background: var(--green);
+	box-shadow: none;
+	color: #fff;
+	font-weight: 600;
+}
+
+.wd-opt.is-wrong {
+	background: var(--pink);
+	box-shadow: none;
+	color: #fff;
+}
+
+.wd-why {
+	padding: var(--s-3) var(--s-4);
+	border-radius: var(--r-sm);
+	background: var(--surface);
+	box-shadow: inset 4px 0 0 var(--h);
+}
+
+.wd-score {
+	display: grid;
+	gap: var(--s-3);
+	justify-items: start;
+}
+
+.wd-score strong {
+	font-size: var(--fs-display);
+	font-weight: 500;
+	line-height: 1;
+	letter-spacing: var(--ls-display);
+	font-variant-numeric: tabular-nums;
+}
+
+/* ---- No-JavaScript fallback ---------------------------------------------------- */
+
+.wd-static {
+	display: grid;
+	gap: var(--s-3);
+	padding: var(--s-4);
+	border-radius: var(--r);
+	background: var(--surface);
+	font-size: var(--fs-small);
+	line-height: 1.5;
+	letter-spacing: 0;
+	text-align: left;
+}
+
+.wd-static :where(ol, ul) {
+	margin: 0;
+	padding-left: 1.25em;
+	display: grid;
+	gap: var(--s-2);
+}
+
+.wd-static :where(h4, h5, p) {
+	margin: 0;
+}
+
+.wd-static h4 {
+	font-size: var(--fs-small);
+	font-weight: 600;
+}
+
+.wd-static h5 {
+	font-size: var(--fs-xs);
+	font-weight: 600;
+	color: var(--ink-3);
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+}
+
+.wd-static li span {
+	color: var(--ink-3);
+}
+
+/* ---- Motion --------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: no-preference) {
+	.wd-rise {
+		animation: wd-rise var(--dur-slow) var(--ease-out) both;
+	}
+}
+
+@keyframes wd-rise {
+	from {
+		transform: translateY(10px);
+		opacity: 0;
+	}
+	to {
+		transform: none;
+		opacity: 1;
+	}
+}

@@ -6,3 +6,4 @@ Keep every Instagram post image here (not under `static/`, so they are never dep
 - `npm run instagram` regenerates the cards defined in `scripts/generate-instagram.mts`.
   Add a new card by adding an entry to `cards` there. Follow DESIGN.md: palette at full strength, Inter, headings at most 5-6 words.
 - Hand-made images can simply be dropped in this folder.
+- Every lesson of a course gets its own card with a small diagram (see `mustalahStory()` and the `mustalah-hadith-part-1` card in the generator). Draw the diagram from the same data as the lesson's interactive pieces, in palette colours at full strength, with no amber (it reads as orange) and no black text on colour.

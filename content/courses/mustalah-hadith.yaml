@@ -1,0 +1,19 @@
+# Mustalah Hadith Made Easy. Subject colour: purple (hadith).
+# Schema is documented in DESIGN.md → "Courses".
+slug: mustalah-hadith
+title: Mustalah Hadith Made Easy
+arabic: مصطلح الحديث
+subject: hadith # one of: tajweed, nahw, aqeedah, hadith, fiqh, tafsir
+code: MH
+tagline: How scholars tell the authentic hadith from the weak, and where the science came from.
+outcome: >-
+  You can tell the story of how the science of hadith terminology was written
+  down, name the books it grew around, and say why the chain of narration is
+  part of the religion.
+level: Beginner friendly
+modules:
+  - title: Introduction
+    blurb: Where the science of Mustalah al-Hadith came from and the books it grew around.
+    lessons:
+      - slug: mustalah-hadith-made-easy-part-1-brief-history
+        title: A brief history

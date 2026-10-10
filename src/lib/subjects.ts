@@ -18,7 +18,7 @@ export const SUBJECTS: SubjectInfo[] = [
 	{ id: 'tajweed', name: 'Tajweed', arabic: 'التجويد', question: 'Reciting the Qur’an as it was revealed' },
 	{ id: 'nahw', name: 'Arabic grammar', arabic: 'النحو', question: 'The grammar that opens the texts' },
 	{ id: 'aqeedah', name: 'Aqeedah', arabic: 'العقيدة', question: 'What a Muslim believes, and why', tag: 'islam' },
-	{ id: 'hadith', name: 'Usul al-Hadith', arabic: 'أصول الحديث', question: 'How a narration is judged' },
+	{ id: 'hadith', name: 'Usul al-Hadith', arabic: 'أصول الحديث', question: 'How a narration is judged', course: 'mustalah-hadith', tag: 'hadith' },
 	{ id: 'fiqh', name: 'Usul al-Fiqh', arabic: 'أصول الفقه', question: 'How rulings are derived', course: 'usul-al-fiqh', tag: 'fiqh' },
 	{ id: 'tafsir', name: 'Usul at-Tafsir', arabic: 'أصول التفسير', question: 'How the Qur’an is explained', tag: 'tafsir' }
 ];

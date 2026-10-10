@@ -14,6 +14,8 @@ This blog is the Arriqaaq site (Islamic education: courses, books, podcasts, and
 teaching series). Posts live in `content/posts/` as markdown with YAML
 frontmatter, rendered by a SvelteKit build with custom remark directives.
 
+**Teaching series (Usul al-Fiqh, Mustalah Hadith, any course): read `VOICE.md` at the repo root before drafting.** It is the full voice and teaching-method guide, derived from all 24 Usul parts, and takes precedence over the short summary below for those posts.
+
 The author supplies the substance: the topic, the points, the personal
 experience, and any Quran/hadith texts. Your job is drafting and editing in the
 house voice, never inventing content.
