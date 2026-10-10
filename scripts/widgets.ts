@@ -64,7 +64,7 @@ export const widgets: Record<string, WidgetMeta> = {
 	'mh-timeline': {
 		g: '',
 		t: 'The story of the science on one time axis',
-		s: 'Every work as a dot on a time axis. Step, play or scrub through the history.',
+		s: 'The main works as dots on a time axis. Step, play or scrub through the history.',
 		f: timelineFallback
 	},
 	'mh-works': {

@@ -132,7 +132,7 @@ const entries: Entry[] = [
 		when: 'd. 463 AH',
 		who: 'al-Khatib al-Baghdadi',
 		work: 'Al-Kifayah fee Ilm al-Riwayah, and Al-Jami li-Adab al-Shaykh wa al-Sami',
-		note: 'Al-Kifayah is a foundational book on the principles of hadith transmission. Ibn Hajar says he wrote a book in every branch of the science, and everyone after him took benefit from Al-Kifayah.'
+		note: 'Al-Kifayah is a foundational book on the principles of hadith transmission. Ibn Hajar says he wrote a book in every branch of the science. Whoever came after him took benefit from Al-Kifayah.'
 	},
 	{
 		cat: 'books',
@@ -172,7 +172,7 @@ const entries: Entry[] = [
 		when: 'd. 676 AH',
 		who: 'Imam al-Nawawi',
 		work: 'Irshad Tullab al-Haqaaiq, and Al-Taqreeb wa al-Tayseer',
-		note: 'Two books on the hadith sciences. Irshad is the first printed abridgment of Ibn al-Salah. Al-Suyuti later explained Al-Taqreeb in Tadreeb al-Rawi.'
+		note: 'Two books on the hadith sciences. Irshad is the first abridgment of Ibn al-Salah (printed). Al-Suyuti later explained Al-Taqreeb in Tadreeb al-Rawi.'
 	},
 	{
 		cat: 'salah',
@@ -200,11 +200,27 @@ const entries: Entry[] = [
 	},
 	{
 		cat: 'salah',
+		ah: 911,
+		when: 'd. 911 AH',
+		who: 'al-Suyuti',
+		work: 'Tadreeb al-Rawi, and Nazm al-Durar fee Ilm al-Athar',
+		note: 'Tadreeb al-Rawi explains al-Nawawi\u2019s Al-Taqreeb. Nazm al-Durar is a poem, with his own incomplete commentary Al-Bahr al-Ladhi Zakhar (printed).'
+	},
+	{
+		cat: 'salah',
+		ah: 1182,
+		when: 'd. 1182 AH',
+		who: 'Muhammad ibn Ismail al-Amir as-San\u2019ani',
+		work: 'Tawdhih al-Afkar, sharh Tanqih al-Anzar',
+		note: 'From the notes\u2019 list of books on the science. He also versified Nukhbat al-Fikr, in Isbal al-Matar ala Qasab al-Sukkar.'
+	},
+	{
+		cat: 'salah',
 		ah: 902,
 		when: 'd. 902 AH',
 		who: 'al-Sakhawi',
 		work: 'Fath al-Mugheeth',
-		note: 'A student of Ibn Hajar. A comprehensive hadith manual, expanding on al-Iraqi’s poem.'
+		note: 'A student of Ibn Hajar. A comprehensive hadith manual, explaining and expanding on al-Iraqi’s poem.'
 	},
 	{
 		cat: 'salah',
@@ -246,7 +262,7 @@ export type GroupKey = 'abridged' | 'explained' | 'critique' | 'poem' | 'sharh';
 
 export const GROUPS: Record<GroupKey, { label: string; hue: Hue }> = {
 	abridged: { label: 'Abridgments', hue: 'purple' },
-	explained: { label: 'Explanations', hue: 'blue' },
+	explained: { label: 'Commentaries', hue: 'blue' },
 	critique: { label: 'Critical notes', hue: 'pink' },
 	poem: { label: 'Poems', hue: 'green' },
 	sharh: { label: 'On Nuzhat al-Nazar', hue: 'purple' }
@@ -286,20 +302,18 @@ export const FAMILIES: Family[] = [
 			critique: [
 				{ title: 'Al-Nukat ala Muqaddimah Ibn al-Salah', by: 'al-Zarkashi', when: 'd. 794 AH', note: 'A critical analysis (printed).' },
 				{ title: 'Al-Taqyeed wa al-Eedah li-ma Ubhima wa Ughliqa min Kitab Ibn al-Salah', by: 'al-Iraqi', when: 'd. 806 AH', note: 'Clarifies ambiguous points and corrects misconceptions about Ibn al-Salah’s work (printed).' },
-				{ title: 'Al-Ifsah an Nukat Ibn al-Salah', by: 'Ibn Hajar al-Asqalani', when: 'd. 852 AH', note: 'A detailed critique covering both Ibn al-Salah and al-Iraqi’s notes, marked with (ص) for Ibn al-Salah and (ع) for al-Iraqi.' }
+				{ title: 'Al-Ifsah an Nukat Ibn al-Salah', by: 'Ibn Hajar al-Asqalani', when: 'd. 852 AH', note: 'A detailed critique covering both Ibn al-Salah and al-Iraqi’s notes, marked with (ص) for Ibn al-Salah and (ع) for al-Iraqi. The notes list Ibn Hajar’s An-Nukat ala Kitab Ibn al-Salah, published now with takhreej by Shaykh Rabi.' }
 			],
 			poem: [
 				{ title: 'Al-Tabsirah wa al-Tadhkirah', by: 'al-Iraqi', note: 'A 1000-line poem. He also wrote its commentary.' },
-				{ title: 'Fath al-Mugheeth', by: 'al-Sakhawi', when: 'd. 902 AH', note: 'A comprehensive hadith manual expanding on the poem.' },
+				{ title: 'Fath al-Mugheeth', by: 'al-Sakhawi', when: 'd. 902 AH', note: 'A comprehensive hadith manual explaining and expanding on the poem.' },
 				{ title: 'Nazm al-Durar fee Ilm al-Athar', by: 'al-Suyuti', note: 'With his own incomplete commentary, Al-Bahr al-Ladhi Zakhar (printed).' },
 				{ title: 'Manhaj Dhawi al-Nazar', by: 'al-Tarmasi', when: 'd. 1329 AH' }
 			],
 			explained: [
-				{
-					title: 'Modern explanations',
-					by: 'Ahmad Shakir (d. 1377 AH), Muhammad Abdul Hameed and Muhammad bin Adam al-Ethiopee',
-					note: 'Muhammad Abdul Hameed’s is printed, and al-Ethiopee’s is printed in two volumes. There are others too.'
-				}
+				{ title: 'A modern explanation', by: 'Ahmad Shakir', when: 'd. 1377 AH', note: 'The Brief History lists the modern explanations after the poems.' },
+				{ title: 'A modern explanation', by: 'Muhammad Abdul Hameed', note: 'Printed.' },
+				{ title: 'A modern explanation', by: 'Muhammad bin Adam al-Ethiopee', note: '2 volumes, printed. There are others too.' }
 			]
 		}
 	},
@@ -310,10 +324,12 @@ export const FAMILIES: Family[] = [
 		blurb: 'A concise treatise by Ibn Hajar, with his own commentary Nuzhat al-Nazar. Scholars turned to it for its conciseness, organisation and accuracy, and it became a focus of study.',
 		groups: {
 			explained: [
+				{ title: 'Nuzhat al-Nazar fee Tawdih Nukhbat al-Fikar', by: 'Ibn Hajar al-Asqalani', note: 'The explanation of Nukhbat al-Fikr written by Ibn Hajar himself.' },
+				{ title: 'An explanation of Nukhbat al-Fikr', by: 'Ibn Hajar’s son' },
 				{ title: 'Annotations on the explanation of Nukhbat al-Fikr', by: 'Zain al-Din Qasim bin Qutlubugha al-Hanafi', when: 'd. 879 AH', note: 'A student of the author.' },
 				{ title: 'Mustalahat Ahl al-Athar', by: 'Mulla Ali al-Qari', when: 'd. 1014 AH' },
 				{ title: 'Al-Yawaqit wa al-Durar', by: 'Muhammad Abdul-Raouf al-Munawi al-Haddadi', when: 'd. 1031 AH' },
-				{ title: 'Imaan al-Nazar fi Tawdih Nukhbat al-Fikr', by: 'Muhammad Akram bin Abdul-Rahman al-Sindi' },
+				{ title: 'Im’an al-Nazar fi Tawdih Nukhbat al-Fikr', by: 'Muhammad Akram bin Abdul-Rahman al-Sindi' },
 				{ title: 'Bahjat al-Nazar', by: 'Abu al-Hasan al-Sindi', when: 'd. 1138 AH' }
 			],
 			sharh: [
@@ -325,7 +341,7 @@ export const FAMILIES: Family[] = [
 			poem: [
 				{ title: 'Uyun al-Maani, nazm of Nukhbat al-Fikr', by: 'Ahmad bin Sadaqa al-Sirfi al-Shafii al-Asqalani', when: 'd. 905 AH' },
 				{ title: 'Nazm Nukhbat al-Fikr', by: 'Muhammad al-Shumni', note: 'His son Taqi al-Din Ahmad bin Muhammad al-Shumni explained it in Al-Ali al-Rutba fi Sharh Nazm al-Nukhba.' },
-				{ title: 'Nazm Nukhbat al-Fikr', by: 'Shihab al-Din Ahmad bin Muhammad al-Tookhi', when: 'd. 893 AH' },
+				{ title: 'Nazm Nukhbat al-Fikr', by: 'Shihab al-Din Ahmad bin Muhammad al-Tookhi', when: 'd. 893 AH', note: 'Nukhbat al-Fikr was converted into a poem for easy memorisation.' },
 				{ title: 'Aqd al-Durar fi Nazm Nukhbat al-Fikr', by: 'Abu Hamid Muhammad al-Arabi ibn Yusuf al-Fasi', when: 'd. 1052 AH' },
 				{ title: 'Isbal al-Matar ala Qasab al-Sukkar', by: 'Muhammad bin Ismail al-Amir al-Sanani al-Yamani', when: 'd. 1182 AH', note: 'And so on.' }
 			]
@@ -338,7 +354,7 @@ export const FAMILIES: Family[] = [
 		blurb: 'Not part of the book we are studying, but very famous.',
 		groups: {
 			explained: [
-				{ title: 'Al-Baith al-Hathith', by: 'Ahmad Shakir', note: 'The famous commentary. It is also published with beneficial footnotes from Muhammad Nasiruddin al-Albani.' },
+				{ title: 'Al-Baith al-Hathith', by: 'Ahmad Shakir', note: 'The famous commentary. It is also published with beneficial footnotes from Muhammad Nasiruddin al-Albani. A copy exists with the notes of Shaykh al-Albani and Ali al-Halabi in it.' },
 				{ title: 'Al-Sayr al-Hatheeth Sharh Ikhtisar Uloom al-Hadith', by: 'Muqbil bin Hadee al-Wadiee' },
 				{ title: 'Fath al-Mugheeth fee Taleeq ala Kitab Ikhtisar Uloom al-Hadith', by: 'Amr Abdul Munim Saleem' },
 				{ title: 'Al-Sayeeul-Hatheeth ila Sharh Ikhtisar Uloom al-Hadith', by: 'Abdul Azeez bin Sagheer' },

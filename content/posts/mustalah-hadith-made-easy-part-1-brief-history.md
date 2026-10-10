@@ -21,9 +21,9 @@ reading_time: 19
 >
 > Abdullah bin al-Mubarak
 
-Anyone could say whatever they wanted. That is what the chain of narration protects us from, and it is where this course begins.
+Anyone could say whatever they wanted. That is what the chain of narration protects us from.
 
-The hadith of the Prophet (ﷺ) is the second legislative source after the Quran. It is the foundation of the religion and the source of the straight path. So when a report is attributed to him (ﷺ), one question matters before every other: ***is it authentic, or is it weak?***
+The hadith of the Prophet (ﷺ) is the second legislative source after the Quran. It is the foundation of the religion and the source of the straight path. So when a report is attributed to him (ﷺ), the first thing we need to know is ***whether it is authentic or weak.***
 
 The science that answers that question is **Mustalah al-Hadith**.
 
@@ -31,7 +31,7 @@ The science that answers that question is **Mustalah al-Hadith**.
 
 ## What is Mustalah al-Hadith?
 
-The knowledge of Mustalah al-Hadith is of great importance, because it distinguishes the authentic hadith from the weak, and the sound from the flawed. Simply put, it is what lets us tell which reports we can rely on.
+The knowledge of Mustalah al-Hadith is of great importance, because it distinguishes the authentic hadith from the weak, and the sound from the flawed. Simply put, it is the science that tells us which hadith are authentic and which are weak.
 
 Its importance comes from the importance of the noble Prophetic hadith itself, the second legislative source after the Quran. Two things rest upon this science:
 
@@ -49,7 +49,7 @@ We will study this science through a book written by Shaykh Abdul Muhsin Al-Abba
 1. It is not too simple, like Nukhbat al-Fikr, and not too detailed, like Ikhtisar Uloom al-Hadith. It is short and concise for a reader.
 2. It is taught in institutes of knowledge in Madinah, under the guidance of the Islamic University of Madinah, and in other schools like Jamia Salafiyyah Banaras.
 
-Both Nukhbat al-Fikr and Ikhtisar Uloom al-Hadith are waiting for us further down.
+We will meet both of them further down.
 
 ---
 
@@ -57,7 +57,7 @@ Both Nukhbat al-Fikr and Ikhtisar Uloom al-Hadith are waiting for us further dow
 
 ### Hadith were being written from the time of the Sahabah
 
-Written manuscripts of hadith were present since the time of the Sahabah. Two of them are:
+Written manuscripts of hadith (each one is called a *sahifa*) were present since the time of the Sahabah. Two of them are:
 
 - **As-Sahifa as-Sadiqa**, by Abdullah ibn Amr al-As.
 - **As-Sahifa as-Sahiha**, by Hammam ibn Munabbah, a student of Abu Hurayrah.
@@ -82,7 +82,7 @@ Step through it, one part at a time.
 
 Now go back to the words of Abdullah bin al-Mubarak at the start of this post: the chain is part of the religion, and without it anyone could say whatever they wanted.
 
-One more thing to understand before we look at the books. The recording of hadith preceded the systematic documentation of hadith terminology. So it is no surprise that the formal writing of hadith terminology came later than the recording of hadith itself. Perhaps the earliest scholars did not feel the need to compile this discipline separately at that time, but later generations required it, and that is how its documentation began.
+The recording of hadith preceded the systematic documentation of hadith terminology. So it is no surprise that the formal writing of hadith terminology came later than the recording of hadith itself. Perhaps the earliest scholars did not feel the need to compile this discipline separately at that time, but later generations required it, and that is how its documentation began.
 
 ---
 
@@ -94,6 +94,8 @@ From the first works that were written on the sciences and usool of Mustalah al-
 2. Kitab ar-Risalah, by Imam al-Shafi'i.
 3. The Muqaddimah (introduction) of Sahih Muslim.
 4. The last part of Jami al-Tirmidhi.
+
+> **Note**: You will see terms like mursal, mudallas and ma'lool in the lists below. Don't worry about them. Each one gets its own lesson later, InshaAllah.
 
 ### Imam al-Shafi'i and Al-Risalah
 
@@ -110,7 +112,9 @@ The first to author a work in this noble science was Imam al-Shafi'i (d. 204 AH)
 - strengthening narrations by seeking additional chains, and
 - the fundamentals of narration.
 
-**Why was Kitab ar-Risalah written?** Abdurrahman Mahdi (d. 198 AH), a student of Imam Malik, Sufyan at-Thawree and Sufyan ibn Uyainah, came to Basra in Iraq, at a time when Imam al-Shafi'i was living in Baghdad. The madhab of Imam al-Shafi'i was the madhab of Ahlul Hadith (to act on a hadith), while in Iraq at that time the madhab of Ahl ul Ray (the people of opinion) was prevalent and dominant. So when Abdurrahman Mahdi went to Basra, people noticed certain strange things about him. He was acting on hadith, but this was very strange to the people living there, for example in not doing wudhu after hijamah.
+In simpler terms, this one book spoke about what makes a hadith authentic, what makes a narrator reliable, and how narrations are received and strengthened.
+
+**Why was Kitab ar-Risalah written?** Abdurrahman Mahdi (d. 198 AH), a student of Imam Malik, Sufyan at-Thawree and Sufyan ibn Uyainah, came to Basra in Iraq, at a time when Imam al-Shafi'i was living in Baghdad. The madhab of Imam al-Shafi'i was the madhab of Ahlul Hadith (to act on a hadith), while in Iraq at that time the madhab of Ahl ul Ray (the people of opinion) was prevalent and dominant. So when Abdurrahman Mahdi went to Basra, people noticed certain strange things about him. He was acting on hadith, but this was very strange to the people living there, for example in not doing wudhu after hijamah (cupping).
 
 So Abdurrahman Mahdi wrote a letter to Imam al-Shafi'i, requesting him to write a book on the usool of the deen, hadith, fiqh and the other sciences. Harith an-Nakkal took the letter to Imam al-Shafi'i, and Imam al-Shafi'i wrote Kitab ar-Risalah in reply.
 
@@ -141,6 +145,8 @@ Following these two great scholars, Imam Muslim bin al-Hajjaj al-Qushayri al-Nay
 - warned against fabricating hadith, providing evidence for this, and
 - discussed the necessity of chains of narration and the obligation to critique weak narrators.
 
+In simpler terms, Imam Muslim used the introduction of his Sahih to explain how reports are sorted, how narrators are judged, and why the chain of narration matters.
+
 His book *Al-Tamyeez* also touches on hadith terminology, because of his reputation for simplifying complex concepts.
 
 **Point of benefit:** The Muqaddimah of Sahih Muslim has a lot of benefits on Mustalah al-Hadith, ilm ur-rijal and the classification of narrators. It was narrated by Imam Muslim's student, Abu Ishaq Ibrahim bin Sufyan, and Imam Muslim wrote it addressing him. [Read more here](https://www.troid.org/hadith/explanation-of-hadith/244-the-muqaddimah-of-a-i-muslim).
@@ -160,6 +166,8 @@ Following them, Imam Muhammad bin Isa bin Sawrah al-Tirmidhi (d. 279 AH), a stud
 - the classification of narrators based on precision,
 - the hasan (good) and ghareeb hadith, and
 - the ma'lool and mursal narrations, with the reasons for their rejection.
+
+In simpler terms, al-Tirmidhi wrote down how hadith is received and passed on, and why narrators may be critiqued.
 
 His *Al-Jami al-Kabeer* also contains many key terminological discussions, and he has another published book called *Al-Ilal al-Kabeer*.
 
@@ -188,8 +196,14 @@ After this, books were written exclusively on the science and terminology of had
 7. A book on high and low chains (al-uluww wa al-nuzool), by Muhammad bin Tahir al-Maqdisi (d. 507 AH).
 8. *Al-Ilma*, by Qadi Iyad (d. 544 AH).
 9. *Ma La Yasa al-Muhaddith Jahluh*, by Abu Hafs Umar al-Mayyanji (d. 581 AH).
+10. *Marifat Anwa Ulum al-Hadith*, famously called *Muqaddimah Ibn al-Salah*, by Abu Amr Uthman Ibn al-Salah (d. 643 AH).
+11. *Nukhbat al-Fikar fee Mustalah Ahl al-Athar*, by Ibn Hajar al-Asqalani (d. 852 AH).
+12. *Mandhumah al-Bayquniyyah*, by Umar ibn Muhammad ibn Fatooh al-Bayqooni ad-Dimashqi.
+13. *Tadreeb al-Rawi fi Sharh Taqreeb al-Nawawi*, by Jalaluddin as-Suyuti.
+14. *Tawdhih al-Afkar*, sharh *Tanqih al-Anzar*, by Muhammad ibn Ismail al-Amir as-San'ani (d. 1182 AH).
+15. *Qawaid at-Tahdith*, by Jamaluddin al-Qasimi.
 
-Let's take them one at a time.
+The books from number 10 onward are the ones we meet in the sections below. Let's take the first nine one at a time.
 
 ### al-Ramahurmuzi (d. 360 AH)
 
@@ -243,7 +257,7 @@ These were the foundational works that addressed the science of Mustalah al-Hadi
 
 - Imam Bukhari, Muslim, al-Tirmidhi, Abu Dawood, Ibn Majah and an-Nasai are from Persian origin. Many of the authors mentioned above are from Persian origin too.
 - *Hilyatul Awliya wa Tabaqat al-Asfiya* (The Beauty of the Righteous and the Ranks of the Elite), by Abu Nuaym al-Isfahani, is a famous book.
-- Four famous huffaz of hadith lived during the same time, in the West and in the East. West: Ibn Hazm and Ibn Abd al-Barr. East: al-Khatib al-Baghdadi and al-Bayhaqi.
+- Four famous huffaz (hadith masters) lived during the same time, in the West and in the East. West: Ibn Hazm and Ibn Abd al-Barr. East: al-Khatib al-Baghdadi and al-Bayhaqi.
 - al-Bayhaqi has a famous book on usool al-hadith and fiqh combined, called *Al-Madkhal ila Ilm al-Sunan*.
 - Whoever came after al-Khatib al-Baghdadi took benefit from his book *Al-Kifayah*. Ibn Hajar al-Asqalani says that al-Khatib al-Baghdadi wrote a book in every science and branch of hadith.
 
@@ -255,7 +269,7 @@ Al-Hafiz Taqi al-Din Abu Amr Uthman bin al-Salah al-Shahrazuri (born 577 AH, d. 
 
 This book became one of the finest and most esteemed works in hadith terminology, and it marked a turning point in the field. It served as a central reference around which later works revolved, and became the core source for subsequent expansions. Later scholars had little to do beyond rearranging its contents, simplifying it through abridgments or versification, or clarifying some of its objectives. Allah blessed Ibn al-Salah's book with widespread acceptance, making it the primary textbook for anyone seeking to enter this discipline. It became the key to unlocking its complex meanings, and the explanatory guide to its condensed principles.
 
-So there is a whole family of books around it: abridgments, critical notes, poems and explanations.
+So there is a whole family of books around it: abridgments, commentaries and critical notes, and poetic versifications.
 
 [[SVG:mh-salah-hub]]
 
@@ -267,7 +281,9 @@ The full list is below. Tap a tab to choose a text, and a coloured chip to see o
 
 - Imam al-Nawawi (the author of the Forty Hadith) wrote two books on Uloom al-Hadith: *Irshad Tullab al-Haqaaiq* and *Al-Taqreeb*.
 - Ibn Kathir's *Ikhtisar Uloom al-Hadith* is one notable mention that is not present in the book we are studying, but it is very famous.
-- Al-Iraqi's *Alfiyyah* is a poem of 1000 lines on Ibn al-Salah's Muqaddimah, for easy memorisation. Al-Sakhawi, a student of Ibn Hajar, explained it in *Fath al-Mugheeth*. Al-Bulqini, a teacher of Ibn Hajar, wrote *Mahasin al-Istilah*, a concise form of Ibn al-Salah's book.
+- Al-Iraqi's *Alfiyyah* (*Al-Tabsirah wa al-Tadhkirah*) is a poem of 1000 lines on Ibn al-Salah's Muqaddimah, for easy memorisation. Al-Sakhawi, a student of Ibn Hajar, explained it in *Fath al-Mugheeth*. Al-Bulqini, a teacher of Ibn Hajar, wrote *Mahasin al-Istilah*, a concise form of Ibn al-Salah's book.
+- Ibn Hajar's *An-Nukat ala Kitab Ibn al-Salah* is now published with takhreej by Shaykh Rabi.
+- Ahmad Shakir's explanation of Ibn Kathir's book is *Al-Baith al-Hathith*. A copy of it exists with the notes of Shaykh al-Albani and Ali al-Halabi in it. Shaykh Muqbil also wrote an explanation of it, called *Al-Sayr al-Hathith*.
 
 ---
 
@@ -286,7 +302,7 @@ Two more short texts are worth knowing:
 
 ## The whole story, played back
 
-That was a lot of names. Here they all are on one time axis, each dot wearing the colour of its period. Press **Play** to watch the story unfold one work at a time, use **Back** and **Next** to step through it yourself, or drag the slider. Tap a dot to jump to it, and tap a coloured chip to look at one period only.
+That was a lot of names. Here are the main works on one time axis, each dot wearing the colour of its period. Press **Play** to watch the story unfold one work at a time, use **Back** and **Next** to step through it yourself, or drag the slider. Tap a dot to jump to it, and tap a coloured chip to look at one period only.
 
 [[WIDGET:mh-timeline]]
 

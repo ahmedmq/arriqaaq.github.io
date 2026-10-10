@@ -47,7 +47,7 @@ function salahHub(): string {
 	const topY = 0;
 	const top: NodeOpts[] = [
 		{ hue: 'purple', label: 'Abridgments', title: '7 works', meta: 'al-Nawawi to al-Bulqini' },
-		{ hue: 'blue', label: 'Explanations', title: '3 modern', meta: 'Shakir · Abdul Hameed · al-Ethiopee' }
+		{ hue: 'blue', label: 'Commentaries', title: '3 modern', meta: 'Shakir · Abdul Hameed · al-Ethiopee' }
 	];
 	const bottom: NodeOpts[] = [
 		{ hue: 'green', label: 'Poems', title: '4 works', meta: 'al-Iraqi · al-Sakhawi · al-Suyuti · al-Tarmasi' },
