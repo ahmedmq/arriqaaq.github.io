@@ -40,7 +40,7 @@
 <Seo title="Design system — Arriqaaq" description="The Arriqaaq UI kit: tokens and components." />
 <svelte:head><meta name="robots" content="noindex" /></svelte:head>
 
-<div class="wrap kit">
+<div class="wrap kit" id="top">
 	<header class="section-head">
 		<span class="eyebrow">UI kit</span>
 		<h1 class="split">The Arriqaaq <em>design system.</em></h1>
