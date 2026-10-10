@@ -41,7 +41,7 @@
 	<div class="wrap">
 		<div class="section-head">
 			<span class="eyebrow">Six sciences</span>
-			<h2 class="split">Every subject starts <em>at its roots.</em> <span class="mute">We teach the principles first, in order, so the rest makes sense.</span></h2>
+			<h2 class="split">Every subject, from its <em>roots.</em></h2>
 		</div>
 
 		<div class="grid" bind:this={grid}>

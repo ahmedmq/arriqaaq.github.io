@@ -269,11 +269,13 @@ Beyond whether the specific ruling is connected or separate from the general, Ta
 
 **Explanation:** This Hadith specifies that the punishment of cutting off hands does not apply to the theft of fruits or palm trees.
 
+[[SVG:takhsis-quran-by-sunnah-theft]]
+
 **Scholarly Agreement**: While the majority of scholars, including the four Imams (Imam Abu Hanifa, Imam Malik, Imam Shafi'i, and Imam Ahmad), agree that an authentic *Ahad* (singularly transmitted) Hadith can specify a general Quranic verse, some later Hanafi scholars held a differing view, arguing that only a *Mutawatir* (mass-transmitted) Hadith could specify the Quran. However, even Imam Abu Hanifa himself, upon hearing an authentic Hadith on this topic, retracted an earlier ruling, showing the acceptance of *Ahad* Hadith for Takhsees.
 
 ### 3. Takhsees of Sunnah by Sunnah (تخصيص السنة بالسنة)
 
-[[SVG:takhsis-quran-by-sunnah-theft]]
+[[SVG:takhsis-sunnah-by-sunnah-silk]]
 
 **Definition:** This occurs when a general ruling found in one Hadith is limited or clarified by a specific ruling found in another Hadith. Both the general statement and its specification come from the Sunnah.
 
@@ -288,8 +290,6 @@ Beyond whether the specific ruling is connected or separate from the general, Ta
 **Explanation:** The first Hadith establishes a general prohibition of silk for men. However, the second Hadith shows that the Prophet ﷺ made a specific exception for medical necessity (skin condition). This shows that while generally forbidden for men, wearing silk is permissible for a specific medical necessity.
 
 ### 4. Takhsees by Ijmaa (Consensus) (التخصيص بالإجماع)
-
-[[SVG:takhsis-sunnah-by-sunnah-silk]]
 
 **Definition:** This occurs when a general text from the Quran or Sunnah is limited by the unanimous agreement (Ijmaa) of qualified scholars. The scholarly consensus establishes a specific exception or limitation to the general ruling.
 

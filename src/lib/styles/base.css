@@ -309,6 +309,11 @@ p {
 
 /* ---- Chips (OpenAI filter chips) -------------------------------------------- */
 
+.chip,
+.tab {
+	text-transform: capitalize;
+}
+
 .chip {
 	display: inline-flex;
 	align-items: center;
@@ -392,7 +397,8 @@ button.chip:hover {
 	scroll-snap-type: x proximity;
 	margin-inline: calc(-1 * var(--gutter));
 	padding-inline: var(--gutter);
-	mask-image: linear-gradient(90deg, transparent 0, #000 var(--gutter), #000 calc(100% - var(--gutter)), transparent);
+	/* Fade only the trailing edge: the row starts flush with the gutter. */
+	mask-image: linear-gradient(90deg, #000 calc(100% - var(--gutter)), transparent);
 }
 
 .scroll-x::-webkit-scrollbar {

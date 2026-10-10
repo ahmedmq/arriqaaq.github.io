@@ -17,17 +17,14 @@
 
 <section class="hero">
 	<div class="wrap inner">
-		<span class="eyebrow eyebrow--quiet eyebrow--dot">Islamic sciences, taught from the roots</span>
+		<span class="eyebrow eyebrow--quiet eyebrow--dot">Taught from the roots</span>
 		<h1 class="title">
 			<span class="text">Roots before branches<span class="stop">.</span></span>
 			<span class="pixels" aria-hidden="true" style:--cols={COLS} style:--rows={ROWS}>
 				{#each blocks as b}<i style:--c={b.c} style:--d={`${b.d}ms`}></i>{/each}
 			</span>
 		</h1>
-		<p class="lede">
-			Arriqaaq teaches the foundations of the deen, from Usul al-Fiqh to Tajweed, as clear courses you can follow
-			lesson by lesson. Free, in plain English, with the Arabic beside it.
-		</p>
+		<p class="lede">Free courses in the Islamic sciences.</p>
 		<div class="cta">
 			<a class="btn" href={`${base}/courses/usul-al-fiqh/`}>Start Usul al-Fiqh <span class="arrow">→</span></a>
 			<a class="btn btn--ghost" href="#subjects">Explore the subjects</a>

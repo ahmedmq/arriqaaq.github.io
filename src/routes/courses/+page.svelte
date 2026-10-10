@@ -11,7 +11,7 @@
 <div class="wrap">
 	<header class="head">
 		<span class="eyebrow">Courses</span>
-		<h1 class="split">Pick a course. <em>Follow the route.</em> <span class="mute">Each one puts its lessons in order and remembers where you stopped.</span></h1>
+		<h1 class="split">Pick a course. <em>Follow the route.</em></h1>
 	</header>
 
 	<div class="list">
@@ -24,7 +24,7 @@
 		<section class="programmes" aria-labelledby="prog-h">
 			<div class="section-head">
 				<span class="eyebrow">Programmes</span>
-				<h2 class="split" id="prog-h">Live programmes. <span class="mute">Taught courses, bootcamps and series.</span></h2>
+				<h2 class="split" id="prog-h">Live <em>programmes.</em></h2>
 			</div>
 			<div class="prose">{@html data.programmes.html}</div>
 		</section>

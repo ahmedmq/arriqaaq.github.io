@@ -6,6 +6,7 @@
 	import Hero from '$lib/components/home/Hero.svelte';
 	import Manifesto from '$lib/components/home/Manifesto.svelte';
 	import SubjectCards from '$lib/components/home/SubjectCards.svelte';
+	import ChapterCarousel from '$lib/components/home/ChapterCarousel.svelte';
 	import CourseCard from '$lib/components/course/CourseCard.svelte';
 	import PostRow from '$lib/components/ui/PostRow.svelte';
 	import Newsletter from '$lib/components/Newsletter.svelte';
@@ -41,7 +42,7 @@
 	<div class="wrap">
 		<div class="section-head">
 			<span class="eyebrow">Follow a route</span>
-			<h2 class="split" id="route-h">Read it <em>like a course,</em> not a pile of posts. <span class="mute">Lessons in order, in steps, with your place saved.</span></h2>
+			<h2 class="split" id="route-h">Learn Usul al-Fiqh, <em>step by step.</em></h2>
 		</div>
 		<div use:reveal data-reveal>
 			{#each courses as c}
@@ -56,7 +57,7 @@
 		<div class="latest-head">
 			<div class="section-head">
 				<span class="eyebrow">From the desk</span>
-				<h2 class="split" id="latest-h">Latest articles. <span class="mute">Lessons, launches and reflections.</span></h2>
+				<h2 class="split" id="latest-h">New from <em>Arriqaaq.</em></h2>
 			</div>
 			<a class="btn btn--ghost" href={`${base}/articles/`}>All articles <span class="arrow">→</span></a>
 		</div>
@@ -78,7 +79,7 @@
 	<div class="wrap">
 		<div class="section-head">
 			<span class="eyebrow">Browse by topic</span>
-			<h2 class="split" id="topics-h">Every topic, <em>one tap away.</em> <span class="mute">Or search everything from the magnifier at the top.</span></h2>
+			<h2 class="split" id="topics-h">Explore by <em>topic.</em></h2>
 		</div>
 		<ul class="topic-list">
 			{#each [...tags].filter((t) => t.post_count > 0).sort((a, b) => b.post_count - a.post_count || a.name.localeCompare(b.name)) as t (t.id)}
@@ -93,12 +94,14 @@
 	</div>
 </section>
 
+<ChapterCarousel />
+
 <section class="section news" aria-labelledby="news-h">
 	<div class="wrap">
 		<div class="news-card">
 			<div class="section-head section-head--center">
 				<span class="eyebrow">Newsletter</span>
-				<h2 class="split" id="news-h">New lessons, <em>in your inbox.</em> <span class="mute">One email when something is published.</span></h2>
+				<h2 class="split" id="news-h">New lessons, <em>in your inbox.</em></h2>
 			</div>
 			<Newsletter />
 		</div>
@@ -143,6 +146,7 @@
 	}
 
 	.topic-list a {
+		text-transform: capitalize;
 		display: flex;
 		justify-content: space-between;
 		align-items: baseline;
