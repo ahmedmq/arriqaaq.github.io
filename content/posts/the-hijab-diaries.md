@@ -51,7 +51,7 @@ Passcode: 224543
 
 *Do you have an inspirational story to share about your journey to taking up the hijab/niqab? Are you a revert who would like to share your experience of wearing the hijab for the first time or your struggles behind it?* Please let us know here! 👇
 
-[**Your**](https://docs.google.com/forms/d/e/1FAIpQLSedQBOPou9lwvZorr5Iqv-FItLVfACq1_g7FCkrp7SuVVWE_w/viewform) **[story](https://docs.google.com/forms/d/e/1FAIpQLSedQBOPou9lwvZorr5Iqv-FItLVfACq1_g7FCkrp7SuVVWE_w/viewform)**
+**Your** **story**
 
 * * *
 

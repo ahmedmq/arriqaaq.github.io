@@ -4,14 +4,14 @@
 	// Course lessons show their course and lesson number.
 	import { base } from '$app/paths';
 	import type { Post } from '$lib/types';
-	import { coursePlace, subjectForPost, getTagById } from '$lib/content';
+	import { coursePlace, accentForPost, getTagById } from '$lib/content';
 	import PixelCover from './PixelCover.svelte';
 
 	type Props = { post: Post };
 	let { post }: Props = $props();
 
 	const place = $derived(coursePlace(post.slug));
-	const subject = $derived(subjectForPost(post));
+	const subject = $derived(accentForPost(post.slug));
 	const tag = $derived(post.primary_tag ? getTagById(post.primary_tag) : null);
 	const title = $derived(place ? place.lesson.title : post.title);
 	const minutes = $derived(Math.max(1, Math.round((post.words || post.reading_time * 200) / 200)));

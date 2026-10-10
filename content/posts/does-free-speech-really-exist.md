@@ -98,7 +98,7 @@ A spokesman for Franco Frattini, Italy's foreign minister, said the declaration,
 
 The EU was also unhappy with resolutions criticising Israel and sought to remove at least five paragraphs from the draft such as the phrase that, *"in order to consolidate the Israeli occupation, \[Palestinians\] have been subjected to unlawful collective punishment, torture.”* \[Al-Jazeera English, ‘Italy attacks 'anti-Semitic' summit'\]
 
-The other contentious resolution that some western nations wanted dropped was, *“to take firm action against negative stereotyping of religions and defamation of religious personalities, holy books, scriptures and symbols.”* This was added by some Muslim countries as a means of preventing future attacks on the Prophet Muhammad ﷺ and the Holy Qur’an which we have witnessed recently in Europe. Western countries were unhappy with this resolution because it limited their freedom of speech i.e. the freedom to attack Islam. This was dropped from the final draft and now the resolution simply states, *“recognizes with deep concern the negative stereotyping of religions...”* \[[http://www.un.org/durbanreview2009/pdf/Rolling](http://www.un.org/durbanreview2009/pdf/Rolling)\]
+The other contentious resolution that some western nations wanted dropped was, *“to take firm action against negative stereotyping of religions and defamation of religious personalities, holy books, scriptures and symbols.”* This was added by some Muslim countries as a means of preventing future attacks on the Prophet Muhammad ﷺ and the Holy Qur’an which we have witnessed recently in Europe. Western countries were unhappy with this resolution because it limited their freedom of speech i.e. the freedom to attack Islam. This was dropped from the final draft and now the resolution simply states, *“recognizes with deep concern the negative stereotyping of religions...”* \[http://www.un.org/durbanreview2009/pdf/Rolling\]
 
 Therefore for the west it’s perfectly acceptable to impose limits on freedom of speech to account the brutal policies of another country in this instance Israel, but it’s not acceptable to impose limits on freedom of speech to insult and defame the character of the Prophet Muhammed ﷺ.
 
@@ -235,7 +235,7 @@ The West use of Freedom Of Speech is their way to impose their colonial rule and
 - [https://ecollections.law.fiu.edu/cgi/viewcontent.cgi](https://ecollections.law.fiu.edu/cgi/viewcontent.cgi)  
 -[https://www.newyorker.com/news/news-desk/french-law-treats-dieudonne-charlie-hebdo-differently](https://www.newyorker.com/news/news-desk/french-law-treats-dieudonne-charlie-hebdo-differently)  
 - [http://www.theindependentbd.com/post/255446](http://www.theindependentbd.com/post/255446)  
-- [http://thesis.honors.olemiss.edu/774/1/thesis\_connorholeman.pdf](http://thesis.honors.olemiss.edu/774/1/thesis_connorholeman.pdf)  
+- http://thesis.honors.olemiss.edu/774/1/thesis\_connorholeman.pdf  
 - [https://islamqa.info/en/answers/98134/concept-of-democracy-in-islam](https://islamqa.info/en/answers/98134/concept-of-democracy-in-islam)  
 - [https://www.arriqaaq.com/how-islam-teaches-us-to-tackle-racism/](/how-islam-teaches-us-to-tackle-racism/)  
 - [https://gallica.bnf.fr/ark:/12148/bpt6k29365z.texteImage](https://gallica.bnf.fr/ark:/12148/bpt6k29365z.texteImage)

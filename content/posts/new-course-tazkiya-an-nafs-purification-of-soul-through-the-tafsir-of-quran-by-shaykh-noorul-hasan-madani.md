@@ -100,6 +100,6 @@ Passcode: 174340
 
 **Like our content? Subscribe Please!** *And Follow us on* [***Instagram***](https://www.instagram.com/arriqaaq/) *or* [***Telegram***](https://t.me/arriqaaq) *to stay up to date!*
 
-::bookmark{url="https://t.me/arriqaaq" title="Arriqaaq" description="arriqaaq.com" publisher="Telegram" icon="https://telegram.org/img/apple-touch-icon.png" thumbnail="https://cdn5.telegram-cdn.org/file/bB_PHrG_N1vwaiBUMgSNfvlXsyylwmYLY1hRBHMKuGnPijgUyPzmtBr-qnAcuug3dGtSsPvilLs2kba7T-qLSTIbJ2bL49-0XzS34QEQinvUwWIiB6r5zPVkGDeKeEa_twAN7gkL16QOn6LysD6weU8-2JNwEIijJREhZRwpeqKDmCplt_3nZ-OALh7K98XAveFyEUHSeCODEJtUlI-gJxT1Cn_Z1r9r4eRM7ys4jfRfAd2GPVeLmXOI64ZQF-iyJUuNvb842LDIymrq-nnCPV924XmWizBGkxvvZU6Py8FLq6CqyrSKi7u-q7soV_jWvqji7O01PKfzxYalb6b7Tg.jpg"}
+::bookmark{url="https://t.me/arriqaaq" title="Arriqaaq" description="arriqaaq.com" publisher="Telegram" icon="https://telegram.org/img/apple-touch-icon.png"}
 
 ::embed{provider=instagram url="https://www.instagram.com/p/Cn9Md5ZS3GV/embed/"}

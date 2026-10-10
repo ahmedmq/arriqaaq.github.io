@@ -284,7 +284,7 @@ Remember, you should not experience pain while exercising. If you do get pain, s
 
 * * *
 
-***Ayesha Baig** is a Nutritionist at* [**Arriqaaq Health**](https://health.arriqaaq.com/) *who has completed her Masters in Food and Nutrition. Her focus is on creating awareness about healthy eating and lifestyle changes along with personalised meal plans to help the community.*
+***Ayesha Baig** is a Nutritionist at* **Arriqaaq Health** *who has completed her Masters in Food and Nutrition. Her focus is on creating awareness about healthy eating and lifestyle changes along with personalised meal plans to help the community.*
 
 ***Rafa Mariam*** *has a* *Diploma in Sports and Exercise Nutrition, currently pursuing her Masters in Dietetics and Food Service Management.*
 

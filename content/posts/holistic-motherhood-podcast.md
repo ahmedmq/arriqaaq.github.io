@@ -45,7 +45,7 @@ Passcode: 531470
 * * *
 
 **🎧 Episode. 1 - *'Carrying to Caring'***  
-In conversation with sister Aysha Abrar, Certified Breastfeeding Counsellor and Founder of [www.ahlanmotherhood.com](http://www.ahlanmotherhood.com/).  
+In conversation with sister Aysha Abrar, Certified Breastfeeding Counsellor and Founder of www.ahlanmotherhood.com.  
   
 **📅 When:** Sunday, October 3rd, 2021  
 **⏱️ Time:** 6.30PM IST |  5:00 PM UAE  

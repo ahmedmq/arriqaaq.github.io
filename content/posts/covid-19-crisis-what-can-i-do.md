@@ -56,9 +56,9 @@ Covid19 Bangalore Helpline
 
 A COVID19 helpline app for Bangalore
 
-![](https://firebasestorage.googleapis.com/v0/b/glide-prod.appspot.com/o/pwa-assets%2F65ZcVjjNiKiCF4dECx0P-favicon-32.png?alt=media)
 
-![](https://firebasestorage.googleapis.com/v0/b/glide-prod.appspot.com/o/pwa-assets%2F65ZcVjjNiKiCF4dECx0P-icon-512.png?alt=media)
+
+
 
 ](https://covid19bangalore.glideapp.io/)
 

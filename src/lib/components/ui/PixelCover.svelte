@@ -6,8 +6,12 @@
 	import { rng } from '$lib/art';
 	import type { Subject } from '$lib/types';
 
-	type Props = { seed: string; subject: Subject; cols?: number; rows?: number; ratio?: number };
-	let { seed, subject, cols = 14, rows = 4, ratio = 3.2 }: Props = $props();
+	// mix: blocks take any of the five palette colours instead of only the
+	// subject colour (course roadmaps: the course keeps one heading colour,
+	// its lesson cards mix the palette).
+	type Props = { seed: string; subject: Subject; cols?: number; rows?: number; ratio?: number; mix?: boolean };
+	let { seed, subject, cols = 14, rows = 4, ratio = 3.2, mix = false }: Props = $props();
+	const MIX = ['var(--pink)', 'var(--purple)', 'var(--blue)', 'var(--amber)', 'var(--green)'];
 
 	const W = 480;
 	const H = $derived(Math.round(W / ratio));
@@ -28,7 +32,8 @@
 				if (rand() > d * 1.05) continue;
 				const dot = rand() < 0.12;
 				const t = rand();
-				const tone = t < d * 0.9 ? 'var(--subject)' : t < d * 0.9 + 0.06 ? 'var(--ink)' : 'var(--line-strong)';
+				const main = mix ? MIX[Math.floor(rand() * MIX.length)] : 'var(--subject)';
+				const tone = t < d * 0.9 ? main : t < d * 0.9 + 0.06 ? 'var(--ink)' : 'var(--line-strong)';
 				out.push({ x: ox + c * cell + pad, y: oy + r * cell + pad, s, dot, tone });
 			}
 		return out;

@@ -34,7 +34,7 @@ At any time, you may request your information to be exported and sent to you for
 
 ## **Privacy Policy**
 
-Arriqaaq provides this Privacy Policy to inform you of our policies and procedures regarding the collection, use, protection, and disclosure of Personal Information received from your use of this website, located at arriqaaq.com (“Site”), as well as all related websites including our subdomain at ilm.arriqaaq.com and other services provided by us (collectively, together with the Site, our “Service”), and in connection with our partner relationships. This Privacy Policy also tells you about your rights and choices with respect to your Personal Information, and how you can reach us to update your contact information or get answers to questions you may have about our privacy practices.
+Arriqaaq provides this Privacy Policy to inform you of our policies and procedures regarding the collection, use, protection, and disclosure of Personal Information received from your use of this website, located at arriqaaq.com (“Site”), as well as all related websites and other services provided by us (collectively, together with the Site, our “Service”), and in connection with our partner relationships. This Privacy Policy also tells you about your rights and choices with respect to your Personal Information, and how you can reach us to update your contact information or get answers to questions you may have about our privacy practices.
 
 Registration with, use of, and access to the Service is subject to this Privacy Policy.
 

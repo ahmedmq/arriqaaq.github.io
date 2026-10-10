@@ -4,6 +4,7 @@
 	// so it also plays without JS; reduced motion skips it.
 	import { base } from '$app/paths';
 	import { rng } from '$lib/art';
+	import HeroTree from './HeroTree.svelte';
 
 	const COLS = 12;
 	const ROWS = 4;
@@ -17,7 +18,7 @@
 
 <section class="hero">
 	<div class="wrap inner">
-		<span class="eyebrow eyebrow--quiet eyebrow--dot">Taught from the roots</span>
+		<span class="eyebrow eyebrow--quiet eyebrow--dot">The deen, from first principles</span>
 		<h1 class="title">
 			<span class="text">Roots before branches<span class="stop">.</span></span>
 			<span class="pixels" aria-hidden="true" style:--cols={COLS} style:--rows={ROWS}>
@@ -29,12 +30,16 @@
 			<a class="btn" href={`${base}/courses/usul-al-fiqh/`}>Start Usul al-Fiqh <span class="arrow">→</span></a>
 			<a class="btn btn--ghost" href="#subjects">Explore the subjects</a>
 		</div>
+		<HeroTree />
 	</div>
 </section>
 
 <style>
 	.hero {
-		padding-block: clamp(56px, 12vw, 140px) clamp(48px, 9vw, 112px);
+		position: relative;
+		isolation: isolate;
+		overflow: hidden;
+		padding-block: clamp(56px, 12vw, 140px) clamp(16px, 3vw, 40px);
 		text-align: center;
 	}
 

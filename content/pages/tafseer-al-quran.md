@@ -33,7 +33,7 @@ Tafseer Al Quran by Ustadha Umm Amrah Noora Jukaku (FOR SISTERS ONLY) This is an
 
 ![](https://telegram.org/favicon.ico?3)Telegram
 
-![](https://cdn5.telesco.pe/file/LxQQy0hXlscFF2Pe9JocBKVCpDgs6KfD2sg0mmrdx9FPS1pFVsqFE6B_Gf8Q5jasXZQr8uBjAZFWDihuZYxsyroS9BdzDB2OCAJdA6opybrgL11PNvh6e7-Nl7GynOC6qzk2uOV9FGMaNdya8qa7NoWLgwHo-Tb82TCn08dr5qIlic1iRpAvv-2GS9kLpS3spMCAB3B6lQzioL8JrdTEp7WdT6RZD30suA6Jx8VBQhN_V9xnx_RmyPZCU-h3XSZWDewP8wVe_uzD1UB9l_ORAmM3vLvzm76_r6vnklmRutZwfBdDbr5T-R_Rx-5B7YXLVn1aqqVy2BwtVXyX3ExCgQ.jpg)
+
 
 ](https://t.me/joinchat/SfOSQl0-duIN4X65)
 
@@ -45,9 +45,9 @@ Tafseer Juzz Amma
 
 WhatsApp-groepsuitnodiging
 
-![](https://static.xx.fbcdn.net/rsrc.php/v3/yP/r/rYZqPCBaG70.png)WhatsApp.com
+WhatsApp.com
 
-![](https://pps.whatsapp.net/v/t61.24694-24/117883757_389803558652043_5959909638230116167_n.jpg?ccb=11-4&oh=f602c1e928d85880bf1293502ae44fca&oe=60DB9EE9)
+
 
 ](https://chat.whatsapp.com/GPMm4YnExqwKIXiCBNF8By)
 
@@ -57,9 +57,9 @@ Tafseer Juzz Amma 2
 
 WhatsApp-groepsuitnodiging
 
-![](https://static.xx.fbcdn.net/rsrc.php/v3/yP/r/rYZqPCBaG70.png)WhatsApp.com
+WhatsApp.com
 
-![](https://pps.whatsapp.net/v/t61.24694-24/117774998_297059421550586_7402073798134051183_n.jpg?ccb=11-4&oh=6005181e9509546ef8b8feaa7fdaaf87&oe=60DABDA1)
+
 
 ](https://chat.whatsapp.com/EWZQlsrdhBJ1yYnmiydPRz)
 

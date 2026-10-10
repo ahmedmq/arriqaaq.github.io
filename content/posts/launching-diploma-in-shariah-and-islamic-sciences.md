@@ -41,8 +41,6 @@ The foundations of any discipline are its definition, knowledge base, terminolog
   
 Our Diploma focuses on the fundamentals of the basic sciences of Islam, and to help students understand the bigger picture. Once the fundamentals are strong, it is easy to understand the higher concepts. And slowly with time, one begins to understand the intricacies of our deen more wisely.
 
-Check out [https://www.ilm.arriqaaq.com/about-the-degree](https://www.ilm.arriqaaq.com/about-the-degree) for more details.
-
 * * *
 
 ### ****Who is this Diploma for?****
@@ -66,16 +64,12 @@ Oh yes! Completely Free. No cost. Alhamdulillah. Our mission is to provide a fre
   
 The focus is to build your fundamentals in the sciences of Islam by learning the fundamental principles of each subject. Our courses focus on the principles of ****Aqeedah****, ****Fiqh****, ****Tafseer****, and ****Arabic****. There are a bunch of electives too which you can choose to further your knowledge like ****Tajweed****, ****Countering Islamophobes****, and a course on Emergency medical care in the community (to make you a Lifesaver before the person reaches the hospital). We believe in the skill development of people along with the knowledge of Deen.
 
-Check out [https://www.ilm.arriqaaq.com/curriculum](https://www.ilm.arriqaaq.com/curriculum) for more details.
-
 * * *
 
 ### ****Who are our Instructors?****
 
   
 We have a group of eminently qualified instructors, with an outstanding academic profile, who have a tenacious hold in their respective fields. All of our teachers are firm upon the sound creed of Ahlus Sunnah treading upon the methodology of the Sahabah, Tabieen, and those who followed them upon goodness.
-
-Check out [https://www.ilm.arriqaaq.com/instructors](https://www.ilm.arriqaaq.com/instructors) for more details.
 
 * * *
 
@@ -89,8 +83,6 @@ The Diploma starts August 29.
 ### ****How do I apply?****
 
   
-Visit [https://www.ilm.arriqaaq.com/apply](https://www.ilm.arriqaaq.com/apply) to start your application and to check out all the wonderful courses.  
-
 * * *
 
 Lastly, I'd like to finish with this amazing response from Imam Ahmad ibn Hanbal to a man who was puzzled when he saw him carrying his wooden inkwell by himself. He, rahimahullah, said:
@@ -101,7 +93,7 @@ Lastly, I'd like to finish with this amazing response from Imam Ahmad ibn Hanbal
 
   
 
-So what is our excuse dear sisters? Join us in embarking on this pathway to knowledge and help build a generation of righteous people! Start your [****application****](https://www.ilm.arriqaaq.com/) now. Diploma starts August 29.
+So what is our excuse dear sisters? Join us in embarking on this pathway to knowledge and help build a generation of righteous people! Diploma starts August 29.
 
 * * *
 

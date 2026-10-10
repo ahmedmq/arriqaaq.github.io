@@ -46,7 +46,7 @@ The Bootcamp starts **5 June, 2021.** The Bootcamp, is completely online, so you
 
 ## ❤️ **Is This Bootcamp Really Free?**
 
-**YES.** Absolutely. Our aim at [**Arriqaaq**](/about/) is to ***enable people***, by helping them learn new skills which will help in their overall holistic development (both in deen and dunya). Our [**Diploma**](https://www.ilm.arriqaaq.com) course is one such example. We hope to please Allah by helping people with our skillset and capabilities. 
+**YES.** Absolutely. Our aim at [**Arriqaaq**](/about/) is to ***enable people***, by helping them learn new skills which will help in their overall holistic development (both in deen and dunya). Our **Diploma** course is one such example. We hope to please Allah by helping people with our skillset and capabilities. 
 
 ## ⏳ **How Does It Work?**
 

@@ -69,7 +69,7 @@ These are the recordings from the Learn Arabic Series by Arriqaaq. Contact @uarr
 
 ![](https://telegram.org/favicon.ico?3)Telegram
 
-![](https://cdn5.telesco.pe/file/uZF5gfT6_ReY78LK5F-mBGYMMURU7b4VFQcMp7iKUxSWGsOfkzlMVE4dMYL_bZO-ezkaRVj-Q_z8XezUu9DwhFy-kD__GBBDjcwJlzqktpXpUCojkwGUMyx5EXTWD4YK6o6c30dvBNSF73PuzQKAXZvpyAXWbmZKSa9IuKLesAQ5m856DC4y7y47PFSXxRTm_xaR7cisaPhn6wnFmbpXSsvCZev7wt7h-nWwfJIsSYzfrztffBaBtxkwO0XP7WhPydT8nkvgK4gPz4cnUKBYBPG57NSqyTABc5D9KLeH9KXrmHsg-fz6kbrLrXzWtrMUnNrPkPj7hKqquLXUZfnVqg.jpg)
+
 
 ](https://t.me/learnmadinaarabic)
 
@@ -81,9 +81,9 @@ Madinah Arabic Book 2
 
 WhatsApp-groepsuitnodiging
 
-![](https://static.xx.fbcdn.net/rsrc.php/v3/yP/r/rYZqPCBaG70.png)WhatsApp.com
+WhatsApp.com
 
-![](https://static.xx.fbcdn.net/rsrc.php/v3/yK/r/ZIvBTrQd9nP.png)
+
 
 ](https://chat.whatsapp.com/Lp2EKo9Hgz51a7hf9flefw)
 

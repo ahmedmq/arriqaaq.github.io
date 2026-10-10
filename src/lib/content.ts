@@ -129,3 +129,15 @@ export function subjectForPost(post: Post): Subject {
 	const tag = post.primary_tag ? getTagById(post.primary_tag) : null;
 	return subjectForTag(tag?.slug);
 }
+
+/**
+ * A stable accent for one post, picked from the five palette colours by a
+ * hash of its slug. Lists use it for the pixel cover and topic label, so
+ * neighbouring rows read as different colours (DESIGN.md → Covers).
+ */
+const ACCENTS: Subject[] = ['fiqh', 'hadith', 'aqeedah', 'tajweed', 'nahw'];
+export function accentForPost(slug: string): Subject {
+	let h = 0;
+	for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) | 0;
+	return ACCENTS[Math.abs(h) % ACCENTS.length];
+}

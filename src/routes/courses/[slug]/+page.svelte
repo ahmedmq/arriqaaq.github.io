@@ -96,7 +96,7 @@
 						</span>
 						<a class="lesson card" href={`${base}/${l.slug}/`}>
 							<span class="thumb">
-								<PixelCover seed={l.slug} subject={course.subject} />
+								<PixelCover seed={l.slug} subject={course.subject} mix />
 							</span>
 							<span class="lesson-body">
 								<span class="row">

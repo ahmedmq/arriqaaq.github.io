@@ -6,7 +6,7 @@
 	// arrow buttons and keyboard on desktop. Works without JS as a plain
 	// scrollable row of the first chapter.
 	import { base } from '$app/paths';
-	import { posts, tags, subjectForPost, coursePlace } from '$lib/content';
+	import { posts, tags, accentForPost, coursePlace } from '$lib/content';
 	import PixelCover from '$lib/components/ui/PixelCover.svelte';
 
 	const CHAPTERS = 6;
@@ -96,9 +96,9 @@
 			<ul class="track" bind:this={track} onscroll={updateEdges}>
 				{#each current.posts as p (p.id)}
 					{@const place = coursePlace(p.slug)}
-					<li class="card-c subject--{subjectForPost(p)}">
+					<li class="card-c subject--{accentForPost(p.slug)}">
 						<a href={`${base}/${p.slug}/`}>
-							<span class="cover"><PixelCover seed={p.slug} subject={subjectForPost(p)} cols={10} rows={5} ratio={1.9} /></span>
+							<span class="cover"><PixelCover seed={p.slug} subject={accentForPost(p.slug)} cols={10} rows={5} ratio={1.9} /></span>
 							<span class="body">
 								<span class="kicker">
 									<span class="topic">{place ? `${place.course.title} · Lesson ${place.lesson.n}` : current.tag.name}</span>

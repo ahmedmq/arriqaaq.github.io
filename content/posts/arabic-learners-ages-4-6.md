@@ -74,8 +74,8 @@ Arabic Explorers Ramadan
 
 WhatsApp-groepsuitnodiging
 
-![](https://static.xx.fbcdn.net/rsrc.php/v3/yP/r/rYZqPCBaG70.png)WhatsApp.com
+WhatsApp.com
 
-![](https://static.xx.fbcdn.net/rsrc.php/v3/yK/r/ZIvBTrQd9nP.png)
+
 
 ](https://chat.whatsapp.com/ImO4qE9yu0b6Bfd1mQLagL)

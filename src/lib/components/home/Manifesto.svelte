@@ -1,7 +1,9 @@
 <script lang="ts">
-	// Scroll-lit manifesto (SurrealDB stop-choosing). The stage pins while you
-	// scroll; words light up in reading order, accent words turn pink, then the
-	// answer lands. Without JS or with reduced motion everything is shown lit.
+	// Scroll-lit manifesto (SurrealDB stop-choosing), without pinning: as the
+	// section scrolls through the screen, words light up in reading order,
+	// accent words turn pink, then the answer appears right under the
+	// sentence. No pinned stage, so no empty screen before or after it.
+	// Without JS or with reduced motion everything is shown lit.
 	type Word = { t: string; accent?: boolean };
 	const raw =
 		'*Courses.* *Articles.* *Crafts.* *Technology.* One creative space, rooted in';
@@ -19,17 +21,45 @@
 	let answered = $state(true);
 	let live = $state(false);
 
+	// The answer cycles through "Islam" in several languages (SurrealDB's
+	// "Stop choosing / Deja de elegir"). Reduced motion: English only.
+	const LANGS: { t: string; lang: string; dir?: 'rtl' }[] = [
+		{ t: 'Islam', lang: 'en' },
+		{ t: 'الإسلام', lang: 'ar', dir: 'rtl' },
+		{ t: 'İslam', lang: 'tr' },
+		{ t: 'اسلام', lang: 'ur', dir: 'rtl' },
+		{ t: 'ইসলাম', lang: 'bn' },
+		{ t: 'इस्लाम', lang: 'hi' },
+		{ t: 'Ислам', lang: 'ru' },
+		{ t: '伊斯兰教', lang: 'zh' },
+		{ t: 'Uislamu', lang: 'sw' },
+		{ t: 'イスラム', lang: 'ja' }
+	];
+	let langIdx = $state(0);
+
+	$effect(() => {
+		if (!answered || !live) {
+			langIdx = 0;
+			return;
+		}
+		const id = setInterval(() => (langIdx = (langIdx + 1) % LANGS.length), 1100);
+		return () => clearInterval(id);
+	});
+	const word = $derived(LANGS[langIdx]);
+
 	$effect(() => {
 		if (!hold || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 		live = true;
 		let raf = 0;
 		const update = () => {
 			raf = 0;
+			// 0 when the section's top reaches 85% down the screen, 1 when it
+			// reaches 25%: the sentence lights up while it is comfortably in view.
 			const r = hold!.getBoundingClientRect();
-			const span = r.height - window.innerHeight;
-			const p = Math.min(1, Math.max(0, -r.top / Math.max(1, span)));
-			lit = Math.round(Math.min(1, p / 0.78) * words.length);
-			answered = p > 0.84;
+			const vh = window.innerHeight;
+			const p = Math.min(1, Math.max(0, (vh * 0.85 - r.top) / (vh * 0.6)));
+			lit = Math.round(Math.min(1, p / 0.8) * words.length);
+			answered = p > 0.9;
 		};
 		const queue = () => (raf ||= requestAnimationFrame(update));
 		update();
@@ -44,49 +74,31 @@
 </script>
 
 <section class="manifesto" class:is-live={live} bind:this={hold} aria-label="What Arriqaaq is">
-	<div class="stage">
 		<div class="wrap stack">
-			<p class="words" class:is-dim={answered && live}>
+			<p class="words">
 				{#each words as w, i}
 					<span class="w" class:lit={i < lit} class:accent={w.accent}>{w.t}</span>{' '}
 				{/each}
 			</p>
-			<p class="answer" class:is-on={answered} aria-hidden={!answered}>Islam<span>.</span></p>
+			<p class="answer" class:is-on={answered} aria-hidden={!answered}>
+				<span class="sr-only">Islam.</span>
+				{#key langIdx}
+					<span class="word" lang={word.lang} dir={word.dir} aria-hidden="true">{word.t}</span>
+				{/key}<span class="stop" aria-hidden="true">.</span>
+			</p>
 		</div>
-	</div>
 </section>
 
 <style>
 	.manifesto {
 		position: relative;
-	}
-
-	.manifesto.is-live {
-		height: 200svh;
-	}
-
-	.stage {
-		display: flex;
-		align-items: center;
-		min-height: calc(100svh - var(--topbar-h));
-		padding-block: var(--s-8);
-	}
-
-	.is-live .stage {
-		position: sticky;
-		top: var(--topbar-h);
-		height: calc(100svh - var(--topbar-h));
-		padding-block: 0;
-		overflow: hidden;
+		padding-block: var(--s-7) var(--s-6);
 	}
 
 	.stack {
 		display: grid;
-		place-items: center;
-	}
-
-	.stack > * {
-		grid-area: 1 / 1;
+		justify-items: center;
+		gap: var(--s-2);
 	}
 
 	.words {
@@ -97,9 +109,6 @@
 		letter-spacing: -0.035em;
 		text-align: center;
 		text-wrap: balance;
-		transition:
-			opacity var(--dur-slow) var(--ease-out),
-			transform var(--dur-slow) var(--ease-out);
 	}
 
 	.w {
@@ -124,11 +133,6 @@
 		color: #d6d4df;
 	}
 
-	.words.is-dim {
-		opacity: 0;
-		transform: scale(0.96);
-	}
-
 	.answer {
 		font-size: clamp(5rem, 2rem + 18vw, 14rem);
 		font-weight: 500;
@@ -142,8 +146,48 @@
 		pointer-events: none;
 	}
 
-	.answer span {
+	/* A fixed-height line with room above: taller scripts (Arabic, Bengali,
+	   Devanagari) must not ride up into "rooted in", and the page must not
+	   jump as the word changes. */
+	.answer {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		white-space: nowrap;
+		height: 1.25em;
+		margin-top: 0.12em;
+		line-height: 1.25 !important;
+	}
+
+	.answer .stop {
 		color: var(--pink);
+	}
+
+	.answer .word {
+		display: inline-block;
+		animation: word-in 0.5s var(--ease-out) both;
+	}
+
+	.answer .word:is([lang='ar'], [lang='ur']) {
+		font-size: 0.86em;
+		font-family: var(--font-arabic-display);
+		font-weight: 600;
+		letter-spacing: 0;
+		line-height: 1.1;
+	}
+
+	.answer .word:is([lang='zh'], [lang='ja'], [lang='bn'], [lang='hi']) {
+		font-size: 0.72em;
+		letter-spacing: 0;
+		font-weight: 600;
+	}
+
+	@keyframes word-in {
+		from {
+			opacity: 0;
+			transform: translateY(0.12em);
+			filter: blur(6px);
+		}
 	}
 
 	.answer.is-on {
@@ -151,12 +195,4 @@
 		transform: none;
 	}
 
-	/* No JS: show the sentence, then the answer underneath it. */
-	.manifesto:not(.is-live) .stack {
-		gap: var(--s-6);
-	}
-
-	.manifesto:not(.is-live) .stack > * {
-		grid-area: auto;
-	}
 </style>

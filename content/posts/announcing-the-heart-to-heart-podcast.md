@@ -80,7 +80,7 @@ Allah tells us in the Qur'an that we will be tested. But it is also important th
 
 ## **🤝 You are not alone!**
 
-If you'd like to be a guest speaker and share your personal story or read out some of your written reflections on the Letters from the Soul podcast, please fill out the form [here](https://docs.google.com/forms/d/e/1FAIpQLSeKeNfjRjMdBhwSgVcuePDay-RqTNKYh2urLzUiEHvTDnq5BQ/viewform).
+If you'd like to be a guest speaker and share your personal story or read out some of your written reflections on the Letters from the Soul podcast, please fill out the form here.
 
 > ***You are invited, Dear Sister,***  
 > ***Come let us truly hear and be here for, each other,***  

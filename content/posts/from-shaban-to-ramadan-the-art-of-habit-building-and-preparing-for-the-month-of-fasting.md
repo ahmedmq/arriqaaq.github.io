@@ -86,46 +86,10 @@ Let's break down the habits we would all love to have during the period of Ramad
 
 *   **Make it Obvious**: Set a clear goal for the length of fasting you want to achieve each day during Ramadan. Write it down in a planner, notebook, or on a calendar to make it visible. Create a schedule that includes meal times, and set reminders to avoid missing Suhoor or Iftar.
 
-[
-
-🌺 Importance Of SUHOOR And It’s Nutritional Benefits
-
-Feeling hungry/thirsty throughout the day? Or just waiting for the Adhan to fill your stomach up?
-
-![](https://health.arriqaaq.com/content/images/size/w256h256/2021/04/Yellow-Pink-Red-Green-Cute-Hand-drawn-Art-Noveau-Fruit-Watermelon-Melon-Round-Circle-Laptop-Sticker-2-1.png)Arriqaaq HealthAyesha Baig
-
-![](https://health.arriqaaq.com/content/images/2021/04/Gold-Bronze-Marhaban-Yaa-Ramadhan-Instagram-Post.png)
-
-](https://health.arriqaaq.com/importance-of-suhoor/)
-
 *   **Make it Attractive**: Choose nutritious and delicious foods for your Suhoor and Iftar. Involve family members in meal preparation, and use beautiful plates and utensils. Reward yourself with something you enjoy after completing your daily fast.
-
-[
-
-💪 How To Boost Your Immunity During The COVID-19 Pandemic?
-
-What Can I Do To Boost My Immune System? Find out healthy immunity boosters to strengthen your immune system.
-
-![](https://health.arriqaaq.com/content/images/size/w256h256/2021/04/Yellow-Pink-Red-Green-Cute-Hand-drawn-Art-Noveau-Fruit-Watermelon-Melon-Round-Circle-Laptop-Sticker-2-1.png)Arriqaaq HealthAyesha Baig
-
-![](https://health.arriqaaq.com/content/images/2021/05/balanced-diet-post-for-instagram-story.png)
-
-](https://health.arriqaaq.com/immunity-boosters-for-the-covid-19-pandemic/)
 
 *   **Make it Easy**: Start by gradually increasing your fasting periods before Ramadan. Break your fast with dates and water, and avoid overeating during Iftar. Take naps during the day if needed to avoid feeling exhausted.
 *   **Make it Satisfying**: Focus on the spiritual benefits of fasting, such as feeling closer to Allah and increasing empathy for those who are less fortunate.
-
-[
-
-🍹Healthy Drinks To Hydrate You Up This Ramadan
-
-Summer is here, Ramadhan is here! A hot summer brings with it the possibility ofmild dehydration which may cause headaches, tiredness and difficultyconcentrating for most people who fast during Ramadan. Thanks to the high temperature and humidity, your body loses water in variousways. Through…
-
-![](https://health.arriqaaq.com/content/images/size/w256h256/2021/04/Yellow-Pink-Red-Green-Cute-Hand-drawn-Art-Noveau-Fruit-Watermelon-Melon-Round-Circle-Laptop-Sticker-2-1.png)Arriqaaq HealthAyesha Baig
-
-![](https://health.arriqaaq.com/content/images/2021/04/nabeedh-2.png)
-
-](https://health.arriqaaq.com/healthy-drinks-to-hydrate-you-up-this-ramadan/)
 
 ### 2) Preparing for Quran Recitation
 

@@ -3,8 +3,8 @@
  * [data-reveal] (base.css) or any selector keyed on .is-in. Without JS or
  * IntersectionObserver the element is shown immediately.
  */
-export function reveal(node: HTMLElement, opts: { margin?: string; selector?: string } = {}) {
-	const targets = opts.selector ? [...node.querySelectorAll<HTMLElement>(opts.selector)] : [node];
+export function reveal(node: Element, opts: { margin?: string; selector?: string } = {}) {
+	const targets: Element[] = opts.selector ? [...node.querySelectorAll(opts.selector)] : [node];
 	if (typeof IntersectionObserver === 'undefined') {
 		targets.forEach((t) => t.classList.add('is-in'));
 		return {};

@@ -126,7 +126,21 @@ function countWords(html: string): number {
 }
 
 // Strict leftover scan — only our token shapes, so legacy bracket prose never trips it.
-const LEFTOVER = /\[\[(?:SVG|WIDGET):[a-z0-9-]+\]\]/g;
+const LEFTOVER = /\[\[(?:SVG|WIDGET):[a-z0-9-]+\]\]|::(?:bookmark|image|embed|gallery|callout|toggle)\{/g;
+
+/**
+ * Leaf directives (::bookmark{…}) must sit on one line, but some imported
+ * posts wrap a long attribute value across lines. Join a directive's lines
+ * until its closing brace so it parses instead of rendering as raw text.
+ */
+/** Old Ghost image URLs on our own domain → the local /images/ copies. */
+function localiseGhostImages(md: string): string {
+	return md.replace(/https?:\/\/(?:www\.)?arriqaaq\.com\/content\/images\/(?:size\/w\d+(?:h\d+)?\/)?/g, '/images/');
+}
+
+function joinDirectiveLines(md: string): string {
+	return md.replace(/^(::[a-z]+\{)([^}]*)\}/gm, (_m, head: string, attrs: string) => `${head}${attrs.replace(/\s*\n\s*/g, ' ')}}`);
+}
 
 type ParsedFile = {
 	fm: any;
@@ -146,7 +160,7 @@ async function parseFile(file: string): Promise<ParsedFile> {
 	const embedState = createEmbedState();
 	const headingState = createHeadingState();
 	const processor = createProcessor(embedState, headingState);
-	const tree = await processor.run(processor.parse(parsed.content));
+	const tree = await processor.run(processor.parse(localiseGhostImages(joinDirectiveLines(parsed.content))));
 	const html = processor.stringify(tree as any).toString();
 	const plaintext = htmlToPlaintext(html);
 	const leftovers = html.match(LEFTOVER) ?? [];

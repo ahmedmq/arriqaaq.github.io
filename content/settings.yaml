@@ -27,8 +27,6 @@ navigation:
   - url: /lettersfromthesoul/
     label: Letters From The Soul
     mobile: true
-  - url: https://health.arriqaaq.com/
-    label: Health
   - url: https://github.com/arriqaaq
     label: Tech
     mobile: true

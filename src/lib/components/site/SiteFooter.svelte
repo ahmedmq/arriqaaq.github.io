@@ -30,7 +30,6 @@
 			links: [
 				{ label: 'Instagram', href: 'https://www.instagram.com/arriqaaq/', ext: true },
 				{ label: 'WhatsApp group', href: 'https://chat.whatsapp.com/G9uGLfu3mwCJrvN5KqNDJ7', ext: true },
-				{ label: 'Arriqaaq Health', href: 'https://health.arriqaaq.com/', ext: true },
 				{ label: 'GitHub', href: 'https://github.com/arriqaaq', ext: true },
 				{ label: 'Report an issue', href: ISSUES_URL, ext: true },
 				{ label: 'Contribute a fix', href: REPO_URL, ext: true }
