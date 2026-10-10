@@ -59,12 +59,13 @@
 	const vw = Math.ceil(Math.max(...xs) - vx + PAD);
 	const vh = Math.ceil(Math.max(...ys) - vy + PAD);
 
-	// Timing: roots first (0.2s–1.4s), then branches level by level, then flowers.
-	const delayOf = (s: Seg) => (s.kind === 'root' ? 0.2 + s.depth * 0.28 : 1.3 + s.depth * 0.26);
+	// Timing (about 2.3s in total, quick enough to finish before a reader
+	// scrolls past): roots first, then branches level by level, then flowers.
+	const delayOf = (s: Seg) => (s.kind === 'root' ? 0.05 + s.depth * 0.12 : 0.55 + s.depth * 0.12);
 	const petals = flowerPetals(3.2);
 </script>
 
-<svg class="tree" viewBox="{vx} {vy} {vw} {vh}" aria-hidden="true" use:reveal>
+<svg class="tree" viewBox="{vx} {vy} {vw} {vh}" aria-hidden="true" use:reveal={{ margin: '0px', threshold: 0.35 }}>
 	<line class="ground" x1={CX - 220} y1={GROUND} x2={CX + 220} y2={GROUND} pathLength="1" />
 	{#each segs as s}
 		<path
@@ -76,7 +77,7 @@
 		/>
 	{/each}
 	{#each tips as t}
-		<g class="tip" style:--d={`${1.3 + t.delay * 0.26 + 0.35}s`} transform="translate({t.x.toFixed(1)} {t.y.toFixed(1)}) scale({t.s.toFixed(2)})">
+		<g class="tip" style:--d={`${0.55 + t.delay * 0.12 + 0.2}s`} transform="translate({t.x.toFixed(1)} {t.y.toFixed(1)}) scale({t.s.toFixed(2)})">
 			<g class="bloom">
 				{#each petals as p}<circle cx={p.cx} cy={p.cy} r={p.r} style:fill={t.c} />{/each}
 				<circle r="2.1" style:fill="var(--amber)" />
@@ -146,12 +147,12 @@
 
 		.tree:global(.is-in) .seg,
 		.tree:global(.is-in) .ground {
-			animation: draw 0.9s var(--ease-soft) forwards;
+			animation: draw 0.5s var(--ease-soft) forwards;
 			animation-delay: var(--d, 0s);
 		}
 
 		.ground {
-			animation-duration: 0.6s;
+			animation-duration: 0.4s;
 		}
 
 		.bloom {
@@ -159,7 +160,7 @@
 		}
 
 		.tree:global(.is-in) .bloom {
-			animation: bloom 0.6s var(--ease-out) forwards;
+			animation: bloom 0.35s var(--ease-out) forwards;
 			animation-delay: var(--d, 0s);
 		}
 	}
