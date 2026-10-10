@@ -1,5 +1,5 @@
 /**
- * Renders Instagram post images (1080x1350, the 4:5 portrait feed size) into
+ * Renders Instagram post images (1080x1440 (3:4), the size Instagram now uses for the profile grid) into
  * instagram/. Same look as the site: Inter, palette at full strength, pixel
  * blocks. Add a card by adding an entry to `cards`. Run: npm run instagram
  * Uses playwright-core with the system Chrome.
@@ -28,7 +28,7 @@ const heroBlocks = Array.from({ length: 48 }, () => tones[Math.floor(rand() * to
 
 const base = `
 *{box-sizing:border-box;margin:0}
-body{width:1080px;height:1350px;background:#fff;color:#0d0c13;font-family:Inter,system-ui,sans-serif;padding:96px 88px;display:flex;flex-direction:column;justify-content:space-between}
+body{width:1080px;height:1440px;background:#fff;color:#0d0c13;font-family:Inter,system-ui,sans-serif;padding:96px 88px;display:flex;flex-direction:column;justify-content:space-between}
 .eyebrow{font-size:34px;font-weight:500;color:#45434f;letter-spacing:-.01em}
 h1{font-size:150px;line-height:1.02;letter-spacing:-.04em;font-weight:500}
 p{font-size:38px;line-height:1.35;color:#45434f;letter-spacing:-.01em}
@@ -55,7 +55,7 @@ for (const [name, body] of Object.entries(cards)) {
 		file,
 		`<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=IBM+Plex+Sans+Arabic:wght@500&display=swap"><style>${base}</style></head><body>${body}</body></html>`
 	);
-	const page = await browser.newPage({ viewport: { width: 1080, height: 1350 } });
+	const page = await browser.newPage({ viewport: { width: 1080, height: 1440 } });
 	await page.goto(pathToFileURL(file).href, { waitUntil: 'networkidle' }).catch(() => {});
 	await page.evaluate(() => document.fonts.ready);
 	await page.screenshot({ path: resolve(out, `${name}.png`) });
