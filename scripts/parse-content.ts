@@ -24,15 +24,16 @@ import rehypeStringify from 'rehype-stringify';
 import remarkGhostCards from './remark-ghost-cards.js';
 import remarkEmbedTokens, { createEmbedState, type EmbedState } from './remark-embed-tokens.js';
 import rehypeHeadingIds, { createHeadingState, type TocEntry } from './rehype-heading-ids.js';
+import rehypeReading, { stripEmoji } from './rehype-reading.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 const POSTS_DIR = resolve(ROOT, 'content/posts');
 const PAGES_DIR = resolve(ROOT, 'content/pages');
-const REPORTS_DIR = resolve(ROOT, 'content/reports');
 const TAGS_FILE = resolve(ROOT, 'content/tags.yaml');
 const AUTHORS_FILE = resolve(ROOT, 'content/authors.yaml');
 const SETTINGS_FILE = resolve(ROOT, 'content/settings.yaml');
+const COURSES_DIR = resolve(ROOT, 'content/courses');
 const OUT_DIR = resolve(ROOT, 'src/lib/generated');
 
 const RESERVED_SLUGS = new Set([
@@ -40,7 +41,6 @@ const RESERVED_SLUGS = new Set([
 	'author',
 	'page',
 	'rss',
-	'report',
 	'sitemap.xml',
 	'rss.xml',
 	'llms.txt',
@@ -83,6 +83,7 @@ function createProcessor(embedState: EmbedState, headingState: { toc: TocEntry[]
 		.use(remarkRehype, { allowDangerousHtml: true })
 		.use(rehypeRaw)
 		.use(rehypeHighlight, { languages: allLanguages, detect: false })
+		.use(rehypeReading)
 		.use(rehypeHeadingIds, headingState)
 		.use(rehypeStringify, { allowDangerousHtml: true });
 }
@@ -183,30 +184,12 @@ function loadYaml<T = any>(file: string, fallback: T): T {
 	return (yaml.load(readFileSync(file, 'utf8')) as T) ?? fallback;
 }
 
-function alternatingRotation(i: number): number {
-	const cycle = [-3, 0, 3];
-	return cycle[i % cycle.length];
-}
-
 function deriveExcerpt(plaintext: string, max = 200): string | null {
 	if (!plaintext) return null;
 	const trimmed = plaintext.trim();
 	if (trimmed.length <= max) return trimmed;
 	return trimmed.slice(0, max).replace(/\s+\S*$/, '').trim() + '…';
 }
-
-type Palette = { bg: string; theme: 'light' | 'dark' };
-// All chapter palette slots are dark-themed so the cover headline reads white
-// on a colored background. The intro chapter is light-themed
-// separately to render the brand rose "Arriqaaq" on the soft accent wash.
-const DEFAULT_PALETTE: Palette[] = [
-	{ bg: 'var(--swatch--gold)', theme: 'dark' },
-	{ bg: 'var(--swatch--cobalt)', theme: 'dark' },
-	{ bg: 'var(--swatch--amethyst)', theme: 'dark' },
-	{ bg: 'var(--swatch--dusk)', theme: 'dark' },
-	{ bg: 'var(--fiqh-to)', theme: 'dark' },
-	{ bg: 'var(--swatch--black)', theme: 'dark' }
-];
 
 async function main() {
 	mkdirSync(OUT_DIR, { recursive: true });
@@ -255,7 +238,7 @@ async function main() {
 			uuid: deterministicUuid(rec.slug),
 			type: (fm.type as 'post' | 'page') ?? 'post',
 			slug: rec.slug,
-			title: fm.title,
+			title: stripEmoji(String(fm.title ?? '')).replace(/^[\s:–-]+|\s+$/g, ''),
 			html: rec.html,
 			plaintext: rec.plaintext,
 			feature_image: fm.feature_image ?? null,
@@ -332,203 +315,6 @@ async function main() {
 		markdown[doc.slug] = `${header.join('\n')}\n\n# ${doc.title}\n\n${rec.source.trim()}\n`;
 	}
 
-	function readReportManifests(dir: string): { file: string; data: any }[] {
-		if (!existsSync(dir)) return [];
-		const out: { file: string; data: any }[] = [];
-		for (const f of readdirSync(dir)) {
-			if (!/\.(ya?ml)$/i.test(f)) continue;
-			const file = resolve(dir, f);
-			const data = yaml.load(readFileSync(file, 'utf8'));
-			if (data && typeof data === 'object') out.push({ file: f, data });
-		}
-		return out;
-	}
-
-	type ChapterShape = {
-		id: string;
-		title: string;
-		nav_label: string;
-		nav_icon: string | null;
-		nav_index: number | null;
-		bg: string;
-		theme: 'light' | 'dark';
-		tag: string | null;
-		show_in_stepper: boolean;
-	};
-
-	function buildPostCard(post: ParsedPost, chapter: ChapterShape, rotation: number) {
-		return {
-			kind: 'post',
-			post,
-			title: post.title,
-			eyebrow: null,
-			excerpt: post.custom_excerpt ?? deriveExcerpt(post.plaintext, 200),
-			permalink: `/${post.slug}/`,
-			feature_image: post.feature_image,
-			bg: chapter.bg,
-			theme: chapter.theme,
-			share: true,
-			rotation,
-			hash: null
-		};
-	}
-
-	function buildSyntheticCover(chapter: ChapterShape, subtitle: string | null, hash: string) {
-		return {
-			kind: 'cover',
-			post: null,
-			title: chapter.title,
-			eyebrow:
-				typeof chapter.nav_index === 'number' ? `Chapter ${chapter.nav_index}` : null,
-			excerpt: subtitle,
-			permalink: null,
-			feature_image: chapter.nav_icon,
-			bg: chapter.bg,
-			theme: chapter.theme,
-			share: false,
-			rotation: 0,
-			hash
-		};
-	}
-
-	function paletteAt(palette: Palette[], i: number): Palette {
-		return palette[i % palette.length];
-	}
-
-	function buildReport(file: string, data: any) {
-		const slug: string = data.slug ?? basename(file).replace(/\.ya?ml$/i, '');
-		const topN: number =
-			typeof data.top_n_tags === 'number' && data.top_n_tags > 0 ? data.top_n_tags : 6;
-		const maxPostsPerChapter: number =
-			typeof data.max_posts_per_chapter === 'number' && data.max_posts_per_chapter > 0
-				? data.max_posts_per_chapter
-				: 6;
-		const includeIntro = data.include_intro !== false;
-		const includeOutro = data.include_outro !== false;
-		const excludeTags: Set<string> = new Set(
-			Array.isArray(data.exclude_tags) ? data.exclude_tags : []
-		);
-		const palette: Palette[] =
-			Array.isArray(data.palette) && data.palette.length > 0
-				? data.palette.map((p: any) => ({
-						bg: typeof p?.bg === 'string' ? p.bg : 'var(--swatch--black)',
-						theme: p?.theme === 'light' ? 'light' : 'dark'
-					}))
-				: DEFAULT_PALETTE;
-		const overrides: Record<string, { title?: string; nav_label?: string }> =
-			data.chapter_overrides && typeof data.chapter_overrides === 'object'
-				? data.chapter_overrides
-				: {};
-
-		// Top N tags by post_count, excluding system + user-excluded.
-		const candidateTags = tags
-			.filter((t) => t.post_count > 0)
-			.filter((t) => !t.slug.startsWith('report-'))
-			.filter((t) => !excludeTags.has(t.slug))
-			.sort((a, b) => b.post_count - a.post_count)
-			.slice(0, topN);
-
-		const chapters: any[] = [];
-
-		if (includeIntro) {
-			const introBg = data.intro_bg ?? 'var(--swatch--black)';
-			const introTheme: 'light' | 'dark' = data.intro_theme === 'light' ? 'light' : 'dark';
-			const intro: ChapterShape = {
-				id: 'intro',
-				title: data.title ?? 'Intro',
-				nav_label: 'Intro',
-				nav_icon: null,
-				nav_index: null,
-				bg: introBg,
-				theme: introTheme,
-				tag: null,
-				show_in_stepper: true
-			};
-			chapters.push({
-				...intro,
-				cards: [buildSyntheticCover(intro, data.subtitle ?? null, 'intro')]
-			});
-		}
-
-		candidateTags.forEach((tag, i) => {
-			const palettePick = paletteAt(palette, i);
-			const ov = overrides[tag.slug] ?? {};
-			const chapter: ChapterShape = {
-				id: tag.slug,
-				title: ov.title ?? tag.name,
-				nav_label: ov.nav_label ?? tag.name,
-				nav_icon: tag.feature_image ?? null,
-				nav_index: i + 1,
-				bg: palettePick.bg,
-				theme: palettePick.theme,
-				tag: tag.slug,
-				show_in_stepper: true
-			};
-			const matched = posts
-				.filter((p) => p.tags.includes(tag.id))
-				.sort((a, b) => (a.published_at < b.published_at ? 1 : -1))
-				.slice(0, maxPostsPerChapter);
-			const cards: any[] = [
-				buildSyntheticCover(chapter, `${matched.length} post${matched.length === 1 ? '' : 's'}`, chapter.id)
-			];
-			matched.forEach((p, idx) => {
-				cards.push(buildPostCard(p, chapter, alternatingRotation(idx + 1)));
-			});
-			chapters.push({ ...chapter, cards });
-		});
-
-		if (includeOutro) {
-			const outroBg = data.outro_bg ?? 'var(--swatch--white)';
-			const outroTheme: 'light' | 'dark' = data.outro_theme === 'dark' ? 'dark' : 'light';
-			const outro: ChapterShape = {
-				id: 'your-turn',
-				title: 'Your Turn',
-				nav_label: 'Your Turn',
-				nav_icon: null,
-				nav_index: null,
-				bg: outroBg,
-				theme: outroTheme,
-				tag: null,
-				show_in_stepper: true
-			};
-			chapters.push({
-				...outro,
-				cards: [
-					buildSyntheticCover(
-						outro,
-						data.outro_subtitle ?? 'Browse more from the library',
-						'your-turn'
-					)
-				]
-			});
-		}
-
-		if (chapters.length === 0) {
-			console.warn(`SKIP report "${slug}": no chapters resolved.`);
-			return null;
-		}
-
-		return {
-			slug,
-			title: data.title ?? slug,
-			subtitle: data.subtitle ?? null,
-			published:
-				typeof data.published === 'string'
-					? data.published
-					: data.published
-						? new Date(data.published).toISOString()
-						: new Date().toISOString(),
-			cover_image: data.cover_image ?? null,
-			press_kit_url: data.press_kit_url ?? null,
-			chapters
-		};
-	}
-
-	const reportManifests = readReportManifests(REPORTS_DIR);
-	const reports = reportManifests
-		.map(({ file, data }) => buildReport(file, data))
-		.filter(Boolean);
-
 	const settings = {
 		title: settingsRaw.title ?? 'Site',
 		url: siteUrl,
@@ -540,16 +326,65 @@ async function main() {
 		secondary_navigation: settingsRaw.secondary_navigation ?? []
 	};
 
+	// Courses: an ordered route over existing posts (content/courses/*.yaml).
+	// Every lesson slug must resolve to a post, or the build fails.
+	const SUBJECTS = new Set(['tajweed', 'nahw', 'aqeedah', 'hadith', 'fiqh', 'tafsir', 'general']);
+	const postBySlugOut = new Map(posts.map((p: any) => [p.slug, p]));
+	const courseErrors: string[] = [];
+	const courses = (existsSync(COURSES_DIR) ? readdirSync(COURSES_DIR) : [])
+		.filter((f) => /\.ya?ml$/.test(f))
+		.sort()
+		.map((f) => {
+			const c: any = yaml.load(readFileSync(resolve(COURSES_DIR, f), 'utf8'));
+			if (!SUBJECTS.has(c.subject)) courseErrors.push(`${f}: unknown subject "${c.subject}"`);
+			let n = 0;
+			const modules = (c.modules ?? []).map((m: any) => ({
+				title: m.title,
+				blurb: m.blurb ?? null,
+				lessons: (m.lessons ?? []).map((l: any) => {
+					const post: any = postBySlugOut.get(l.slug);
+					if (!post) courseErrors.push(`${f}: lesson "${l.slug}" has no post`);
+					n += 1;
+					return {
+						n,
+						slug: l.slug,
+						title: l.title ?? post?.title ?? l.slug,
+						excerpt: post?.custom_excerpt ?? null,
+						minutes: Math.max(1, Math.round((post?.words ?? 0) / 200))
+					};
+				})
+			}));
+			return {
+				slug: c.slug,
+				title: c.title,
+				arabic: c.arabic ?? null,
+				subject: c.subject,
+				code: c.code ?? null,
+				tagline: c.tagline ?? '',
+				outcome: c.outcome ?? '',
+				level: c.level ?? null,
+				lesson_count: n,
+				minutes: modules.reduce(
+					(t: number, m: any) => t + m.lessons.reduce((u: number, l: any) => u + l.minutes, 0),
+					0
+				),
+				modules
+			};
+		});
+	if (courseErrors.length) {
+		throw new Error('Course manifest errors:\n  ' + courseErrors.join('\n  '));
+	}
+
+	writeFileSync(resolve(OUT_DIR, 'courses.json'), JSON.stringify(courses, null, '\t'));
 	writeFileSync(resolve(OUT_DIR, 'posts.json'), JSON.stringify(posts, null, '\t'));
 	writeFileSync(resolve(OUT_DIR, 'pages.json'), JSON.stringify(pages, null, '\t'));
 	writeFileSync(resolve(OUT_DIR, 'tags.json'), JSON.stringify(tagsOut, null, '\t'));
 	writeFileSync(resolve(OUT_DIR, 'authors.json'), JSON.stringify(authors, null, '\t'));
 	writeFileSync(resolve(OUT_DIR, 'settings.json'), JSON.stringify(settings, null, '\t'));
-	writeFileSync(resolve(OUT_DIR, 'reports.json'), JSON.stringify(reports, null, '\t'));
 	writeFileSync(resolve(OUT_DIR, 'markdown.json'), JSON.stringify(markdown, null, '\t'));
 
 	console.log(
-		`Parsed: ${posts.length} posts, ${pages.length} pages, ${tagsOut.length} tags, ${authors.length} authors, ${reports.length} reports`
+		`Parsed: ${posts.length} posts, ${pages.length} pages, ${tagsOut.length} tags, ${authors.length} authors, ${courses.length} courses`
 	);
 }
 

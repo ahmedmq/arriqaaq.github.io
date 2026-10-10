@@ -1,0 +1,79 @@
+# A course turns a set of existing posts into an ordered route with a roadmap
+# page at /courses/<slug>/. Posts listed here automatically get a course tag,
+# a "Lesson N of M" marker and course-aware next/previous navigation.
+# Schema is documented in DESIGN.md → "Courses".
+slug: usul-al-fiqh
+title: Usul al-Fiqh Made Easy
+arabic: أصول الفقه
+subject: fiqh # one of: tajweed, nahw, aqeedah, hadith, fiqh, tafsir
+code: UF
+tagline: How scholars derive rulings from the Qur'an and Sunnah, one principle at a time.
+outcome: >-
+  You can explain where a ruling comes from, name the sources scholars rely on
+  and where they disagree, and read a fiqh discussion knowing which tool of
+  usul is being used.
+level: Beginner friendly
+modules:
+  - title: Foundations
+    blurb: Where usul al-fiqh came from, the two early methods, and the books that shaped it.
+    lessons:
+      - slug: usul-al-fiqh-made-easy-introduction-part-1
+        title: History and evolution
+      - slug: usul-al-fiqh-made-easy-difference-between-ahlul-hadith-and-ahlul-rai-part-2
+        title: Ahlul Hadith and Ahlur Rai
+      - slug: usul-al-fiqh-made-easy-part-3-what-is-fiqh
+        title: What is usul al-fiqh?
+      - slug: usul-al-fiqh-made-easy-part-4-books
+        title: The books of usul al-fiqh
+  - title: The ruling (al-Hukm)
+    blurb: What a ruling is, its five categories, and the conditions that attach to it.
+    lessons:
+      - slug: usul-al-fiqh-made-easy-part-5-what-is-hukm
+        title: What is al-Hukm?
+      - slug: hukm-al-wadi
+        title: Al-Hukm al-Wad'i
+  - title: Sources of the ruling
+    blurb: The agreed sources, then each disputed source with the arguments on both sides.
+    lessons:
+      - slug: sources-of-al-hukm-quran-sunnah-ijmaa-and-ijtihaad-usul-al-fiqh-made-easy-part-7
+        title: Qur'an, Sunnah, Ijma' and Ijtihad
+      - slug: ijtihad
+        title: Ijtihad
+      - slug: what-is-qiyas
+        title: What is Qiyas?
+      - slug: qiyas-debate
+        title: The debate over Qiyas
+      - slug: istihsan
+        title: Istihsan
+      - slug: istishab
+        title: Istishab
+      - slug: istislah
+        title: Istislah (al-Masalih al-Mursalah)
+      - slug: saddzarai
+        title: Sadd adh-Dhara'i
+      - slug: qawlassahabi
+        title: Qawl as-Sahabi
+      - slug: urf
+        title: "'Urf (custom)"
+  - title: Reading the texts
+    blurb: How general and specific, absolute and restricted, command and prohibition are understood.
+    lessons:
+      - slug: aamkhaas
+        title: Takhsis ('Aam and Khaas)
+      - slug: mutlaqmuqayyad
+        title: Mutlaq and Muqayyad
+      - slug: amrnahi
+        title: Amr and Nahi
+      - slug: analysisamrnahi
+        title: Scholarly positions on Amr and Nahi
+  - title: Deriving and following rulings
+    blurb: The methods of istinbat in each school, and who may give or follow a fatwa.
+    lessons:
+      - slug: istinbaatmajority
+        title: Istinbat (the majority)
+      - slug: istinbaathanafi
+        title: Istinbat (the Hanafis)
+      - slug: ijtihadfatwa
+        title: Ijtihad, Mujtahid, Fatwa and Mufti
+      - slug: taqleed
+        title: Taqlid

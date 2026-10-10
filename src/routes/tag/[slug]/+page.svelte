@@ -1,30 +1,19 @@
 <script lang="ts">
-	import PostCard from '$lib/components/PostCard.svelte';
+	import { base } from '$app/paths';
 	import Seo from '$lib/components/Seo.svelte';
-	import { settings } from '$lib/content';
-	import { themeClass } from '$lib/themeForTag';
+	import Archive from '$lib/components/ui/Archive.svelte';
+	import { settings, courses, subjectForTag } from '$lib/content';
 	let { data } = $props();
+	const subject = $derived(subjectForTag(data.tag.slug));
+	const course = $derived(courses.find((c) => c.subject === subject && subject !== 'general'));
 </script>
 
-<Seo
-	title={`${data.tag.name} — ${settings.title}`}
-	description={data.tag.description ?? settings.description}
-	markdownAlt
-/>
+<Seo title={`${data.tag.name} — ${settings.title}`} description={data.tag.description ?? settings.description} markdownAlt />
 
-<div class={themeClass(data.tag.slug)}>
-	<header class="archive-header">
-		<small class="related-heading">Tag</small>
-		<h1 class="archive-title">{data.tag.name}</h1>
-		{#if data.tag.description}
-			<p class="archive-desc">{data.tag.description}</p>
+<Archive eyebrow="Topic" title={data.tag.name} lede={data.tag.description} posts={data.posts} {subject}>
+	{#snippet toolbar()}
+		{#if course}
+			<a class="btn" href={`${base}/courses/${course.slug}/`}>Read these in order: {course.title} <span class="arrow">→</span></a>
 		{/if}
-		<p class="archive-count">{data.posts.length} post{data.posts.length === 1 ? '' : 's'}</p>
-	</header>
-
-	<div class="feed">
-		{#each data.posts as p}
-			<PostCard post={p} />
-		{/each}
-	</div>
-</div>
+	{/snippet}
+</Archive>

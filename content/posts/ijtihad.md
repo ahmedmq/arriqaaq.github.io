@@ -26,7 +26,7 @@ For example, if someone asks a mujtahid, "Is it okay to smoke cigarettes?" the m
 
 ## **Types of Ijtihad**
 
-::image{src="/images/2025/04/Screenshot-2025-04-06-at-2.36.25-PM.png" width=full}
+[[SVG:ijtihad-sources-map]]
 
 There are several types or forms of ijtihad:
 

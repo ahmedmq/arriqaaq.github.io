@@ -17,7 +17,7 @@ reading_time: 7
 
 In our study of *Usool al-Fiqh*, we explored the various sources of Islamic rulings. We have covered [Quran, Sunnah, and Ijma](/sources-of-al-hukm-quran-sunnah-ijmaa-and-ijtihaad-usul-al-fiqh-made-easy-part-7/) as the primary sources, and examined various forms of *Ijtihad* including [*Qiyas*](/what-is-qiyas/) (analogical reasoning), [*Istihsan*](/istihsan/) (juristic preference), [*Amal Ahlul Madina*](/sources-of-al-hukm-quran-sunnah-ijmaa-and-ijtihaad-usul-al-fiqh-made-easy-part-7/) (practice of the people of Madinah), [*Istishab*](/istishab/) (presumption of continuity), and [*Istislah*](/istislah/) *(or Masalih Mursalah* (unspecified public interests)). Today, we turn our attention to another significant methodology of *Ijtihad*: **سد الذرائع (Sadd al-Dhara'i)**.
 
-::image{src="/images/2025/05/image.png"}
+[[SVG:ijtihad-sources-map]]
 
 This principle involves blocking pathways that could lead to *Haram* before the prohibited act occurs. Though the concept appears simple, it has different use cases and scholars have varying views on its use as evidence in *Fiqh*.
 

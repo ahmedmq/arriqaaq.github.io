@@ -1,22 +1,34 @@
 <script lang="ts">
-	import Sidebar from '$lib/components/Sidebar.svelte';
-	import TagPanel from '$lib/components/TagPanel.svelte';
-	import Topbar from '$lib/components/Topbar.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	import { page } from '$app/state';
+	import '$lib/styles/tokens.css';
+	import '$lib/styles/base.css';
+	import '$lib/styles/prose.css';
+	import SiteHeader from '$lib/components/site/SiteHeader.svelte';
+	import SiteFooter from '$lib/components/site/SiteFooter.svelte';
 
 	let { children } = $props();
-	const breadcrumb = $derived(page.data.breadcrumb ?? '');
 </script>
 
-<div class="app panel-collapsed">
-	<Sidebar />
-	<TagPanel />
-	<Topbar {breadcrumb} />
-	<main class="main">
-		<div class="container">
-			{@render children()}
-		</div>
-		<Footer />
-	</main>
-</div>
+<a class="skip" href="#main">Skip to content</a>
+<SiteHeader />
+<main id="main">
+	{@render children()}
+</main>
+<SiteFooter />
+
+<style>
+	.skip {
+		position: absolute;
+		left: var(--s-3);
+		top: -60px;
+		z-index: 60;
+		padding: var(--s-2) var(--s-4);
+		border-radius: var(--r-pill);
+		background: var(--ink);
+		color: #fff;
+		text-decoration: none;
+	}
+
+	.skip:focus {
+		top: var(--s-2);
+	}
+</style>

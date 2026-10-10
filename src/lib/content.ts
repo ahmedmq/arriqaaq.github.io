@@ -3,15 +3,15 @@ import pagesRaw from './generated/pages.json';
 import tagsRaw from './generated/tags.json';
 import authorsRaw from './generated/authors.json';
 import settingsRaw from './generated/settings.json';
-import reportsRaw from './generated/reports.json';
-import type { Author, Post, Report, SiteSettings, Tag } from './types';
+import coursesRaw from './generated/courses.json';
+import type { Author, Course, CoursePlace, Post, SiteSettings, Subject, Tag } from './types';
 
 export const posts = postsRaw as Post[];
 export const pages = pagesRaw as Post[];
 export const tags = tagsRaw as Tag[];
 export const authors = authorsRaw as Author[];
 export const settings = settingsRaw as SiteSettings;
-export const reports = reportsRaw as Report[];
+export const courses = coursesRaw as Course[];
 
 export const POSTS_PER_PAGE = 9;
 
@@ -21,7 +21,6 @@ const authorBySlug = new Map(authors.map((a) => [a.slug, a]));
 const authorById = new Map(authors.map((a) => [a.id, a]));
 const postBySlug = new Map(posts.map((p) => [p.slug, p]));
 const pageBySlug = new Map(pages.map((p) => [p.slug, p]));
-const reportBySlug = new Map(reports.map((r) => [r.slug, r]));
 
 export function getPost(slug: string): Post | undefined {
 	return postBySlug.get(slug);
@@ -63,9 +62,6 @@ export function resolveImage(src: string | null | undefined, base: string): stri
 	return base + src;
 }
 
-export function getReport(slug: string): Report | undefined {
-	return reportBySlug.get(slug);
-}
 
 export function adjacentPosts(post: Post): { prev: Post | null; next: Post | null } {
 	const idx = posts.findIndex((p) => p.id === post.id);
@@ -74,4 +70,62 @@ export function adjacentPosts(post: Post): { prev: Post | null; next: Post | nul
 		prev: idx + 1 < posts.length ? posts[idx + 1] : null,
 		next: idx - 1 >= 0 ? posts[idx - 1] : null
 	};
+}
+
+const courseBySlug = new Map(courses.map((c) => [c.slug, c]));
+
+export function getCourse(slug: string): Course | undefined {
+	return courseBySlug.get(slug);
+}
+
+/** Where a post sits inside a course, or null when it is not a lesson. */
+export function coursePlace(postSlug: string): CoursePlace | null {
+	for (const course of courses) {
+		const flat = course.modules.flatMap((m) => m.lessons.map((lesson) => ({ lesson, module: m })));
+		const i = flat.findIndex((x) => x.lesson.slug === postSlug);
+		if (i === -1) continue;
+		return {
+			course,
+			lesson: flat[i].lesson,
+			module: flat[i].module,
+			prev: flat[i - 1]?.lesson ?? null,
+			next: flat[i + 1]?.lesson ?? null
+		};
+	}
+	return null;
+}
+
+/** Tag slug → subject colour family. Unlisted tags fall back to 'general'. */
+const SUBJECT_BY_TAG: Record<string, Subject> = {
+	fiqh: 'fiqh',
+	tafsir: 'tafsir',
+	tajweed: 'tajweed',
+	grammar: 'nahw',
+	arabic: 'nahw',
+	aqeedah: 'aqeedah',
+	hadith: 'hadith',
+	islam: 'aqeedah',
+	ramadhan: 'aqeedah',
+	book: 'hadith',
+	poem: 'tajweed',
+	homeschooling: 'nahw',
+	coding: 'fiqh',
+	tech: 'fiqh',
+	health: 'tajweed',
+	lifestyle: 'tajweed',
+	podcast: 'hadith',
+	magazine: 'nahw',
+	competition: 'nahw',
+	events: 'aqeedah'
+};
+
+export function subjectForTag(slug: string | null | undefined): Subject {
+	return (slug && SUBJECT_BY_TAG[slug]) || 'general';
+}
+
+export function subjectForPost(post: Post): Subject {
+	const place = coursePlace(post.slug);
+	if (place) return place.course.subject;
+	const tag = post.primary_tag ? getTagById(post.primary_tag) : null;
+	return subjectForTag(tag?.slug);
 }

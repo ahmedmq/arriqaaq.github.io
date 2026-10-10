@@ -38,7 +38,7 @@ The technical or legal definition of Istihsan has been a source of significant d
 
 Let's explore the various definitions that have been proposed:
 
-::image{src="/images/2025/04/Screenshot-2025-04-14-at-12.56.50-PM.png" width=full}
+[[SVG:istihsan-definitions]]
 
 ### Definition 1: The Unexplainable Insight
 

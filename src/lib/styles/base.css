@@ -1,0 +1,554 @@
+/* ==========================================================================
+   Base: reset, type, and the shared component vocabulary described in
+   DESIGN.md. Mobile-first: every rule here is written for a 375px screen;
+   min-width queries add the desktop layout.
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+	scroll-padding-top: calc(var(--topbar-h) + 16px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+body {
+	margin: 0;
+	background: var(--page);
+	color: var(--ink);
+	font-family: var(--font-sans);
+	font-size: var(--fs-body);
+	line-height: var(--lh-body);
+	letter-spacing: var(--ls-body);
+	font-feature-settings: 'cv11', 'ss01';
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-x: clip;
+}
+
+img,
+svg,
+video,
+iframe {
+	display: block;
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+}
+
+a {
+	color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+	font: inherit;
+	letter-spacing: inherit;
+	color: inherit;
+}
+
+button {
+	cursor: pointer;
+}
+
+:focus-visible {
+	outline: none;
+	box-shadow: var(--ring);
+	border-radius: var(--r-xs);
+}
+
+::selection {
+	background: var(--amber);
+	color: var(--ink);
+}
+
+h1,
+h2,
+h3,
+h4 {
+	margin: 0;
+	font-weight: 500;
+	line-height: var(--lh-heading);
+	letter-spacing: var(--ls-heading);
+	text-wrap: balance;
+}
+
+p {
+	margin: 0;
+	text-wrap: pretty;
+}
+
+/* Arabic runs inside Latin text: Inter has no Arabic glyphs, so the stack
+   falls through to Noto Naskh. Explicit [lang=ar] and .ar get a size bump
+   because Naskh reads small next to Inter at the same px size. */
+:lang(ar),
+.ar {
+	font-family: var(--font-arabic);
+	font-size: 1.12em;
+	letter-spacing: 0;
+	line-height: 1.8;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+}
+
+/* ---- Layout primitives ---------------------------------------------------- */
+
+.wrap {
+	width: 100%;
+	max-width: calc(var(--max) + 2 * var(--gutter));
+	margin-inline: auto;
+	padding-inline: var(--gutter);
+}
+
+.wrap--wide {
+	max-width: calc(var(--wide) + 2 * var(--gutter));
+}
+
+.wrap--measure {
+	max-width: calc(var(--measure) + 2 * var(--gutter));
+}
+
+.section {
+	padding-block: var(--section);
+}
+
+/* ---- Eyebrow: small uppercase Inter label, in colour (arriqaaqlabs) -------- */
+
+.eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--s-2);
+	font-family: var(--font-sans);
+	font-size: var(--fs-eyebrow);
+	font-weight: 600;
+	line-height: 1.3;
+	letter-spacing: var(--ls-eyebrow);
+	text-transform: uppercase;
+	color: var(--subject-ink, var(--purple-ink));
+}
+
+.eyebrow--quiet {
+	color: var(--ink-3);
+}
+
+.eyebrow--dot::before {
+	content: '';
+	width: 8px;
+	height: 8px;
+	border-radius: 2px;
+	background: var(--subject, var(--pink));
+}
+
+/* ---- Split heading (arriqaaqlabs): ink lead, one solid-colour highlight,
+   muted continuation. <h2 class="split">Lead <em>highlight</em> more.
+   <span class="mute">The rest, quieter.</span></h2> -------------------------- */
+
+.split {
+	font-size: var(--fs-section);
+	font-weight: 500;
+	line-height: 1.08;
+	letter-spacing: -0.04em;
+	max-width: 20ch;
+	text-wrap: balance;
+}
+
+.split em {
+	font-style: normal;
+	color: var(--subject-ink, var(--purple-ink));
+}
+
+.split .mute {
+	color: var(--ink-3);
+}
+
+/* Heading with a coloured bar on its left (arriqaaqlabs "Other roadmaps"). */
+.barred {
+	padding-left: 14px;
+	border-left: 4px solid var(--subject, var(--purple));
+}
+
+/* ---- Section header: eyebrow then split heading (38labs + arriqaaqlabs) ---- */
+
+.section-head {
+	display: grid;
+	gap: var(--s-4);
+	max-width: 46rem;
+	margin-bottom: var(--s-6);
+}
+
+.section-head--center {
+	margin-inline: auto;
+	text-align: center;
+	justify-items: center;
+}
+
+.section-head--center .split {
+	margin-inline: auto;
+}
+
+.section-head h2:not(.split) {
+	font-size: var(--fs-h2);
+}
+
+.section-head p {
+	color: var(--ink-2);
+	font-size: var(--fs-body);
+}
+
+/* ---- Buttons: pills (38labs / OpenAI) --------------------------------------- */
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--s-2);
+	min-height: var(--tap);
+	padding: 12px 20px;
+	border: 1px solid var(--ink);
+	border-radius: var(--r-pill);
+	background: var(--ink);
+	color: #fff;
+	font-size: var(--fs-small);
+	font-weight: 500;
+	line-height: 1.1;
+	letter-spacing: 0;
+	text-decoration: none;
+	white-space: nowrap;
+	transition:
+		background var(--dur-fast) ease,
+		border-color var(--dur-fast) ease,
+		transform var(--dur-fast) ease;
+}
+
+.btn:hover {
+	background: #2a2834;
+}
+
+.btn:active {
+	transform: scale(0.98);
+}
+
+.btn--ghost {
+	background: var(--page);
+	color: var(--ink);
+	border-color: rgba(13, 12, 19, 0.12);
+}
+
+.btn--ghost:hover {
+	background: var(--surface);
+	border-color: rgba(13, 12, 19, 0.2);
+}
+
+.btn--subject {
+	background: var(--subject);
+	border-color: var(--subject);
+	color: var(--subject-on);
+}
+
+.btn--subject:hover {
+	background: var(--subject);
+	filter: brightness(1.06);
+}
+
+.btn--block {
+	width: 100%;
+	white-space: normal;
+	text-align: center;
+}
+
+.btn .arrow {
+	transition: transform var(--dur) var(--ease-out);
+}
+
+.btn:hover .arrow {
+	transform: translateX(3px);
+}
+
+/* Round icon button (38labs carousel arrows). */
+.icon-btn {
+	display: inline-grid;
+	place-items: center;
+	width: var(--tap);
+	height: var(--tap);
+	border: 1px solid rgba(13, 12, 19, 0.12);
+	border-radius: 50%;
+	background: var(--page);
+	color: var(--ink);
+	transition: background var(--dur-fast) ease;
+}
+
+.icon-btn:hover {
+	background: var(--surface);
+}
+
+.icon-btn svg {
+	width: 18px;
+	height: 18px;
+}
+
+/* ---- Chips (OpenAI filter chips) -------------------------------------------- */
+
+.chip {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	min-height: 28px;
+	padding: 3px 11px;
+	border: 0;
+	border-radius: var(--r-sm);
+	background: var(--surface);
+	color: rgba(13, 12, 19, 0.8);
+	font-size: var(--fs-xs);
+	font-weight: 500;
+	line-height: 1.2;
+	letter-spacing: 0;
+	text-decoration: none;
+	white-space: nowrap;
+	transition:
+		background var(--dur-fast) ease,
+		color var(--dur-fast) ease;
+}
+
+a.chip:hover,
+button.chip:hover {
+	background: var(--surface-2);
+}
+
+.chip[aria-pressed='true'],
+.chip.is-active {
+	background: var(--ink);
+	color: #fff;
+}
+
+.chip--subject {
+	background: var(--surface);
+	color: var(--ink);
+}
+
+.chip--subject::before {
+	content: '';
+	width: 7px;
+	height: 7px;
+	border-radius: 2px;
+	background: var(--subject);
+}
+
+.chip--outline {
+	background: var(--page);
+	box-shadow: inset 0 0 0 1px var(--line-strong);
+}
+
+/* Uppercase tag chip (38labs "CASE STUDY"). */
+.tag {
+	display: inline-flex;
+	align-items: center;
+	padding: 6px 10px;
+	border-radius: var(--r-pill);
+	background: var(--page);
+	box-shadow: inset 0 0 0 1px var(--line);
+	font-family: var(--font-sans);
+	font-size: 10.5px;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--ink-2);
+	line-height: 1;
+}
+
+.chip-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--s-2);
+}
+
+/* Horizontal scroller for chip/tab rows on phones: no wrap, edge fade. */
+.scroll-x {
+	display: flex;
+	gap: var(--s-2);
+	overflow-x: auto;
+	scrollbar-width: none;
+	overscroll-behavior-x: contain;
+	scroll-snap-type: x proximity;
+	margin-inline: calc(-1 * var(--gutter));
+	padding-inline: var(--gutter);
+	mask-image: linear-gradient(90deg, transparent 0, #000 var(--gutter), #000 calc(100% - var(--gutter)), transparent);
+}
+
+.scroll-x::-webkit-scrollbar {
+	display: none;
+}
+
+.scroll-x > * {
+	flex: 0 0 auto;
+	scroll-snap-align: start;
+}
+
+/* ---- Pill tabs (OpenAI "Planning a Sunday roast | Building a wardrobe") ------ */
+
+.tabs {
+	display: inline-flex;
+	gap: 2px;
+	padding: 4px;
+	border-radius: var(--r-pill);
+	box-shadow: inset 0 0 0 1px var(--line);
+	background: var(--page);
+	max-width: 100%;
+	overflow-x: auto;
+	scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar {
+	display: none;
+}
+
+.tab {
+	flex: 0 0 auto;
+	min-height: 40px;
+	padding: 10px 16px;
+	border: 0;
+	border-radius: var(--r-pill);
+	background: transparent;
+	font-size: var(--fs-small);
+	font-weight: 500;
+	letter-spacing: 0;
+	color: var(--ink-2);
+	white-space: nowrap;
+	transition:
+		background var(--dur-fast) ease,
+		color var(--dur-fast) ease;
+}
+
+.tab:hover {
+	color: var(--ink);
+}
+
+.tab[aria-selected='true'] {
+	background: var(--scrim);
+	color: var(--ink);
+}
+
+/* ---- Segmented toggle (OpenAI "GPT-5.6 Instant | GPT-6 Instant") ----------- */
+
+.segmented {
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: 1fr;
+	padding: 4px;
+	border-radius: var(--r-pill);
+	background: var(--surface);
+	width: 100%;
+	max-width: 420px;
+}
+
+.segmented button {
+	min-height: 38px;
+	padding: 8px 14px;
+	border: 0;
+	border-radius: var(--r-pill);
+	background: transparent;
+	font-size: var(--fs-xs);
+	font-weight: 500;
+	color: var(--ink-2);
+	transition:
+		background var(--dur) var(--ease-soft),
+		color var(--dur) ease,
+		box-shadow var(--dur) ease;
+}
+
+.segmented button[aria-pressed='true'] {
+	background: var(--page);
+	color: var(--ink);
+	box-shadow: 0 1px 2px rgba(13, 12, 19, 0.08), 0 0 0 1px rgba(13, 12, 19, 0.04);
+}
+
+/* ---- Cards (38labs anatomy: white on grey, big radius, hairline rules) ----- */
+
+.card {
+	position: relative;
+	display: block;
+	border-radius: var(--r-lg);
+	background: var(--page);
+	box-shadow: inset 0 0 0 1px var(--line);
+	color: inherit;
+	text-decoration: none;
+	overflow: hidden;
+	transition:
+		box-shadow var(--dur) ease,
+		transform var(--dur) var(--ease-out);
+}
+
+a.card:hover {
+	box-shadow: inset 0 0 0 1px var(--line-strong), var(--shadow-1);
+	transform: translateY(-2px);
+}
+
+.card-body {
+	padding: var(--s-5);
+}
+
+/* Labelled row inside a card: a mono label above its value, separated from
+   the next row by a hairline. */
+.card-row {
+	display: grid;
+	gap: 4px;
+	padding-block: var(--s-3);
+	border-top: 1px solid var(--line);
+}
+
+.card-row:first-child {
+	border-top: 0;
+}
+
+.card-row > .eyebrow {
+	font-size: 10px;
+}
+
+.card--fill {
+	background: var(--subject);
+	color: var(--subject-on);
+	box-shadow: none;
+}
+
+.panel {
+	border-radius: var(--r-lg);
+	background: var(--surface);
+	padding: var(--s-5);
+}
+
+/* ---- Reveal on scroll (paired with the `reveal` action in $lib/actions) ---- */
+
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+	.js [data-reveal] {
+		opacity: 0;
+		transform: translateY(28px);
+		transition:
+			opacity var(--dur-slow) var(--ease-out),
+			transform var(--dur-slow) var(--ease-out);
+	}
+
+	.js [data-reveal].is-in {
+		opacity: 1;
+		transform: none;
+	}
+}

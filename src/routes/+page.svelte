@@ -1,144 +1,194 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { settings, authors, getReport } from '$lib/content';
+	import { settings, authors, courses, tags, getTagById } from '$lib/content';
 	import { SITE_URL } from '$lib/site';
 	import Seo from '$lib/components/Seo.svelte';
-	import PostCard from '$lib/components/PostCard.svelte';
-	import PostCardLarge from '$lib/components/PostCardLarge.svelte';
-	import FeaturedHero from '$lib/components/FeaturedHero.svelte';
-	import KnowledgeStack from '$lib/components/KnowledgeStack.svelte';
+	import Hero from '$lib/components/home/Hero.svelte';
+	import Manifesto from '$lib/components/home/Manifesto.svelte';
+	import SubjectCards from '$lib/components/home/SubjectCards.svelte';
+	import CourseCard from '$lib/components/course/CourseCard.svelte';
+	import PostRow from '$lib/components/ui/PostRow.svelte';
 	import Newsletter from '$lib/components/Newsletter.svelte';
-	import ReportPage from '$lib/components/report/ReportPage.svelte';
-	import SectionHeader from '$lib/components/SectionHeader.svelte';
-	import TopicGlyphs from '$lib/components/TopicGlyphs.svelte';
-	import ReleaseStack from '$lib/components/ReleaseStack.svelte';
-	import ArchiveLines from '$lib/components/ArchiveLines.svelte';
-	import NewsletterMark from '$lib/components/NewsletterMark.svelte';
-	import { themeClass } from '$lib/themeForTag';
+	import { reveal } from '$lib/actions';
 
 	let { data } = $props();
 
-	const introReport = getReport('arriqaaq-2026') ?? null;
+	// Filter chips: the most common primary tags among recent posts.
+	const tagCounts = new Map<string, number>();
+	for (const p of data.posts) if (p.primary_tag) tagCounts.set(p.primary_tag, (tagCounts.get(p.primary_tag) ?? 0) + 1);
+	const filters = [...tagCounts.entries()]
+		.sort((a, b) => b[1] - a[1])
+		.slice(0, 5)
+		.map(([id]) => getTagById(id)!)
+		.filter(Boolean);
 
-	const ordered = $derived([...data.featured, ...data.recent]);
-	const heroPost = $derived(ordered[0] ?? null);
-	const cardPosts = $derived(ordered.slice(1, 4));
-	const listPosts = $derived(ordered.slice(4));
+	let active = $state<string | null>(null);
+	const shown = $derived(data.posts.filter((p) => !active || p.primary_tag === active).slice(0, 6));
 
 	const jsonLd = [
-		{
-			'@context': 'https://schema.org',
-			'@type': 'WebSite',
-			name: settings.title,
-			url: `${SITE_URL}/`,
-			description: settings.description
-		},
-		...authors.slice(0, 1).map((a) => ({
-			'@context': 'https://schema.org',
-			'@type': 'Person',
-			name: a.name,
-			url: `${SITE_URL}/author/${a.slug}/`
-		}))
+		{ '@context': 'https://schema.org', '@type': 'WebSite', name: settings.title, url: `${SITE_URL}/`, description: settings.description },
+		...authors.slice(0, 1).map((a) => ({ '@context': 'https://schema.org', '@type': 'Person', name: a.name, url: `${SITE_URL}/author/${a.slug}/` }))
 	];
 </script>
 
 <Seo {jsonLd} markdownAlt />
 
-{#if introReport}
-	{@const firstChapter =
-		introReport.chapters.find((c) => c.show_in_stepper) ?? introReport.chapters[0]}
-	<section
-		class="report-inline theme--tajweed"
-		class:u-theme-light={firstChapter?.theme === 'light'}
-		class:u-theme-dark={firstChapter?.theme === 'dark'}
-		style:--page-bg={firstChapter?.bg}
-	>
-		<ReportPage report={introReport} />
-	</section>
-{:else}
-	<section class="hero hero--centered">
-		<h1 class="hero-title">{settings.title}<span class="hero-title-accent">.</span></h1>
-		{#if settings.description}
-			<p class="hero-lede">{settings.description}</p>
-		{/if}
-	</section>
-{/if}
+<Hero />
+<Manifesto />
+<SubjectCards />
 
-<section class="focus-split theme--tajweed">
-	<SectionHeader
-		heading="What we focus on"
-		lede="The deen, from first principles. The six foundations we cover: Tajweed, Grammar, Aqeedah, Usul al-Hadith, Usul al-Fiqh, and Usul at-Tafsir — the roots before the branches."
-		rail
-	>
-		{#snippet visual()}
-			<KnowledgeStack />
-		{/snippet}
-	</SectionHeader>
-</section>
-
-<section class="topic-strip theme--tajweed">
-	<SectionHeader heading="Browse by discipline">
-		{#snippet visual()}
-			<TopicGlyphs />
-		{/snippet}
-	</SectionHeader>
-	<div class="topic-grid">
-		{#each data.tags as t}
-			<a href={`${base}/tag/${t.slug}/`} class="topic-card {themeClass(t.slug)}">
-				<span class="topic-name">{t.name}</span>
-				<span class="topic-count">{t.post_count}</span>
-			</a>
-		{/each}
+<section class="section" aria-labelledby="route-h">
+	<div class="wrap">
+		<div class="section-head">
+			<span class="eyebrow">Follow a route</span>
+			<h2 class="split" id="route-h">Read it <em>like a course,</em> not a pile of posts. <span class="mute">Lessons in order, in steps, with your place saved.</span></h2>
+		</div>
+		<div use:reveal data-reveal>
+			{#each courses as c}
+				<CourseCard course={c} />
+			{/each}
+		</div>
 	</div>
 </section>
 
-<hr class="section-rule" id="latest" />
-
-{#if heroPost}
-	<FeaturedHero post={heroPost} />
-{/if}
-
-{#if cardPosts.length}
-	<section class="releases theme--tajweed">
-		<SectionHeader heading="Latest from the desk" rail>
-			{#snippet visual()}
-				<ReleaseStack />
-			{/snippet}
-		</SectionHeader>
-		<div class="releases-grid">
-			{#each cardPosts as p}
-				<PostCardLarge post={p} />
+<section class="section latest" aria-labelledby="latest-h">
+	<div class="wrap">
+		<div class="latest-head">
+			<div class="section-head">
+				<span class="eyebrow">From the desk</span>
+				<h2 class="split" id="latest-h">Latest articles. <span class="mute">Lessons, launches and reflections.</span></h2>
+			</div>
+			<a class="btn btn--ghost" href={`${base}/articles/`}>All articles <span class="arrow">→</span></a>
+		</div>
+		<div class="scroll-x filters" role="toolbar" aria-label="Filter by topic">
+			<button class="chip" aria-pressed={active === null} onclick={() => (active = null)}>All</button>
+			{#each filters as t}
+				<button class="chip" aria-pressed={active === t.id} onclick={() => (active = t.id)}>{t.name}</button>
 			{/each}
 		</div>
-	</section>
-{/if}
-
-{#if listPosts.length}
-	<section class="intro-list theme--tajweed">
-		<SectionHeader heading="More reading" rail>
-			{#snippet visual()}
-				<ArchiveLines />
-			{/snippet}
-		</SectionHeader>
-		<div class="intro-list-feed">
-			{#each listPosts as p}
-				<PostCard post={p} />
+		<div class="list">
+			{#each shown as p (p.id)}
+				<PostRow post={p} />
 			{/each}
 		</div>
-	</section>
-{/if}
-
-{#if data.totalPages > 1}
-	<div class="pagination-wrap">
-		<a href={`${base}/page/2/`} class="btn">Older posts →</a>
 	</div>
-{/if}
-
-<section class="newsletter-callout theme--tajweed">
-	<SectionHeader heading="Get new posts in your inbox" lede={settings.description} rail>
-		{#snippet visual()}
-			<NewsletterMark />
-		{/snippet}
-	</SectionHeader>
-	<Newsletter />
 </section>
+
+<section class="section topics-band" aria-labelledby="topics-h">
+	<div class="wrap">
+		<div class="section-head">
+			<span class="eyebrow">Browse by topic</span>
+			<h2 class="split" id="topics-h">Every topic, <em>one tap away.</em> <span class="mute">Or search everything from the magnifier at the top.</span></h2>
+		</div>
+		<ul class="topic-list">
+			{#each [...tags].filter((t) => t.post_count > 0).sort((a, b) => b.post_count - a.post_count || a.name.localeCompare(b.name)) as t (t.id)}
+				<li>
+					<a href={`${base}/tag/${t.slug}/`}>
+						<span>{t.name}</span>
+						<span class="n">{t.post_count}</span>
+					</a>
+				</li>
+			{/each}
+		</ul>
+	</div>
+</section>
+
+<section class="section news" aria-labelledby="news-h">
+	<div class="wrap">
+		<div class="news-card">
+			<div class="section-head section-head--center">
+				<span class="eyebrow">Newsletter</span>
+				<h2 class="split" id="news-h">New lessons, <em>in your inbox.</em> <span class="mute">One email when something is published.</span></h2>
+			</div>
+			<Newsletter />
+		</div>
+	</div>
+</section>
+
+<style>
+	.latest-head {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: end;
+		justify-content: space-between;
+		gap: var(--s-4);
+		margin-bottom: var(--s-5);
+	}
+
+	.latest-head .section-head {
+		margin-bottom: 0;
+	}
+
+	.filters {
+		margin-bottom: var(--s-4);
+	}
+
+	.list {
+		border-bottom: 1px solid var(--line);
+	}
+
+	.topics-band {
+		padding-top: 0;
+	}
+
+	/* All topics as a tidy grid of rows (the original "Browse by discipline"). */
+	.topic-list {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 0 var(--s-4);
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		border-top: 1px solid var(--line);
+	}
+
+	.topic-list a {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		gap: var(--s-2);
+		min-height: var(--tap);
+		padding-block: 12px;
+		border-bottom: 1px solid var(--line);
+		text-decoration: none;
+		font-weight: 500;
+		transition: color var(--dur-fast) ease;
+	}
+
+	.topic-list a:hover {
+		color: var(--purple-ink);
+	}
+
+	.topic-list .n {
+		font-size: var(--fs-xs);
+		font-variant-numeric: tabular-nums;
+		color: var(--ink-3);
+	}
+
+	@media (min-width: 720px) {
+		.topic-list {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 0 var(--s-6);
+		}
+	}
+
+	@media (min-width: 1040px) {
+		.topic-list {
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+		}
+	}
+
+	.news {
+		padding-bottom: 0;
+	}
+
+	.news-card {
+		padding: var(--s-7) var(--s-5);
+		border-radius: var(--r-lg);
+		background: var(--surface);
+	}
+
+	.news-card .section-head {
+		margin-bottom: var(--s-4);
+	}
+</style>

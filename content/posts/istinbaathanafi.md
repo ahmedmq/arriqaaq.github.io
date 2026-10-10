@@ -13,7 +13,7 @@ featured: false
 reading_time: 11
 ---
 
-::image{src="/images/2025/10/Screenshot-2025-10-18-at-1.23.33---AM.png" width=full}
+[[SVG:istinbat-hanafi-overview]]
 
 In the previous section, we explored the **Ways of al-Istinbaat according to the Jumhoor (Majority)**. The Jumhoor classify textual interpretation based on **what the speech directly states** (*Al-Mantooq*) and **what it implies or suggests** (*Al-Mafhoom*).
 
@@ -31,7 +31,7 @@ According to the Hanafi scholars of *Usul*, there are **five major Mubhath** thr
 
 ## ***Mubhath 1***
 
-::image{src="/images/2025/10/Screenshot-2025-10-18-at-1.24.19---AM.png" width=wide}
+[[SVG:istinbat-hanafi-mubhath-1]]
 
 ### **1. Dhahir**
 
@@ -206,7 +206,7 @@ The **prohibition of marrying the wives of the Prophet ﷺ** is *Muhkam* — abs
 
 ## ***Mubhath 2***
 
-::image{src="/images/2025/10/Screenshot-2025-10-18-at-1.25.17---AM.png" width=wide}
+[[SVG:istinbat-hanafi-mubhath-2]]
 
 ### **1. Al-Khafi** 
 
@@ -442,7 +442,7 @@ These are *Mutashabih* — their meaning is unknown and only Allah knows best.
 
 ## ***Mubhath 3***
 
-::image{src="/images/2025/10/Screenshot-2025-10-18-at-1.26.14---AM.png"}
+[[SVG:istinbat-hanafi-mubhath-3]]
 
 ### **1. Al-Haqiqah (Literal Meaning)**
 
@@ -675,7 +675,7 @@ Hence, it is *Kinayah* — unclear by form but made meaningful through context.
 
 ## ***Mubhath 4***
 
-::image{src="/images/2025/10/Screenshot-2025-10-18-at-1.26.57---AM.png"}
+[[SVG:istinbat-hanafi-mubhath-4]]
 
 ### **1. Ibaarah al-Nass**
 
@@ -755,7 +755,7 @@ This was explained previously in the chapter on *Qiyas.*
 
 ## **Mubhath 5**
 
-::image{src="/images/2025/10/Screenshot-2025-10-18-at-1.27.23---AM.png"}
+[[SVG:istinbat-hanafi-mubhath-5]]
 
 <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
   <table style="width: 100%; border-collapse: collapse; min-width: 800px;">

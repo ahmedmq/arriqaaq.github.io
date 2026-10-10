@@ -1,31 +1,29 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import PostCard from '$lib/components/PostCard.svelte';
 	import Seo from '$lib/components/Seo.svelte';
+	import Archive from '$lib/components/ui/Archive.svelte';
 	import { settings } from '$lib/content';
-
 	let { data } = $props();
 </script>
 
 <Seo title={`Page ${data.page} — ${settings.title}`} markdownAlt />
 
-<header class="archive-header">
-	<small class="related-heading">Page {data.page} of {data.totalPages}</small>
-</header>
+<Archive eyebrow={`Page ${data.page} of ${data.totalPages}`} title="Older articles" posts={data.posts}>
+	{#snippet footer()}
+		<nav class="pager" aria-label="Pages">
+			<a class="btn btn--ghost" href={data.page > 2 ? `${base}/page/${data.page - 1}/` : `${base}/articles/`}>← Newer</a>
+			{#if data.page < data.totalPages}
+				<a class="btn btn--ghost" href={`${base}/page/${data.page + 1}/`}>Older →</a>
+			{/if}
+		</nav>
+	{/snippet}
+</Archive>
 
-<div class="feed">
-	{#each data.posts as p}
-		<PostCard post={p} />
-	{/each}
-</div>
-
-<div class="pagination-wrap">
-	{#if data.page > 2}
-		<a href={`${base}/page/${data.page - 1}/`} class="btn">← Newer</a>
-	{:else if data.page === 2}
-		<a href={`${base}/`} class="btn">← Newer</a>
-	{/if}
-	{#if data.page < data.totalPages}
-		<a href={`${base}/page/${data.page + 1}/`} class="btn">Older →</a>
-	{/if}
-</div>
+<style>
+	.pager {
+		display: flex;
+		justify-content: space-between;
+		gap: var(--s-3);
+		margin-top: var(--s-6);
+	}
+</style>

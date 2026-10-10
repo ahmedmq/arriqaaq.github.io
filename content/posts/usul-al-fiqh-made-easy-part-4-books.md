@@ -29,7 +29,7 @@ Driven by a commitment to bridge this literary gap, we aim to highlight well kno
 
 ## Different Approaches In Books On Usul Al-Fiqh
 
-::image{src="/images/2024/01/Books-of-Usool-ul-Fiqh-3-Different-Approaches---1-.png" width=wide}
+[[SVG:usul-books-approaches]]
 
 The approach of scholars, in writing their works on the foundations of Usul Al-Fiqh, is primarily based on three distinct approaches, with a fourth emerging as a fusion of the first three. 
 
@@ -125,7 +125,7 @@ As we've seen in [the](/usul-al-fiqh-made-easy-introduction-part-1/) [previous](
 ###   
 **1) Manhaj Ahlul Hadith**
 
-::image{src="/images/2024/01/Books-of-Usool-ul-Fiqh-3-Different-Approaches---2-.png"}
+[[SVG:usul-books-ahlul-hadith]]
 
   
 **1) Ar-Risalah by Imam Shafiee (d. 205 H)**
@@ -186,7 +186,7 @@ Furthermore, "Alam al-Muwaqqieen" provides insights into the debates among schol
 ###   
 **2) Manhaj Ahlur Ray**
 
-::image{src="/images/2024/01/4.png"}
+[[SVG:usul-books-ahlur-ray]]
 
 1. Al-Fusool fil Usool Abu Bakr Al-Razi Al-Jassas (d. 370 H)
 2. Taqweem al-Adillah by Al-Dabusi (d.430 H)
@@ -197,7 +197,7 @@ Furthermore, "Alam al-Muwaqqieen" provides insights into the debates among schol
 
 ### **3) Manhaj** Mutakallimeen
 
-::image{src="/images/2024/01/5.png"}
+[[SVG:usul-books-mutakallimeen]]
 
 1. Al-Mutamad by Abul Hasan al-Basari al-Mutazili (d.436 H)
 2. Al-Burhaan fee Usool al-Fiqh by Imam al-Haramayn al-Juwaynee (d.487 H)
@@ -213,7 +213,7 @@ Two famous Mukhtasarat based on above books 
 ###   
 **4) Manhaj Mutakallimeen + Ahlur Ray**
 
-::image{src="/images/2024/01/6.png"}
+[[SVG:usul-books-mutakallimeen-ahlur-ray]]
 
 1. Badee’un Nidham by Imam As-Sa’ati (mixture of Usool Bazdawi and Ihkaam of Aamidi) 
 2. Tanqeeh Al-Usool by Sadrush Shareeah (d. 747 H)

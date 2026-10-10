@@ -18,7 +18,7 @@ reading_time: 7
 
 In our ongoing study of *Usool al-Fiqh* (principles of Islamic Fiqh), we have systematically examined the various sources of *Al-Hukm* (Islamic rulings). We have covered the primary sources - the [Quran, Sunnah, and Ijma](/sources-of-al-hukm-quran-sunnah-ijmaa-and-ijtihaad-usul-al-fiqh-made-easy-part-7/) (scholarly consensus) - and explored different methodologies of *Ijtihad* including [*Qiyas*](/what-is-qiyas/) (analogical reasoning), [*Istihsan*](/istihsan/), [*Amal Ahlul Madina*](/sources-of-al-hukm-quran-sunnah-ijmaa-and-ijtihaad-usul-al-fiqh-made-easy-part-7/) (practice of the people of Madinah), [*Istishab*](/istishab/) (presumption of continuity), [*Sadd al-Dhara'i*](/saddzarai/) (blocking the means), and [*Masalih Mursalah*](/istislah/). Today, we examine another important source within *Ijtihad*: **Statements of Companions (قول الصحابي - Qawl as-Sahabi)**.
 
-::image{src="/images/2025/05/image.png"}
+[[SVG:ijtihad-sources-map]]
 
 ---
 

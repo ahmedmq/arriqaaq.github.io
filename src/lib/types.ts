@@ -56,43 +56,36 @@ export type SiteSettings = {
 	secondary_navigation: { label: string; url: string; mobile?: boolean }[];
 };
 
-export type ReportTheme = 'light' | 'dark';
-export type ReportCardKind = 'cover' | 'post';
+export type Subject = 'tajweed' | 'nahw' | 'aqeedah' | 'hadith' | 'fiqh' | 'tafsir' | 'general';
 
-export type ReportCard = {
-	kind: ReportCardKind;
-	post: Post | null;
-	title: string | null;
-	eyebrow: string | null;
-	excerpt: string | null;
-	permalink: string | null;
-	feature_image: string | null;
-	bg: string;
-	theme: ReportTheme;
-	share: boolean;
-	rotation: number;
-	hash: string | null;
-};
-
-export type ReportChapter = {
-	id: string;
-	title: string;
-	nav_label: string;
-	nav_icon: string | null;
-	nav_index: number | null;
-	bg: string;
-	theme: ReportTheme;
-	tag: string | null;
-	show_in_stepper: boolean;
-	cards: ReportCard[];
-};
-
-export type Report = {
+export type CourseLesson = {
+	n: number;
 	slug: string;
 	title: string;
-	subtitle: string | null;
-	published: string;
-	cover_image: string | null;
-	press_kit_url: string | null;
-	chapters: ReportChapter[];
+	excerpt: string | null;
+	minutes: number;
+};
+
+export type CourseModule = { title: string; blurb: string | null; lessons: CourseLesson[] };
+
+export type Course = {
+	slug: string;
+	title: string;
+	arabic: string | null;
+	subject: Subject;
+	code: string | null;
+	tagline: string;
+	outcome: string;
+	level: string | null;
+	lesson_count: number;
+	minutes: number;
+	modules: CourseModule[];
+};
+
+export type CoursePlace = {
+	course: Course;
+	lesson: CourseLesson;
+	module: CourseModule;
+	prev: CourseLesson | null;
+	next: CourseLesson | null;
 };

@@ -1,0 +1,158 @@
+/* ==========================================================================
+   Arriqaaq design tokens — the single source of truth for colour, type,
+   spacing, radius, shadow and motion. Rules for using them live in
+   /DESIGN.md. Never hard-code a hex value, font stack or radius in a
+   component: add or reuse a token here.
+   ========================================================================== */
+
+:root {
+	color-scheme: light;
+
+	/* ---- Brand palette ------------------------------------------------------
+	   Pink and purple are SurrealDB's exact brand values (--surreal-pink,
+	   --surreal-purple). Amber and blue are the coolors.co ffbe0b / 3a86ff hues
+	   pushed to the same vibrancy (100% saturation, 50% lightness). Green
+	   replaces the palette's orange: a deep, saturated emerald (hue 148,
+	   100% saturation, 38% lightness) so it holds its own next to the others
+	   without looking neon. There is no orange. */
+	--amber: #ffbe00;
+	--green: #00c25a;
+	--pink: #ff00a0;
+	--purple: #9800ff;
+	--blue: #0066ff;
+
+	/* Text-safe versions (>= 4.5:1 on white). Use these for coloured TEXT and
+	   thin strokes; use the base colour for fills, large display type and art.
+	   There are deliberately NO tints, pastels or faded variants: colour is
+	   used at full strength or not at all, on neutral grounds (DESIGN.md). */
+	--amber-ink: #977000;
+	--green-ink: #008940;
+	--pink-ink: #e3008f;
+	--purple-ink: #9800ff;
+	--blue-ink: #0066ff;
+
+
+
+	/* Diagram and course-cover language (DESIGN.md → Diagram language), read
+	   from SurrealDB's deep-dive diagram. The purple ramp darkens toward the
+	   focus; lavender is the context block; obsidian is the chip. */
+	--ramp-0: #5b1bdc;
+	--ramp-1: #6a2ce4;
+	--ramp-2: #7c48e8;
+	--ramp-3: #8b5cec;
+	--lavender: #ebe9f5;
+	--lavender-ink: #706d8f;
+	--obsidian: #242132;
+
+	/* SurrealDB's signature gradient, purple to pink. */
+	--gradient-brand: linear-gradient(45deg, var(--purple), var(--pink));
+	--gradient-fresh: linear-gradient(45deg, var(--green), var(--amber));
+
+	/* ---- Neutrals (light only) ------------------------------------------- */
+	--page: #ffffff;
+	--surface: #f6f6f8; /* SurrealDB --surreal-background-color */
+	--surface-2: #eeeef2;
+	--ink: #0d0c13; /* SurrealDB obsidian */
+	--ink-2: #45434f; /* body secondary, 9.6:1 */
+	--ink-3: #6b6a78; /* meta and captions, 5.3:1 */
+	--line: #e8e7ee;
+	--line-strong: #cfcdd9;
+	--scrim: rgba(13, 12, 19, 0.04); /* OpenAI's active-tab fill */
+
+	/* ---- Subjects ----------------------------------------------------------
+	   Each discipline owns one palette colour. Components read --subject,
+	   --subject-ink and --subject-on, set by the .subject--* classes below. */
+	--subj-tajweed: var(--amber);
+	--subj-nahw: var(--green);
+	--subj-aqeedah: var(--pink);
+	--subj-hadith: var(--purple);
+	--subj-fiqh: var(--blue);
+	--subj-tafsir: var(--pink);
+
+	/* ---- Type -------------------------------------------------------------
+	   Reading settings copy the OpenAI article template: 17px / 28px,
+	   weight 400, -0.01em tracking; headings weight 500. Inter is the
+	   licensed stand-in for OpenAI Sans. Arabic falls through to Noto Naskh. */
+	--font-sans: 'Inter', 'Noto Naskh Arabic', ui-sans-serif, system-ui, -apple-system,
+		'Segoe UI', Roboto, sans-serif;
+	--font-arabic: 'Noto Naskh Arabic', 'Inter', serif; /* Arabic inside article text */
+	--font-arabic-display: 'IBM Plex Sans Arabic', 'Noto Naskh Arabic', sans-serif; /* Arabic in UI and headings */
+	--font-quran: 'Amiri Quran', 'Noto Naskh Arabic', serif; /* Qur'anic verses in quotes */
+	--font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+	--fs-display: clamp(3.25rem, 1.6rem + 9vw, 9rem); /* landing statements */
+	--fs-section: clamp(2rem, 1.45rem + 2.6vw, 3.3rem); /* split section headings (arriqaaqlabs) */
+	--fs-h1: clamp(2rem, 1.55rem + 2.2vw, 3.25rem);
+	--fs-h2: clamp(1.5rem, 1.35rem + 0.7vw, 1.875rem);
+	--fs-h3: clamp(1.1875rem, 1.12rem + 0.3vw, 1.3125rem);
+	--fs-lead: clamp(1.125rem, 1.07rem + 0.3vw, 1.3125rem);
+	--fs-body: 1.0625rem; /* 17px */
+	--fs-small: 0.875rem; /* 14px */
+	--fs-xs: 0.8125rem; /* 13px — chips */
+	--fs-eyebrow: 0.75rem; /* 12px Inter, uppercase */
+
+	--lh-body: 1.647; /* 28px at 17px */
+	--lh-heading: 1.18;
+	--lh-display: 0.92;
+	--ls-body: -0.01em;
+	--ls-heading: -0.02em;
+	--ls-display: -0.05em;
+	--ls-eyebrow: 0.12em;
+
+	/* ---- Layout ----------------------------------------------------------- */
+	--measure: 680px; /* reading column */
+	--wide: 1040px; /* figures, roadmaps */
+	--max: 1200px; /* landing sections */
+	--gutter: clamp(20px, 5vw, 32px); /* 20px on a 375px phone */
+	--topbar-h: 56px;
+	--tap: 44px; /* minimum touch target */
+
+	/* 4px spacing scale */
+	--s-1: 4px;
+	--s-2: 8px;
+	--s-3: 12px;
+	--s-4: 16px;
+	--s-5: 24px;
+	--s-6: 32px;
+	--s-7: 48px;
+	--s-8: 64px;
+	--s-9: 96px;
+	--section: clamp(64px, 10vw, 128px); /* vertical rhythm between landing bands */
+
+	/* ---- Shape ------------------------------------------------------------ */
+	--r-xs: 6px;
+	--r-sm: 10px; /* chips (OpenAI) */
+	--r: 14px; /* cards */
+	--r-lg: 24px; /* feature panels and sheets (38labs) */
+	--r-pill: 999px; /* tabs, buttons */
+
+	--shadow-1: 0 1px 2px rgba(13, 12, 19, 0.05), 0 8px 24px -14px rgba(13, 12, 19, 0.16);
+	--shadow-2: 0 2px 6px rgba(13, 12, 19, 0.06), 0 24px 48px -24px rgba(13, 12, 19, 0.28);
+	--ring: 0 0 0 3px color-mix(in srgb, var(--purple) 35%, transparent);
+
+	/* ---- Motion ----------------------------------------------------------- */
+	--ease-out: cubic-bezier(0.22, 1, 0.36, 1); /* SurrealDB rise */
+	--ease-soft: cubic-bezier(0.25, 1, 0.5, 1);
+	--dur-fast: 160ms;
+	--dur: 300ms;
+	--dur-slow: 900ms;
+}
+
+/* Subject scoping. Put one of these on any component root; children use
+   var(--subject) (fills), var(--subject-ink) (text) and var(--subject-on)
+   (text placed ON a --subject fill). */
+.subject--tajweed { --subject: var(--amber); --subject-ink: var(--amber-ink); --subject-on: var(--ink); }
+.subject--nahw { --subject: var(--green); --subject-ink: var(--green-ink); --subject-on: var(--ink); }
+.subject--aqeedah { --subject: var(--pink); --subject-ink: var(--pink-ink); --subject-on: var(--ink); }
+.subject--hadith { --subject: var(--purple); --subject-ink: var(--purple-ink); --subject-on: #fff; }
+.subject--fiqh { --subject: var(--blue); --subject-ink: var(--blue-ink); --subject-on: #fff; }
+.subject--tafsir { --subject: var(--pink); --subject-ink: var(--pink-ink); --subject-on: var(--ink); }
+.subject--general { --subject: var(--ink); --subject-ink: var(--ink); --subject-on: #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+	:root {
+		--dur-fast: 0ms;
+		--dur: 0ms;
+		--dur-slow: 0ms;
+	}
+}

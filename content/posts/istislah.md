@@ -17,7 +17,7 @@ reading_time: 15
 
 In our previous articles, we explored the various sources of Islamic rulings. We have covered [Quran, Sunnah, and Ijma](/sources-of-al-hukm-quran-sunnah-ijmaa-and-ijtihaad-usul-al-fiqh-made-easy-part-7/) as the primary sources, and examined [Amal Ahlul Madina](/sources-of-al-hukm-quran-sunnah-ijmaa-and-ijtihaad-usul-al-fiqh-made-easy-part-7/), [Qiyas](/what-is-qiyas/), [Istihsan](/istihsan/), and [Istishab](/istishab/) as forms of Ijtihad. Building on this understanding, we now turn our attention to another important type of Ijtihaad: الاستصلاح (Istislah - consideration of public interest).
 
-::image{src="/images/2025/05/image.png"}
+[[SVG:ijtihad-sources-map]]
 
 Before we can properly understand and appreciate the wisdom behind this important principle, we must take a step back and thoroughly examine the important objectives that Allah has established as the foundation of all Islamic shariah (law) rulings.
 

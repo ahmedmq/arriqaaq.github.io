@@ -1,7 +1,7 @@
 /**
  * remark plugin: rewrites custom directives (`:::name{}`, `::name{}`) into
  * `html` mdast nodes whose value is the kg-* HTML Ghost emits — `rehype-raw`
- * later parses these back into hast and the existing screen.css renders them.
+ * later parses these back into hast and src/lib/styles/prose.css renders them.
  *
  * Supported:
  *   ::image{src=… alt=… width=regular|wide|full caption=… href=…}
@@ -18,6 +18,9 @@
  *     body
  *   :::
  */
+import { existsSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { visit } from 'unist-util-visit';
 import { toString as nodeToString } from 'mdast-util-to-string';
 import { unified } from 'unified';
@@ -49,7 +52,16 @@ function imageHtml(a: Record<string, string | undefined>): string {
 	return `<figure class="${figClass}">${inner}${caption}</figure>`;
 }
 
-function bookmarkHtml(a: Record<string, string | undefined>): string {
+/** Local asset paths ("/images/…") that are missing from static/ are dropped
+ *  so a bookmark never renders a broken image. Remote URLs pass through. */
+const STATIC_DIR = resolve(dirname(fileURLToPath(import.meta.url)), '..', 'static');
+function existingAsset(src: string | undefined): string | undefined {
+	if (!src || /^https?:\/\//.test(src)) return src;
+	return existsSync(resolve(STATIC_DIR, '.' + decodeURI(src))) ? src : undefined;
+}
+
+function bookmarkHtml(raw: Record<string, string | undefined>): string {
+	const a = { ...raw, icon: existingAsset(raw.icon), thumbnail: existingAsset(raw.thumbnail) };
 	const meta: string[] = [];
 	if (a.icon) meta.push(`<img class="kg-bookmark-icon" src="${esc(a.icon)}" alt="">`);
 	if (a.author) meta.push(`<span class="kg-bookmark-author">${esc(a.author)}</span>`);

@@ -18,7 +18,7 @@ reading_time: 18
 
 ::bookmark{url="/tag/fiqh/" title="Fiqh - Arriqaaq" description="Usul Al Fiqh Series Arriqaaq" author="Arriqaaq" publisher="Arriqaaq" icon="/images/icon/Flower-Fern-Business-logo-2-8.png" thumbnail="/images/thumbnail/Screenshot-2025-11-04-at-8.17.54---AM.png"}
 
-::image{src="/images/2024/02/Usul-al-fiqh-1--3-.png"}
+[[SVG:hukm-taklifi-five-categories]]
 
 You've just finished your Isha prayer, and your mom casually asks if you prayed the "wajib al witr" prayer. You shake your head, replying, "No, mom, I'll pray tomorrow as I am feeling very tired." Your mom persists, stating, "But witr is wajib." You scratch your head because, to your knowledge, only the five daily prayers are called obligatory. Feeling fatigued, you explain, "Mom, I'm really exhausted right now. Since witr isn't fardh, I thought I'd pray it later when I'm more awake."
 
@@ -57,7 +57,7 @@ Muslims are required to perform the Salat and pay the Zakat, while they are proh
 
 ## **Classifciation Of Hukm Al-Taklifi**
 
-::image{src="/images/2024/02/Hukm-Taklifi--Four-Madhab---3-.png"}
+[[SVG:hukm-taklifi-madhabs]]
 
 Hukm can be classified into the following categories:
 
@@ -97,7 +97,7 @@ It's worth noting that this distinction between Dhanni and Qatiee, based on Hadi
 
 ## **Types of FARD**
 
-::image{src="/images/2024/02/Purple-and-Green-Minimalist-Color-Blocks-Concept-Map-Chart--1-.png"}
+[[SVG:hukm-fard-divisions]]
 
 ### According to Time
 

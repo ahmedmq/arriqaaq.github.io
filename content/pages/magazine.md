@@ -73,9 +73,9 @@ We will open submissions for our upcoming issues in the following categories:
 [Zahra VK  
 ](/zahravenkat/)[Zara Ilyas](/zara-ilyas/)  
 [Aiasha Sadaf](/aiasha-sadaf-ismailmalik/)  
-Saniya Khaleel  
+[Saniya Khaleel](/saniya-khaleel/)  
 [Asiya Khan](/asiya-khan/)  
-Zahra Shahid  
+[Zahra Shahid](/zahra-shahid/)  
 [Huda Syed](/huda-syed/)
 
 * * *

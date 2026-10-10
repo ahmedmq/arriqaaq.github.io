@@ -19,7 +19,7 @@ reading_time: 1
 
 After taking you through an exciting journey through the historic landscape of usul-al-fiqh in our [last](/usul-al-fiqh-made-easy-introduction-part-1/) [two](/usul-al-fiqh-made-easy-difference-between-ahlul-hadith-and-ahlul-rai-part-2/) articles, we can practically sense either the lingering echoes of your excitement or, perhaps, a state of perplexity. Undoubtedly, our previous exploration inundated you with a wave of unfamiliar terms. Hence, beginning with this article, we aim to address it directly by delving into the first and most pertinent question: ***What is fiqh?***
 
-::image{src="/images/2024/01/Usul-al-fiqh-1.png"}
+[[SVG:usul-al-fiqh-terms]]
 
 ---
 
@@ -92,7 +92,7 @@ Hold on a moment; our intended focus was on Usul al-Fiqh, yet we now find oursel
 
 ## **Difference between FIQH And USUL-AL-FIQH**
 
-::image{src="/images/2024/01/1.png"}
+[[SVG:fiqh-vs-usul-al-fiqh]]
 
 Let's break down the differences between Fiqh and Usul Al-Fiqh in simpler terms:
 
@@ -119,7 +119,7 @@ Usul Al-Fiqh, on the other hand, is like the toolkit that helps scholars figure 
 
 ## **Usool ul-Fiqh vs Qawaid al-Fiqhiyyah**
 
-::image{src="/images/2024/01/2-1.png"}
+[[SVG:usul-vs-qawaid-al-fiqh]]
 
 Now, let's explore the difference between Usool ul-Fiqh and Qawaid al-Fiqhiyyah.   
   

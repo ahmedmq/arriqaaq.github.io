@@ -34,7 +34,7 @@ The effect of al-hukm al-wad'i depends on the presence or absence of specific fa
 
 ## **Types of Al-Hukm Al-Wad'i**
 
-::image{src="/images/2024/03/Usul-al-fiqh-1--1--1.png"}
+[[SVG:hukm-wadi-types]]
 
 Al-Hukm Al-Wad'i encompasses several types, each with its own definition and examples:
 

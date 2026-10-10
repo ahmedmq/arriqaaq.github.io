@@ -13,7 +13,7 @@ featured: false
 reading_time: 15
 ---
 
-::image{src="/images/2024/11/Beige-Colorful-Minimal-Flowchart-Infographic-Graph.png" width=full}
+[[SVG:qiyas-flowchart]]
 
   
 Islamic law, or Shariah, is derived from four main sources: the Quran, the Sunnah (teachings and practices of Prophet Muhammad ﷺ), Ijma (scholarly consensus), and Ijtihad. While the Quran and Sunnah are the primary sources, Qiyas is important in extending the principles and rulings of Islam to new situations and issues that are not directly addressed in these texts. In this blog post, we will understand the concept of Qiyas, its components, conditions, types, and the scholarly debates surrounding its application.

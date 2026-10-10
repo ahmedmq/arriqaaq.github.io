@@ -22,7 +22,7 @@ In our previous articles, we explored the various sources of Islamic rulings. We
 
 Before we continue, here is a simple diagram to remind you of the different categories of ijtihad.
 
-::image{src="/images/2025/04/Screenshot-2025-04-26-at-5.16.49-AM.png" width=full}
+[[SVG:ijtihad-sources-map]]
 
 ## Defining الاستصحاب (Istishaab)
 

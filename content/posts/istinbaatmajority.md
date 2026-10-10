@@ -126,7 +126,7 @@ Thus, *Istinbat* is not used for something clear or self-evident (as that falls 
 
 ## **Types of Istinbaat**
 
-::image{src="/images/2025/10/Screenshot-2025-10-17-at-7.53.43---AM.png" width=wide}
+[[SVG:istinbat-overview]]
 
 *Istinbaat* is classified into two major approaches:
 
@@ -173,7 +173,7 @@ Thus, *Istinbat* is not used for something clear or self-evident (as that falls 
 
 ## Mantooq and Mafhoom
 
-::image{src="/images/2025/10/Screenshot-2025-10-17-at-7.55.50---AM.png" width=wide}
+[[SVG:istinbat-jumhoor-mantooq-mafhoom]]
 
 Every sentence communicates in two ways:
 
@@ -268,7 +268,7 @@ Thus, *Al-Mantooq* represents **what the text says**, as opposed to *Al-Mafhoom*
 
 ### **Al-Mantooq al-Sareeh (The Explicit Stated Meaning)**
 
-::image{src="/images/2025/10/Screenshot-2025-10-17-at-8.01.30---AM.png" width=wide}
+[[SVG:istinbat-jumhoor-mantooq-sareeh]]
 
 **Al-Mantooq** refers to the *stated meaning* — what is expressed directly by the wording.  
 **Al-Sareeh** means *explicit*.  
@@ -580,7 +580,7 @@ Thus, *Mujmal* represents the limit of explicit meaning — where the wording it
 
 ## **Al-Mantooq Ghayr Sareeh (The Non-Explicit Stated Meaning)**
 
-::image{src="/images/2025/10/Screenshot-2025-10-17-at-8.03.43---AM.png" width=wide}
+[[SVG:istinbat-jumhoor-mantooq-ghayr-sareeh]]
 
 **Al-Mantooq** means *the stated meaning*.  
 **Ghayr Sareeh** means *non-explicit*.
@@ -704,7 +704,7 @@ Mafhoom al-Muwafaqah refers to the understood meaning that is in agreement with 
 
 ## **Types**
 
-::image{src="/images/2025/10/Screenshot-2025-10-17-at-8.07.40---AM.png" width=wide}
+[[SVG:istinbat-jumhoor-mafhoom-types]]
 
 *Mafhoom* is divided into two main categories:
 
@@ -800,7 +800,7 @@ Here, verification is required in the *Mantooq* but not in the *Mafhoom* — hen
 
 ## **Types of Mafhoom al-Mukhalafah**
 
-::image{src="/images/2025/10/Screenshot-2025-10-17-at-8.08.03---AM.png" width=wide}
+[[SVG:istinbat-jumhoor-mukhalafah-types]]
 
 ###   
 **1. Mafhoom al-Sifah (Based on Description)**

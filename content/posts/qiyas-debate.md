@@ -16,7 +16,7 @@ reading_time: 20
 
 ## Introduction
 
-::image{src="/images/2025/04/Screenshot-2025-04-06-at-12.55.59-PM-1.png" width=full}
+[[SVG:qiyas-flowchart]]
 
 > To weigh truth requires empty scales
 
@@ -26,7 +26,7 @@ In our journey through the study of Fiqh, this gentle wisdom offers a valuable r
 
 Building on this approach, our [previous](/what-is-qiyas/) [articles](/sources-of-al-hukm-quran-sunnah-ijmaa-and-ijtihaad-usul-al-fiqh-made-easy-part-7/) explored various sources of Islamic law, including the fundamental sources like [Quran, Sunnah, and Ijma](/sources-of-al-hukm-quran-sunnah-ijmaa-and-ijtihaad-usul-al-fiqh-made-easy-part-7/). We then turned our focus to [Qiyas](/what-is-qiyas/), which you can read about in detail in our [last article](/what-is-qiyas/).
 
-::image{src="/images/2025/04/Screenshot-2025-04-06-at-2.36.25-PM-1.png" width=full}
+[[SVG:ijtihad-sources-map]]
 
 Now, in this article, we will examine the scholarly debate surrounding Qiyas. While most classical scholars accept Qiyas as a valid tool, critics like the Ẓāhirī school reject it entirely. This article examines both perspectives, evaluates their evidence, and clarifies how this debate shapes Islamic Fiqh.
 

@@ -20,10 +20,10 @@
 <style>
 	.newsletter-embed {
 		margin: 24px auto;
-		max-width: var(--reading-w);
+		max-width: var(--measure);
 	}
 	.newsletter-embed :global(form),
 	.newsletter-embed :global(.eomail-form) {
-		font-family: var(--font-ui);
+		font-family: var(--font-sans);
 	}
 </style>

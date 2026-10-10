@@ -35,7 +35,7 @@ Islamic law recognizes the importance of protecting intellectual property, inclu
 
 Other scholars believe that copyright protection is permissible in Islam, as long as it does not harm the public interest. They argue that authors and publishers have the right to claim ownership of their works and to receive compensation for their efforts. These scholars base their arguments on Islamic principles such as the protection of property, prohibition of stealing, encouragement of knowledge, respecting contracts, and considering the public interest.
 
-::image{src="/images/2023/02/Screenshot-2023-02-26-at-3.46.14-AM.png" width=full}
+[[SVG:copyright-sharing-vs-stealing]]
 
 ## Analysing the Arguments 
 
@@ -69,7 +69,7 @@ There are several arguments to support the idea that copyright infringement can 
 
 Ultimately, copyright infringement can harm the author or publisher in many ways. This is why copyright laws exist to protect the rights of authors and publishers and ensure that they are fairly compensated for their work.
 
-::image{src="/images/2023/02/Screenshot-2023-02-26-at-3.46.31-AM.png" width=full}
+[[SVG:copyright-livelihood]]
 
 ## Statistics on the Impact Of Copyright Infringement
 
@@ -88,7 +88,7 @@ There are several statistics and studies that support the argument that copyrigh
 
 These statistics and studies demonstrate the potential harm that copyright infringement can cause to authors, publishers, and industries that rely on copyright protection. By protecting copyright, it is possible to preserve the economic value of creative works and ensure that authors and publishers are fairly compensated for their efforts.
 
-::image{src="/images/2023/02/Screenshot-2023-02-26-at-3.40.14-AM.png" width=full}
+[[SVG:copyright-pdf-sharing]]
 
 ## Argument: Sharing PDF online is similar to sharing a physical book
 
@@ -141,7 +141,7 @@ The concept of intellectual property rights is not explicitly mentioned in the Q
 
 These verses and hadith emphasize the importance of respecting the property rights of others and avoiding unjust consumption or infringement of their property, including intellectual property such as copyrights.
 
-::image{src="/images/2023/02/Screenshot-2023-02-26-at-3.46.47-AM-1.png" width=full}
+[[SVG:copyright-honesty-policy]]
 
 ## Conclusion
 

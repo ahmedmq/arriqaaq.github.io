@@ -32,7 +32,8 @@ function svgFig(name: string, state: EmbedState): string {
 	}
 	state.usedSvgs.push(name);
 	const body = d.type === 'html' ? `<div class="cmp-wrap">${d.body}</div>` : d.body;
-	const cls = d.type === 'html' ? 'fig fig-cmp' : 'fig fig-dgm';
+	const cols = d.body.includes('dgm-d');
+	const cls = (d.type === 'html' ? 'fig fig-cmp' : 'fig fig-dgm') + (d.wide ? ' fig--wide' : '') + (cols ? ' fig--cols' : '');
 	return `<figure class="${cls}">${body}<figcaption>${d.title}</figcaption></figure>`;
 }
 

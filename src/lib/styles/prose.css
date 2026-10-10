@@ -1,0 +1,634 @@
+/* ==========================================================================
+   Prose: the article body (.prose). Reading settings follow the OpenAI
+   article template: 17px / 28px Inter, black on white, ~680px measure,
+   24px-ish side gutters on phones. Figures may break out to --wide.
+   ========================================================================== */
+
+.prose {
+	font-size: var(--fs-body);
+	line-height: var(--lh-body);
+	color: var(--ink);
+	overflow-wrap: break-word;
+}
+
+.prose > * {
+	max-width: var(--measure);
+	margin-inline: auto;
+}
+
+.prose > * + * {
+	margin-top: 1.35em;
+}
+
+.prose p,
+.prose li {
+	text-wrap: pretty;
+}
+
+/* ---- Headings ---------------------------------------------------------------
+   Anthropic-style weight and spacing (600, generous space before a section),
+   plus a numbered index above each h2 (data-n, set by rehype-reading) and a
+   gentle rise-in when the heading scrolls into view. */
+
+.prose h2 {
+	position: relative;
+	font-size: clamp(1.5rem, 1.32rem + 0.9vw, 1.875rem);
+	font-weight: 600;
+	line-height: 1.2;
+	letter-spacing: -0.025em;
+	margin-top: 3.4em;
+	scroll-margin-top: calc(var(--topbar-h) + 24px);
+}
+
+.prose h2[data-n]::before {
+	content: attr(data-n);
+	display: block;
+	width: fit-content;
+	margin-bottom: 0.7rem;
+	padding-top: 0.7rem;
+	border-top: 2px solid var(--subject, var(--purple));
+	font-family: var(--font-mono);
+	font-size: 0.75rem;
+	font-weight: 500;
+	letter-spacing: 0.08em;
+	color: var(--subject-ink, var(--purple-ink));
+	transform-origin: left;
+	transition: border-color var(--dur-slow) var(--ease-out);
+}
+
+.prose h3 {
+	font-size: clamp(1.1875rem, 1.12rem + 0.3vw, 1.3125rem);
+	font-weight: 600;
+	letter-spacing: -0.015em;
+	margin-top: 2.2em;
+	scroll-margin-top: calc(var(--topbar-h) + 24px);
+}
+
+.prose h4 {
+	font-family: var(--font-sans);
+	font-size: 0.8125rem;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--subject-ink, var(--ink-2));
+	margin-top: 2em;
+}
+
+.prose h2 + *,
+.prose h3 + *,
+.prose h4 + * {
+	margin-top: 0.8em;
+}
+
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+	.js .prose h2 {
+		transition:
+			opacity var(--dur-slow) var(--ease-out),
+			transform var(--dur-slow) var(--ease-out);
+	}
+
+	.js .prose h2:not(.is-in) {
+		opacity: 0;
+		transform: translateY(14px);
+	}
+
+	.js .prose h2:not(.is-in)::before {
+		border-color: transparent;
+	}
+}
+
+/* Heading anchor link emitted by rehype-heading-ids. */
+.prose :is(h2, h3) a[href^='#'] {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* ---- Inline ---------------------------------------------------------------- */
+
+.prose a {
+	color: inherit;
+	text-decoration: underline;
+	text-decoration-color: var(--subject, var(--pink));
+	text-decoration-thickness: 1.5px;
+	text-underline-offset: 3px;
+	transition:
+		background var(--dur-fast) ease,
+		text-decoration-color var(--dur-fast) ease;
+}
+
+.prose a:hover {
+	background: transparent;
+	text-decoration-color: var(--ink);
+	text-decoration-thickness: 2px;
+}
+
+.prose strong {
+	font-weight: 600;
+}
+
+.prose code {
+	font-family: var(--font-mono);
+	font-size: 0.86em;
+	padding: 0.1em 0.36em;
+	border-radius: var(--r-xs);
+	background: var(--surface);
+}
+
+/* ---- Lists ----------------------------------------------------------------- */
+
+.prose ul,
+.prose ol {
+	padding-left: 1.35em;
+}
+
+.prose li + li {
+	margin-top: 0.45em;
+}
+
+.prose li > ul,
+.prose li > ol {
+	margin-top: 0.45em;
+}
+
+.prose li::marker {
+	color: var(--subject-ink, var(--ink-3));
+	font-weight: 500;
+}
+
+/* ---- Quotes -------------------------------------------------------------------
+   rehype-reading classifies every blockquote: quote--quran, quote--hadith or
+   quote--plain. All stay white (no tinted boxes):
+   - Qur'an: hairlines above and below, a small label, the Arabic verse large
+     and right-aligned in Amiri Quran, translation beneath, reference as cite.
+   - Hadith: the same structure with a thin purple rule instead of hairlines.
+   - Plain: a quiet grey rule, slightly muted text. */
+
+.prose blockquote {
+	margin-block: 2em;
+	padding: 0 0 0 1.1em;
+	border-left: 2px solid var(--line-strong);
+	color: var(--ink-2);
+}
+
+.prose blockquote > * + * {
+	margin-top: 0.75em;
+}
+
+.prose .quote--quran,
+.prose .quote--hadith {
+	position: relative;
+	color: var(--ink);
+}
+
+.prose .quote--quran {
+	padding: 2.1em 0 1.3em;
+	border-left: 0;
+	border-top: 1px solid var(--line);
+	border-bottom: 1px solid var(--line);
+}
+
+.prose .quote--hadith {
+	padding: 1.9em 0 0.2em 1.1em;
+	border-left: 2px solid var(--subject, var(--purple));
+}
+
+.prose .quote--quran::before,
+.prose .quote--hadith::before {
+	content: attr(data-label);
+	position: absolute;
+	top: 0.75em;
+	left: 0;
+	font-family: var(--font-mono);
+	font-size: 0.6875rem;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--subject-ink, var(--purple-ink));
+}
+
+.prose .quote--hadith::before {
+	top: 0.1em;
+	left: 1.1rem;
+}
+
+/* The Arabic verse or matn: its own right-aligned line (a whole paragraph,
+   or a line span split out of a mixed paragraph). */
+.prose .quote span.q-ar,
+.prose .quote span.q-tr {
+	display: block;
+}
+
+.prose .quote span.q-ar + span.q-tr,
+.prose .quote span.q-tr + span.q-ar {
+	margin-top: 0.5em;
+}
+
+.prose .quote .q-ar {
+	font-family: var(--font-arabic);
+	font-size: 1.45em;
+	line-height: 2;
+	text-align: right;
+	color: var(--ink);
+	font-weight: 400;
+}
+
+.prose .quote--quran .q-ar {
+	font-family: var(--font-quran);
+	font-size: 1.6em;
+	line-height: 2.1;
+}
+
+.prose .quote .q-ar strong {
+	font-weight: inherit;
+}
+
+/* Translation: regular weight, even if the import made it bold or italic. */
+.prose .quote--quran > p:not(.q-ar),
+.prose .quote--hadith > p:not(.q-ar) {
+	font-size: 1.0625rem;
+	line-height: 1.7;
+}
+
+/* Translations arrive italic or bold from the old editor; set them plainly
+   so every verse reads the same. A leading label like "Quran 3:185:" keeps
+   a medium weight. */
+.prose .quote--quran em,
+.prose .quote--hadith .q-tr em {
+	font-style: normal;
+}
+
+.prose .quote--quran strong {
+	font-weight: 500;
+}
+
+.prose .q-cite {
+	display: block;
+	margin-top: 0.9em;
+	font-family: var(--font-mono);
+	font-size: 0.75rem;
+	font-style: normal;
+	letter-spacing: 0.04em;
+	color: var(--ink-3);
+}
+
+/* Inline Arabic inside English sentences (wrapped by rehype-reading). */
+.prose span[lang='ar'] {
+	font-family: var(--font-arabic);
+	font-size: 1.12em;
+	line-height: 1;
+	letter-spacing: 0;
+}
+
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+	.js .prose blockquote {
+		transition:
+			opacity var(--dur-slow) var(--ease-out),
+			transform var(--dur-slow) var(--ease-out);
+	}
+
+	.js .prose blockquote:not(.is-in) {
+		opacity: 0;
+		transform: translateY(12px);
+	}
+}
+
+/* ---- Section divider: three flowers ------------------------------------------ */
+
+.prose hr {
+	height: 18px;
+	margin-block: 2.6em;
+	border: 0;
+	/* Three flowers in the subject colour, drawn as a mask so the colour
+	   comes from the token rather than a hard-coded hex. */
+	background: var(--subject, var(--pink));
+	-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 84 18'%3E%3Cg transform='translate(9 9)'%3E%3Ccircle cx='0' cy='-3.8' r='3.2'/%3E%3Ccircle cx='3.6' cy='-1.2' r='3.2'/%3E%3Ccircle cx='2.2' cy='3.1' r='3.2'/%3E%3Ccircle cx='-2.2' cy='3.1' r='3.2'/%3E%3Ccircle cx='-3.6' cy='-1.2' r='3.2'/%3E%3C/g%3E%3Cg transform='translate(42 9)'%3E%3Ccircle cx='0' cy='-3.8' r='3.2'/%3E%3Ccircle cx='3.6' cy='-1.2' r='3.2'/%3E%3Ccircle cx='2.2' cy='3.1' r='3.2'/%3E%3Ccircle cx='-2.2' cy='3.1' r='3.2'/%3E%3Ccircle cx='-3.6' cy='-1.2' r='3.2'/%3E%3C/g%3E%3Cg transform='translate(75 9)'%3E%3Ccircle cx='0' cy='-3.8' r='3.2'/%3E%3Ccircle cx='3.6' cy='-1.2' r='3.2'/%3E%3Ccircle cx='2.2' cy='3.1' r='3.2'/%3E%3Ccircle cx='-2.2' cy='3.1' r='3.2'/%3E%3Ccircle cx='-3.6' cy='-1.2' r='3.2'/%3E%3C/g%3E%3C/svg%3E") center / 84px 18px no-repeat;
+	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 84 18'%3E%3Cg transform='translate(9 9)'%3E%3Ccircle cx='0' cy='-3.8' r='3.2'/%3E%3Ccircle cx='3.6' cy='-1.2' r='3.2'/%3E%3Ccircle cx='2.2' cy='3.1' r='3.2'/%3E%3Ccircle cx='-2.2' cy='3.1' r='3.2'/%3E%3Ccircle cx='-3.6' cy='-1.2' r='3.2'/%3E%3C/g%3E%3Cg transform='translate(42 9)'%3E%3Ccircle cx='0' cy='-3.8' r='3.2'/%3E%3Ccircle cx='3.6' cy='-1.2' r='3.2'/%3E%3Ccircle cx='2.2' cy='3.1' r='3.2'/%3E%3Ccircle cx='-2.2' cy='3.1' r='3.2'/%3E%3Ccircle cx='-3.6' cy='-1.2' r='3.2'/%3E%3C/g%3E%3Cg transform='translate(75 9)'%3E%3Ccircle cx='0' cy='-3.8' r='3.2'/%3E%3Ccircle cx='3.6' cy='-1.2' r='3.2'/%3E%3Ccircle cx='2.2' cy='3.1' r='3.2'/%3E%3Ccircle cx='-2.2' cy='3.1' r='3.2'/%3E%3Ccircle cx='-3.6' cy='-1.2' r='3.2'/%3E%3C/g%3E%3C/svg%3E") center / 84px 18px no-repeat;
+}
+
+/* A divider straight before a heading is redundant with the heading gap. */
+.prose hr + h2 {
+	margin-top: 0;
+}
+
+/* ---- Tables: scroll sideways on phones instead of squashing ------------------ */
+
+.prose table {
+	display: block;
+	width: max-content;
+	max-width: min(100%, var(--measure));
+	overflow-x: auto;
+	border-collapse: collapse;
+	font-size: var(--fs-small);
+	line-height: 1.5;
+	border-radius: var(--r);
+	box-shadow: inset 0 0 0 1px var(--line);
+	-webkit-overflow-scrolling: touch;
+}
+
+.prose th,
+.prose td {
+	min-width: 9rem;
+	max-width: 22rem;
+	padding: 10px 14px;
+	border-bottom: 1px solid var(--line);
+	text-align: left;
+	vertical-align: top;
+}
+
+.prose th {
+	background: var(--surface);
+	font-family: var(--font-sans);
+	font-size: 0.6875rem;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--ink-2);
+}
+
+.prose tr:last-child td {
+	border-bottom: 0;
+}
+
+/* ---- Figures ----------------------------------------------------------------- */
+
+.prose figure {
+	margin-block: 2em;
+}
+
+.prose .kg-image-card img,
+.prose > img {
+	width: 100%;
+	border-radius: var(--r);
+	background: var(--surface);
+	box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.prose .kg-width-wide,
+.prose .kg-width-full,
+.prose .fig {
+	max-width: var(--wide);
+}
+
+.prose figcaption {
+	margin-top: var(--s-3);
+	font-size: var(--fs-small);
+	color: var(--ink-3);
+	text-align: center;
+}
+
+/* SVG diagrams from [[SVG:name]] (scripts/diagram-kit.ts, DESIGN.md →
+   Diagram language). Plain white ground like SurrealDB's diagrams; the
+   blocks carry their own colour. Authored on a 360-wide canvas, so they
+   are shown near their natural size everywhere: full width on a phone, and
+   capped at 440px (about 1.2x) and centred on desktop. Stretching them to
+   the full column made text huge and tall diagrams impossible to take in at
+   a glance. */
+.prose .fig-dgm {
+	max-width: 440px;
+}
+
+.prose .fig-dgm.fig--wide {
+	max-width: var(--wide);
+}
+
+/* Responsive diagrams (kit responsive()): one column on phones, two
+   columns on desktop at about actual size. */
+.prose .fig-dgm .dgm-d {
+	display: none;
+}
+
+@media (min-width: 900px) {
+	.prose .fig-dgm.fig--cols {
+		max-width: 760px;
+	}
+
+	.prose .fig-dgm.fig--cols .dgm-m {
+		display: none;
+	}
+
+	.prose .fig-dgm.fig--cols .dgm-d {
+		display: block;
+	}
+}
+
+.prose .fig-dgm figcaption {
+	text-align: left;
+	font-size: var(--fs-small);
+	line-height: 1.5;
+}
+
+.prose .dgm-svg {
+	width: 100%;
+	height: auto;
+	overflow: visible;
+}
+
+.prose .cmp-wrap {
+	overflow-x: auto;
+}
+
+.prose .missing {
+	padding: var(--s-4);
+	border: 1px dashed var(--green-ink);
+	border-radius: var(--r);
+	color: var(--green-ink);
+	font: 600 0.85rem var(--font-mono);
+	text-align: center;
+}
+
+/* Gallery */
+.prose .kg-gallery-container {
+	display: grid;
+	gap: var(--s-2);
+}
+
+.prose .kg-gallery-row {
+	display: flex;
+	gap: var(--s-2);
+}
+
+.prose .kg-gallery-image {
+	flex: 1 1 0;
+	min-width: 0;
+}
+
+.prose .kg-gallery-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: var(--r-sm);
+}
+
+/* Bookmark card (38labs card anatomy). */
+.prose .kg-bookmark-card a.kg-bookmark-container {
+	display: flex;
+	flex-direction: column-reverse;
+	border-radius: var(--r-lg);
+	box-shadow: inset 0 0 0 1px var(--line);
+	overflow: hidden;
+	text-decoration: none;
+	background: var(--page);
+	transition: box-shadow var(--dur) ease;
+}
+
+.prose .kg-bookmark-card a.kg-bookmark-container:hover {
+	background: var(--page);
+	box-shadow: inset 0 0 0 1px var(--line-strong), var(--shadow-1);
+}
+
+.prose .kg-bookmark-content {
+	display: grid;
+	gap: 6px;
+	padding: var(--s-4) var(--s-5) var(--s-5);
+	min-width: 0;
+}
+
+.prose .kg-bookmark-title {
+	font-weight: 500;
+	line-height: 1.35;
+}
+
+.prose .kg-bookmark-description {
+	font-size: var(--fs-small);
+	color: var(--ink-2);
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.prose .kg-bookmark-metadata {
+	display: flex;
+	align-items: center;
+	gap: var(--s-2);
+	font-size: var(--fs-xs);
+	color: var(--ink-3);
+	min-width: 0;
+}
+
+.prose .kg-bookmark-metadata > * {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.prose .kg-bookmark-icon {
+	width: 18px;
+	height: 18px;
+	border-radius: 4px;
+	flex: none;
+}
+
+.prose .kg-bookmark-thumbnail {
+	aspect-ratio: 2 / 1;
+	background: var(--surface);
+}
+
+.prose .kg-bookmark-thumbnail img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+@media (min-width: 640px) {
+	.prose .kg-bookmark-card a.kg-bookmark-container {
+		flex-direction: row;
+	}
+
+	.prose .kg-bookmark-content {
+		flex: 1;
+		align-content: center;
+	}
+
+	.prose .kg-bookmark-thumbnail {
+		flex: 0 0 34%;
+		aspect-ratio: auto;
+	}
+}
+
+/* Embeds */
+.prose .kg-embed-card iframe {
+	width: 100%;
+	border: 0;
+	border-radius: var(--r);
+}
+
+.prose .kg-embed-instagram iframe {
+	min-height: 560px;
+	max-width: 480px;
+	margin-inline: auto;
+}
+
+.prose iframe[src*='youtube'] {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	height: auto;
+}
+
+/* Callout and toggle */
+.prose .kg-callout-card {
+	display: flex;
+	gap: var(--s-3);
+	padding: var(--s-4) var(--s-5);
+	border-radius: var(--r);
+	background: var(--surface);
+}
+
+.prose .kg-toggle-card {
+	border-radius: var(--r);
+	box-shadow: inset 0 0 0 1px var(--line);
+	padding: var(--s-4) var(--s-5);
+}
+
+/* ---- Code -------------------------------------------------------------------- */
+
+.prose pre {
+	max-width: var(--measure);
+	padding: var(--s-4) var(--s-5);
+	border-radius: var(--r);
+	background: var(--surface);
+	overflow-x: auto;
+	font-size: 0.85rem;
+	line-height: 1.6;
+}
+
+.prose pre code {
+	padding: 0;
+	background: none;
+	font-size: 1em;
+}
+
+.hljs-comment,
+.hljs-quote {
+	color: var(--ink-3);
+	font-style: italic;
+}
+.hljs-keyword,
+.hljs-literal,
+.hljs-selector-tag {
+	color: var(--purple-ink);
+}
+.hljs-string,
+.hljs-attr {
+	color: var(--green-ink);
+}
+.hljs-number,
+.hljs-bullet {
+	color: var(--pink-ink);
+}
+.hljs-title,
+.hljs-type,
+.hljs-built_in {
+	color: var(--blue-ink);
+}
+.hljs-operator,
+.hljs-variable {
+	color: var(--ink-2);
+}
+
+/* ---- Phones --------------------------------------------------------------------
+   The Ghost import carries hard <br>s and empty paragraphs; keep them from
+   opening big holes on a narrow screen. */
+.prose p:empty {
+	display: none;
+}

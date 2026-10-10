@@ -112,46 +112,64 @@
 {/if}
 
 <style>
+	/* Phones: full-screen sheet. Desktop: centred card. */
 	.search-overlay {
 		position: fixed;
 		inset: 0;
 		z-index: 100;
 		display: flex;
-		align-items: flex-start;
+		align-items: stretch;
 		justify-content: center;
-		padding-top: 80px;
 	}
 	.search-overlay-backdrop {
 		position: absolute;
 		inset: 0;
-		background: rgba(26, 26, 26, 0.4);
+		background: rgba(13, 12, 19, 0.32);
+		backdrop-filter: blur(4px);
 		border: 0;
 		padding: 0;
 		cursor: pointer;
 	}
 	.search-overlay-panel {
 		position: relative;
-		background: var(--cream);
-		border: 1px solid var(--ink);
-		border-radius: var(--radius);
-		box-shadow: var(--shadow-md);
-		width: min(720px, calc(100vw - 32px));
-		max-height: calc(100vh - 160px);
+		width: 100%;
+		height: 100dvh;
 		overflow: auto;
-		padding: 24px;
+		padding: calc(var(--s-7) + env(safe-area-inset-top)) var(--gutter) var(--s-6);
+		background: var(--page);
+		--pagefind-ui-font: var(--font-sans);
+		--pagefind-ui-primary: var(--ink);
+		--pagefind-ui-text: var(--ink);
+		--pagefind-ui-border: var(--line-strong);
+		--pagefind-ui-tag: var(--surface);
+		--pagefind-ui-border-radius: 14px;
+		--pagefind-ui-border-width: 1px;
 	}
 	.search-overlay-close {
 		position: absolute;
-		top: 8px;
-		right: 12px;
-		font-size: 28px;
-		line-height: 1;
-		color: var(--ink-muted);
-		background: none;
+		top: calc(var(--s-2) + env(safe-area-inset-top));
+		right: var(--s-3);
+		width: var(--tap);
+		height: var(--tap);
 		border: 0;
-		cursor: pointer;
+		border-radius: 50%;
+		background: var(--surface);
+		font-size: 24px;
+		line-height: 1;
+		color: var(--ink);
 	}
-	.pagefind-mount :global(.pagefind-ui__form) {
-		font-family: var(--font-ui);
+	@media (min-width: 720px) {
+		.search-overlay {
+			align-items: flex-start;
+			padding-top: 10vh;
+		}
+		.search-overlay-panel {
+			width: min(720px, calc(100vw - 48px));
+			height: auto;
+			max-height: 76vh;
+			padding: var(--s-6);
+			border-radius: var(--r-lg);
+			box-shadow: var(--shadow-2);
+		}
 	}
 </style>

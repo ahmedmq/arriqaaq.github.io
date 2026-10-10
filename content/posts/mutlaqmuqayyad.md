@@ -30,7 +30,7 @@ Now, *in this lesson*, we move to a closely related topic: **Al-Mutlaq wal-Muqay
 
 ### **Mutlaq (المطلق – The Absolute)**
 
-::image{src="/images/2025/10/Screenshot-2025-10-08-at-5.27.39---AM.png"}
+[[SVG:mutlaq-inheritance-ayah]]
 
 - **Linguistically**: The word *Mutlaq* (مطلق) linguistically means **unrestricted**, **free**, or **absolute**.
 - **Usuli Definition**: In *Usool al-Fiqh*, *Mutlaq* refers to a word or expression that is **unrestricted in its application,** it applies to something **without any limitation**. It covers any instance of its kind, without specifying a quality, condition, or context.
@@ -42,7 +42,7 @@ When one says “a man” (*رجلٌ*), or “a book” (*كتابٌ*), or “a 
 
 ### **Muqayyad (المقيد – The Restricted)**
 
-::image{src="/images/2025/10/Screenshot-2025-10-08-at-5.27.52---AM.png"}
+[[SVG:muqayyad-bequest-hadith]]
 
 - **Linguistically**: The word *Muqayyad* (مقيد) means **restricted**, **limited**, or **qualified**.
 - **Usuli Definition**: In *Usool al-Fiqh*, *Muqayyad* refers to a wording that is **restricted by a condition, quality, or context**. It specifies that the ruling applies **only when that restriction is met**.
@@ -182,7 +182,7 @@ This is important because many verses in the Qur’an or Hadith may seem similar
 
 ### **Case 1: Same Ruling and Same Cause (sabab)**
 
-::image{src="/images/2025/10/Screenshot-2025-10-08-at-6.05.48---AM.png"}
+[[SVG:mutlaq-case-1]]
 
 **Rule:**  
 When both the ruling and the cause are the same, the *Muqayyad* (restricted) text **clarifies and restricts** the *Mutlaq* (unrestricted) text.
@@ -210,7 +210,7 @@ Only *flowing blood (دمًا مسفوحًا)* is haram, not the blood that rema
 
 ### **Case 2: Different Ruling and Different Cause (sabab)**
 
-::image{src="/images/2025/10/Screenshot-2025-10-08-at-6.07.09---AM.png"}
+[[SVG:mutlaq-case-2]]
 
 **Rule:**  
 If both the ruling and the cause are different, **each text remains independent** — the *Muqayyad* does not restrict the *Mutlaq*.
@@ -255,7 +255,7 @@ When both ruling and cause differ, *Mutlaq* and *Muqayyad* remain separate and a
 
 ### **Case 3: Different Ruling but Same Cause (sabab)**
 
-::image{src="/images/2025/10/Screenshot-2025-10-08-at-7.05.23---AM.png"}
+[[SVG:mutlaq-case-3]]
 
 **Rule:**  
 If the *cause* is the same but the *ruling* differs, the two texts **remain independent** unless there is textual evidence linking them.
@@ -294,7 +294,7 @@ Though both address purification, because the rulings differ, *each is applied i
 
 ### **Case 4: Same Ruling but Different Cause (sabab)**
 
-::image{src="/images/2025/10/Screenshot-2025-10-08-at-7.06.38---AM.png"}
+[[SVG:mutlaq-case-4]]
 
 **Rule:**  
 If the ruling is the same but the causes differ, scholars **differed** — does *Muqayyad* restrict *Mutlaq*, or do they remain separate?

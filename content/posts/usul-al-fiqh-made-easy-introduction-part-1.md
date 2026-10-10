@@ -13,7 +13,7 @@ featured: true
 reading_time: 13
 ---
 
-::image{src="/images/2023/12/Screenshot-2023-12-31-at-5.25.07-AM.png" width=full}
+[[SVG:fiqh-sources-to-fatwa]]
 
 *In the Name of Allah, The Most Gracious, The Most Merciful…*
 
@@ -65,7 +65,7 @@ Simply put, only Allah has the authority to make laws. These laws are found in t
 
 # The Evolution Of Usul al-Fiqh
 
-::image{src="/images/2023/12/Screenshot-2023-12-31-at-5.36.26-AM.png" width=wide}
+[[SVG:fiqh-imams-timeline]]
 
 During the time of our Prophet (ﷺ), all legal rulings of the Shariah were derived from the Quran and Sunnah (by consulting him (ﷺ) directly in all matters), leading to the foundation of usul al fiqh for that era.. The Sahabah were the foremost in faithfully following our Prophet (ﷺ). They learned and understood the Quran directly from him, and readily grasped the rulings and wisdom behind the legislations because it was revealed to them during their lifetime and in specific situations. They also learned directly from our Prophet (ﷺ), clarified their doubts, and thus had a deep understanding of the context of the hadiths (our Prophet's (ﷺ) narrations).
 
@@ -95,7 +95,7 @@ Let’s try and understand how the study usul al-fiqh evolved through these thre
 
 # **Usul ul-Fiqh of the Companions (The Generation of Witnesses)**
 
-::image{src="/images/2023/12/Screenshot-2023-12-31-at-5.25.07-AM-1.png" width=full}
+[[SVG:fiqh-sources-to-fatwa]]
 
 > Abdullah bin Masood said: “Whoever is presented with an issue which needs a religious verdict or ruling; then let him give his verdict with what is in the Book of Allah (Quran) and if an issue presents itself which is not mentioned in the Quran, then let him give his verdict with what the Prophet Muhammad (ﷺ) judged in the issue. If an issue presents itself which is not mentioned in the Quran nor did the Prophet Muhammad (ﷺ) pass judgment in the issue than let him give his verdict in agreement with what the righteous people judged (Ijmaa). If an issue presents itself which is not mentioned in the Quran, nor did the Prophet Muhammad clarify it, nor did the righteous people make a judgment in the issue, then let him exert his ‘ijtihaad’ in the issue. (Sunan an-Nasa'i 5397, a similar hadith is reported by Umar (Sunan Ad-Daramee 1/55) and Abu Bakr (Sunan al Kubra by al Bayhaqi 10/196, #20341)).
 
@@ -118,7 +118,7 @@ Hence during this era, the necessity for developing the science of usul al-fiqh 
 
 # **Usul ul-Fiqh of the Taba'een (The Generation of Collectors)**
 
-::image{src="/images/2023/12/Screenshot-2023-12-28-at-11.00.25-PM.png" width=wide}
+[[SVG:fiqh-expansion-ijtihaad]]
 
 The Taba'een followed methodology of Sahabah. And during this era, various schools of thought emerged, and each associated with renowned scholars who had their own distinct opinions and followers. This graph organizes the information by location and provides a clear overview of the famous jurists from each region.
 

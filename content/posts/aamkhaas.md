@@ -134,13 +134,13 @@ Here, the **specific ruling limits the general ruling** — this is **Takhsees**
 
 ## **Types of Takhsees**
 
-::image{src="/images/2025/09/Screenshot-2025-09-23-at-6.15.58---PM.png"}
+[[SVG:takhsis-types]]
 
 #### 
 
 ### 1. **Al-Mukhassis al-Muttasil (المخصص المتصل - Connected Takhsees)**
 
-::image{src="/images/2025/09/Screenshot-2025-09-23-at-6.28.15---PM.png"}
+[[SVG:takhsis-muttasil-example]]
 
 **Definition:**  
 This occurs when the general ruling (*Aam*) and its specific limitation (*Khaas*) appear together in the same text, without separation.
@@ -162,7 +162,7 @@ Here, the **general obligation to fast** is **immediately restricted** for the s
 
 ### 2. **Al-Mukhassis al-Munfasil (المخصص المنفصل - Disconnected Specificator)**
 
-::image{src="/images/2025/09/Screenshot-2025-09-23-at-6.28.31---PM.png"}
+[[SVG:takhsis-munfasil-example]]
 
 **Definition:**  
 This occurs when the general ruling (*Aam*) is mentioned in one text, and the specific limitation (*Khaas*) comes from a completely separate text.
@@ -184,7 +184,7 @@ The **general ruling** requires all divorced women to observe a waiting period o
 
 ### 3. **Takhsees by Aql (Intellect) (التخصيص بالعقل)**
 
-::image{src="/images/2025/09/Screenshot-2025-09-23-at-6.29.01---PM.png"}
+[[SVG:takhsis-aql-example]]
 
 **Definition:**  
 This occurs when the general ruling (*Aam*) is understood to exclude certain cases through intellectual reasoning. Some scholars of *Uṣūl* mention this form of specification, though it is not always considered necessary since revelation itself clarifies such matters.
@@ -205,7 +205,7 @@ While the wording *“Creator of all things”* is general, the intellect recogn
 
 ### 4. **Takhsees by Urf (Custom) (التخصيص بالعرف)**
 
-::image{src="/images/2025/09/Screenshot-2025-09-23-at-6.29.27---PM.png"}
+[[SVG:takhsis-urf-example]]
 
 **Definition:**  
 This refers to specifying a general text by reference to custom (*ʿUrf*). Scholars differed on its validity:
@@ -227,11 +227,11 @@ The word *ṭaʿām* (food) in this Hadith is linguistically general. Mālikī s
 
 Beyond whether the specific ruling is connected or separate from the general, Takhsees can also be classified based on **the source that provides the specification**. This helps scholars determine **which text or evidence limits the general ruling**.
 
-::image{src="/images/2025/09/Screenshot-2025-09-23-at-6.20.53---PM.png"}
+[[SVG:takhsis-by-source]]
 
 ### 1. Takhsees of Quran by Quran (تخصيص القرآن بالقرآن)
 
-::image{src="/images/2025/09/Screenshot-2025-09-23-at-6.29.43---PM.png"}
+[[SVG:takhsis-quran-by-quran]]
 
 **Definition:** This occurs when a general verse (Aam) in the Quran is clarified by another specific verse (Khaas) elsewhere in the Quran. Both the general ruling and its specification come from the same source — the Quran itself.
 
@@ -247,7 +247,7 @@ Beyond whether the specific ruling is connected or separate from the general, Ta
 
 ### 2. Takhsees of Quran by Sunnah (تخصيص القرآن بالسنة)
 
-::image{src="/images/2025/09/Screenshot-2025-09-23-at-6.30.06---PM.png"}
+[[SVG:takhsis-quran-by-sunnah-dead-animals]]
 
 **Definition:** This occurs when a general ruling established in the Quran is clarified by a specific ruling found in the Sunnah (Hadith). The Sunnah provides details that narrow the scope of the Quranic general statement.
 
@@ -273,7 +273,7 @@ Beyond whether the specific ruling is connected or separate from the general, Ta
 
 ### 3. Takhsees of Sunnah by Sunnah (تخصيص السنة بالسنة)
 
-::image{src="/images/2025/09/Screenshot-2025-09-23-at-6.30.21---PM.png"}
+[[SVG:takhsis-quran-by-sunnah-theft]]
 
 **Definition:** This occurs when a general ruling found in one Hadith is limited or clarified by a specific ruling found in another Hadith. Both the general statement and its specification come from the Sunnah.
 
@@ -289,7 +289,7 @@ Beyond whether the specific ruling is connected or separate from the general, Ta
 
 ### 4. Takhsees by Ijmaa (Consensus) (التخصيص بالإجماع)
 
-::image{src="/images/2025/09/Screenshot-2025-09-23-at-6.30.37---PM.png"}
+[[SVG:takhsis-sunnah-by-sunnah-silk]]
 
 **Definition:** This occurs when a general text from the Quran or Sunnah is limited by the unanimous agreement (Ijmaa) of qualified scholars. The scholarly consensus establishes a specific exception or limitation to the general ruling.
 
