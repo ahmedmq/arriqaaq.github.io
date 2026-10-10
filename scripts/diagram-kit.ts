@@ -60,10 +60,10 @@ export type Tone =
 	| 'p1'
 	| 'p2'
 	| 'p3' // purple ramp, white text
-	| 'pink' // highlight fill, ink text: rare, prefer accent: true on a light block
+	| 'pink' // highlight fill, white text: rare, prefer accent: true on a light block
 	| 'blue' // white text
-	| 'amber' // ink text
-	| 'green' // ink text
+	| 'amber' // white text
+	| 'green' // white text
 	| 'ink' // obsidian, white text
 	| 'outline'; // white with hairline, ink text (rare: "empty" or contrast cases)
 
@@ -80,7 +80,8 @@ const FILL: Record<Tone, string> = {
 	ink: P.obsidian,
 	outline: P.white
 };
-const DARK = new Set<Tone>(['p0', 'p1', 'p2', 'p3', 'blue', 'ink']);
+// Owner rule: text inside a colour is white, so every saturated fill is a dark tone.
+const DARK = new Set<Tone>(['p0', 'p1', 'p2', 'p3', 'blue', 'ink', 'pink', 'green', 'amber']);
 const fg = (t: Tone) => (DARK.has(t) ? P.white : P.ink);
 const labelColor = (t: Tone) => (DARK.has(t) ? 'rgba(255,255,255,0.8)' : P.label);
 const metaColor = (t: Tone) => (DARK.has(t) ? 'rgba(255,255,255,0.75)' : P.ink2);
