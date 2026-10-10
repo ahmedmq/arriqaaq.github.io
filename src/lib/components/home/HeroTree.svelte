@@ -99,12 +99,12 @@
 		margin: var(--s-6) calc((100% - var(--tw)) / 2) 0;
 	}
 
-	/* Desktop: size by HEIGHT so the whole tree (canopy to roots) always fits
-	   in one view below the header, even on a 1280x800 laptop. Width follows
-	   from the viewBox. Phones keep the width-based sizing above. */
+	/* Desktop: size by HEIGHT, as large as fits in one view below the header
+	   (window minus header and breathing room), capped at 680px. Big, but
+	   never split across the fold. Phones keep the width-based sizing above. */
 	@media (min-width: 720px) {
 		.tree {
-			--th: min(56svh, 520px);
+			--th: min(calc(100svh - var(--topbar-h) - 96px), 680px);
 			width: auto;
 			height: var(--th);
 			max-width: 100%;
