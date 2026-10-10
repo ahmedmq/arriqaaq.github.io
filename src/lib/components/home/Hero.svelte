@@ -24,7 +24,7 @@
 				{#each blocks as b}<i style:--c={b.c} style:--d={`${b.d}ms`}></i>{/each}
 			</span>
 		</h1>
-		<p class="lede">Free courses in the Islamic sciences.</p>
+		<p class="lede">An online creative space for authentic Islamic courses, articles, crafts, education and technology.</p>
 		<div class="cta">
 			<a class="btn" href={`${base}/courses/usul-al-fiqh/`}>Start Usul al-Fiqh <span class="arrow">→</span></a>
 			<a class="btn btn--ghost" href="#subjects">Explore the subjects</a>

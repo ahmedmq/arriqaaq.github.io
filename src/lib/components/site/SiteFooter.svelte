@@ -48,7 +48,7 @@
 		<div class="top">
 			<div class="brand">
 				<a href={`${base}/`} class="logo"><Flower size={26} /><span>arriqaaq</span></a>
-				<p>Authentic Islamic knowledge, taught from the roots: courses, articles and crafts for students at every stage.</p>
+				<p>An online creative space for authentic Islamic courses, articles, crafts, education and technology.</p>
 			</div>
 
 			<div class="cols">
