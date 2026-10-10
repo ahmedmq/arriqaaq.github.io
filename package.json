@@ -13,7 +13,9 @@
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"check:links": "tsx scripts/check-links.ts",
+		"preview:diagrams": "tsx scripts/preview-diagrams.mts"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^3.0.10",
@@ -27,6 +29,7 @@
 		"mdast-util-to-string": "^4.0.0",
 		"node-html-parser": "^7.1.0",
 		"pagefind": "^1.5.2",
+		"playwright-core": "^1.48.2",
 		"rehype-highlight": "^7.0.2",
 		"rehype-raw": "^7.0.0",
 		"rehype-stringify": "^10.0.1",

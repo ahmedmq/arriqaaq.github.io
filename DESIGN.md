@@ -11,6 +11,12 @@ tokens and to this file in the same change.
 **90% of readers are on phones.** Design at 375px first. Desktop is an
 enhancement.
 
+- **Living UI kit:** `/design/` (`src/routes/design/+page.svelte`) renders the
+  real tokens and components. Look at it before building anything, and add
+  every new shared component to it.
+- **Agent skill:** `.claude/skills/arriqaaq-design/SKILL.md` carries these rules
+  as a working checklist and loads for any UI, diagram or layout task.
+
 ## References and what we took from each
 
 | Source | What we borrow |
@@ -21,6 +27,16 @@ enhancement.
 | arriqaaq.com/blog (LSM post) | Numbered contents box, the reading-progress "road" under the header (ours grows flowers), the floating prev/next section pill |
 | arriqaaqlabs roadmap | Course roadmap: numbered rail, cards alternating sides on desktop and stacked against a left rail on phones, "at the end of this course" outcome card |
 | 38labs.com | Neatness: black pill primary button plus hairline ghost button, cards with large radius and hairline rows, small mono uppercase labels, "STEP 01" numbering, the eyebrow, heading, lede pattern for section headers |
+
+## Copy
+
+The owner's rules, from direct corrections:
+
+- **Headings are at most 5–6 words.** No second muted sentence that explains the first.
+- **Write about what Arriqaaq actually offers:** the Usul al-Fiqh course, Tafsir, its own books, podcasts, events and competitions for children, health, homeschooling and technology. Generic lines ("Every topic, one tap away", "Lessons, launches and reflections") are rejected.
+- **The site's own description is canonical,** used verbatim in the hero, the footer and the meta description: *"An online creative space for authentic Islamic courses, articles, crafts, education and technology."*
+- The hero label is **"The deen, from first principles"**, from the original "What we focus on" copy.
+- No emojis anywhere in UI copy. Never ask readers for money, sponsorship or contributions.
 
 ## Colour
 
@@ -55,6 +71,7 @@ Rules:
 - Text on a `--subject` fill uses `--subject-on` (ink on amber, green and pink;
   white on purple and blue).
 - Light theme only.
+- **The one exception is the diagram language:** SurrealDB's purple ramp (`--ramp-0…3`) and lavender (`--lavender`) are used inside diagrams and course chrome, exactly as specified under Diagram language. Nowhere else.
 
 ### Subjects
 
@@ -118,9 +135,11 @@ mapping from tags to subjects lives in `subjectForTag()` in
 | `h2.split`, `em`, `.mute`, `.barred` | Split heading with a colour highlight and a muted continuation. |
 | `.scroll-x` | Horizontal chip or tab row on phones, with an edge fade. |
 | `use:reveal` + `[data-reveal]` | Rise-in on scroll. Visible without JS. |
-| `Cover.svelte` | Generative SVG cover. Use it instead of raster feature images. |
+| `PixelCover.svelte` | The dotted pixel-field cover (arriqaaqlabs). `mix` for palette-mixed dots. |
 | `Flower.svelte` | The brand flower (five petals, amber centre). |
-| `PostRow.svelte`, `Archive.svelte` | Article lists. |
+| `PostRow.svelte`, `Archive.svelte` | Article lists (pixel thumbnail, topic, date, title). |
+| `home/*` | `Hero`, `HeroTree`, `Manifesto`, `SubjectCards`, `ChapterCarousel`, the landing page sections. |
+| `reading/WidgetHydrator.svelte` | Mounts `[[WIDGET:name]]` interactives on the posts that use them. |
 | `CourseCard.svelte` | Course summary. |
 | `reading/*` | Article chrome: `ArticleHeader`, `Toc`, `FlowerVine`, `SectionPill` (the light "Up next" pill, shown only at the end of an article), `LessonNav`. |
 
@@ -226,9 +245,29 @@ something meaningful before JS runs (a caption or a static frame).
 
 ## Covers
 
-- **Article lists:** a pixel-field thumbnail (`PixelCover`, the arriqaaqlabs dotted pattern) in the post's subject colour on a grey ground, then the topic, date and title. Solid fills only.
-- **Course card and roadmap:** pixel-field banners and lesson cards, as on arriqaaqlabs.
+- **Article lists and the carousel:** a pixel-field thumbnail (`PixelCover`, the arriqaaqlabs dotted pattern) on a grey ground, in a **per-post palette colour** (`accentForPost(slug)`), so neighbouring rows differ. The topic label takes the same colour.
+- **Course card:** a pixel banner in the course colour.
+- **Roadmap:** each course keeps **one fixed colour** for its header band and heading accents (Usul al-Fiqh is blue), while the dots on its lesson cards **mix the palette** (`<PixelCover mix>`).
 - Post titles are never baked into images; the page sets them in Inter.
+
+## Landing page (top to bottom)
+
+1. **Hero:** the label, "Roots before branches." with the pixel-block reveal, the site description, two buttons, then the **roots-before-branches tree** (`HeroTree`). Roots draw down first, then the branches grow up and flowers bloom. It sits centred under the buttons, nearly full width on phones and about 620px on desktop, never behind text.
+2. **Manifesto** (`Manifesto`): "Courses. Articles. Crafts. Technology. One creative space, rooted in" lights up word by word as it scrolls through the screen, then **Islam.** appears beneath it, cycling through ten languages (SurrealDB's "Stop choosing / Deja de elegir"). It is not pinned, so there is no empty screen around it. Taller scripts get a fixed-height line so nothing overlaps.
+3. **Six sciences** (`SubjectCards`): cards flood with the subject colour, with white text, as they cross the middle of the screen.
+4. **Course card** (`CourseCard`): white, a pixel banner, the steps list.
+5. **New from Arriqaaq:** `PostRow` list with filter chips.
+6. **Explore by topic:** every topic with its count, in a grid of rows.
+7. **Something from every chapter** (`ChapterCarousel`): pill tabs for the six biggest topics, and a swipeable deck of each topic's latest posts.
+8. **Newsletter.**
+
+## Content integrity
+
+- **No broken links, images, anchors or unconverted directives.** After any content or routing change, run `npm run build && npm run check:links`, which crawls every built page.
+- The parser joins multi-line directives, maps old Ghost `/content/images/` URLs to `/images/`, drops missing local bookmark images, and **fails the build** on an unconverted directive or an unknown `[[SVG]]`.
+- **Dead external links:** keep the words and drop the link. Dead embedded images: remove them. Never rewrite the meaning of a post.
+- **Recovering old content:** the Ghost export is at `../arriqaaq-website/arriqaaq.ghost.2026-05-03-16-49-49.json` (pages marked `draft` were never migrated), and its images are at `https://storage.ghost.io/c/ce/b6/ceb66798-429b-432a-a02d-1c148871e2cf/content/images/…`.
+- `health.arriqaaq.com` and `ilm.arriqaaq.com` are offline. Never link to them.
 
 ## Courses
 

@@ -4,6 +4,12 @@ This same contract is in `AGENTS.md` for Codex and other agents. Keep the two fi
 
 ## Design system: read DESIGN.md first
 
+**Any visual, UI, copy-on-page, diagram, cover or course-page work must load
+the `arriqaaq-design` skill (`.claude/skills/arriqaaq-design/SKILL.md`) first.**
+The living UI kit is at `/design/`. Before calling UI work done, run
+`npx svelte-check`, then `npm run build && npm run check:links`, and look at
+the result at 375px and 1280px.
+
 Every UI, CSS, component, page or imagery change must follow [`DESIGN.md`](DESIGN.md).
 Its values live in [`src/lib/styles/tokens.css`](src/lib/styles/tokens.css); shared
 component classes in `src/lib/styles/base.css`; article body in `src/lib/styles/prose.css`.
@@ -19,6 +25,10 @@ component classes in `src/lib/styles/base.css`; article body in `src/lib/styles/
 - Diagrams are SVG via `[[SVG:name]]` in `scripts/diagrams-svg.ts`, never screenshots, and
   must be authored portrait-first so they read at 375px.
 - Courses are defined in `content/courses/*.yaml` (schema in DESIGN.md → Courses).
+- Copy: headings max 5–6 words, about what Arriqaaq actually offers; no emojis; never ask for money.
+- Never touch the team member pages' drawings, `/magazine/`, `/lettersfromthesoul/` or the `/ilm/` post's images. Never change what an original image says.
+- No broken links, images or anchors: `npm run check:links` must pass. `health.arriqaaq.com` and `ilm.arriqaaq.com` are offline; never link to them.
+- A push to `main` deploys the live site. Work on a branch, and push only with the owner's go-ahead.
 
 ## Design changes: mobile is a first-class target
 

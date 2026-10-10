@@ -138,3 +138,10 @@ the voice authority it defers to.
 3. Every ayah/hadith has a real citation or a TODO marker.
 4. Humanizer pass done with voice samples.
 5. File saved as `content/posts/<slug>.md`.
+
+## Presentation rules (from DESIGN.md → Reading)
+
+- No emojis in headings, titles or line openings (the build strips old ones; don't add new ones).
+- Write a Qur'an quote as a blockquote: the Arabic on its own line, then the translation, then `(Quran 2:185)`. Hadith the same way, with the collection and number. The site styles these automatically.
+- Diagrams are `[[SVG:key]]` built with the diagram kit, never screenshots. Interactives are `[[WIDGET:name]]`. Load the `arriqaaq-design` skill for any visual work.
+
