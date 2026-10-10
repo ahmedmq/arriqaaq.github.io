@@ -1,113 +1,132 @@
 /**
- * Diagrams for batch "uf-misc". Built with scripts/diagram-kit.ts and following
- * DESIGN.md → Imagery (palette only, portrait-first at W = 360).
+ * Diagrams for batch "uf-misc". Free-form (scripts/diagram-free.ts): a numbered
+ * list on a spine, a radial hub, a fan, a bow-tie, quote-to-verdict paths and
+ * a two-panel comparison. Palette colours at full strength: pink, purple,
+ * blue, green. W = 360. Mutlaq is blue and Muqayyad pink throughout.
  * Each key is referenced from markdown as [[SVG:<key>]].
  */
-import { W, GAP, svg, stack, block, row, chip, connector, group, responsive, type BlockOpts, type Diagram, type Section } from '../diagram-kit.js';
+import { W, svg, type Diagram } from '../diagram-kit.js';
+import { node, nodeHeight, ring, badge, tab, caption, words, curve, hcurve, arrow, pill, funnel, compare, defs, type NodeOpts, type Hue } from '../diagram-free.js';
 
-/**
- * REFERENCE DIAGRAM for the diagram language (DESIGN.md → Diagram language).
- * Layer-stack layout: a context block naming the question, a chip on the
- * connector, then one cohesive slab of four blocks 8px apart. Accepted
- * definitions are purple (darker = more widely accepted); the rejected one is
- * lavender with its label and verdict in pink (accent); the debated one stays
- * plain lavender. Verdicts are meta lines.
- */
+/* ---------- Istihsan: four definitions on a spine ---------- */
+
 function istihsanDefinitions(): string {
-	// Responsive: the question and the chip are the head; each definition is a
-	// section (two columns on desktop). The group label opens the first one.
-	const head: Section = (y0) => {
-		const b = block(0, y0, W, { tone: 'light', label: 'The question', content: 'What is Istihsan?', meta: 'four definitions · four verdicts' });
-		const y = y0 + b.h;
-		// Connector runs through the section gap so it still meets the group label.
-		const out = b.svg + connector(W / 2, y, W / 2, y + 62) + chip(W / 2, y + 16, 'Scholars define it as').svg;
-		return { svg: out, h: b.h + 62 + 4 - 16 };
-	};
-	const defs: BlockOpts[] = [
-		{ tone: 'light', accent: true, n: 1, label: 'Unexplainable insight', body: 'An evidence or insight that arises within the heart of a Mujtahid but is hard to articulate to others.', meta: 'Rejected · al-Shafi‘i, Ibn Hazm' },
-		{ tone: 'p0', n: 2, label: 'Preference for stronger evidence', body: 'Preferring the stronger of two evidences, including moving from Qiyas al-jali to Qiyas al-khafi.', meta: 'Accepted by most scholars' },
-		{ tone: 'p2', n: 3, label: 'Contextual replacement', body: 'Replacing one ruling with another more fitting to the circumstances, justified by Qur’an, Sunnah or consensus.', meta: 'Accepted by many scholars' },
-		{ tone: 'light', n: 4, label: 'Takhsis al-‘Illa', body: 'Particularising the cause: the ruling does not apply despite the cause, due to a hindrance.', meta: 'Debated' }
+	const head: NodeOpts = { hue: 'ink', label: 'The question', title: 'What is Istihsan?', titleSize: 17, meta: 'four definitions · four verdicts' };
+	const hw = 250;
+	const hh = nodeHeight(hw, head);
+	const defs4: { label: string; body: string; verdict: string; hue: Hue }[] = [
+		{ label: 'Unexplainable insight', body: 'An evidence or insight that arises within the heart of a Mujtahid but is hard to articulate to others.', verdict: 'Rejected · al-Shafi‘i, Ibn Hazm', hue: 'pink' },
+		{ label: 'Preference for stronger evidence', body: 'Preferring the stronger of two evidences, including moving from Qiyas al-jali to Qiyas al-khafi.', verdict: 'Accepted by most scholars', hue: 'purple' },
+		{ label: 'Contextual replacement', body: 'Replacing one ruling with another more fitting to the circumstances, justified by Qur’an, Sunnah or consensus.', verdict: 'Accepted by many scholars', hue: 'blue' },
+		{ label: 'Takhsis al-‘Illa', body: 'Particularising the cause: the ruling does not apply despite the cause, due to a hindrance.', verdict: 'Debated', hue: 'white' }
 	];
-	const sections = defs.map((d, i): Section => (y) => {
-		if (i > 0) return block(0, y, W, d);
-		const g = group(0, y, 'Four definitions');
-		const b = block(0, y + 26, W, d);
-		return { svg: g.svg + b.svg, h: 26 + b.h };
+	const sx = 18;
+	const tx = 46;
+	const tw = W - tx;
+	let out = defs + node(0, 0, hw, head, hh).svg;
+	let y = hh + 74;
+	const top = hh;
+	let marks = '';
+	let content = '';
+	out += pill(sx + 8 + 80, hh + 26, 'Scholars define it as');
+	content += caption(tx, hh + 62, 'Four definitions', 'start');
+	defs4.forEach((d, i) => {
+		content += caption(tx, y + 10, d.label, 'start');
+		const w = words(tx, y + 20, tw, d.body, { size: 14 });
+		content += w.svg;
+		const py = y + 20 + w.h + 20;
+		content += tab(tx, py, d.verdict, d.hue);
+		marks += badge(sx, y + 8, String(i + 1), d.hue);
+		y = py + 34;
 	});
-	return responsive(sections, { head });
+	const end = y - 20;
+	out += arrow(sx, top, sx, end, { dash: true, head: true });
+	return svg(end + 2, out + content + marks);
 }
 
-/** Stack blocks top to bottom with GAP, from y. Returns { svg, h }. */
-function slab(y0: number, parts: ((y: number) => { svg: string; h: number })[]) {
-	const r = stack(y0, GAP, parts);
-	return { svg: r.svg, h: r.y - y0 };
-}
+/* ---------- Hukm al-Wadhi: a hub with seven satellites ---------- */
 
-const full = (o: BlockOpts) => (y: number) => block(0, y, W, o);
-const pair = (a: BlockOpts, b: BlockOpts) => (y: number) => row(0, y, W, [a, b]);
-
-/**
- * Mind map as one slab: the centre concept is a full-width p0 block, the
- * branches a tight grid of blocks directly beneath it (no trunk lines).
- */
 function hukmWadiTypes(): string {
-	const r = slab(0, [
-		full({ tone: 'p0', label: 'The categories of', content: 'Hukm al-Wadhi' }),
-		(y) =>
-			row(0, y, W, [
-				{ tone: 'p1', n: 1, label: 'Sabab', content: 'Cause' },
-				{ tone: 'p1', n: 2, label: 'Shart', content: 'Condition' },
-				{ tone: 'p1', n: 3, label: 'Mani‘', content: 'Impediment' }
-			]),
-		pair({ tone: 'p2', n: 4, content: 'Saheeh' }, { tone: 'p2', n: 5, content: 'Baatil' }),
-		pair({ tone: 'light', n: 6, content: 'Rukhsah' }, { tone: 'light', n: 7, content: 'Azeemah' })
-	]);
-	return svg(r.h, r.svg);
+	const cx = W / 2;
+	const cy = 192;
+	const R = 128;
+	const sr = 40;
+	const sats: { n: number; label?: string; title: string; hue: Hue }[] = [
+		{ n: 1, label: 'Sabab', title: 'Cause', hue: 'purple' },
+		{ n: 2, label: 'Shart', title: 'Condition', hue: 'purple' },
+		{ n: 3, label: 'Mani‘', title: 'Impediment', hue: 'purple' },
+		{ n: 4, title: 'Saheeh', hue: 'blue' },
+		{ n: 5, title: 'Baatil', hue: 'blue' },
+		{ n: 6, title: 'Rukhsah', hue: 'pink' },
+		{ n: 7, title: 'Azeemah', hue: 'pink' }
+	];
+	let lines = '';
+	let shapes = '';
+	sats.forEach((s, k) => {
+		const a = -Math.PI / 2 + (k * 2 * Math.PI) / 7;
+		const x = cx + R * Math.cos(a);
+		const y = cy + R * Math.sin(a);
+		lines += arrow(cx, cy, x, y, { head: false });
+		shapes += ring(x, y, sr, { hue: s.hue, label: s.label, title: s.title, titleSize: s.label ? 12 : 13.5 });
+		shapes += badge(x + sr * 0.74, y - sr * 0.74, String(s.n), 'ink', 10);
+	});
+	const hub = ring(cx, cy, 70, { hue: 'ink', label: 'The categories of', title: 'Hukm al-Wadhi', titleSize: 17 });
+	return svg(cy + R + sr + 4, defs + lines + hub + shapes);
 }
+
+/* ---------- Sources of Ijtihad: a fan ---------- */
 
 function ijtihadSourcesMap(): string {
 	const names = ['Qiyas', 'Istihsan', 'Istishaab', 'Istislah', 'Urf', 'Qawl al-Sahabi', 'Sadd al-Zaraai', 'Amal Ahl al-Madina'];
-	const parts = [full({ tone: 'p0', label: 'Sources of', content: 'Ijtihad' })];
-	for (let i = 0; i < names.length; i += 2) parts.push(pair({ tone: 'light', n: i + 1, content: names[i] }, { tone: 'light', n: i + 2, content: names[i + 1] }));
-	const r = slab(0, parts);
-	return svg(r.h, r.svg);
+	const ph = 40;
+	const gap = 10;
+	const total = names.length * ph + (names.length - 1) * gap;
+	const rcx = 52;
+	const rcy = total / 2;
+	const px = 150;
+	const pw = W - px;
+	let lines = '';
+	let shapes = '';
+	names.forEach((n, i) => {
+		const y = i * (ph + gap);
+		lines += hcurve(rcx + 48, rcy, px, y + ph / 2);
+		shapes += node(px, y, pw, { hue: 'white', title: n, titleSize: 15, r: 20 }, ph).svg;
+		shapes += badge(px + 20, y + ph / 2, String(i + 1), i % 2 === 0 ? 'pink' : 'purple', 12);
+	});
+	return svg(total, defs + lines + ring(rcx, rcy, 50, { hue: 'purple', label: 'Sources of', title: 'Ijtihad', titleSize: 17 }) + shapes);
 }
 
-/**
- * Flow: the Asl and its Hukm (two-up) lead by deductive reasoning to the
- * effective cause (p0), which leads by analogical reasoning to the Far and
- * its Hukm (two-up). Chips on the connectors name the two directions.
- */
+/* ---------- Qiyas: a bow-tie around the effective cause ---------- */
+
 function qiyasFlowchart(): string {
-	let out = '';
-	let y = 0;
-	const head = block(0, y, W, { tone: 'light', label: 'The question', content: 'What is Qiyas?' });
-	out += head.svg;
-	y += head.h + GAP;
-	const top = row(0, y, W, [
-		{ tone: 'p1', n: 1, label: 'Original case', content: 'Al-Asl' },
-		{ tone: 'light', n: 2, label: 'Ruling', content: 'Al-Hukm' }
-	]);
-	out += top.svg;
-	y += top.h;
-	out += connector(W / 2, y, W / 2, y + 62);
-	out += chip(W / 2, y + 16, 'Deductive reasoning').svg;
-	y += 62 + 4;
-	const illah = block(0, y, W, { tone: 'p0', n: 3, label: 'Effective cause', content: 'Al-Illah' });
-	out += illah.svg;
-	y += illah.h;
-	out += connector(W / 2, y, W / 2, y + 62);
-	out += chip(W / 2, y + 16, 'Analogical reasoning').svg;
-	y += 62 + 4;
-	const bottom = row(0, y, W, [
-		{ tone: 'p2', n: 4, label: 'New case', content: 'Al-Far' },
-		{ tone: 'light', n: 5, label: 'Ruling', content: 'Al-Hukm' }
-	]);
-	out += bottom.svg;
-	y += bottom.h;
-	return svg(y, out);
+	const hw = 160;
+	const rx = W - hw;
+	let out = defs;
+	out += caption(0, 10, 'The question', 'start');
+	out += words(0, 22, W, 'What is Qiyas?', { size: 22, weight: 600 }).svg;
+	const asl: NodeOpts = { hue: 'purple', label: '1 · Original case', title: 'Al-Asl', titleSize: 17 };
+	const hukm: NodeOpts = { hue: 'white', label: '2 · Ruling', title: 'Al-Hukm', titleSize: 17 };
+	const y1 = 76;
+	const h1 = Math.max(nodeHeight(hw, asl), nodeHeight(hw, hukm));
+	out += node(0, y1, hw, asl, h1).svg + node(rx, y1 + 16, hw, hukm, h1).svg;
+	const M = y1 + 16 + h1 + 46;
+	const illah: NodeOpts = { hue: 'pink', label: '3 · Effective cause', title: 'Al-Illah', titleSize: 19 };
+	const iw = 220;
+	const ih = nodeHeight(iw, illah);
+	const iy = M + 56;
+	out += funnel([[hw / 2, y1 + h1], [rx + hw / 2, y1 + 16 + h1]], [[W / 2, iy]], W / 2, M, 'Deductive reasoning');
+	out += node((W - iw) / 2, iy, iw, illah, ih).svg;
+	const M2 = iy + ih + 46;
+	const far: NodeOpts = { hue: 'blue', label: '4 · New case', title: 'Al-Far', titleSize: 17 };
+	const hukm2: NodeOpts = { hue: 'white', label: '5 · Ruling', title: 'Al-Hukm', titleSize: 17 };
+	const y2 = M2 + 56;
+	const h2 = Math.max(nodeHeight(hw, far), nodeHeight(hw, hukm2));
+	out += funnel([[W / 2, iy + ih]], [[hw / 2, y2], [rx + hw / 2, y2 + 16]], W / 2, M2, 'Analogical reasoning');
+	out += node(0, y2, hw, far, h2).svg + node(rx, y2 + 16, hw, hukm2, h2).svg;
+	return svg(y2 + 16 + h2, out);
 }
+
+/* ---------- Mutlaq and Muqayyad: a quote, and the verdict it leads to ---------- */
 
 /** Split a trailing "(Quran 5:3)" style citation off a quote. */
 function cite(quote: string): { body: string; meta?: string } {
@@ -115,32 +134,36 @@ function cite(quote: string): { body: string; meta?: string } {
 	return m ? { body: m[1], meta: m[2] } : { body: quote };
 }
 
-/** Lavender quote block (pink label/citation for muqayyad), then its p1 verdict. */
-function quote(label: string, text: string, muqayyad = false): BlockOpts {
-	return { tone: 'light', accent: muqayyad, label, ...cite(text) };
+const QW = 312;
+
+/** A quote, then a dashed curve to its verdict; returns { svg, h }. */
+function quoteVerdict(y: number, label: string, text: string, verdict: string, hue: Hue, o: { cardLabel?: string } = {}) {
+	const q: NodeOpts = { hue: 'white', align: 'start', label: o.cardLabel, title: '', bodySize: 13, ...cite(text) };
+	const qh = nodeHeight(QW, q);
+	const v: NodeOpts = { hue, align: 'start', label, title: verdict, titleSize: 14 };
+	const vh = nodeHeight(QW, v);
+	const vy = y + qh + 30;
+	let out = curve(70, y + qh, 110, vy);
+	out += node(0, y, QW, { ...q, tab: o.cardLabel ? undefined : { text: label, hue } }, qh).svg;
+	out += node(W - QW, vy, QW, v, vh).svg;
+	return { svg: out, h: vy + vh - y };
 }
-const verdict = (content: string, label = 'Verdict'): BlockOpts => ({ tone: 'p1', label, content });
 
 function mutlaqInheritanceAyah(): string {
-	const r = slab(0, [
-		full(quote('Ayah of inheritance', 'after the fulfilment of bequests (Wasiyyah) and debts (Quran 4:11)')),
-		full(verdict('Wasiyyah in this ayah is Mutlaq. It can be any share.', 'Mutlaq'))
-	]);
-	return svg(r.h, r.svg);
+	const r = quoteVerdict(8, 'Mutlaq', 'after the fulfilment of bequests (Wasiyyah) and debts (Quran 4:11)', 'Wasiyyah in this ayah is Mutlaq. It can be any share.', 'blue', { cardLabel: 'Ayah of inheritance' });
+	return svg(r.h + 8, defs + r.svg);
 }
 
 function muqayyadBequestHadith(): string {
-	const r = slab(0, [
-		full(
-			quote(
-				'Hadith',
-				'Narrated Ibn Abbas: I recommend that people reduce the proportion of what they bequeath by will to the fourth (of the whole legacy), for Allah’s Messenger ﷺ said, “One-third, yet even one third is too much.” (Saheeh al-Bukhari 2743)',
-				true
-			)
-		),
-		full(verdict('Muqayyad (restricted) to one-third.', 'Muqayyad'))
-	]);
-	return svg(r.h, r.svg);
+	const r = quoteVerdict(
+		8,
+		'Muqayyad',
+		'Narrated Ibn Abbas: I recommend that people reduce the proportion of what they bequeath by will to the fourth (of the whole legacy), for Allah’s Messenger ﷺ said, “One-third, yet even one third is too much.” (Saheeh al-Bukhari 2743)',
+		'Muqayyad (restricted) to one-third.',
+		'pink',
+		{ cardLabel: 'Hadith' }
+	);
+	return svg(r.h + 8, defs + r.svg);
 }
 
 type Case = {
@@ -153,29 +176,42 @@ type Case = {
 	twoUp?: boolean; // compare the two texts side by side (short texts only)
 };
 
-/**
- * Layer stack: the case on top (lavender), each text as a lavender quote
- * block followed by its p1 verdict, the "Thus" note in lavender, and the
- * rule as the p0 focus at the bottom.
- */
 function mutlaqCase(c: Case): string {
-	const parts: ((y: number) => { svg: string; h: number })[] = [full({ tone: 'light', label: `Case ${c.n}`, content: c.title })];
-	const qa = quote('Mutlaq', c.mutlaq.quote);
-	const qb = quote('Muqayyad', c.muqayyad.quote, true);
+	let out = defs + caption(0, 10, `Case ${c.n}`, 'start');
+	const t = words(0, 20, W, c.title, { size: 17, weight: 600 });
+	out += t.svg;
+	let y = 20 + t.h + 22;
 	if (c.twoUp) {
-		parts.push(pair(qa, qb), pair(verdict(c.mutlaq.verdict), verdict(c.muqayyad.verdict)));
+		const cmp = compare(
+			{ hue: 'blue', title: 'Mutlaq' },
+			{ hue: 'pink', title: 'Muqayyad' },
+			[
+				[cite(c.mutlaq.quote).body + (cite(c.mutlaq.quote).meta ? ` (${cite(c.mutlaq.quote).meta})` : ''), cite(c.muqayyad.quote).body + (cite(c.muqayyad.quote).meta ? ` (${cite(c.muqayyad.quote).meta})` : '')],
+				[c.mutlaq.verdict, c.muqayyad.verdict]
+			],
+			{ y0: y }
+		);
+		out += cmp.svg;
+		y += cmp.h + 22;
 	} else {
-		parts.push(full(qa), full(verdict(c.mutlaq.verdict)), full(qb), full(verdict(c.muqayyad.verdict)));
+		const a = quoteVerdict(y, 'Mutlaq', c.mutlaq.quote, c.mutlaq.verdict, 'blue');
+		out += a.svg;
+		y += a.h + 30;
+		const b = quoteVerdict(y, 'Muqayyad', c.muqayyad.quote, c.muqayyad.verdict, 'pink');
+		out += b.svg;
+		y += b.h + 22;
 	}
-	if (c.thus) parts.push(full({ tone: 'light', body: c.thus }));
-	parts.push(full({ tone: 'p0', label: 'Rule', content: c.rule }));
-	const r = slab(0, parts);
-	if (c.twoUp || r.h <= 700) return svg(r.h, r.svg);
-	// Too tall for one desktop column: the case is the head, the Mutlaq text
-	// and its verdict one section, the Muqayyad text, verdict, note and rule
-	// the other (two columns on desktop).
-	const sec = (ps: typeof parts): Section => (y) => slab(y, ps);
-	return responsive([sec(parts.slice(1, 3)), sec(parts.slice(3))], { head: parts[0] });
+	if (c.thus) {
+		const th = words(0, y, W, c.thus, { size: 13.5 });
+		out += th.svg;
+		y += th.h + 8;
+	}
+	const rule: NodeOpts = { hue: 'purple', align: 'start', label: 'Rule', title: c.rule, titleSize: 15 };
+	const rh = nodeHeight(W, rule);
+	out += arrow(W / 2, y, W / 2, y + 26);
+	y += 26;
+	out += node(0, y, W, rule, rh).svg;
+	return svg(y + rh, out);
 }
 
 const handElbows = 'O believers! When you rise up for prayer, wash your faces and your hands up to the elbows (Quran 5:6)';
