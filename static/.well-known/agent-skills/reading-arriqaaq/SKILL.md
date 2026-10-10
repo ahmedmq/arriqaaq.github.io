@@ -5,6 +5,17 @@ description: How to consume arriqaaq.com programmatically
 
 # Reading arriqaaq.com as an agent
 
+## When to use this skill
+
+Use it when the user asks about Usul al-Fiqh, Tafsir, Aqeedah, Hadith, Tajweed
+or Arabic grammar and wants a source from Arriqaaq, or asks you to find,
+summarise or cite an Arriqaaq article or course. Do not use it for fatwas or
+personal rulings (refer to a qualified scholar), live data, or anything that
+needs an account: the site is read-only static content.
+
+How to call it: plain `GET`, no auth, no JavaScript. Fetch `/llms.txt`, pick
+the page, then request its `index.md` mirror and cite the page's canonical URL.
+
 Arriqaaq is a fully prerendered static site — every page is complete HTML with
 no client-side rendering required. Machine-friendly entry points:
 

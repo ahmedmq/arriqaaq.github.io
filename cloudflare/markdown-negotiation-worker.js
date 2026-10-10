@@ -17,6 +17,8 @@
  * which is only available on Pro+ zones, on a free zone.
  */
 
+import { addVary, prefersMarkdown } from '../functions/lib/agent.js';
+
 const HAS_EXTENSION = /\.[a-z0-9]{1,8}$/i;
 
 export function mirrorPathFor(pathname) {
@@ -36,7 +38,7 @@ async function passThrough(request) {
 	// HTML pages have a markdown variant on the same URL — shared caches
 	// must key on Accept.
 	const headers = new Headers(response.headers);
-	headers.append('Vary', 'Accept');
+	headers.set('Vary', addVary(headers.get('Vary'), 'Accept', 'Accept-Encoding'));
 	return new Response(response.body, {
 		status: response.status,
 		statusText: response.statusText,
@@ -48,8 +50,7 @@ export default {
 	async fetch(request) {
 		if (request.method !== 'GET' && request.method !== 'HEAD') return fetch(request);
 
-		const accept = (request.headers.get('Accept') || '').toLowerCase();
-		if (!accept.includes('text/markdown')) return passThrough(request);
+		if (!prefersMarkdown(request.headers.get('Accept'))) return passThrough(request);
 
 		const url = new URL(request.url);
 		const mirrorPath = mirrorPathFor(url.pathname);
@@ -65,7 +66,7 @@ export default {
 		const headers = new Headers({
 			'Content-Type': 'text/markdown; charset=utf-8',
 			'X-Markdown-Tokens': String(estimateTokens(body)),
-			Vary: 'Accept',
+			Vary: 'Accept, Accept-Encoding',
 			Link: `<${canonical}>; rel="canonical"`
 		});
 		for (const name of ['Cache-Control', 'Last-Modified', 'ETag']) {

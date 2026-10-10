@@ -9,6 +9,9 @@ export const absUrl = (path: string) => SITE_URL + path;
 // Page URLs always end with '/' (trailingSlash: 'always') — avoids GH Pages 301s.
 export const postUrl = (slug: string) => `${SITE_URL}/${slug}/`;
 
+/** Branded 1200x630 share card, the og:image for pages without their own image. */
+export const DEFAULT_OG_IMAGE = '/og/default.png';
+
 /** Public source repository: where readers report issues or suggest fixes. */
 export const REPO_URL = 'https://github.com/arriqaaq/arriqaaq.github.io';
 export const ISSUES_URL = `${REPO_URL}/issues/new`;

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { settings } from '$lib/content';
-	import { SITE_URL } from '$lib/site';
+	import { SITE_URL, DEFAULT_OG_IMAGE } from '$lib/site';
 
 	let {
 		title = settings.title,
@@ -24,11 +24,13 @@
 	} = $props();
 
 	const canonical = $derived(SITE_URL + page.url.pathname);
-	// Fall back to the site logo so every page has an og:image.
+	// Pages without their own image get the branded share card (static/og/default.png,
+	// 1200x630, made by `npm run og`) so link previews match the site.
 	const ogImage = $derived.by(() => {
-		const src = image ?? settings.logo;
-		return src ? (src.startsWith('http') ? src : SITE_URL + src) : null;
+		const src = image ?? DEFAULT_OG_IMAGE;
+		return src.startsWith('http') ? src : SITE_URL + src;
 	});
+	const isDefaultImage = $derived(!image);
 	// A literal closing script tag may not appear inside the markup — build it
 	// by concatenation; escape '<' inside the JSON payload.
 	const ldScript = $derived(
@@ -50,21 +52,23 @@
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
 	<meta property="og:url" content={canonical} />
-	{#if ogImage}
-		<meta property="og:image" content={ogImage} />
+	<meta property="og:image" content={ogImage} />
+	{#if isDefaultImage}
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:type" content="image/png" />
 	{/if}
+	<meta property="og:image:alt" content={title} />
 	{#if publishedAt}
 		<meta property="article:published_time" content={publishedAt} />
 	{/if}
 	{#if updatedAt}
 		<meta property="article:modified_time" content={updatedAt} />
 	{/if}
-	<meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
+	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
-	{#if ogImage}
-		<meta name="twitter:image" content={ogImage} />
-	{/if}
+	<meta name="twitter:image" content={ogImage} />
 	<link
 		rel="alternate"
 		type="application/rss+xml"

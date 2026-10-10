@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { settings, authors, courses, tags, getTagById } from '$lib/content';
-	import { SITE_URL } from '$lib/site';
+	import { settings, courses, tags, getTagById } from '$lib/content';
+	import { SITE_URL, DEFAULT_OG_IMAGE } from '$lib/site';
 	import Seo from '$lib/components/Seo.svelte';
 	import Hero from '$lib/components/home/Hero.svelte';
 	import Manifesto from '$lib/components/home/Manifesto.svelte';
@@ -26,9 +26,26 @@
 	let active = $state<string | null>(null);
 	const shown = $derived(data.posts.filter((p) => !active || p.primary_tag === active).slice(0, 6));
 
+	const sameAs = settings.navigation.map((n) => n.url).filter((u) => /instagram\.com|github\.com/.test(u));
 	const jsonLd = [
-		{ '@context': 'https://schema.org', '@type': 'WebSite', name: settings.title, url: `${SITE_URL}/`, description: settings.description },
-		...authors.slice(0, 1).map((a) => ({ '@context': 'https://schema.org', '@type': 'Person', name: a.name, url: `${SITE_URL}/author/${a.slug}/` }))
+		{
+			'@context': 'https://schema.org',
+			'@type': 'WebSite',
+			name: settings.title,
+			url: `${SITE_URL}/`,
+			description: settings.description,
+			inLanguage: 'en'
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: settings.title,
+			url: `${SITE_URL}/`,
+			description: settings.description,
+			logo: `${SITE_URL}${DEFAULT_OG_IMAGE}`,
+			image: `${SITE_URL}${DEFAULT_OG_IMAGE}`,
+			sameAs
+		}
 	];
 </script>
 

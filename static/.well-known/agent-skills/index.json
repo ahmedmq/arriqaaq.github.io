@@ -6,7 +6,7 @@
 			"type": "skill-md",
 			"description": "How to consume arriqaaq.com programmatically",
 			"url": "/.well-known/agent-skills/reading-arriqaaq/SKILL.md",
-			"digest": "sha256:56b14a5963765642b62ad407fc8f35332db7433565bd2689ea4288ac4663670c"
+			"digest": "sha256:75ed801bf6c84252ec8a004fc47e090baf275ecdb95c7feb0469daac740fd5dc"
 		}
 	]
 }
