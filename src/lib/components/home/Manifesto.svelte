@@ -4,7 +4,7 @@
 	// answer lands. Without JS or with reduced motion everything is shown lit.
 	type Word = { t: string; accent?: boolean };
 	const raw =
-		'Learning the deen can feel like a choice. *The text* or *the reasoning.* *Tradition* or *evidence.* *Memorising* or *understanding.* The roots of each science show you how they fit. The answer is';
+		'*Courses.* *Articles.* *Crafts.* *Technology.* One creative space, rooted in';
 	// "*the text*" marks an accent run that may span several words.
 	let inAccent = false;
 	const words: Word[] = raw.split(' ').map((x) => {
@@ -43,7 +43,7 @@
 	});
 </script>
 
-<section class="manifesto" class:is-live={live} bind:this={hold} aria-label="Why the roots">
+<section class="manifesto" class:is-live={live} bind:this={hold} aria-label="What Arriqaaq is">
 	<div class="stage">
 		<div class="wrap stack">
 			<p class="words" class:is-dim={answered && live}>
@@ -51,7 +51,7 @@
 					<span class="w" class:lit={i < lit} class:accent={w.accent}>{w.t}</span>{' '}
 				{/each}
 			</p>
-			<p class="answer" class:is-on={answered} aria-hidden={!answered}>Both<span>.</span></p>
+			<p class="answer" class:is-on={answered} aria-hidden={!answered}>Islam<span>.</span></p>
 		</div>
 	</div>
 </section>
@@ -62,7 +62,7 @@
 	}
 
 	.manifesto.is-live {
-		height: 260svh;
+		height: 200svh;
 	}
 
 	.stage {
@@ -90,7 +90,7 @@
 	}
 
 	.words {
-		max-width: 22ch;
+		max-width: 16ch;
 		font-size: clamp(2rem, 1.2rem + 4.4vw, 4.5rem);
 		font-weight: 500;
 		line-height: 1.08;
