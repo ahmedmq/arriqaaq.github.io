@@ -53,6 +53,14 @@ In this course, we will explore it from the very beginning, one step at a time.
 
 ---
 
+## The story in five steps
+
+Here is the path we are about to walk, from the very beginning.
+
+[[SVG:mh-history-map]]
+
+---
+
 ## What is Mustalah al-Hadith?
 
 The knowledge of Mustalah al-Hadith is of great importance, because it distinguishes the authentic hadith from the weak, and the sound from the flawed. Simply put, it is the science that tells us which hadith are authentic and which are weak.
@@ -74,10 +82,6 @@ We will study this science through a book written by Shaykh Abdul Muhsin Al-Abba
 2. It is taught in institutes of knowledge in Madinah, under the guidance of the Islamic University of Madinah, and in other schools like Jamia Salafiyyah Banaras.
 
 We will meet both of them further down.
-
-Before we start, here is the path we are about to walk, in five steps.
-
-[[SVG:mh-history-map]]
 
 ---
 

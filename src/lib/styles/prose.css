@@ -162,7 +162,9 @@
      and right-aligned in Amiri Quran, translation beneath, reference as cite.
    - Hadith: the same structure with a thin purple rule instead of hairlines.
    - Plain (a scholar's words, or any other quote): ink text a little larger
-     than body, a small square in the subject colour above it, and the
+     than body behind a 4px rule in the subject colour. A short saying
+     (quote--pull, up to 300 characters) is a pull-quote: larger and heavier.
+     The
      speaker or source as a quiet line beneath. Only real Qur'an and hadith
      get a label: a quote that merely mentions them is plain.
    - Note (a "Note: ..." aside written as a quote): ink text and a 3px rule
@@ -275,24 +277,25 @@
 
 .prose .quote--plain {
 	position: relative;
-	padding: 2.5rem 0 0.1rem 0;
-	border-left: 0;
+	margin-block: 2.2em;
+	padding: 0.15rem 0 0.15rem 1.25rem;
+	border-left: 4px solid var(--subject, var(--purple));
 	color: var(--ink);
-}
-
-.prose .quote--plain::before {
-	content: '';
-	position: absolute;
-	top: 0.95rem;
-	left: 0;
-	width: 0.85rem;
-	height: 0.85rem;
-	background: var(--subject, var(--purple));
 }
 
 .prose .quote--plain > p:not(.q-ar) {
 	font-size: 1.125rem;
 	line-height: 1.65;
+}
+
+/* A short saying is a pull-quote: larger and heavier, so it stands out of the
+   column and is clearly someone's words. */
+.prose .quote--pull > p:not(.q-ar) {
+	font-size: 1.375rem;
+	font-weight: 500;
+	line-height: 1.45;
+	letter-spacing: -0.02em;
+	text-wrap: pretty;
 }
 
 .prose .quote--plain .q-cite {

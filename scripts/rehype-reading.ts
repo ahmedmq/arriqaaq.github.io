@@ -250,6 +250,8 @@ export default function rehypeReading() {
 			const cite = kind === 'note' ? null : kind === 'plain' ? extractAttribution(node) : extractCitation(node);
 			addClass(node, 'quote');
 			addClass(node, `quote--${kind}`);
+			// A short plain quote (a saying, one or two sentences) is set as a pull-quote.
+			if (kind === 'plain' && text.replace(/\s+/g, ' ').trim().length <= 300) addClass(node, 'quote--pull');
 			node.properties['dataLabel'] = kind === 'quran' ? 'Qur’an' : kind === 'hadith' ? 'Hadith' : '';
 			for (const c of node.children) {
 				if (c.type !== 'element' || c.tagName !== 'p') continue;
