@@ -114,7 +114,7 @@ const entries: Entry[] = [
 		cat: 'books',
 		ah: 430,
 		when: 'd. 430 AH',
-		who: 'Abu Nuaym al-Isfahani',
+		who: 'Abu Nuaym al-Asbahani',
 		work: 'Al-Mustakhraj ala Kitab al-Hakim',
 		note: 'He completed al-Hakim’s book and critiqued some of its points. As Ibn Hajar noted, he did not fully perfect it.'
 	},
@@ -329,7 +329,7 @@ export const FAMILIES: Family[] = [
 				{ title: 'Annotations on the explanation of Nukhbat al-Fikr', by: 'Zain al-Din Qasim bin Qutlubugha al-Hanafi', when: 'd. 879 AH', note: 'A student of the author.' },
 				{ title: 'Mustalahat Ahl al-Athar', by: 'Mulla Ali al-Qari', when: 'd. 1014 AH' },
 				{ title: 'Al-Yawaqit wa al-Durar', by: 'Muhammad Abdul-Raouf al-Munawi al-Haddadi', when: 'd. 1031 AH' },
-				{ title: 'Im’an al-Nazar fi Tawdih Nukhbat al-Fikr', by: 'Muhammad Akram bin Abdul-Rahman al-Sindi' },
+				{ title: 'Im’an al-Nazar fi Tawdih Nukhbat al-Fikr', by: 'Muhammad Akram bin Abdul-Rahman al-Sindhi' },
 				{ title: 'Bahjat al-Nazar', by: 'Abu al-Hasan al-Sindi', when: 'd. 1138 AH' }
 			],
 			sharh: [
@@ -341,7 +341,7 @@ export const FAMILIES: Family[] = [
 			poem: [
 				{ title: 'Uyun al-Maani, nazm of Nukhbat al-Fikr', by: 'Ahmad bin Sadaqa al-Sirfi al-Shafii al-Asqalani', when: 'd. 905 AH' },
 				{ title: 'Nazm Nukhbat al-Fikr', by: 'Muhammad al-Shumni', note: 'His son Taqi al-Din Ahmad bin Muhammad al-Shumni explained it in Al-Ali al-Rutba fi Sharh Nazm al-Nukhba.' },
-				{ title: 'Nazm Nukhbat al-Fikr', by: 'Shihab al-Din Ahmad bin Muhammad al-Tookhi', when: 'd. 893 AH', note: 'Nukhbat al-Fikr was converted into a poem for easy memorisation.' },
+				{ title: 'Nazm Nukhbat al-Fikr', by: 'Shihab al-Din Ahmad bin Muhammad al-Tufi', when: 'd. 883 AH', note: 'Nukhbat al-Fikr was converted into a poem for easy memorisation.' },
 				{ title: 'Aqd al-Durar fi Nazm Nukhbat al-Fikr', by: 'Abu Hamid Muhammad al-Arabi ibn Yusuf al-Fasi', when: 'd. 1052 AH' },
 				{ title: 'Isbal al-Matar ala Qasab al-Sukkar', by: 'Muhammad bin Ismail al-Amir al-Sanani al-Yamani', when: 'd. 1182 AH', note: 'And so on.' }
 			]

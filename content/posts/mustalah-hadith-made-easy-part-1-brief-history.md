@@ -223,7 +223,7 @@ After this, books were written exclusively on the science and terminology of had
 
 1. *Al-Muhaddith al-Fasil bayn al-Rawi wa al-Waiee*, by Abu Muhammad al-Hasan bin Abdurrahman bin Khallad al-Ramahurmuzi (d. 360 AH).
 2. *Marifat Ulum al-Hadith*, by Abu Abdullah al-Hakim al-Naysaburi (d. 405 AH). He could not complete the book.
-3. *Al-Mustakhraj ala Kitab al-Hakim*, by Abu Nuaym Ahmad al-Isfahani (d. 430 AH). It completed the book above.
+3. *Al-Mustakhraj ala Kitab al-Hakim*, by Abu Nuaym Ahmad bin Abdullah al-Asbahani (d. 430 AH). It completed the book above.
 4. *Al-Irshad fi Marifat Ulama al-Hadith*, by Abu Yala al-Khalili (d. 446 AH).
 5. *Al-Kifayah fee Ilm al-Riwayah*, by Abu Bakr Ahmad bin Ali al-Khatib al-Baghdadi (d. 463 AH).
 6. *Al-Jami li-Adab al-Shaykh wa al-Sami*, by al-Khatib al-Baghdadi.
@@ -257,7 +257,7 @@ He relied heavily on narrated reports from early scholars with full chains of tr
 
 Then came Abu Abdillah Muhammad bin Abdullah al-Hakim al-Naysaburi, who authored ***Marifat Ulum al-Hadith***. His work is far more valuable and refined than that of al-Ramahurmuzi, as it encompasses most branches of the hadith sciences, systematically categorising and detailing its various types. Some scholars even consider it the pioneering work in hadith terminology.
 
-Following him, the Hafiz Abu Nuaym Ahmad bin Ali al-Isfahani expanded upon al-Hakim's work and critiqued some of its points in a book he titled ***Al-Mustakhraj ala Kitab al-Hakim***. However, as Ibn Hajar noted, he did not fully perfect it, leaving room for further refinement by later scholars.
+Following him, the Hafiz Abu Nuaym Ahmad bin Abdullah al-Asbahani expanded upon al-Hakim's work and critiqued some of its points in a book he titled ***Al-Mustakhraj ala Kitab al-Hakim***. However, as Ibn Hajar noted, he did not fully perfect it, leaving room for further refinement by later scholars.
 
 ### Abu Yala al-Khalili (d. 446 AH)
 
@@ -294,7 +294,7 @@ These were the foundational works that addressed the science of Mustalah al-Hadi
 **Points of benefit:**
 
 - Imam Bukhari, Muslim, al-Tirmidhi, Abu Dawood, Ibn Majah and an-Nasai are from Persian origin. Many of the authors mentioned above are from Persian origin too.
-- *Hilyatul Awliya wa Tabaqat al-Asfiya* (The Beauty of the Righteous and the Ranks of the Elite), by Abu Nuaym al-Isfahani, is a famous book.
+- *Hilyatul Awliya wa Tabaqat al-Asfiya* (The Beauty of the Righteous and the Ranks of the Elite), by Abu Nuaym al-Asbahani, is a famous book.
 - Four famous huffaz (hadith masters) lived during the same time, in the West and in the East. West: Ibn Hazm and Ibn Abd al-Barr. East: al-Khatib al-Baghdadi and al-Bayhaqi.
 - al-Bayhaqi has a famous book on usool al-hadith and fiqh combined, called *Al-Madkhal ila Ilm al-Sunan*.
 - Whoever came after al-Khatib al-Baghdadi took benefit from his book *Al-Kifayah*. Ibn Hajar al-Asqalani says that al-Khatib al-Baghdadi wrote a book in every science and branch of hadith.
