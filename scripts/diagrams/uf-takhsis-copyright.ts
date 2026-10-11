@@ -1,121 +1,122 @@
 /**
- * Diagrams for batch "uf-takhsis-copyright". Built with scripts/diagram-kit.ts
- * and following DESIGN.md → Diagram language (W = 360, square blocks 8px
- * apart, lavender context, purple ramp for the focus).
- * Each key is referenced from markdown as [[SVG:<key>]].
+ * Diagrams for batch "uf-takhsis-copyright". Free-form (scripts/diagram-free.ts):
+ * a hub with four spokes, a tree on a spine, forks and merges with a pill on
+ * the join, a region that holds a verse, and large pull quotes.
+ * Palette colours at full strength: pink, purple, blue, green. W = 360.
  *
  * Conventions in this batch:
- * - Aam / Khaas pairs are a two-up slab: Aam lavender (context), Khaas purple
- *   (focus). Arabic is the block content, the translation is body, the
- *   citation is meta.
- * - A chip on a split connector names how the pair relates ("SAME VERSE").
- * - Where the post states the principle, the pair merges into one dark p0
- *   block carrying the principle and its references.
+ * - Aam is blue, Khaas is pink, and the principle is dark.
+ * - Arabic is set in Noto Naskh, right-aligned; the translation is body text;
+ *   the citation is a small mono line.
+ * Each key is referenced from markdown as [[SVG:<key>]].
  */
-import { W, GAP, svg, block, row, chip, connector, type BlockOpts, type Diagram } from '../diagram-kit.js';
+import { W, svg, type Diagram } from '../diagram-kit.js';
+import { node, nodeHeight, arrow, funnel, pill, region, outline, defs, words, caption, type NodeOpts, type Hue } from '../diagram-free.js';
 
-const HALF = (W - GAP) / 2;
-const COLS = [HALF / 2, HALF + GAP + HALF / 2]; // centres of a two-up row
-
-/**
- * Split connector: from the bottom of a full-width block (y) down to a chip,
- * then out to the centre of each column of a two-up row. Returns the y where
- * the row starts. Built only from connector() and chip().
- */
-function split(y: number, label: string, dash = false): { svg: string; y: number } {
-	let out = connector(W / 2, y, W / 2, y + 16, { diamond: false, dash });
-	out += chip(W / 2, y + 16, label).svg;
-	const top = y + 46;
-	const mid = top + 12;
-	const end = top + 26;
-	out += connector(W / 2, top, W / 2, mid, { diamond: false, dash });
-	out += connector(COLS[0], mid, COLS[1], mid, { diamond: false, dash });
-	for (const cx of COLS) out += connector(cx, mid, cx, end, { dash });
-	return { svg: out, y: end + 6 };
-}
-
-/**
- * Merge connector: from the bottom of a two-up row (y) the two columns join,
- * pass through a chip, and land on the full-width block below. Returns the y
- * where that block starts.
- */
-function merge(y: number, label: string): { svg: string; y: number } {
-	const mid = y + 14;
-	let out = '';
-	for (const cx of COLS) out += connector(cx, y, cx, mid, { diamond: false });
-	out += connector(COLS[0], mid, COLS[1], mid, { diamond: false });
-	out += connector(W / 2, mid, W / 2, mid + 10, { diamond: false });
-	out += chip(W / 2, mid + 10, label).svg;
-	out += connector(W / 2, mid + 40, W / 2, mid + 58);
-	return { svg: out, y: mid + 64 };
-}
+const HW = 170;
+const RX = W - HW;
 
 type Ev = { ar?: string; en: string; cite: string; note?: string };
 
-const aam = (e: Ev): BlockOpts => ({ tone: 'light', n: 1, label: 'Aam (General)', content: e.ar, contentFace: 'sans', body: e.en, meta: [e.cite, e.note].filter(Boolean).join(' · ') });
-const khaas = (e: Ev, label = 'Khaas (Specific)'): BlockOpts => ({ tone: 'p1', n: 2, label, content: e.ar, contentFace: 'sans', body: e.en, meta: e.cite || undefined });
+const aam = (e: Ev): NodeOpts => ({ hue: 'blue', align: 'start', label: '1 · Aam (General)', ar: e.ar, title: '', body: e.en, bodySize: 12.5, meta: [e.cite, e.note].filter(Boolean).join(' · ') });
+const khaas = (e: Ev, label = '2 · Khaas (Specific)'): NodeOpts => ({ hue: 'pink', align: 'start', label, ar: e.ar, title: '', body: e.en, bodySize: 12.5, meta: e.cite || undefined });
+
+const pairH = (a: NodeOpts, b: NodeOpts) => Math.max(nodeHeight(HW, a), nodeHeight(HW, b));
 
 // ---------------------------------------------------------------------------
-// Tree as slabs: the types of Takhsees
+// The types of Takhsees: a hub with four spokes
 // ---------------------------------------------------------------------------
 
-type Leaf = { n: number; label: string; name: string; meaning: string; tone: BlockOpts['tone'] };
+type Leaf = { n: number; label: string; name: string; meaning: string; hue: Hue };
 
-function typeTree(root: string, meta: string, leaves: Leaf[]): string {
-	let out = '';
-	let y = 0;
-	const head = block(0, y, W, { tone: 'p0', label: 'Takhsees', content: root, meta });
-	out += head.svg;
-	y += head.h + GAP;
-	for (let i = 0; i < leaves.length; i += 2) {
-		const r = row(
-			0,
-			y,
-			W,
-			leaves.slice(i, i + 2).map((l) => ({ tone: l.tone, n: l.n, label: l.label, content: l.name, body: l.meaning }))
-		);
-		out += r.svg;
-		y += r.h + GAP;
-	}
-	return svg(y - GAP, out);
+function typeHub(root: string, meta: string, leaves: Leaf[], rootLabel = 'Takhsees'): string {
+	const hubO: NodeOpts = { hue: 'ink', label: rootLabel, title: root, titleSize: 16, meta };
+	const hubW = 230;
+	const hubH = nodeHeight(hubW, hubO);
+	const os = leaves.map((l): NodeOpts => ({ hue: l.hue, align: 'start', label: `${l.n} · ${l.label}`, title: l.name, titleSize: 14, body: l.meaning, bodySize: 12.5 }));
+	const h1 = Math.max(nodeHeight(HW, os[0]), nodeHeight(HW, os[1]));
+	const h2 = Math.max(nodeHeight(HW, os[2]), nodeHeight(HW, os[3]));
+	const band = hubH + 64;
+	const hubY = h1 + 32;
+	const y2 = h1 + band;
+	let out = defs;
+	const cx = W / 2;
+	const cy = hubY + hubH / 2;
+	out += arrow(cx - 50, hubY, HW / 2, h1, { head: false }) + arrow(cx + 50, hubY, RX + HW / 2, h1, { head: false });
+	out += arrow(cx - 50, hubY + hubH, HW / 2, y2, { head: false }) + arrow(cx + 50, hubY + hubH, RX + HW / 2, y2, { head: false });
+	void cy;
+	out += node(0, 0, HW, os[0], h1).svg + node(RX, 0, HW, os[1], h1).svg;
+	out += node((W - hubW) / 2, hubY, hubW, hubO, hubH).svg;
+	out += node(0, y2, HW, os[2], h2).svg + node(RX, y2, HW, os[3], h2).svg;
+	return svg(y2 + h2, out);
 }
 
 function takhsisTypes(): string {
-	return typeTree('Types of Takhsees', 'together · separate · intellect · custom', [
-		{ n: 1, label: 'Type', name: 'Al-Mukhassis al-Muttasil', meaning: 'General ruling (Aam) and its specific limitation (Khaas) appear together in the same text.', tone: 'p1' },
-		{ n: 2, label: 'Type', name: 'Al-Mukhassis al-Munfasil', meaning: 'General ruling (Aam) is mentioned in one text, and the specific limitation (Khaas) comes in a separate text.', tone: 'p2' },
-		{ n: 3, label: 'Type', name: 'Takhsees bil-Aql', meaning: 'General ruling (Aam) is understood to exclude certain cases through intellectual reasoning.', tone: 'light' },
-		{ n: 4, label: 'Type', name: 'Takhsees bil-Urf', meaning: 'Specifying a general text by reference to custom (‘Urf).', tone: 'light' }
+	return typeHub('Types of Takhsees', 'together · separate · intellect · custom', [
+		{ n: 1, label: 'Type', name: 'Al-Mukhassis al-Muttasil', meaning: 'General ruling (Aam) and its specific limitation (Khaas) appear together in the same text.', hue: 'purple' },
+		{ n: 2, label: 'Type', name: 'Al-Mukhassis al-Munfasil', meaning: 'General ruling (Aam) is mentioned in one text, and the specific limitation (Khaas) comes in a separate text.', hue: 'blue' },
+		{ n: 3, label: 'Type', name: 'Takhsees bil-Aql', meaning: 'General ruling (Aam) is understood to exclude certain cases through intellectual reasoning.', hue: 'pink' },
+		{ n: 4, label: 'Type', name: 'Takhsees bil-Urf', meaning: 'Specifying a general text by reference to custom (‘Urf).', hue: 'green' }
 	]);
 }
 
 function takhsisBySource(): string {
-	return typeTree('Takhsees by source', 'Quran · Sunnah · Ijma', [
-		{ n: 1, label: 'Source', name: 'Quran by Quran', meaning: 'General verse (Aam) in the Quran is clarified by another specific verse (Khaas) in the Quran.', tone: 'p1' },
-		{ n: 2, label: 'Source', name: 'Quran by Sunnah', meaning: 'General ruling established in the Quran is clarified by a specific ruling found in the Sunnah (Hadith).', tone: 'p2' },
-		{ n: 3, label: 'Source', name: 'Sunnah by Sunnah', meaning: 'General ruling found in one Hadith is limited or clarified by a specific ruling found in another Hadith.', tone: 'p3' },
-		{ n: 4, label: 'Source', name: 'Ijma (Consensus)', meaning: 'General text from the Quran or Sunnah is limited by the Ijmaa of qualified scholars.', tone: 'light' }
-	]);
+	const leaf = (n: number, name: string, meaning: string, hue: Hue) => ({ depth: 1, o: { hue, align: 'start' as const, label: `${n} · Source`, title: name, titleSize: 14, body: meaning, bodySize: 12.5 } });
+	const o = outline(
+		[
+			{ depth: 0, o: { hue: 'ink', label: 'Takhsees', title: 'Takhsees by source', titleSize: 16, meta: 'Quran · Sunnah · Ijma' } },
+			leaf(1, 'Quran by Quran', 'General verse (Aam) in the Quran is clarified by another specific verse (Khaas) in the Quran.', 'green'),
+			leaf(2, 'Quran by Sunnah', 'General ruling established in the Quran is clarified by a specific ruling found in the Sunnah (Hadith).', 'purple'),
+			leaf(3, 'Sunnah by Sunnah', 'General ruling found in one Hadith is limited or clarified by a specific ruling found in another Hadith.', 'blue'),
+			leaf(4, 'Ijma (Consensus)', 'General text from the Quran or Sunnah is limited by the Ijmaa of qualified scholars.', 'pink')
+		],
+		{ indent: 24, gap: 18 }
+	);
+	return svg(o.h, defs + o.svg);
 }
 
 // ---------------------------------------------------------------------------
-// Flow into a two-up slab: context block, chip, Aam | Khaas
+// A head, a pill on the join, then Aam beside Khaas
 // ---------------------------------------------------------------------------
 
-function headedPair(head: BlockOpts, chipLabel: string, left: BlockOpts, right: BlockOpts, dash = false): string {
-	let out = '';
-	const h = block(0, 0, W, head);
-	out += h.svg;
-	const s = split(h.h, chipLabel, dash);
-	out += s.svg;
-	const r = row(0, s.y, W, [left, right]);
-	out += r.svg;
-	return svg(s.y + r.h, out);
+const headNode = (o: NodeOpts) => ({ ...o, hue: 'white' as Hue, align: 'start' as const, title: '', bodySize: 13 });
+
+/** Head, then a fork through a pill to two nodes. `stagger` sets the right node lower (a separate text). */
+function headedFork(head: NodeOpts, pillLabel: string, left: NodeOpts, right: NodeOpts, stagger = 0): string {
+	const hw = 300;
+	const ho = headNode(head);
+	const hh = nodeHeight(hw, ho);
+	const M = hh + 38;
+	const y = M + 64;
+	const h = pairH(left, right);
+	let out = defs + node((W - hw) / 2, 0, hw, ho, hh).svg;
+	out += funnel([[W / 2, hh]], [[HW / 2, y], [RX + HW / 2, y + stagger]], W / 2, M, pillLabel);
+	out += node(0, y, HW, left, h).svg + node(RX, y + stagger, HW, right, h).svg;
+	return svg(y + stagger + h, out);
+}
+
+/** Head, a pill on the border of a region, and Aam beside Khaas inside it: one verse. */
+function headedRegion(head: NodeOpts, pillLabel: string, left: NodeOpts, right: NodeOpts): string {
+	const hw = 300;
+	const ho = headNode(head);
+	const hh = nodeHeight(hw, ho);
+	const ry = hh + 46;
+	const h = pairH(left, right);
+	const pad = 10;
+	const iw = (W - 3 * pad) / 2;
+	const h2 = Math.max(nodeHeight(iw, left), nodeHeight(iw, right));
+	let out = defs + node((W - hw) / 2, 0, hw, ho, hh).svg;
+	out += arrow(W / 2, hh, W / 2, ry - 12);
+	out += region(0, ry, W, h2 + 40, { r: 20 });
+	out += pill(W / 2, ry, pillLabel);
+	out += node(pad, ry + 26, iw, left, h2).svg + node(pad * 2 + iw, ry + 26, iw, right, h2).svg;
+	void h;
+	return svg(ry + h2 + 40, out);
 }
 
 function muttasil(): string {
-	return headedPair(
-		{ tone: 'light', label: 'Al-Mukhassis al-Muttasil', body: 'In this Al-Mukhassis is together with al-Aam (They are not separated)' },
+	return headedRegion(
+		{ title: '', label: 'Al-Mukhassis al-Muttasil', body: 'In this Al-Mukhassis is together with al-Aam (They are not separated)' },
 		'Same verse',
 		aam({ ar: 'فَمَن شَهِدَ مِنكُمُ الشَّهْرَ فَلْيَصُمْهُ', en: 'So whoever is present this month, let them fast.', cite: '(Quran 2:185)', note: 'The word مَن is Aam (General) in this Ayah' }),
 		khaas({
@@ -138,57 +139,58 @@ const KHAAS_654: Ev = {
 };
 
 function munfasil(): string {
-	return headedPair(
-		{ tone: 'light', label: 'Al-Mukhassis al-Munfasil', body: 'In this Al-Mukhassis is separated from al-Aam (They are not together)' },
+	return headedFork(
+		{ title: '', label: 'Al-Mukhassis al-Munfasil', body: 'In this Al-Mukhassis is separated from al-Aam (They are not together)' },
 		'A separate text',
 		aam(AAM_228),
 		khaas(KHAAS_654),
-		true
+		36
 	);
 }
 
 function bilAql(): string {
-	return headedPair(
-		{ tone: 'light', label: 'Takhsees bil-Aql', body: 'Some scholars of Usool made this categorization, though it is not necessary.' },
+	return headedFork(
+		{ title: '', label: 'Takhsees bil-Aql', body: 'Some scholars of Usool made this categorization, though it is not necessary.' },
 		'By intellect',
 		aam({ ar: 'اللَّهُ خَالِقُ كُلِّ شَيْءٍ', en: 'Allah is the Creator of all things', cite: '(Quran 39:62)' }),
-		{ tone: 'p1', n: 2, label: 'Khaas (by Aql)', content: 'Creation of creator is not included in this.' }
+		{ hue: 'pink', align: 'start', label: '2 · Khaas (by Aql)', title: '', body: 'Creation of creator is not included in this.', bodySize: 12.5 }
 	);
 }
 
 function bilUrf(): string {
-	let out = '';
-	const pos = row(0, 0, W, [
-		{ tone: 'light', n: 1, label: 'Position', body: 'This is the position of some Maliki scholars, one can make Takhsees based on Urf.' },
-		{ tone: 'light', accent: true, n: 2, label: 'Position', body: 'Others say that they consider only the Urf at the time of Prophet ﷺ to make takhsees of the text.' }
-	]);
-	out += pos.svg;
-	const s = split(pos.h, 'By custom (Urf)');
-	out += s.svg;
-	const r = row(0, s.y, W, [
-		{ tone: 'light', n: 1, label: 'Aam (General)', content: 'الطَّعَامُ بِالطَّعَامِ مِثْلاً بِمِثْلٍ', contentFace: 'sans', body: 'Allah’s Messenger ﷺ said: “Food (may be sold) for food, of same quantities.”', meta: '(Saheeh Muslim 1592)' },
-		{ tone: 'p1', n: 2, label: 'Khaas (by Urf)', body: 'Maliki scholars say that the طعام used in this Hadith should be used for food used during the time of Prophet ﷺ.' }
-	]);
-	out += r.svg;
-	return svg(s.y + r.h, out);
+	const p1: NodeOpts = { hue: 'white', align: 'start', label: '1 · Position', title: '', body: 'This is the position of some Maliki scholars, one can make Takhsees based on Urf.', bodySize: 12.5 };
+	const p2: NodeOpts = { hue: 'purple', align: 'start', label: '2 · Position', title: '', body: 'Others say that they consider only the Urf at the time of Prophet ﷺ to make takhsees of the text.', bodySize: 12.5 };
+	const top = pairH(p1, p2);
+	const M = top + 38;
+	const y = M + 64;
+	const left = aam({ ar: 'الطَّعَامُ بِالطَّعَامِ مِثْلاً بِمِثْلٍ', en: 'Allah’s Messenger ﷺ said: “Food (may be sold) for food, of same quantities.”', cite: '(Saheeh Muslim 1592)' });
+	const right: NodeOpts = { hue: 'pink', align: 'start', label: '2 · Khaas (by Urf)', title: '', body: 'Maliki scholars say that the طعام used in this Hadith should be used for food used during the time of Prophet ﷺ.', bodySize: 12.5 };
+	const h = pairH(left, right);
+	let out = defs + node(0, 0, HW, p1, top).svg + node(RX, 0, HW, p2, top).svg;
+	out += funnel([[HW / 2, top], [RX + HW / 2, top]], [[HW / 2, y], [RX + HW / 2, y]], W / 2, M, 'By custom (Urf)');
+	out += node(0, y, HW, left, h).svg + node(RX, y, HW, right, h).svg;
+	return svg(y + h, out);
 }
 
 // ---------------------------------------------------------------------------
-// Two-up slab merging into the principle (p0)
+// Aam beside Khaas, merging into the principle
 // ---------------------------------------------------------------------------
 
 const PRINCIPLE = 'Khaas (specific) Dalil (evidence) takes precedence over Aam (General) Dalil.';
 const PRINCIPLE_REFS = 'Fath al-Bari 1/89 · Majmoo al-Fatawaa 31/141 · Nayl al-Awtar 1/485 · Tafseer Bahr al-Muheet 3/168';
 
 function pairToPrinciple(a: Ev, k: Ev, principle = PRINCIPLE): string {
-	let out = '';
-	const r = row(0, 0, W, [aam(a), khaas(k)]);
-	out += r.svg;
-	const m = merge(r.h, 'Specified by Khaas');
-	out += m.svg;
-	const p = block(0, m.y, W, { tone: 'p0', label: 'Principle', content: principle, meta: PRINCIPLE_REFS });
-	out += p.svg;
-	return svg(m.y + p.h, out);
+	const l = aam(a);
+	const r = khaas(k);
+	const h = pairH(l, r);
+	const M = h + 38;
+	const py = M + 56;
+	const p: NodeOpts = { hue: 'ink', align: 'start', label: 'Principle', title: principle, titleSize: 15, meta: PRINCIPLE_REFS };
+	const ph = nodeHeight(W, p);
+	let out = defs + node(0, 0, HW, l, h).svg + node(RX, 0, HW, r, h).svg;
+	out += funnel([[HW / 2, h], [RX + HW / 2, h]], [[W / 2, py]], W / 2, M, 'Specified by Khaas');
+	out += node(0, py, W, p, ph).svg;
+	return svg(py + ph, out);
 }
 
 function quranByQuran(): string {
@@ -227,20 +229,28 @@ function sunnahBySunnahSilk(): string {
 }
 
 // ---------------------------------------------------------------------------
-// Copyright: pull quotes as single blocks, and a two-up comparison
+// Copyright: pull quotes, and two reasons side by side
 // ---------------------------------------------------------------------------
 
-function quote(o: BlockOpts): string {
-	const b = block(0, 0, W, o);
-	return svg(b.h, b.svg);
+/** A quote with a large pink mark and no box. */
+function openQuote(label: string, text: string): string {
+	const w = words(54, 32, W - 54, text, { size: 18, weight: 500 });
+	const h = Math.max(w.h + 40, 80);
+	return svg(h, `<text x="0" y="72" font-family="Inter, system-ui, sans-serif" font-size="88" font-weight="700" fill="#ff00a0">“</text>` + caption(54, 18, label, 'start') + w.svg);
+}
+
+/** A quote on a full colour. */
+function filledQuote(hue: Hue, label: string, text: string, size = 17): string {
+	const o: NodeOpts = { hue, align: 'start', label, title: '', body: text, bodySize: size, r: 20 };
+	const h = nodeHeight(W, o);
+	return svg(h, node(0, 0, W, o, h).svg);
 }
 
 function pdfSharing(): string {
-	const r = row(0, 0, W, [
-		{ tone: 'light', accent: true, n: 1, label: 'Sharing', content: 'I share PDF because it helps us learn' },
-		{ tone: 'p0', n: 2, label: 'Not sharing', content: 'I don’t share PDF because it is not my property' }
-	]);
-	return svg(r.h, r.svg);
+	const a: NodeOpts = { hue: 'pink', label: '1 · Sharing', title: 'I share PDF because it helps us learn', titleSize: 16 };
+	const b: NodeOpts = { hue: 'purple', label: '2 · Not sharing', title: 'I don’t share PDF because it is not my property', titleSize: 16 };
+	const h = Math.max(nodeHeight(HW, a), nodeHeight(HW, b));
+	return svg(h + 30, node(0, 0, HW, a, h).svg + node(RX, 30, HW, b, h).svg);
 }
 
 export const diagrams: Record<string, Diagram> = {
@@ -257,17 +267,17 @@ export const diagrams: Record<string, Diagram> = {
 	'copyright-sharing-vs-stealing': {
 		title: 'Sharing and stealing online',
 		type: 'svg',
-		body: quote({ tone: 'light', label: 'Sharing vs stealing', body: '“In the digital age, the line between sharing and stealing can be blurry.”' })
+		body: openQuote('Sharing vs stealing', '“In the digital age, the line between sharing and stealing can be blurry.”')
 	},
 	'copyright-livelihood': {
 		title: 'Taking work without permission',
 		type: 'svg',
-		body: quote({ tone: 'p0', label: 'Livelihood', body: '“Remember: when you take someone else’s work without permission, you’re not just taking their words, you’re taking their livelihood.”' })
+		body: filledQuote('purple', 'Livelihood', '“Remember: when you take someone else’s work without permission, you’re not just taking their words, you’re taking their livelihood.”')
 	},
 	'copyright-pdf-sharing': { title: 'Two reasons people give about sharing PDFs', type: 'svg', body: pdfSharing() },
 	'copyright-honesty-policy': {
 		title: 'Honesty and copyright',
 		type: 'svg',
-		body: quote({ tone: 'light', accent: true, label: 'Honesty', body: '“When it comes to copyright, honesty is the best PDF policy.”' })
+		body: filledQuote('pink', 'Honesty', '“When it comes to copyright, honesty is the best PDF policy.”', 19)
 	}
 };

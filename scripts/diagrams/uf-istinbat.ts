@@ -1,124 +1,131 @@
 /**
- * Diagrams for batch "uf-istinbat". Built with scripts/diagram-kit.ts and
- * following DESIGN.md → Diagram language ("tree as slabs", W = 360).
- * Each key is referenced from markdown as [[SVG:<key>]].
+ * Diagrams for batch "uf-istinbat". Free-form (scripts/diagram-free.ts): a
+ * tree written as an outline with a dashed spine, a hub with four spokes, and
+ * a simple fork. Palette colours at full strength: pink, purple, blue, green.
+ * W = 360. Each key is referenced from markdown as [[SVG:<key>]].
  *
- * Layout: the root is a full-width p0 block; first-level branches are
- * full-width purple blocks 8px below it (two-up when there are exactly two
- * unexpanded branches); a branch's leaves are tags inside it, or two-up
- * lavender blocks directly under it. Deeper levels are lavender blocks with
- * tags. The node revealed at each Jumhoor step carries the pink accent.
+ * Each Mubhath keeps one colour across its overview row and its own hub. On
+ * the Jumhoor tree, Mantooq is blue and Mafhoom purple; the node revealed at
+ * each step is filled pink.
  */
-import { W, GAP, block, row, svg, responsive, type BlockOpts, type Diagram, type Section } from '../diagram-kit.js';
-
-/**
- * Tree as slabs: lays out rows of blocks top to bottom, 8px apart. Each row
- * is one full-width block, or a two-up (or wider) row() of blocks.
- */
-function slabs(rows: (BlockOpts | BlockOpts[])[]): string {
-	let out = '';
-	let y = 0;
-	for (const r of rows) {
-		const b = Array.isArray(r) ? row(0, y, W, r) : block(0, y, W, r);
-		out += b.svg;
-		y += b.h + GAP;
-	}
-	return svg(y - GAP, out);
-}
+import { W, svg, type Diagram } from '../diagram-kit.js';
+import { node, nodeHeight, ring, curve, arrow, outline, defs, type NodeOpts, type Hue } from '../diagram-free.js';
 
 /* ---------- Hanafiyyah: the five Mubhath ---------- */
 
 const HANAFI = 'Ways of al-Istinbaat according to Hanafiyyah';
 
-const MUBHATH: { label: string; leaves: string[] }[] = [
-	{ label: 'Mubhath 1', leaves: ['Dhahir', 'Nass', 'Muawwal', 'Mujmal'] },
-	{ label: 'Mubhath 2', leaves: ['Al-Khafi', 'Al-Mushkil', 'Al-Mujmal', 'Al-Mutashabih'] },
-	{ label: 'Mubhath 3', leaves: ['Al-Haqiqah', 'Al-Majaz', 'Al-Sareeh', 'Al-Kinayah'] },
-	{ label: 'Mubhath 4', leaves: ['Ibaarah al-Nass', 'Isharah al-Nass', 'Iqtida al-Nass', 'Dalalah al-Nass'] },
-	{ label: 'Mubhath 5', leaves: ['Mafhoom al-Sifah', 'Mafhoom al-Shart', 'Mafhoom al-Ghayah', 'Mafhoom al-Adad'] }
+const MUBHATH: { label: string; hue: Hue; leaves: string[] }[] = [
+	{ label: 'Mubhath 1', hue: 'purple', leaves: ['Dhahir', 'Nass', 'Muawwal', 'Mujmal'] },
+	{ label: 'Mubhath 2', hue: 'blue', leaves: ['Al-Khafi', 'Al-Mushkil', 'Al-Mujmal', 'Al-Mutashabih'] },
+	{ label: 'Mubhath 3', hue: 'pink', leaves: ['Al-Haqiqah', 'Al-Majaz', 'Al-Sareeh', 'Al-Kinayah'] },
+	{ label: 'Mubhath 4', hue: 'green', leaves: ['Ibaarah al-Nass', 'Isharah al-Nass', 'Iqtida al-Nass', 'Dalalah al-Nass'] },
+	{ label: 'Mubhath 5', hue: 'ink', leaves: ['Mafhoom al-Sifah', 'Mafhoom al-Shart', 'Mafhoom al-Ghayah', 'Mafhoom al-Adad'] }
 ];
 
-/**
- * Overview: root, then the five Mubhath as one purple family, leaves as tags.
- * Responsive: the root is the head, each Mubhath a section (two columns on desktop).
- */
-const hanafiOverview = (): string =>
-	responsive(
-		MUBHATH.map((m, i): Section => (y) => block(0, y, W, { tone: 'p2', n: i + 1, label: 'Mubhath', tags: m.leaves })),
-		{ head: (y) => block(0, y, W, { tone: 'p0', label: 'Ways of al-Istinbaat', content: HANAFI, meta: 'five Mubhath · four categories each' }) }
+/** Overview: the root, then the five Mubhath on a spine, each with its four as tags. */
+function hanafiOverview(): string {
+	const o = outline(
+		[
+			{ depth: 0, o: { hue: 'white', label: 'Ways of al-Istinbaat', title: HANAFI, titleSize: 15, meta: 'five Mubhath · four categories each' } },
+			...MUBHATH.map((m, i) => ({
+				depth: 1,
+				o: { hue: m.hue, align: 'start' as const, label: `${i + 1} · Mubhath`, title: '', tags: m.leaves }
+			}))
+		],
+		{ indent: 24, gap: 18 }
 	);
+	return svg(o.h, defs + o.svg);
+}
 
-/** One Mubhath on its own: the branch as root, its four leaves two-up under it. */
+/** One Mubhath on its own: a hub, and its four categories on four spokes. */
 function mubhath(i: number): string {
 	const m = MUBHATH[i];
-	const leaf = (content: string): BlockOpts => ({ tone: 'light', content });
-	return slabs([
-		{ tone: 'p0', label: 'Hanafiyyah', content: m.label, meta: 'four categories' },
-		[leaf(m.leaves[0]), leaf(m.leaves[1])],
-		[leaf(m.leaves[2]), leaf(m.leaves[3])]
-	]);
+	const lw = 150;
+	const leaf = (t: string): NodeOpts => ({ hue: 'white', title: t, titleSize: 16 });
+	const hs = m.leaves.map((t) => nodeHeight(lw, leaf(t)));
+	const row1 = Math.max(hs[0], hs[1]);
+	const row2 = Math.max(hs[2], hs[3]);
+	const R = 62;
+	const cy = row1 + 26 + R;
+	const y2 = cy + R + 26;
+	const cx = W / 2;
+	const lx = [0, W - lw, 0, W - lw];
+	const ly = [0, 0, y2, y2];
+	const lh = [row1, row1, row2, row2];
+	let out = defs;
+	m.leaves.forEach((_, k) => {
+		const px = lx[k] + lw / 2;
+		const py = k < 2 ? ly[k] + lh[k] : ly[k];
+		out += arrow(cx, cy, px, py, { head: false });
+	});
+	out += ring(cx, cy, R, { hue: m.hue, label: 'Hanafiyyah', title: m.label, titleSize: 17, meta: 'four categories' });
+	m.leaves.forEach((t, k) => {
+		out += node(lx[k], ly[k], lw, leaf(t), lh[k]).svg;
+	});
+	return svg(y2 + row2, out);
 }
 
 /* ---------- Overview of both approaches ---------- */
 
-const istinbaatOverview = (): string =>
-	slabs([
-		{ tone: 'p0', label: 'Ways of al-Istinbaat', content: 'Ways of al-Istinbaat from Quran and Sunnah', meta: 'two approaches' },
-		[
-			{ tone: 'p1', n: 1, label: 'Jumhoor', content: 'Ways of al-Istinbaat according to Jumhoor (Majority)' },
-			{ tone: 'p2', n: 2, label: 'Hanafiyyah', content: 'Ways of al-Istinbaat according to Hanafiyyah' }
-		]
-	]);
-
-/* ---------- Jumhoor: Mantooq and Mafhoom, revealed step by step ---------- */
+function forkOver(root: NodeOpts, kids: NodeOpts[]): string {
+	const rw = 300;
+	const rh = nodeHeight(rw, root);
+	const kw = 168;
+	const kh = Math.max(...kids.map((k) => nodeHeight(kw, k)));
+	const y = rh + 58;
+	let out = defs;
+	out += curve(W / 2 - 60, rh, kw / 2, y) + curve(W / 2 + 60, rh, W - kw / 2, y);
+	out += node((W - rw) / 2, 0, rw, root, rh).svg;
+	out += node(0, y, kw, kids[0], kh).svg + node(W - kw, y, kw, kids[1], kh).svg;
+	return svg(y + kh, out);
+}
 
 const JUMHOOR = 'Ways of al-Istinbaat according to Jumhoor (Majority)';
 
-function jumhoor(stage: 1 | 2 | 3 | 4 | 5): string {
-	const root: BlockOpts = { tone: 'p0', label: 'Ways of al-Istinbaat', content: JUMHOOR };
-	const mantooq: BlockOpts = { tone: 'p1', n: 1, label: 'Mantooq', content: 'Al-Istidlaal bil Mantooq' };
-	const mafhoom: BlockOpts = { tone: 'p2', n: 2, label: 'Mafhoom', content: 'Al-Istidlaal bil Mafhoom' };
-	if (stage === 1) return slabs([root, [mantooq, mafhoom]]);
+const istinbaatOverview = (): string =>
+	forkOver(
+		{ hue: 'ink', label: 'Ways of al-Istinbaat', title: 'Ways of al-Istinbaat from Quran and Sunnah', titleSize: 15, meta: 'two approaches' },
+		[
+			{ hue: 'blue', label: '1 · Jumhoor', title: 'Ways of al-Istinbaat according to Jumhoor (Majority)', titleSize: 14 },
+			{ hue: 'purple', label: '2 · Hanafiyyah', title: 'Ways of al-Istinbaat according to Hanafiyyah', titleSize: 14 }
+		]
+	);
 
-	const rows: (BlockOpts | BlockOpts[])[] = [root, mantooq];
-	rows.push({ tone: 'light', accent: stage === 2, n: '1.1', label: 'Mantooq', content: 'Mantooq Sareeh', tags: ['Dhahir', 'Nass', 'Muawwal', 'Mujmal'] });
-	rows.push({
-		tone: 'light',
-		accent: stage === 3,
-		n: '1.2',
-		label: 'Mantooq',
-		content: 'Mantooq Ghayr Sareeh',
-		tags: stage >= 3 ? ['Dalalatul Iqtida', 'Dalalatul Isharah', 'Dalalatut Tambeeh wal Eemah'] : undefined
+/* ---------- Jumhoor: Mantooq and Mafhoom, revealed step by step ---------- */
+
+function jumhoor(stage: 1 | 2 | 3 | 4 | 5): string {
+	const root: NodeOpts = { hue: 'ink', label: 'Ways of al-Istinbaat', title: JUMHOOR, titleSize: 15 };
+	const mantooq: NodeOpts = { hue: 'blue', label: '1 · Mantooq', title: 'Al-Istidlaal bil Mantooq', titleSize: 15 };
+	const mafhoom: NodeOpts = { hue: 'purple', label: '2 · Mafhoom', title: 'Al-Istidlaal bil Mafhoom', titleSize: 15 };
+	if (stage === 1) return forkOver(root, [mantooq, mafhoom]);
+
+	const leaf = (accent: boolean, n: string, label: string, title: string, tags?: string[]): NodeOpts => ({
+		hue: accent ? 'pink' : 'white',
+		align: 'start',
+		label: `${n} · ${label}`,
+		title,
+		tags
 	});
-	rows.push(mafhoom);
+	const items: { depth: number; o: NodeOpts }[] = [
+		{ depth: 0, o: root },
+		{ depth: 1, o: mantooq },
+		{ depth: 2, o: leaf(stage === 2, '1.1', 'Mantooq', 'Mantooq Sareeh', ['Dhahir', 'Nass', 'Muawwal', 'Mujmal']) },
+		{
+			depth: 2,
+			o: leaf(stage === 3, '1.2', 'Mantooq', 'Mantooq Ghayr Sareeh', stage >= 3 ? ['Dalalatul Iqtida', 'Dalalatul Isharah', 'Dalalatut Tambeeh wal Eemah'] : undefined)
+		},
+		{ depth: 1, o: mafhoom }
+	];
 	if (stage >= 4) {
-		rows.push({ tone: 'light', accent: stage === 4, n: '2.1', label: 'Mafhoom', content: 'Mafhoom al-Muwafaqah' });
-		rows.push({
-			tone: 'light',
-			accent: stage >= 4,
-			n: '2.2',
-			label: 'Mafhoom',
-			content: 'Mafhoom al-Mukhalafah',
-			tags: stage >= 5 ? ['Mafhoom al-Sifah', 'Mafhoom al-Shart', 'Mafhoom al-Ghayah', 'Mafhoom al-Adad'] : undefined
+		items.push({ depth: 2, o: leaf(stage === 4, '2.1', 'Mafhoom', 'Mafhoom al-Muwafaqah') });
+		items.push({
+			depth: 2,
+			o: leaf(stage >= 4, '2.2', 'Mafhoom', 'Mafhoom al-Mukhalafah', stage >= 5 ? ['Mafhoom al-Sifah', 'Mafhoom al-Shart', 'Mafhoom al-Ghayah', 'Mafhoom al-Adad'] : undefined)
 		});
 	}
-	if (stage === 5) {
-		// The full tree is too tall for one desktop column: root as head, then
-		// the Mantooq branch and the Mafhoom branch as two sections.
-		const branch = (items: (BlockOpts | BlockOpts[])[]): Section => (y0) => {
-			let out = '';
-			let y = y0;
-			for (const r of items) {
-				const b = Array.isArray(r) ? row(0, y, W, r) : block(0, y, W, r);
-				out += b.svg;
-				y += b.h + GAP;
-			}
-			return { svg: out, h: y - GAP - y0 };
-		};
-		const mafhoomAt = rows.indexOf(mafhoom);
-		return responsive([branch(rows.slice(1, mafhoomAt)), branch(rows.slice(mafhoomAt))], { head: branch([root]) });
-	}
-	return slabs(rows);
+	const o = outline(items, { indent: 28, gap: 18 });
+	return svg(o.h, defs + o.svg);
 }
 
 export const diagrams: Record<string, Diagram> = {
