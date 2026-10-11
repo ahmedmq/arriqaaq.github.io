@@ -147,7 +147,7 @@ const entries: Entry[] = [
 		ah: 544,
 		when: 'd. 544 AH',
 		who: 'Qadi Iyad',
-		work: 'Al-Ilma fi Dhabt ar-Rawih wa Taqeed as-Samaa',
+		work: 'Al-Ilma fi Dhabt ar-Riwayah wa Taqeed as-Samaa',
 		note: 'Composed by Qadi Iyad.'
 	},
 	{

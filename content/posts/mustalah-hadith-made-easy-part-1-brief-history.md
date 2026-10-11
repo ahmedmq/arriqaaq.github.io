@@ -203,7 +203,7 @@ In simpler terms, al-Tirmidhi wrote down how hadith is received and passed on, a
 
 His *Al-Jami al-Kabeer* also contains many key terminological discussions, and he has another published book called *Al-Ilal al-Kabeer*.
 
-**Point of benefit:** Imam al-Tirmidhi is well known in the field of finding hidden defects in a hadith (ilal). Ibn Rajab al-Hanbali wrote an explanation of Al-Ilal as-Sagheer titled *Sharh Ilal at-Tirmidhi*.
+**Point of benefit:** Imam al-Tirmidhi is well known in the field of finding hidden defects in a hadith (ilal). Ibn Rajab al-Hanbali wrote an explanation of Al-Ilal as-Sagheer titled *Sharh Ilal at-Tirmidhi*, which is a very beneficial book on this topic.
 
 ### al-Hafiz Ibn Hibban (d. 354 AH)
 
@@ -228,7 +228,7 @@ After this, books were written exclusively on the science and terminology of had
 5. *Al-Kifayah fee Ilm al-Riwayah*, by Abu Bakr Ahmad bin Ali al-Khatib al-Baghdadi (d. 463 AH).
 6. *Al-Jami li-Adab al-Shaykh wa al-Sami*, by al-Khatib al-Baghdadi.
 7. A book on high and low chains (al-uluww wa al-nuzool), by Muhammad bin Tahir al-Maqdisi (d. 507 AH).
-8. *Al-Ilma fi Dhabt ar-Rawih wa Taqeed as-Samaa*, by Qadi Iyad (d. 544 AH).
+8. *Al-Ilma fi Dhabt ar-Riwayah wa Taqeed as-Samaa*, by Qadi Iyad (d. 544 AH).
 9. *Ma La Yasa al-Muhaddith Jahluh*, by Abu Hafs Umar al-Mayyanji (d. 581 AH).
 10. *Marifat Anwa Ulum al-Hadith*, famously called *Muqaddimah Ibn al-Salah*, by Abu Amr Uthman Ibn al-Salah (d. 643 AH).
 11. *Nukhbat al-Fikar fee Mustalah Ahl al-Athar*, by Ibn Hajar al-Asqalani (d. 852 AH).
@@ -287,7 +287,7 @@ al-Khatib al-Baghdadi played a major role in hadith terminology, composing indep
 
 ### al-Maqdisi, Qadi Iyad and al-Mayyanji
 
-Following him, al-Hafiz Abu al-Fadl Muhammad bin Tahir al-Maqdisi (d. 507 AH) wrote a book on higher and lower chains of narration (al-uluww wa an-nuzool). Later, Qadi Iyad (d. 544 AH) composed *Al-Ilma fi Dhabt ar-Rawih wa Taqeed as-Samaa*, and Abu Hafs al-Mayyanji (d. 581 AH) wrote a concise treatise titled *Ma La Yasa al-Muhaddith Jahluh*.
+Following him, al-Hafiz Abu al-Fadl Muhammad bin Tahir al-Maqdisi (d. 507 AH) wrote a book on higher and lower chains of narration (al-uluww wa an-nuzool). Later, Qadi Iyad (d. 544 AH) composed *Al-Ilma fi Dhabt ar-Riwayah wa Taqeed as-Samaa*, and Abu Hafs al-Mayyanji (d. 581 AH) wrote a concise treatise titled *Ma La Yasa al-Muhaddith Jahluh*.
 
 These were the foundational works that addressed the science of Mustalah al-Hadith, and they remained the primary references until the arrival of Ibn al-Salah.
 
