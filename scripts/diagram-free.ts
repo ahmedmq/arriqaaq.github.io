@@ -305,14 +305,15 @@ export function outline(items: OutlineItem[], o: { width?: number; indent?: numb
  * a height so they line up across the panels.
  */
 export type CompareHead = { title: string; label?: string; meta?: string; hue: Hue };
-export function compare(left: CompareHead, right: CompareHead, rows: [string, string][], o: { size?: number; y0?: number } = {}) {
+export function compare(left: CompareHead, right: CompareHead, rows: [string, string][], o: { size?: number; y0?: number; rowLabels?: (string | undefined)[] } = {}) {
 	const GAPX = 12;
 	const pw = (360 - GAPX) / 2;
 	const size = o.size ?? 12.5;
 	const y0 = o.y0 ?? 0;
 	const headO = (s: CompareHead): NodeOpts => ({ hue: s.hue, label: s.label, title: s.title, meta: s.meta, titleSize: 16 });
 	const hh = Math.max(nodeHeight(pw, headO(left)), nodeHeight(pw, headO(right)));
-	const rh = rows.map(([l, r]) => Math.max(words(0, 0, pw - 28, l, { size }).h, words(0, 0, pw - 28, r, { size }).h) + 26);
+	const LAB = 14; // room for a small caption above a labelled row
+	const rh = rows.map(([l, r], i) => Math.max(words(0, 0, pw - 28, l, { size }).h, words(0, 0, pw - 28, r, { size }).h) + 26 + (o.rowLabels?.[i] ? LAB : 0));
 	const total = hh + rh.reduce((a, b) => a + b, 0);
 	const rx = pw + GAPX;
 	let out = region(0, y0, pw, total, { r: 16 }) + region(rx, y0, pw, total, { r: 16 });
@@ -324,7 +325,10 @@ export function compare(left: CompareHead, right: CompareHead, rows: [string, st
 	let y = y0 + hh;
 	rows.forEach(([l, r], i) => {
 		if (i > 0) out += `<line x1="14" y1="${y}" x2="${pw - 14}" y2="${y}" stroke="${P.ink}" stroke-width="1" stroke-dasharray="3 4"/><line x1="${rx + 14}" y1="${y}" x2="${rx + pw - 14}" y2="${y}" stroke="${P.ink}" stroke-width="1" stroke-dasharray="3 4"/>`;
-		out += words(14, y + 13, pw - 28, l, { size }).svg + words(rx + 14, y + 13, pw - 28, r, { size }).svg;
+		const lab = o.rowLabels?.[i];
+		const dy = lab ? LAB : 0;
+		if (lab) out += caption(14, y + 15, lab, 'start') + caption(rx + 14, y + 15, lab, 'start');
+		out += words(14, y + 13 + dy, pw - 28, l, { size }).svg + words(rx + 14, y + 13 + dy, pw - 28, r, { size }).svg;
 		y += rh[i];
 	});
 	return { svg: out, h: total };

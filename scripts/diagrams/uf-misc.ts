@@ -137,10 +137,10 @@ function cite(quote: string): { body: string; meta?: string } {
 const QW = 312;
 
 /** A quote, then a dashed curve to its verdict; returns { svg, h }. */
-function quoteVerdict(y: number, label: string, text: string, verdict: string, hue: Hue, o: { cardLabel?: string } = {}) {
+function quoteVerdict(y: number, label: string, text: string, verdict: string, hue: Hue, o: { cardLabel?: string; verdictLabel?: string } = {}) {
 	const q: NodeOpts = { hue: 'white', align: 'start', label: o.cardLabel, title: '', bodySize: 13, ...cite(text) };
 	const qh = nodeHeight(QW, q);
-	const v: NodeOpts = { hue, align: 'start', label, title: verdict, titleSize: 14 };
+	const v: NodeOpts = { hue, align: 'start', label: o.verdictLabel ?? label, title: verdict, titleSize: 14 };
 	const vh = nodeHeight(QW, v);
 	const vy = y + qh + 30;
 	let out = curve(70, y + qh, 110, vy);
@@ -189,15 +189,15 @@ function mutlaqCase(c: Case): string {
 				[cite(c.mutlaq.quote).body + (cite(c.mutlaq.quote).meta ? ` (${cite(c.mutlaq.quote).meta})` : ''), cite(c.muqayyad.quote).body + (cite(c.muqayyad.quote).meta ? ` (${cite(c.muqayyad.quote).meta})` : '')],
 				[c.mutlaq.verdict, c.muqayyad.verdict]
 			],
-			{ y0: y }
+			{ y0: y, rowLabels: [undefined, 'Verdict'] }
 		);
 		out += cmp.svg;
 		y += cmp.h + 22;
 	} else {
-		const a = quoteVerdict(y, 'Mutlaq', c.mutlaq.quote, c.mutlaq.verdict, 'blue');
+		const a = quoteVerdict(y, 'Mutlaq', c.mutlaq.quote, c.mutlaq.verdict, 'blue', { verdictLabel: 'Verdict' });
 		out += a.svg;
 		y += a.h + 30;
-		const b = quoteVerdict(y, 'Muqayyad', c.muqayyad.quote, c.muqayyad.verdict, 'pink');
+		const b = quoteVerdict(y, 'Muqayyad', c.muqayyad.quote, c.muqayyad.verdict, 'pink', { verdictLabel: 'Verdict' });
 		out += b.svg;
 		y += b.h + 22;
 	}
