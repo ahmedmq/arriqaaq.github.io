@@ -181,7 +181,7 @@ In simpler terms, Imam Muslim used the introduction of his Sahih to explain how 
 
 His book *Al-Tamyeez* also touches on hadith terminology, because of his reputation for simplifying complex concepts.
 
-**Point of benefit:** The Muqaddimah of Sahih Muslim has a lot of benefits on Mustalah al-Hadith, ilm ur-rijal and the classification of narrators. It was narrated by Imam Muslim's student, Abu Ishaq Ibrahim bin Sufyan, and Imam Muslim wrote it addressing him. [Read more here](https://www.troid.org/hadith/explanation-of-hadith/244-the-muqaddimah-of-a-i-muslim).
+**Point of benefit:** The Muqaddimah of Sahih Muslim has a lot of benefits on Mustalah al-Hadith, ilm ur-rijal and the classification of narrators. It was narrated by Imam Muslim's student, Abu Ishaq Ibrahim bin Sufyan, and Imam Muslim wrote it addressing him. [Read more here](https://www.troid.org/the-muqaddimah-of-a-sahih-muslim/).
 
 ### Imam Abu Dawood (d. 275 AH)
 
