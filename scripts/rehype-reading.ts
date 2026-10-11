@@ -10,9 +10,16 @@
  *    text. A paragraph that is mostly Arabic becomes a right-aligned verse
  *    line (class "q-ar").
  * 3. Quotes: each blockquote is classified as Qur'an, hadith or a general
- *    quote (class "quote quote--quran|hadith|plain", data-label). A trailing
- *    reference such as "(Quran 15:9)" or "[Saheeh al-Bukhari 2743]" is moved
- *    into a <cite> at the end of the quote.
+ *    quote (class "quote quote--quran|hadith|plain", data-label). A quote is
+ *    Qur'an or hadith only when it carries the evidence of one: a Qur'an
+ *    citation or verse marks, a hadith-collection citation with a number, a
+ *    leading "Narrated", or a sunnah.com link. Merely MENTIONING the Qur'an,
+ *    hadith, Muslim or the Prophet (ﷺ) does not count, so a scholar's words
+ *    about a hadith stay a plain quote. A trailing reference such as
+ *    "(Quran 15:9)" or "[Saheeh al-Bukhari 2743]" is moved into a <cite> at
+ *    the end of the quote. In a plain quote, a short closing line that only
+ *    names the speaker or source ("Abdullah bin al-Mubarak", "(Majmoo
+ *    al-Fatawa 20/306)") becomes the <cite> too.
  * 4. Sections: each h2 gets data-n="01", "02"… for its index marker.
  *
  * Must run BEFORE rehype-heading-ids so the contents list is emoji-free.
@@ -26,8 +33,51 @@ const ARABIC_RUN = new RegExp(`[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\u
 const ARABIC_CHAR = /[؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿]/u;
 const LATIN_CHAR = /[A-Za-z]/;
 
-const QURAN = /\b(qur.?[aâ]n|surah|surat|ayah|ayat)\b|﴿|\[\s*\d{1,3}\s*[:：]\s*\d{1,3}\s*\]|\(\s*\d{1,3}\s*[:：]\s*\d{1,3}\s*\)/i;
-const HADITH = /\b(bukh[aā]r[iī]|muslim|tirmidh[iī]|ab[uū] d[aā]w[uū]d|abu dawood|nas[aā]['’]?[iī]|nasaee|ibn m[aā]jah|muwatta|musnad|narrated|hadith|ḥadīth|sa?h[iī]h|saheeh|sunan)\b|ﷺ/i;
+// Qur'an evidence. A trailing reference: "(Quran 2:185)", "(The Quran 2:256)",
+// "[Quran, 4: 59]", "(Surah al-Ikhlas 112:1)", a bare "Quran 2:230", or just
+// "(2:255)". Trailing punctuation after it is fine.
+const QURAN_REF = String.raw`(?:the\s+)?(?:al-?)?(?:qur.?[aâ]n|surah|surat)\b[^()\[\]]{0,50}?\d{1,3}\s*[:：,]\s*\d{1,3}(?:\s*[-–]\s*\d{1,3})?`;
+const QURAN_TAIL = new RegExp(String.raw`(?:[(\[]\s*${QURAN_REF}[^()\[\]]{0,20}[)\]]|(?:^|[\s.,"”])${QURAN_REF})[\s,.;:。*_]*$`, 'i');
+const QURAN_NUM_TAIL = /[(\[]\s*\d{1,3}\s*[:：]\s*\d{1,3}(?:\s*[-–]\s*\d{1,3})?\s*[)\]][\s,.;:。]*$/;
+// A leading label: "Quran 3:185: ..." (Arabic verse or translation under it).
+const QURAN_HEAD = /^\s*(?:the\s+)?(?:al-?)?(?:qur.?[aâ]n|surah)\s*,?\s*\d{1,3}\s*[:：]\s*\d{1,3}/i;
+
+// Hadith evidence. A collection AND a number: "(Sahih al-Bukhari 4362)",
+// "Sunan Abu Dawood 2076", "(Muslim 135, 442; Ahmad 2/76)"; or a collection
+// alone as the whole reference: "(Bukhari and Muslim)"; or a grade label:
+// "(Authentic Hadith: ...)". A statement of a Companion or a scholar quoting
+// "Sunan al-Kubra 2/10" is NOT a hadith.
+const COLLECTION = String.raw`(?:bukh[aā]+r[iī]|muslim|(?:abu|abi|ab[uū])\s+d[aā]+w[uūo]+d|(?:at-?|al-?)?tirmidh[iī]|trimidhi|(?:an-?|al-?)?nas[aā]+['’]?[iī]|nasaee|ibn\s+m[aā]+jah|musnad\s+ahmad|muwatta)`;
+const HADITH_NUM_TAIL = new RegExp(String.raw`(?:[(\[][^()\[\]]{0,30}\b${COLLECTION}\b[^()\[\]]{0,50}\d[^()\[\]]{0,50}[)\]]|\b(?:sahih|saheeh|sunan|jami.?)\s+(?:al-|at-|an-)?${COLLECTION}\b\s*,?\s*(?:no\.?\s*)?\d[\d,;:\s()\-–]*(?:[,;]?\s*(?:authentic|sahih|saheeh|hasan|da.?if)\b)?)[\s.*_]*$`, 'i');
+const HADITH_ONLY_TAIL = new RegExp(String.raw`[(\[]\s*(?:narrated|reported|related|recorded)?\s*(?:by\s+)?(?:(?:sahih|saheeh)\s+)?(?:al-)?${COLLECTION}(?:\s*(?:,|and|&|;)\s*(?:(?:sahih|saheeh)\s+)?(?:al-)?${COLLECTION})*\s*[)\]][\s.*_]*$`, 'i');
+const HADITH_GRADE_TAIL = /[(\[]\s*(?:authentic|sahih|saheeh|hasan|da.?if)\s+hadith/i;
+// A leading "Narrated ..." or "It was narrated ...".
+const HADITH_HEAD = /^\s*(?:it was\s+)?(?:narrated|reported)\b/i;
+// An aside box written as a quote: "Note: ...", "It's important to note ...".
+const NOTE_HEAD = /^\s*(?:note\s*[:：]|(?:it'?s|it is)\s+(?:important|worth)\s+(?:to\s+)?not(?:e|ing))/i;
+
+function hasSunnahLink(node: any): boolean {
+	let found = false;
+	visit(node, 'element', (n: any) => {
+		if (n.tagName === 'a' && /sunnah\.com/.test(String(n.properties?.href ?? ''))) found = true;
+	});
+	return found;
+}
+
+function classifyQuote(node: any, text: string): 'quran' | 'hadith' | 'note' | 'plain' {
+	const t = text.replace(/\s+/g, ' ').trim();
+	if (NOTE_HEAD.test(t)) return 'note';
+	// Look at the end of the whole quote and of each paragraph (a verse may be
+	// followed by the author's explanation).
+	const paras = node.children.filter((c: any) => c.type === 'element' && c.tagName === 'p').map((p: any) => textOf(p).replace(/\s+/g, ' ').trim());
+	const tails = [t.slice(-170), ...paras.map((p: string) => p.slice(-170))];
+	const hadithEvidence = HADITH_HEAD.test(t) || hasSunnahLink(node) || tails.some((x: string) => HADITH_NUM_TAIL.test(x) || HADITH_ONLY_TAIL.test(x) || HADITH_GRADE_TAIL.test(x));
+	const quranEvidence = /﴿/.test(t) || QURAN_HEAD.test(t) || tails.some((x: string) => QURAN_TAIL.test(x) || QURAN_NUM_TAIL.test(x));
+	if (quranEvidence && !hadithEvidence) return 'quran';
+	if (hadithEvidence) return 'hadith';
+	return 'plain';
+}
+
 const CITATION =
 	/\s*[(\[]\s*((?:quran|qur.?[aâ]n|surah|surat|saheeh|sahih|sunan|jami|musnad|muwatta|bukhari|muslim|tirmidhi|abu dawud|abu dawood|nasa|nasaee|ibn majah|al-bukhari)[^()[\]]{0,90}?)\s*[)\]]\s*[.。]?\s*$/i;
 
@@ -155,6 +205,26 @@ function extractCitation(bq: any): string | null {
 	return found;
 }
 
+
+/**
+ * Plain quotes: when the last paragraph is only a short attribution (no
+ * sentence of its own), take it out and return its text for the <cite>.
+ * "Abdullah bin al-Mubarak", "— Imam al-Shafi'i", "(Majmoo al-Fatawa 20/306)".
+ */
+function extractAttribution(node: any): string | null {
+	const ps = node.children.filter((c: any) => c.type === 'element' && c.tagName === 'p');
+	if (ps.length < 2) return null;
+	const last = ps[ps.length - 1];
+	const raw = textOf(last).replace(/\s+/g, ' ').trim();
+	if (!raw || raw.length > 110) return null;
+	const wrapped = /^[(\[].*[)\]]\.?$/.test(raw);
+	const dashed = /^[—–-]\s*\S/.test(raw);
+	const sentence = /[.!?:”"’']$/.test(raw);
+	if (!(wrapped || dashed || !sentence)) return null;
+	node.children = node.children.filter((c: any) => c !== last);
+	return raw.replace(/^[—–-]\s*/, '').replace(/^[(\[]\s*|\s*[)\]]\.?$/g, '');
+}
+
 export default function rehypeReading() {
 	return (tree: any) => {
 		let h2 = 0;
@@ -176,8 +246,8 @@ export default function rehypeReading() {
 		visit(tree, 'element', (node: any) => {
 			if (node.tagName !== 'blockquote') return;
 			const text = textOf(node);
-			const kind = QURAN.test(text) ? 'quran' : HADITH.test(text) ? 'hadith' : 'plain';
-			const cite = kind === 'plain' ? null : extractCitation(node);
+			const kind = classifyQuote(node, text);
+			const cite = kind === 'note' ? null : kind === 'plain' ? extractAttribution(node) : extractCitation(node);
 			addClass(node, 'quote');
 			addClass(node, `quote--${kind}`);
 			node.properties['dataLabel'] = kind === 'quran' ? 'Qur’an' : kind === 'hadith' ? 'Hadith' : '';

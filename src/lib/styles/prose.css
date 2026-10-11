@@ -161,7 +161,12 @@
    - Qur'an: hairlines above and below, a small label, the Arabic verse large
      and right-aligned in Amiri Quran, translation beneath, reference as cite.
    - Hadith: the same structure with a thin purple rule instead of hairlines.
-   - Plain: a quiet grey rule, slightly muted text. */
+   - Plain (a scholar's words, or any other quote): ink text a little larger
+     than body, a small square in the subject colour above it, and the
+     speaker or source as a quiet line beneath. Only real Qur'an and hadith
+     get a label: a quote that merely mentions them is plain.
+   - Note (a "Note: ..." aside written as a quote): ink text and a 3px rule
+     in the subject colour, no quote mark and no label. */
 
 .prose blockquote {
 	margin-block: 2em;
@@ -259,6 +264,54 @@
 
 .prose .quote--quran strong {
 	font-weight: 500;
+}
+
+.prose .quote--note {
+	margin-block: 1.6em;
+	padding: 0.15em 0 0.15em 1.1em;
+	border-left: 3px solid var(--subject, var(--purple));
+	color: var(--ink);
+}
+
+.prose .quote--plain {
+	position: relative;
+	padding: 2.5rem 0 0.1rem 0;
+	border-left: 0;
+	color: var(--ink);
+}
+
+.prose .quote--plain::before {
+	content: '';
+	position: absolute;
+	top: 0.95rem;
+	left: 0;
+	width: 0.85rem;
+	height: 0.85rem;
+	background: var(--subject, var(--purple));
+}
+
+.prose .quote--plain > p:not(.q-ar) {
+	font-size: 1.125rem;
+	line-height: 1.65;
+}
+
+.prose .quote--plain .q-cite {
+	margin-top: 0.8em;
+	font-family: var(--font-sans);
+	font-size: 0.9375rem;
+	font-weight: 500;
+	letter-spacing: 0;
+	color: var(--ink-2);
+}
+
+.prose .quote--plain .q-cite::before {
+	content: '';
+	display: inline-block;
+	width: 1.25rem;
+	height: 1px;
+	margin-right: 0.6rem;
+	vertical-align: middle;
+	background: currentColor;
 }
 
 .prose .q-cite {

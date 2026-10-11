@@ -5,10 +5,11 @@
  */
 
 export const CHAIN = {
+	/** The sanad as the notes give it: Hammam, Abu Hurayrah, the Prophet (ﷺ). Only the narrators can be taken out; the Prophet (ﷺ) is where the report ends. */
 	links: [
-		{ name: 'Hammam ibn Munabbah', role: 'A student of Abu Hurayrah' },
-		{ name: 'Abu Hurayrah', role: '' },
-		{ name: 'The Prophet (ﷺ)', role: '' }
+		{ name: 'Hammam ibn Munabbah', role: 'A student of Abu Hurayrah', narrator: true },
+		{ name: 'Abu Hurayrah', role: 'A narrator', narrator: true },
+		{ name: 'The Prophet (ﷺ)', role: 'Where the report ends', narrator: false }
 	],
 	caption:
 		'As-Sahifa as-Sahiha: every hadith in it is present in Bukhari and Muslim, and its sanad is very short.',

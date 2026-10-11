@@ -1,7 +1,11 @@
 /**
- * Break the chain. Tap a narrator to take them out of the sanad of
- * As-Sahifa as-Sahiha, and see why the scholars said the chain is part of
- * the religion. Text: ./data/mustalah-chain.ts (shared with the no-JS fallback).
+ * Take a narrator out of the chain. The sanad of As-Sahifa as-Sahiha has
+ * three links: Hammam, Abu Hurayrah, the Prophet (ﷺ). Each narrator has an
+ * explicit "Take out" button; the Prophet (ﷺ) is where the report ends and
+ * cannot be removed. With every link in place the chain is complete; with a
+ * link missing nobody can check who the report came through, which is what
+ * Abdullah bin al-Mubarak meant. Text: ./data/mustalah-chain.ts (shared with
+ * the no-JS fallback).
  */
 import { CHAIN } from './data/mustalah-chain';
 import { esc } from './lib/dom';
@@ -9,10 +13,10 @@ import { esc } from './lib/dom';
 const HUES = ['blue', 'purple', 'green'] as const;
 
 export function init(el: HTMLElement) {
-	const gone = new Set<number>();
+	const out = new Set<number>();
 
 	el.innerHTML = `<div class="wd subject--hadith">
-		<p class="wd-mono">Tap a narrator</p>
+		<p class="wd-mono">Take a narrator out of the chain</p>
 		<div class="wd-chain" data-chain></div>
 		<div class="wd-status" data-status aria-live="polite"></div>
 	</div>`;
@@ -22,28 +26,31 @@ export function init(el: HTMLElement) {
 	function draw() {
 		chain.innerHTML = CHAIN.links
 			.map((l, i) => {
-				const out = gone.has(i);
-				const next = i < CHAIN.links.length - 1;
-				const broken = out || gone.has(i + 1);
-				return `<button type="button" class="wd-node wd-hue--${HUES[i]}" aria-pressed="${out}" data-i="${i}">
-						<strong>${out ? '?' : esc(l.name)}</strong>
-						<span>${out ? 'Tap to put back' : l.role ? esc(l.role) : 'Tap to take out'}</span>
-					</button>${next ? `<span class="wd-link${broken ? ' is-broken' : ''}" aria-hidden="true"></span>` : ''}`;
+				const gone = out.has(i);
+				const last = i === CHAIN.links.length - 1;
+				const broken = gone || out.has(i + 1);
+				const action = l.narrator
+					? `<button type="button" class="btn ${gone ? 'btn--ghost' : 'btn--subject'}" data-i="${i}">${gone ? 'Put back' : 'Take out'}<span class="sr-only"> ${esc(l.name)}</span></button>`
+					: '';
+				return `<div class="wd-node wd-hue--${HUES[i]}${gone ? ' is-out' : ''}">
+						<div><strong>${gone ? 'Missing link' : esc(l.name)}</strong><span>${gone ? 'Who was here? Nobody can say.' : esc(l.role)}</span></div>
+						${action}
+					</div>${last ? '' : `<span class="wd-link${broken ? ' is-broken' : ''}" aria-hidden="true"></span>`}`;
 			})
 			.join('');
-		const whole = gone.size === 0;
+		const whole = out.size === 0;
 		status.className = `wd-status ${whole ? 'wd-hue--green' : 'wd-hue--pink'}`;
 		status.innerHTML = whole
-			? `<p>${esc(CHAIN.caption)}</p>`
-			: `<p><q>${esc(CHAIN.quote)}</q></p><p class="wd-mono">${esc(CHAIN.by)}</p>`;
+			? `<p><strong>The chain is complete.</strong> Every link is named, from Hammam to the Prophet (ﷺ).</p><p>${esc(CHAIN.caption)}</p>`
+			: `<p><strong>A link is missing.</strong> Nobody can check who this report came through.</p><p><q>${esc(CHAIN.quote)}</q></p><p class="wd-mono">${esc(CHAIN.by)}</p>`;
 	}
 
 	const onClick = (ev: Event) => {
-		const n = (ev.target as HTMLElement).closest<HTMLElement>('[data-i]');
-		if (!n) return;
-		const i = Number(n.dataset.i);
-		if (gone.has(i)) gone.delete(i);
-		else gone.add(i);
+		const b = (ev.target as HTMLElement).closest<HTMLElement>('[data-i]');
+		if (!b) return;
+		const i = Number(b.dataset.i);
+		if (out.has(i)) out.delete(i);
+		else out.add(i);
 		draw();
 		el.querySelector<HTMLElement>(`[data-i="${i}"]`)?.focus({ preventScroll: true });
 	};
