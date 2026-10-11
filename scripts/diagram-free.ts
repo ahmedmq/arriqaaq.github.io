@@ -83,7 +83,7 @@ function measure(w: number, o: NodeOpts) {
 	const inner = w - PAD * 2;
 	const ts = o.titleSize ?? 15;
 	const bs = o.bodySize ?? 13;
-	const ar = o.ar ? wrapTo(o.ar, inner, 17, 'sans') : [];
+	const ar = o.ar ? wrapTo(o.ar, inner, 13, 'sans') /* Arabic runs narrower than Latin: about 7px a character at 17px */ : [];
 	const title = wrapTo(o.title, inner, ts, 'sans');
 	const body = o.body ? wrapTo(o.body, inner, bs, 'sans') : [];
 	const meta = o.meta ? wrapTo(o.meta, inner, 10.5, 'mono') : [];
@@ -119,7 +119,7 @@ function nodeText(x: number, y: number, w: number, o: NodeOpts, m = measure(w, o
 		cy += 16;
 	}
 	for (const l of m.ar) {
-		out += `<text x="${x + w - PAD}" y="${cy + 18}" text-anchor="end" direction="rtl" ${AR} font-size="17" font-weight="${hue === 'amber' ? 700 : 400}" fill="${ink}">${esc(l)}</text>`;
+		out += `<text x="${x + w - PAD}" y="${cy + 18}" text-anchor="start" direction="rtl" ${AR} font-size="17" font-weight="${hue === 'amber' ? 700 : 400}" fill="${ink}">${esc(l)}</text>`;
 		cy += 26;
 	}
 	for (const l of m.title) {
