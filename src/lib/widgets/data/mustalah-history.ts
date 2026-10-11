@@ -147,7 +147,7 @@ const entries: Entry[] = [
 		ah: 544,
 		when: 'd. 544 AH',
 		who: 'Qadi Iyad',
-		work: 'Al-Ilma',
+		work: 'Al-Ilma fi Dhabt ar-Rawih wa Taqeed as-Samaa',
 		note: 'Composed by Qadi Iyad.'
 	},
 	{
@@ -302,7 +302,7 @@ export const FAMILIES: Family[] = [
 			critique: [
 				{ title: 'Al-Nukat ala Muqaddimah Ibn al-Salah', by: 'al-Zarkashi', when: 'd. 794 AH', note: 'A critical analysis (printed).' },
 				{ title: 'Al-Taqyeed wa al-Eedah li-ma Ubhima wa Ughliqa min Kitab Ibn al-Salah', by: 'al-Iraqi', when: 'd. 806 AH', note: 'Clarifies ambiguous points and corrects misconceptions about Ibn al-Salah’s work (printed).' },
-				{ title: 'Al-Ifsah an Nukat Ibn al-Salah', by: 'Ibn Hajar al-Asqalani', when: 'd. 852 AH', note: 'A detailed critique covering both Ibn al-Salah and al-Iraqi’s notes, marked with (ص) for Ibn al-Salah and (ع) for al-Iraqi. The notes list Ibn Hajar’s An-Nukat ala Kitab Ibn al-Salah, published now with takhreej by Shaykh Rabi.' }
+				{ title: 'An-Nukat ala Ibn al-Salah', by: 'Ibn Hajar al-Asqalani', when: 'd. 852 AH', note: 'A detailed critique covering both Ibn al-Salah and al-Iraqi’s notes, marked with (ص) for Ibn al-Salah and (ع) for al-Iraqi. It is now published with takhreej by Shaykh Rabi.' }
 			],
 			poem: [
 				{ title: 'Al-Tabsirah wa al-Tadhkirah', by: 'al-Iraqi', note: 'A 1000-line poem. He also wrote its commentary.' },

@@ -150,11 +150,11 @@ In simpler terms, this one book spoke about what makes a hadith authentic, what 
 
 So Abdurrahman Mahdi wrote a letter to Imam al-Shafi'i, requesting him to write a book on the usool of the deen, hadith, fiqh and the other sciences. Harith an-Nakkal took the letter to Imam al-Shafi'i, and Imam al-Shafi'i wrote Kitab ar-Risalah in reply.
 
-**He wrote it twice.** This is why scholars list it in the index of his works as two separate books: *Al-Risalah al-Qadimah* (the Old Risalah) and *Al-Risalah al-Jadidah* (the New Risalah). Shaykh Ahmad Shakir (the editor of the book) said in his introduction to Al-Risalah:
+**He wrote it twice.** This is why scholars list it in the index of his works as two separate books: *Al-Risalah al-Qadimah* (the Old Risalah) and *Al-Risalah al-Jadidah* (the New Risalah). The Old Risalah was based on the letter of Abdurrahman bin Mahdi. Shaykh Ahmad Shakir (the editor of the book) said in his introduction to Al-Risalah:
 
-> “As for the Al-Risalah al-Qadimah (The Old Risalah), the most plausible view in my opinion is that he wrote it in Mecca in response to the request of Abdurrahman bin Mahdi, the great Imam and scholar of Hadith, about whom Al-Shafi'i said: ‘I do not know anyone like him in the world.’ When Al-Shafi'i returned to Egypt, he recompiled the Risalah. Whatever the case may be, the Al-Risalah al-Qadimah (The Old Risalah) has been lost, and what people have today is only the Al-Risalah al-Jadidah (The New Risalah). From our examination of Al-Shafi'i's existing books written in Egypt, it appears that he recompiled it from memory because he did not have all his books with him. It also seems to me that he rewrote the book ‘Al-Risalah’ after composing most of the books found in ‘Al-Umm.’ He dictated it to Al-Rabee al-Muradi. Al-Shafi'i did not name it ‘Al-Risalah’ himself; rather, he referred to it simply as ‘Al-Kitab’ (The Book). It appears that it was called ‘Al-Risalah’ (The Epistle) in his time because it was sent to Imam Abdurrahman bin Mahdi, may Allah have mercy on him, who said about it: ‘When I read Al-Shafi'i's Risalah, it astonished me, for I saw the words of an intelligent, eloquent, and sincere man. I frequently supplicate for him.’”
+> “As for the Al-Risalah al-Qadimah (The Old Risalah), the most plausible view in my opinion is that he wrote it […] in response to the request of Abdurrahman bin Mahdi, the great Imam and scholar of Hadith, about whom Al-Shafi'i said: ‘I do not know anyone like him in the world.’ When Al-Shafi'i returned to Egypt, he recompiled the Risalah. Whatever the case may be, the Al-Risalah al-Qadimah (The Old Risalah) has been lost, and what people have today is only the Al-Risalah al-Jadidah (The New Risalah). From our examination of Al-Shafi'i's existing books written in Egypt, it appears that he recompiled it from memory because he did not have all his books with him. It also seems to me that he rewrote the book ‘Al-Risalah’ after composing most of the books found in ‘Al-Umm.’ He dictated it to Al-Rabee al-Muradi. Al-Shafi'i did not name it ‘Al-Risalah’ himself; rather, he referred to it simply as ‘Al-Kitab’ (The Book). It appears that it was called ‘Al-Risalah’ (The Epistle) in his time because it was sent to Imam Abdurrahman bin Mahdi, may Allah have mercy on him, who said about it: ‘When I read Al-Shafi'i's Risalah, it astonished me, for I saw the words of an intelligent, eloquent, and sincere man. I frequently supplicate for him.’”
 
-So Kitab ar-Risalah was revised again by Imam al-Shafi'i when he was in Egypt, and Rabi ibn Sulayman, who was present with him, narrated the book. Ismaaeel Ibn Yahyaa al-Muzanee (d. 264 AH), also known as Imam Muzni, a companion and disciple of Imam al-Shafi'i and the author of the famous book on aqeedah called Sharhus-Sunnah, revised this book 500 times. He said that each time he read it, he found new benefits in it.
+So Kitab ar-Risalah was revised again by Imam al-Shafi'i when he was in Egypt, and Ar-Rabee ibn Sulayman al-Muradi, who was present with him, narrated the book. Ismaaeel Ibn Yahyaa al-Muzanee (d. 264 AH), also known as Imam Muzni, a companion and disciple of Imam al-Shafi'i and the author of the famous book on aqeedah called Sharhus-Sunnah, revised this book 500 times. He said that each time he read it, he found new benefits in it.
 
 **Points of benefit:**
 
@@ -228,7 +228,7 @@ After this, books were written exclusively on the science and terminology of had
 5. *Al-Kifayah fee Ilm al-Riwayah*, by Abu Bakr Ahmad bin Ali al-Khatib al-Baghdadi (d. 463 AH).
 6. *Al-Jami li-Adab al-Shaykh wa al-Sami*, by al-Khatib al-Baghdadi.
 7. A book on high and low chains (al-uluww wa al-nuzool), by Muhammad bin Tahir al-Maqdisi (d. 507 AH).
-8. *Al-Ilma*, by Qadi Iyad (d. 544 AH).
+8. *Al-Ilma fi Dhabt ar-Rawih wa Taqeed as-Samaa*, by Qadi Iyad (d. 544 AH).
 9. *Ma La Yasa al-Muhaddith Jahluh*, by Abu Hafs Umar al-Mayyanji (d. 581 AH).
 10. *Marifat Anwa Ulum al-Hadith*, famously called *Muqaddimah Ibn al-Salah*, by Abu Amr Uthman Ibn al-Salah (d. 643 AH).
 11. *Nukhbat al-Fikar fee Mustalah Ahl al-Athar*, by Ibn Hajar al-Asqalani (d. 852 AH).
@@ -287,7 +287,7 @@ al-Khatib al-Baghdadi played a major role in hadith terminology, composing indep
 
 ### al-Maqdisi, Qadi Iyad and al-Mayyanji
 
-Following him, al-Hafiz Abu al-Fadl Muhammad bin Tahir al-Maqdisi (d. 507 AH) wrote a book on higher and lower chains of narration (al-uluww wa an-nuzool). Later, Qadi Iyad (d. 544 AH) composed *Al-Ilma*, and Abu Hafs al-Mayyanji (d. 581 AH) wrote a concise treatise titled *Ma La Yasa al-Muhaddith Jahluh*.
+Following him, al-Hafiz Abu al-Fadl Muhammad bin Tahir al-Maqdisi (d. 507 AH) wrote a book on higher and lower chains of narration (al-uluww wa an-nuzool). Later, Qadi Iyad (d. 544 AH) composed *Al-Ilma fi Dhabt ar-Rawih wa Taqeed as-Samaa*, and Abu Hafs al-Mayyanji (d. 581 AH) wrote a concise treatise titled *Ma La Yasa al-Muhaddith Jahluh*.
 
 These were the foundational works that addressed the science of Mustalah al-Hadith, and they remained the primary references until the arrival of Ibn al-Salah.
 
@@ -322,7 +322,7 @@ The full list is below. Tap a tab to choose a text, and a coloured chip to see o
 - Imam al-Nawawi (the author of the Forty Hadith) wrote two books on Uloom al-Hadith: *Irshad Tullab al-Haqaaiq* and *Al-Taqreeb*.
 - Ibn Kathir's *Ikhtisar Uloom al-Hadith* is one notable mention that is not present in the book we are studying, but it is very famous.
 - Al-Iraqi's *Alfiyyah* (*Al-Tabsirah wa al-Tadhkirah*) is a poem of 1000 lines on Ibn al-Salah's Muqaddimah, for easy memorisation. Al-Sakhawi, a student of Ibn Hajar, explained it in *Fath al-Mugheeth*. Al-Bulqini, a teacher of Ibn Hajar, wrote *Mahasin al-Istilah*, a concise form of Ibn al-Salah's book.
-- Ibn Hajar's *An-Nukat ala Kitab Ibn al-Salah* is now published with takhreej by Shaykh Rabi.
+- Ibn Hajar's *An-Nukat ala Ibn al-Salah* is now published with takhreej by Shaykh Rabi.
 - Ahmad Shakir's explanation of Ibn Kathir's book is *Al-Baith al-Hathith*. A copy of it exists with the notes of Shaykh al-Albani and Ali al-Halabi in it. Shaykh Muqbil also wrote an explanation of it, called *Al-Sayr al-Hathith*.
 
 ---
