@@ -116,6 +116,7 @@ function htmlToPlaintext(html: string): string {
 function countWords(html: string): number {
 	return html
 		.replace(/<pre[\s\S]*?<\/pre>/g, ' ')
+		.replace(/<div class="wd-static">[\s\S]*?<\/div>/g, ' ') // no-JS fallbacks of widgets repeat the widget's data
 		.replace(/<svg[\s\S]*?<\/svg>/g, ' ')
 		.replace(/<[^>]+>/g, ' ')
 		.replace(/&[a-z#0-9]+;/gi, ' ')

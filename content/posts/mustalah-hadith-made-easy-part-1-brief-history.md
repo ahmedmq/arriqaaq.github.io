@@ -10,22 +10,26 @@ tags:
 authors:
   - arriqaaq
 featured: false
-reading_time: 19
+reading_time: 21
 ---
 
 [[SVG:mh-history-map]]
 
 *In the Name of Allah, The Most Gracious, The Most Merciful…*
 
+Have you ever come across a hadith on social media, or in a forwarded message, and thought, "***Hold up, who actually said this?***" Most of us have. We read it, we share it, and very rarely do we stop to ask who told it to whom, and who told them.
+
 > “The (Isnaad) chain of narration is part of the (Deen) religion. Were it not for the chain (Isnaad), anyone could say whatever they wanted.”
 >
 > Abdullah bin al-Mubarak
 
-Anyone could say whatever they wanted. That is what the chain of narration protects us from.
+Anyone could say whatever they wanted. Think about what that would mean. The Quran and the hadith did not reach us by chance. They reached us through people, handed down from one generation to the next, and for the hadith that handing down is recorded in the chain of narration. That is why Ibn al-Mubarak did not call the chain a useful extra. He called it part of the religion itself.
 
-The hadith of the Prophet (ﷺ) is the second legislative source after the Quran. It is the foundation of the religion and the source of the straight path. So when a report is attributed to him (ﷺ), the first thing we need to know is ***whether it is authentic or weak.***
+Without it, a lie only needs the name of the Prophet (ﷺ) attached to it to travel, and false narrations would sit beside the authentic ones with nothing to tell them apart. The scholars saw this danger early. When the turmoil (fitnah) occurred, their answer was simple: "Name your men for us." We will meet that moment in this post.
 
-The science that answers that question is **Mustalah al-Hadith**.
+It's a curious scenario: we depend on the chain every time we read a hadith, but how often are we told about the science standing behind it? It is a careful, strong science, built to sort the authentic from the weak and the sound from the flawed, and it is unique to Muslims. So the goal of this course is to open the door to that science, one step at a time, starting from the very beginning.
+
+That science is called **Mustalah al-Hadith**.
 
 ---
 
@@ -33,7 +37,7 @@ The science that answers that question is **Mustalah al-Hadith**.
 
 The knowledge of Mustalah al-Hadith is of great importance, because it distinguishes the authentic hadith from the weak, and the sound from the flawed. Simply put, it is the science that tells us which hadith are authentic and which are weak.
 
-Its importance comes from the importance of the noble Prophetic hadith itself, the second legislative source after the Quran. Two things rest upon this science:
+Its importance comes from the importance of the noble Prophetic hadith itself: the second legislative source after the Quran, the foundation of the religion and the source of the straight path. Two things rest upon this science:
 
 - The derivation of rulings from the pure Sunnah is based upon it.
 - Through this noble science, which is unique to Muslims, proper emulation of the Messenger (ﷺ) is achieved.
@@ -88,7 +92,7 @@ The recording of hadith preceded the systematic documentation of hadith terminol
 
 ## The first works
 
-From the first works that were written on the sciences and usool of Mustalah al-Hadith are:
+Now to the books. Let's go through them in the order they came. From the first works that were written on the sciences and usool of Mustalah al-Hadith are:
 
 1. Kitab al-Umm, by Imam al-Shafi'i.
 2. Kitab ar-Risalah, by Imam al-Shafi'i.
@@ -181,6 +185,8 @@ After them, al-Hafiz Muhammad bin Hibban al-Busti (d. 354 AH) addressed hadith t
 - In ***Al-Majrooheen*** he listed twenty types of narrator criticism in the introduction.
 - His greatest work, ***Al-Saheeh ala al-Taqaseem wa al-Anwa***, includes key terminological discussions in its valuable introduction. He summarised his conditions for authenticity, defended his methodology, and classified reports based on their chains. He also discussed differences in elevation (raf) and stopping (waqf), connected (mawsool) and mursal narrations, ziyadah al-thiqaat in chains and texts, narrations by innovators and the rulings on narrating from them, mukhtaliteen (those who mix up narrations), mudallis narrators, and the integrity of the Sahabah.
 
+In simpler terms, Ibn Hibban wrote down which narrators he accepted and why, how narrators can be criticised, and what makes a report authentic by his conditions.
+
 ---
 
 ## The later days
@@ -215,6 +221,8 @@ Qadi al-Hasan bin Abdurrahman al-Ramahurmuzi authored his beneficial and brillia
 - It elaborates on those who combined narration with deep understanding, and discusses in detail the methods of receiving hadith (tahammul) and the phrases of transmission.
 - It also addresses linguistic errors (al-lahn) in narration, narrating by meaning (al-riwayah bi al-mana), comparative criticism, memorisation and review (al-mudhakarah), scholarly competition, and other related subjects.
 
+In simpler terms, this book is less about the types of hadith and more about how hadith is taught, written down and carried from teacher to student.
+
 He relied heavily on narrated reports from early scholars with full chains of transmission, and earned high praise from leading hadith authorities for this book. Imam al-Dhahabi said about it: “The author of Al-Muhaddith al-Fasil bayn al-Rawi wa al-Waiee, and what an excellent book it is! It is said that Al-Silafi (a renowned hadith scholar) would hardly ever part with his copy, meaning during a portion of his life.”
 
 ### al-Hakim (d. 405 AH) and Abu Nuaym (d. 430 AH)
@@ -237,6 +245,8 @@ After him came the Hafiz Abu Yala al-Khalili, who authored ***Al-Irshad fi Marif
 - the leading authorities in this field,
 - the critics of narrations (nuqqad al-athar), and
 - the jurists among the Companions and their successors, and other related subjects.
+
+In simpler terms, the introduction of his book is a small tour of the terms of the field and of the people who shaped it.
 
 ### al-Khatib al-Baghdadi (d. 463 AH)
 
@@ -269,6 +279,8 @@ Al-Hafiz Taqi al-Din Abu Amr Uthman bin al-Salah al-Shahrazuri (born 577 AH, d. 
 
 This book became one of the finest and most esteemed works in hadith terminology, and it marked a turning point in the field. It served as a central reference around which later works revolved, and became the core source for subsequent expansions. Later scholars had little to do beyond rearranging its contents, simplifying it through abridgments or versification, or clarifying some of its objectives. Allah blessed Ibn al-Salah's book with widespread acceptance, making it the primary textbook for anyone seeking to enter this discipline. It became the key to unlocking its complex meanings, and the explanatory guide to its condensed principles.
 
+Simply put, Ibn al-Salah's book became the book that everyone after him wrote around.
+
 So there is a whole family of books around it: abridgments, commentaries and critical notes, and poetic versifications.
 
 [[SVG:mh-salah-hub]]
@@ -289,7 +301,7 @@ The full list is below. Tap a tab to choose a text, and a coloured chip to see o
 
 ## Nukhbat al-Fikar, and the short texts
 
-Among the comprehensive abridgments in this field is a concise treatise by the Imam, the Hafiz, Abu al-Fadl Ahmad bin Ali bin Hajar al-Asqalani al-Misri (d. 852 AH), titled ***Nukhbat al-Fikar fee Mustalah Ahl al-Athar***. He then authored a commentary on it, titled ***Nuzhat al-Nazar fee Tawdih Nukhbat al-Fikar***. Scholars turned their attention to it, relying on it for its conciseness, organisation and accuracy. Nukhbat al-Fikr and its explanation became the focus of study and consideration among hadith scholars, resulting in numerous commentaries, abridgments, annotations and poetic renderings. Among them, Ibn Hajar's son also wrote an explanation of Nukhbat al-Fikr.
+Among the comprehensive abridgments in this field is a concise treatise by the Imam, the Hafiz, Abu al-Fadl Ahmad bin Ali bin Hajar al-Asqalani al-Misri (d. 852 AH), titled ***Nukhbat al-Fikar fee Mustalah Ahl al-Athar***. He then authored a commentary on it, titled ***Nuzhat al-Nazar fee Tawdih Nukhbat al-Fikar***. Scholars turned their attention to it, relying on it for its conciseness, organisation and accuracy. Nukhbat al-Fikr and its explanation became the focus of study and consideration among hadith scholars, resulting in numerous commentaries, abridgments, annotations and poetic renderings. One of those explanations of Nukhbat al-Fikr was written by Ibn Hajar's own son.
 
 Two more short texts are worth knowing:
 
@@ -319,5 +331,7 @@ Eight questions, taken only from what you just read. Every answer comes with the
 ## Conclusion
 
 We looked at where the science of Mustalah al-Hadith came from: the sahifas written from the time of the Sahabah, the moment the chain began to matter, the first works of al-Shafi'i, Imam Muslim, Abu Dawood, al-Tirmidhi and Ibn Hibban, the books written exclusively on the science, and the turning point of Ibn al-Salah and the books that grew around him.
+
+Simply put, the science was written down late, but the care for the chain began early.
 
 InshaAllah, in the next post we begin on the science itself, with the definitions and the first terms.
