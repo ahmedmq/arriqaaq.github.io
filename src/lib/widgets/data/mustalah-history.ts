@@ -147,7 +147,7 @@ const entries: Entry[] = [
 		ah: 544,
 		when: 'd. 544 AH',
 		who: 'Qadi Iyad',
-		work: 'Al-Ilma fi Dhabt ar-Riwayah wa Taqeed as-Samaa',
+		work: 'Al-Ilma fi Dhabt ar-Riwayah wa Taqyeed as-Sama',
 		note: 'Composed by Qadi Iyad.'
 	},
 	{
@@ -370,7 +370,7 @@ export const FAMILIES: Family[] = [
 		blurb: 'A short didactic poem of only 34 verses by Umar bin Muhammad al-Bayquni (d. 1080 AH). Despite its brevity, it is one of the most famous and beneficial abridgments in hadith terminology.',
 		groups: {
 			explained: [
-				{ title: 'Al-Arjuun fi Sharh al-Bayqoon', by: 'Nawab Siddiq Hasan Khan', note: 'He wrote books in all fields of Islam. Shaykh Uzair Shams says he was an ummah in his own because of his works.' }
+				{ title: 'Al-Arjuun fi Sharh al-Bayqoon', by: 'Nawab Siddiq Hasan Khan', when: 'd. 1307 AH', note: 'He wrote books in all fields of Islam. Shaykh Uzair Shams says he was an ummah in his own because of his works.' }
 			]
 		}
 	}

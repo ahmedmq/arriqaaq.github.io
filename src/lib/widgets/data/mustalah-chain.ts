@@ -5,11 +5,16 @@
  */
 
 export const CHAIN = {
-	/** The sanad as the notes give it: Hammam, Abu Hurayrah, the Prophet (ﷺ). Only the narrators can be taken out; the Prophet (ﷺ) is where the report ends. */
+	/**
+	 * The chain as the notes draw it by hand: the Prophet (ﷺ) at the top, then
+	 * Abu Hurayrah, then Hammam ibn Munabbah. (The typed note reads the sanad
+	 * the other way: Hammam, Abu Hurayrah, the Prophet (ﷺ).) Only the narrators
+	 * can be taken out; the Prophet (ﷺ) is where the report starts.
+	 */
 	links: [
-		{ name: 'Hammam ibn Munabbah', role: 'A student of Abu Hurayrah', narrator: true },
+		{ name: 'The Prophet (ﷺ)', role: 'Where the report starts', narrator: false },
 		{ name: 'Abu Hurayrah', role: 'A narrator', narrator: true },
-		{ name: 'The Prophet (ﷺ)', role: 'Where the report ends', narrator: false }
+		{ name: 'Hammam ibn Munabbah', role: 'A student of Abu Hurayrah', narrator: true }
 	],
 	caption:
 		'As-Sahifa as-Sahiha: every hadith in it is present in Bukhari and Muslim, and its sanad is very short.',

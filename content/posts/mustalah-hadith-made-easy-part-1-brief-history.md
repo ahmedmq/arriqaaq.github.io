@@ -76,7 +76,7 @@ Its importance comes from the importance of the noble Prophetic hadith itself: t
 
 ## Why this book?
 
-We will study this science through a book written by Shaykh Abdul Muhsin Al-Abbad and Shaykh Abdul Kareem al-Murad. It was chosen for two reasons:
+We will study this science through *Min Atyab al-Minah fi Ilm al-Mustalah*, written by Shaykh Abdul Muhsin Al-Abbad and Shaykh Abdul Kareem al-Murad. It was chosen for two reasons:
 
 1. It is not too simple, like Nukhbat al-Fikr, and not too detailed, like Ikhtisar Uloom al-Hadith. It is short and concise for a reader.
 2. It is taught in institutes of knowledge in Madinah, under the guidance of the Islamic University of Madinah, and in other schools like Jamia Salafiyyah Banaras.
@@ -96,7 +96,7 @@ Written manuscripts of hadith (each one is called a *sahifa*) were present since
 
 > **Note**: All the hadith in As-Sahifa as-Sahiha are present in Bukhari and Muslim, and its sanad (its chain of narrators) is very short: Hammam → Abu Hurayrah → the Prophet (ﷺ).
 
-Try it yourself. Tap one of the narrators below and see what happens to the chain.
+Try it yourself. Take a narrator out of the chain below and see what happens.
 
 [[WIDGET:isnad-chain]]
 
@@ -126,6 +126,8 @@ Now to the books. Let's go through them in the order they came. From the first w
 2. Kitab ar-Risalah, by Imam al-Shafi'i.
 3. The Muqaddimah (introduction) of Sahih Muslim.
 4. The last part of Jami al-Tirmidhi.
+
+At this stage, the writing on the science was scattered, in different kinds, within the books of knowledge.
 
 > **Note**: You will see terms like mursal, mudallas and ma'lool in the lists below. Don't worry about them. Each one gets its own lesson later, InshaAllah.
 
@@ -219,7 +221,7 @@ In simpler terms, Ibn Hibban wrote down which narrators he accepted and why, how
 
 ## The later days
 
-After this, books were written exclusively on the science and terminology of hadith. From them are:
+By the fourth century after the Hijrah, the sciences and arts had matured and the terminology had settled. After this, books were written exclusively on the science and terminology of hadith. From them are:
 
 1. *Al-Muhaddith al-Fasil bayn al-Rawi wa al-Waiee*, by Abu Muhammad al-Hasan bin Abdurrahman bin Khallad al-Ramahurmuzi (d. 360 AH).
 2. *Marifat Ulum al-Hadith*, by Abu Abdullah al-Hakim al-Naysaburi (d. 405 AH). He could not complete the book.
@@ -228,20 +230,21 @@ After this, books were written exclusively on the science and terminology of had
 5. *Al-Kifayah fee Ilm al-Riwayah*, by Abu Bakr Ahmad bin Ali al-Khatib al-Baghdadi (d. 463 AH).
 6. *Al-Jami li-Adab al-Shaykh wa al-Sami*, by al-Khatib al-Baghdadi.
 7. A book on high and low chains (al-uluww wa al-nuzool), by Muhammad bin Tahir al-Maqdisi (d. 507 AH).
-8. *Al-Ilma fi Dhabt ar-Riwayah wa Taqeed as-Samaa*, by Qadi Iyad (d. 544 AH).
+8. *Al-Ilma fi Dhabt ar-Riwayah wa Taqyeed as-Sama*, by Qadi Iyad (d. 544 AH).
 9. *Ma La Yasa al-Muhaddith Jahluh*, by Abu Hafs Umar al-Mayyanji (d. 581 AH).
-10. *Marifat Anwa Ulum al-Hadith*, famously called *Muqaddimah Ibn al-Salah*, by Abu Amr Uthman Ibn al-Salah (d. 643 AH).
+10. *Marifat Anwa Uloom al-Hadith* (also called *Uloom al-Hadith*), famously called *Muqaddimah Ibn al-Salah*, by Abu Amr Uthman Ibn al-Salah (d. 643 AH).
 11. *Nukhbat al-Fikar fee Mustalah Ahl al-Athar*, by Ibn Hajar al-Asqalani (d. 852 AH).
 12. *Mandhumah al-Bayquniyyah*, by Umar ibn Muhammad ibn Fatooh al-Bayqooni ad-Dimashqi.
 13. *Tadreeb al-Rawi fi Sharh Taqreeb al-Nawawi*, by Jalaluddin as-Suyuti.
 14. *Tawdhih al-Afkar*, sharh *Tanqih al-Anzar*, by Muhammad ibn Ismail al-Amir as-San'ani (d. 1182 AH).
 15. *Qawaid at-Tahdith*, by Jamaluddin al-Qasimi.
+16. *Tawjih an-Nazar*, by al-Jaza'iri.
 
 The books from number 10 onward are the ones we meet in the sections below. Let's take the first nine one at a time.
 
 ### al-Ramahurmuzi (d. 360 AH)
 
-Qadi al-Hasan bin Abdurrahman al-Ramahurmuzi authored his beneficial and brilliant book ***Al-Muhaddith al-Fasil bayn al-Rawi wa al-Waiee***. This book is not exclusively dedicated to compiling all the types of hadith sciences, nor was that its purpose. It is a work focused on the Sunan of riwayah, scholarly pursuit, writing methodologies and their etiquettes.
+Qadi al-Hasan bin Abdurrahman al-Ramahurmuzi authored his beneficial and brilliant book ***Al-Muhaddith al-Fasil bayn al-Rawi wa al-Waiee***. He singled out the science of mustalah for authorship, in a rudimentary state. This book is not exclusively dedicated to compiling all the types of hadith sciences, nor was that its purpose. It is a work focused on the Sunan of riwayah, scholarly pursuit, writing methodologies and their etiquettes.
 
 - In its early chapters it discusses introductory matters related to hadith terminology.
 - It then outlines the qualities of a hadith student and some of their necessary conditions.
@@ -255,7 +258,7 @@ He relied heavily on narrated reports from early scholars with full chains of tr
 
 ### al-Hakim (d. 405 AH) and Abu Nuaym (d. 430 AH)
 
-Then came Abu Abdillah Muhammad bin Abdullah al-Hakim al-Naysaburi, who authored ***Marifat Ulum al-Hadith***. His work is far more valuable and refined than that of al-Ramahurmuzi, as it encompasses most branches of the hadith sciences, systematically categorising and detailing its various types. Some scholars even consider it the pioneering work in hadith terminology.
+Then came Abu Abdillah Muhammad bin Abdullah al-Hakim al-Naysaburi, who authored ***Marifat Ulum al-Hadith***. His work is far more valuable and refined than that of al-Ramahurmuzi, as it encompasses most branches of the hadith sciences, systematically categorising and detailing its various types. Some scholars even consider it the pioneering work in hadith terminology. But he did not refine it, and it did not cover everything.
 
 Following him, the Hafiz Abu Nuaym Ahmad bin Abdullah al-Asbahani expanded upon al-Hakim's work and critiqued some of its points in a book he titled ***Al-Mustakhraj ala Kitab al-Hakim***. However, as Ibn Hajar noted, he did not fully perfect it, leaving room for further refinement by later scholars.
 
@@ -283,11 +286,11 @@ Then came al-Khatib al-Baghdadi (Abu Bakr Ahmad bin Ali), who authored two signi
 - ***Al-Kifayah fee Ilm al-Riwayah***, a foundational book on the principles of hadith transmission.
 - ***Al-Jami li-Adab al-Shaykh wa al-Sami***, a work on proper conduct in hadith learning and teaching.
 
-al-Khatib al-Baghdadi played a major role in hadith terminology, composing independent works on most branches of the hadith sciences. Fair-minded scholars agree that all later researchers relied on his writings, which makes him an indispensable reference in the field.
+al-Khatib al-Baghdadi played a major role in hadith terminology, composing independent works on most branches of the hadith sciences. In the words of al-Hafiz Abu Bakr ibn Nuqtah, everyone who came after al-Khatib became dependent on his books. Fair-minded scholars agree that all later researchers relied on his writings, which makes him an indispensable reference in the field.
 
 ### al-Maqdisi, Qadi Iyad and al-Mayyanji
 
-Following him, al-Hafiz Abu al-Fadl Muhammad bin Tahir al-Maqdisi (d. 507 AH) wrote a book on higher and lower chains of narration (al-uluww wa an-nuzool). Later, Qadi Iyad (d. 544 AH) composed *Al-Ilma fi Dhabt ar-Riwayah wa Taqeed as-Samaa*, and Abu Hafs al-Mayyanji (d. 581 AH) wrote a concise treatise titled *Ma La Yasa al-Muhaddith Jahluh*.
+Following him, al-Hafiz Abu al-Fadl Muhammad bin Tahir al-Maqdisi (d. 507 AH) wrote a book on higher and lower chains of narration (al-uluww wa an-nuzool). Later, Qadi Iyad (d. 544 AH) composed *Al-Ilma fi Dhabt ar-Riwayah wa Taqyeed as-Sama*, and Abu Hafs al-Mayyanji (d. 581 AH) wrote a concise treatise titled *Ma La Yasa al-Muhaddith Jahluh*.
 
 These were the foundational works that addressed the science of Mustalah al-Hadith, and they remained the primary references until the arrival of Ibn al-Salah.
 
@@ -303,9 +306,11 @@ These were the foundational works that addressed the science of Mustalah al-Hadi
 
 ## Ibn al-Salah, the turning point
 
-Al-Hafiz Taqi al-Din Abu Amr Uthman bin al-Salah al-Shahrazuri (born 577 AH, d. 643 AH) was a scholar residing in Damascus. When he was appointed to teach hadith at Al-Madrasah al-Ashrafiyyah, he compiled what had been scattered across the works of his predecessors, and enriched it with essential insights, in his invaluable book ***Marifat Anwa Uloom al-Hadith***, famously called ***Muqaddimah Ibn al-Salah***. He referred to all the works of al-Khatib al-Baghdadi and of the other scholars before him.
+Al-Hafiz Taqi al-Din Abu Amr Uthman bin al-Salah al-Shahrazuri (born 577 AH, d. 643 AH) was a scholar residing in Damascus. When he was appointed to teach hadith at Al-Madrasah al-Ashrafiyyah, known as Dar al-Hadith, he compiled what had been scattered across the works of his predecessors, and enriched it with essential insights, in his invaluable book ***Marifat Anwa Uloom al-Hadith***, famously called ***Muqaddimah Ibn al-Salah***. He referred to all the works of al-Khatib al-Baghdadi and of the other scholars before him. He refined its subjects and dictated it little by little, gathering the scattered aims of al-Khatib's works and adding to them the best benefits from other books.
 
 This book became one of the finest and most esteemed works in hadith terminology, and it marked a turning point in the field. It served as a central reference around which later works revolved, and became the core source for subsequent expansions. Later scholars had little to do beyond rearranging its contents, simplifying it through abridgments or versification, or clarifying some of its objectives. Allah blessed Ibn al-Salah's book with widespread acceptance, making it the primary textbook for anyone seeking to enter this discipline. It became the key to unlocking its complex meanings, and the explanatory guide to its condensed principles.
+
+Some scholars abridged it, like al-Nawawi in his *Irshad* and al-Bulqini in his *Mahasin*. Some versified it, like al-Iraqi in his *Alfiyyah*. Some supplemented it, and some objected to it.
 
 Simply put, Ibn al-Salah's book became the book that everyone after him wrote around.
 
@@ -333,7 +338,7 @@ Among the comprehensive abridgments in this field is a concise treatise by the I
 
 Two more short texts are worth knowing:
 
-- ***Mandhumah al-Bayquniyyah***, authored by Umar bin Muhammad al-Bayquni (d. 1080 AH). It is a short didactic poem of only 34 verses. Despite its brevity, it is one of the most famous and beneficial abridgments in hadith terminology. Nawab Siddiq Hasan Khan wrote a sharh on it called *Al-Arjuun fi Sharh al-Bayqoon*.
+- ***Mandhumah al-Bayquniyyah***, authored by Umar bin Muhammad al-Bayquni (d. 1080 AH). It is a short didactic poem of only 34 verses. Despite its brevity, it is one of the most famous and beneficial abridgments in hadith terminology. Nawab Siddiq Hasan Khan (d. 1307 AH) wrote a sharh on it called *Al-Arjuun fi Sharh al-Bayqoon*.
 - ***Qawaid al-Tahdith***, by Muhammad Jamal al-Deen al-Qasimi (d. 1332 AH). It is a well-researched and highly beneficial work on hadith principles.
 
 **Point of benefit:** Nawab Siddiq Hasan Khan wrote books in all fields of Islam. Shaykh Uzair Shams says he was an ummah in his own because of his works.

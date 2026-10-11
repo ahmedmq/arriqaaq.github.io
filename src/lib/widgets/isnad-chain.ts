@@ -1,8 +1,8 @@
 /**
  * Take a narrator out of the chain. The sanad of As-Sahifa as-Sahiha has
- * three links: Hammam, Abu Hurayrah, the Prophet (ﷺ). Each narrator has an
- * explicit "Take out" button; the Prophet (ﷺ) is where the report ends and
- * cannot be removed. With every link in place the chain is complete; with a
+ * three links, drawn as in the notes: the Prophet (ﷺ), Abu Hurayrah, Hammam.
+ * Each narrator has an explicit "Take out" button; the Prophet (ﷺ) is where
+ * the report starts and cannot be removed. With every link in place the chain is complete; with a
  * link missing nobody can check who the report came through, which is what
  * Abdullah bin al-Mubarak meant. Text: ./data/mustalah-chain.ts (shared with
  * the no-JS fallback).
@@ -10,7 +10,7 @@
 import { CHAIN } from './data/mustalah-chain';
 import { esc } from './lib/dom';
 
-const HUES = ['blue', 'purple', 'green'] as const;
+const HUES = ['green', 'purple', 'blue'] as const;
 
 export function init(el: HTMLElement) {
 	const out = new Set<number>();
@@ -41,7 +41,7 @@ export function init(el: HTMLElement) {
 		const whole = out.size === 0;
 		status.className = `wd-status ${whole ? 'wd-hue--green' : 'wd-hue--pink'}`;
 		status.innerHTML = whole
-			? `<p><strong>The chain is complete.</strong> Every link is named, from Hammam to the Prophet (ﷺ).</p><p>${esc(CHAIN.caption)}</p>`
+			? `<p><strong>The chain is complete.</strong> Every link is named, from the Prophet (ﷺ) down to Hammam.</p><p>${esc(CHAIN.caption)}</p>`
 			: `<p><strong>A link is missing.</strong> Nobody can check who this report came through.</p><p><q>${esc(CHAIN.quote)}</q></p><p class="wd-mono">${esc(CHAIN.by)}</p>`;
 	}
 
