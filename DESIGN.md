@@ -258,6 +258,7 @@ Anything below can go straight into a post's markdown:
 | Animated SVG | Inline SVG with CSS `@keyframes` inside a `<style>` scoped by a class. Wrap it in `@media (prefers-reduced-motion: no-preference)` |
 | Interactive widget | `[[WIDGET:name]]`: register it in `scripts/widgets.ts` and implement `src/lib/widgets/<name>.ts` exporting `init(el)`. `WidgetHydrator` loads it only on posts that use it. Build controls from `.tabs`, `.segmented`, `.chip` and `.btn` |
 | Image | `::image{src=… width=wide|full caption=…}`, for real photos only, never for diagrams |
+| Questions after a section | `:::pause` with a list: each item is a question, the indented paragraph under it is the answer; an item with no answer is a "Think about it" prompt. Renders as native `<details>` (works without JS); `src/lib/pause.ts` adds "I knew it / Not yet", saved in the reader's browser. Answers come from the post's own words |
 
 Every rich element must work at 375px, respect reduced motion, and render
 something meaningful before JS runs (a caption or a static frame).

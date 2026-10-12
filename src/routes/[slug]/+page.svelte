@@ -13,6 +13,7 @@
 	import Giscus from '$lib/components/Giscus.svelte';
 	import { coursePlace, subjectForPost } from '$lib/content';
 	import { reveal } from '$lib/actions';
+	import { pauses } from '$lib/pause';
 
 	let { data } = $props();
 	const isPost = $derived(data.post.type === 'post');
@@ -106,7 +107,7 @@
 			{#if isPost && data.post.toc?.length > 1}
 				<Toc entries={data.post.toc} />
 			{/if}
-			<div class="prose" use:reveal={{ selector: 'blockquote, h2' }}>
+			<div class="prose" use:reveal={{ selector: 'blockquote, h2' }} use:pauses={data.html}>
 				{@html data.html}
 			</div>
 			<p class="fix" data-pagefind-ignore>

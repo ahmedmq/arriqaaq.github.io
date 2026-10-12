@@ -17,6 +17,12 @@
  *   :::toggle{title=…}
  *     body
  *   :::
+ *   :::pause{title=…}
+ *   - Question?
+ *
+ *     Answer, as the indented paragraph(s) under the question.
+ *   - A question with no answer is a "think about it" prompt.
+ *   :::
  */
 import { existsSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
@@ -127,6 +133,27 @@ function toggleHtml(a: Record<string, string | undefined>, children: Mdast[]): s
 	return `<details class="kg-toggle-card"><summary>${esc(a.title ?? '')}</summary>${inner}</details>`;
 }
 
+/** "Pause and check": a short list of questions after a section. Each
+ *  question is a native <details> (works without JavaScript); the answer is
+ *  whatever sits under the question in the list item. src/lib/pause.ts adds
+ *  the self-check buttons when the page runs. */
+function pauseHtml(a: Record<string, string | undefined>, children: Mdast[]): string {
+	const list = children.find((c: Mdast) => c.type === 'list');
+	const items: Mdast[] = list?.children ?? [];
+	const qs = items.map((li: Mdast, i: number) => {
+		const [first, ...rest] = li.children ?? [];
+		const q = renderChildrenToHtml(first?.children ? [{ type: 'paragraph', children: first.children }] : [])
+			.replace(/^<p>|<\/p>\s*$/g, '');
+		const n = `<span class="pause-n" aria-hidden="true">${i + 1}</span>`;
+		if (!rest.length) {
+			return `<li class="pause-q pause-q--think">${n}<div class="pause-body"><p class="pause-text">${q}</p><span class="pause-tag">Think about it</span></div></li>`;
+		}
+		return `<li class="pause-q">${n}<details class="pause-body"><summary><span class="pause-text">${q}</span><span class="pause-cta">Show answer</span></summary><div class="pause-a">${renderChildrenToHtml(rest)}</div></details></li>`;
+	});
+	const count = `${items.length} question${items.length === 1 ? '' : 's'}`;
+	return `<aside class="pause" aria-label="${esc(a.title ?? 'Pause and check')}"><div class="pause-head"><span class="pause-title">${esc(a.title ?? 'Pause and check')}</span><span class="pause-count">${count}</span></div><ol class="pause-list">${qs.join('')}</ol></aside>`;
+}
+
 function collectGalleryImages(node: Mdast): string[] {
 	const images: string[] = [];
 	visit(node, 'listItem', (li: any) => {
@@ -136,7 +163,7 @@ function collectGalleryImages(node: Mdast): string[] {
 	return images;
 }
 
-const KNOWN = new Set(['image', 'bookmark', 'gallery', 'embed', 'callout', 'toggle']);
+const KNOWN = new Set(['image', 'bookmark', 'gallery', 'embed', 'callout', 'toggle', 'pause']);
 
 export default function remarkGhostCards() {
 	return (tree: any) => {
@@ -191,6 +218,9 @@ function transformIfDirective(node: any): any[] | null {
 				break;
 			case 'toggle':
 				html = toggleHtml(attrs, node.children ?? []);
+				break;
+			case 'pause':
+				html = pauseHtml(attrs, node.children ?? []);
 				break;
 		}
 		return [{ type: 'html', value: html }];

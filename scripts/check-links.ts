@@ -47,7 +47,7 @@ const pages = walk(BUILD);
 for (const file of pages) {
 	const html = readFileSync(file, 'utf8');
 	const page = '/' + relative(BUILD, file).replace(/index\.html$/, '');
-	if (/::(bookmark|image|embed|gallery|callout|toggle)\{/.test(html)) problems.push(`${page}: unconverted directive`);
+	if (/::(bookmark|image|embed|gallery|callout|toggle|pause)\{/.test(html)) problems.push(`${page}: unconverted directive`);
 	const ids = new Set([...html.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]));
 	for (const m of html.matchAll(/\s(href|src)="([^"]+)"/g)) {
 		const v = unescape(m[2]);

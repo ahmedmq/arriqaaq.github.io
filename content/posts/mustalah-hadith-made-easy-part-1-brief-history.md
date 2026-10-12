@@ -83,6 +83,18 @@ We will study this science through *Min Atyab al-Minah fi Ilm al-Mustalah*, writ
 
 We will meet both of them further down.
 
+:::pause
+- In one line, what does Mustalah al-Hadith do?
+
+  It distinguishes the authentic hadith from the weak, and the sound from the flawed.
+- Which two things rest upon this science?
+
+  The derivation of rulings from the Sunnah is based upon it, and through it proper emulation of the Messenger (ﷺ) is achieved.
+- Why was *Min Atyab al-Minah* chosen over Nukhbat al-Fikr or Ikhtisar Uloom al-Hadith?
+
+  It is not too simple, like Nukhbat al-Fikr, and not too detailed, like Ikhtisar Uloom al-Hadith. It is short and concise for a reader.
+:::
+
 ---
 
 ## The earlier days
@@ -115,6 +127,19 @@ Step through it, one part at a time.
 Now go back to the words of Abdullah bin al-Mubarak at the start of this post: the chain is part of the religion, and without it anyone could say whatever they wanted.
 
 The recording of hadith preceded the systematic documentation of hadith terminology. So it is no surprise that the formal writing of hadith terminology came later than the recording of hadith itself. Perhaps the earliest scholars did not feel the need to compile this discipline separately at that time, but later generations required it, and that is how its documentation began.
+
+:::pause
+- What is a *sahifa*?
+
+  A written manuscript of hadith. They were present since the time of the Sahabah.
+- What did Muhammad bin Sireen say changed when the fitnah occurred?
+
+  They began to say: "Name your men for us." Then they accepted the narrations of the people of Sunnah and rejected the narrations of the people of innovation.
+- Which came first: the recording of hadith, or the writing of hadith terminology?
+
+  The recording of hadith. The formal writing of hadith terminology came later.
+- The next time a hadith reaches you, what would you want to know about it first?
+:::
 
 ---
 
@@ -217,6 +242,21 @@ After them, al-Hafiz Muhammad bin Hibban al-Busti (d. 354 AH) addressed hadith t
 
 In simpler terms, Ibn Hibban wrote down which narrators he accepted and why, how narrators can be criticised, and what makes a report authentic by his conditions.
 
+:::pause
+- Who was the first to author a work in this science, and in which book?
+
+  Imam al-Shafi'i (d. 204 AH), in his book Al-Risalah.
+- Why was Kitab ar-Risalah written?
+
+  Abdurrahman Mahdi wrote a letter to Imam al-Shafi'i, requesting him to write a book on the usool of the deen, hadith, fiqh and the other sciences. Imam al-Shafi'i wrote Kitab ar-Risalah in reply.
+- Where did Imam Muslim discuss hadith terminology?
+
+  In the introduction (Muqaddimah) of his *Al-Jami*, that is, Sahih Muslim.
+- Which book did al-Tirmidhi place at the end of his *Al-Jami al-Kabeer*?
+
+  *Al-Ilal as-Sagheer*.
+:::
+
 ---
 
 ## The later days
@@ -302,6 +342,18 @@ These were the foundational works that addressed the science of Mustalah al-Hadi
 - al-Bayhaqi has a famous book on usool al-hadith and fiqh combined, called *Al-Madkhal ila Ilm al-Sunan*.
 - Whoever came after al-Khatib al-Baghdadi took benefit from his book *Al-Kifayah*. Ibn Hajar al-Asqalani says that al-Khatib al-Baghdadi wrote a book in every science and branch of hadith.
 
+:::pause
+- By which century had the terminology settled?
+
+  By the fourth century after the Hijrah. After this, books were written exclusively on the science and terminology of hadith.
+- What is al-Ramahurmuzi's book mostly about?
+
+  Less about the types of hadith, and more about how hadith is taught, written down and carried from teacher to student.
+- In the words of Ibn Nuqtah, whose books did everyone after him depend on?
+
+  al-Khatib al-Baghdadi's.
+:::
+
 ---
 
 ## Ibn al-Salah, the turning point
@@ -330,6 +382,15 @@ The full list is below. Tap a tab to choose a text, and a coloured chip to see o
 - Ibn Hajar's *An-Nukat ala Ibn al-Salah* is now published with takhreej by Shaykh Rabi.
 - Ahmad Shakir's explanation of Ibn Kathir's book is *Al-Baith al-Hathith*. A copy of it exists with the notes of Shaykh al-Albani and Ali al-Halabi in it. Shaykh Muqbil also wrote an explanation of it, called *Al-Sayr al-Hathith*.
 
+:::pause
+- What is Ibn al-Salah's book famously called?
+
+  *Muqaddimah Ibn al-Salah*. Its title is *Marifat Anwa Uloom al-Hadith*.
+- What did later scholars do with his book?
+
+  Some abridged it, like al-Nawawi in his *Irshad* and al-Bulqini in his *Mahasin*. Some versified it, like al-Iraqi in his *Alfiyyah*. Some supplemented it, and some objected to it.
+:::
+
 ---
 
 ## Nukhbat al-Fikar, and the short texts
@@ -342,6 +403,15 @@ Two more short texts are worth knowing:
 - ***Qawaid al-Tahdith***, by Muhammad Jamal al-Deen al-Qasimi (d. 1332 AH). It is a well-researched and highly beneficial work on hadith principles.
 
 **Point of benefit:** Nawab Siddiq Hasan Khan wrote books in all fields of Islam. Shaykh Uzair Shams says he was an ummah in his own because of his works.
+
+:::pause
+- What is Ibn Hajar's own commentary on Nukhbat al-Fikar called?
+
+  *Nuzhat al-Nazar fee Tawdih Nukhbat al-Fikar*.
+- Why did scholars turn to Nukhbat al-Fikar?
+
+  For its conciseness, organisation and accuracy.
+:::
 
 ---
 
