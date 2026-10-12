@@ -63,8 +63,8 @@ const quizFallback = () =>
 export const widgets: Record<string, WidgetMeta> = {
 	'mh-timeline': {
 		g: '',
-		t: 'The story of the science on one time axis',
-		s: 'The main works as dots on a time axis. Step, play or scrub through the history.',
+		t: 'The story of the science, in order',
+		s: 'The main works on one line, by period. Scroll to walk through the history.',
 		f: timelineFallback
 	},
 	'mh-works': {

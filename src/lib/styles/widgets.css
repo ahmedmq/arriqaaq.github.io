@@ -156,123 +156,175 @@
 	transition: width var(--dur) var(--ease-out);
 }
 
-/* ---- Timeline: dot plot, now card, controls, list -------------------------- */
+/* ---- Timeline, scrolled (mh-timeline) ----------------------------------------
+   One vertical line; the part above the reading point takes each period's
+   colour. A pinned bar on top shows the place in the whole story. */
 
-.wd-plot svg {
-	display: block;
-	width: 100%;
-	height: auto;
-	overflow: visible;
-}
-
-.wd-plot g[data-dot] {
-	-webkit-tap-highlight-color: transparent;
-}
-
-.wd-now {
+.ws-pin {
+	position: sticky;
+	top: calc(var(--topbar-h) + 10px);
+	z-index: 2;
 	display: grid;
-	gap: var(--s-1);
-	padding: var(--s-4);
+	gap: var(--s-2);
+	margin: calc(var(--s-2) * -1) calc(var(--s-2) * -1) 0;
+	padding: var(--s-2);
 	border-radius: var(--r);
-	background: var(--h, var(--surface));
-	color: var(--h-on, var(--ink));
-	min-height: 188px;
-	align-content: start;
+	background: var(--page);
+	box-shadow: 0 0 0 1px var(--line);
 }
 
-.wd-now .wd-mono {
-	color: inherit;
+.ws-bar {
+	display: flex;
+	gap: 2px;
+	height: 8px;
 }
 
-.wd-now strong {
-	font-size: 1.25rem;
-	font-weight: 600;
-	line-height: 1.25;
-	letter-spacing: -0.02em;
-	text-wrap: balance;
+.ws-bar span {
+	flex: 1;
+	border-radius: 2px;
+	background: var(--line);
+	transition: background var(--dur-fast) ease;
 }
 
-.wd-now .wd-who {
-	font-weight: 500;
+.ws-bar span.is-on {
+	background: var(--h);
 }
 
-.wd-now p {
-	margin-top: var(--s-2);
-}
-
-.wd-now .wd-pos {
-	margin-top: var(--s-2);
+.ws-now {
+	min-height: 1.5em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: var(--ink-2);
 	font-variant-numeric: tabular-nums;
 }
 
-.wd-ctl {
-	display: grid;
-	grid-template-columns: auto 1fr auto;
-	gap: var(--s-2);
-	align-items: center;
-}
-
-.wd-ctl .wd-range {
-	grid-column: 1 / -1;
-}
-
-.wd-range {
-	width: 100%;
-	height: var(--tap);
-	margin: 0;
-	accent-color: var(--purple);
-	cursor: pointer;
-}
-
-.wd-tl {
-	display: grid;
-	gap: var(--s-2);
+.ws-line {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
-.wd-tl[hidden] {
-	display: none;
+.ws-line > li {
+	position: relative;
+	padding-left: 34px;
 }
 
-.wd-item {
-	display: block;
-	width: 100%;
-	min-height: var(--tap);
-	padding: var(--s-3) var(--s-4);
-	border: 0;
+/* The line itself: a segment per row, grey until you pass it. */
+.ws-line > li::before {
+	content: '';
+	position: absolute;
+	left: 11px;
+	top: 0;
+	bottom: 0;
+	width: 3px;
+	background: var(--line-strong);
+	transition: background var(--dur) ease;
+}
+
+.ws-line > li.is-lit::before {
+	background: var(--h);
+}
+
+.ws-line > li:first-child::before {
+	top: 14px;
+}
+
+.ws-line > li:last-child::before {
+	bottom: auto;
+	height: 14px;
+}
+
+.ws-era {
+	padding-top: var(--s-4);
+	padding-bottom: var(--s-2);
+}
+
+.ws-era span {
+	display: inline-block;
+	padding: 4px 10px;
+	border-radius: 999px;
+	background: var(--h);
+	color: var(--h-on);
+	font-weight: 600;
+	font-size: 0.8125rem;
+}
+
+.ws-cent {
+	padding-block: var(--s-1);
+}
+
+.ws-cent span {
+	font-family: var(--font-mono);
+	font-size: 11px;
+	letter-spacing: 0.06em;
+	color: var(--ink-3);
+}
+
+.ws-item {
+	padding-block: var(--s-1);
+}
+
+.ws-dot {
+	position: absolute;
+	left: 5px;
+	top: 18px;
+	width: 15px;
+	height: 15px;
+	border: 3px solid var(--line-strong);
+	border-radius: 50%;
+	background: var(--page);
+	transition: background var(--dur) ease, border-color var(--dur) ease, transform var(--dur) ease;
+}
+
+.ws-item.is-lit .ws-dot {
+	border-color: var(--h);
+	background: var(--h);
+}
+
+.ws-item.is-now .ws-dot {
+	transform: scale(1.35);
+}
+
+.ws-card {
+	display: grid;
+	gap: 2px;
+	padding: var(--s-3);
 	border-radius: var(--r-sm);
 	background: var(--surface);
-	box-shadow: inset 4px 0 0 var(--h);
-	text-align: left;
-	color: inherit;
-	font: inherit;
-	cursor: pointer;
-	transition: background var(--dur-fast) ease;
+	transition: background var(--dur) ease, color var(--dur) ease;
 }
 
-.wd-item:hover,
-.wd-item[aria-current='true'] {
-	background: var(--surface-2);
-}
-
-.wd-item .wd-mono {
-	display: block;
-	margin-bottom: 2px;
-}
-
-.wd-item strong {
-	display: block;
-	font-size: 15px;
+.ws-card strong {
+	font-size: 0.9375rem;
 	font-weight: 600;
-	letter-spacing: -0.01em;
 	line-height: 1.35;
 }
 
-.wd-item .wd-who {
-	display: block;
+.ws-who {
+	font-weight: 500;
+}
+
+.ws-card p {
 	color: var(--ink-2);
+}
+
+.ws-item.is-now .ws-card {
+	background: var(--h);
+	color: var(--h-on);
+}
+
+.ws-item.is-now .ws-card :is(.wd-mono, p) {
+	color: var(--h-on);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.ws-bar span,
+	.ws-line > li::before,
+	.ws-dot,
+	.ws-card {
+		transition: none;
+	}
 }
 
 /* ---- Works (tabs of families) ------------------------------------------------ */

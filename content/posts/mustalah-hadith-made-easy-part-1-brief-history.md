@@ -415,9 +415,9 @@ Two more short texts are worth knowing:
 
 ---
 
-## The whole story, played back
+## The whole story, in order
 
-That was a lot of names. Here are the main works on one time axis, each dot wearing the colour of its period. Press **Play** to watch the story unfold one work at a time, use **Back** and **Next** to step through it yourself, or drag the slider. Tap a dot to jump to it, and tap a coloured chip to look at one period only.
+That was a lot of names. Here are the main works on one line, in order, each period in its own colour. Just keep scrolling: each work lights up as you reach it, and the bar at the top shows where you are in the whole story. Tap a coloured chip to jump to a period.
 
 [[WIDGET:mh-timeline]]
 
