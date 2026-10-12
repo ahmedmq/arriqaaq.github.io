@@ -16,6 +16,8 @@
 	let current = $state(1);
 	let status = $state<'loading' | 'ready' | 'error'>('loading');
 	let why = $state('');
+	// 0..1 while the PDF downloads, or -1 when the size is not known yet.
+	let fetched = $state(-1);
 	// A mouse-and-keyboard browser has its own full PDF viewer; use it when ours cannot start.
 	let native = $state(false);
 	let resume = $state(0);
@@ -116,6 +118,7 @@
 
 	async function open(index: number) {
 		status = 'loading';
+		fetched = -1;
 		for (const n of [...drawn.keys()]) release(n);
 		near.clear();
 		await loading?.destroy();
@@ -126,6 +129,9 @@
 			const worker: any = await import('pdfjs-dist/legacy/build/pdf.worker.min.mjs?url');
 			lib.GlobalWorkerOptions.workerSrc = worker.default;
 			loading = lib.getDocument({ url: base + book.pdfs[index].href, rangeChunkSize: 262144, disableAutoFetch: true, isEvalSupported: false });
+			loading.onProgress = (e: { loaded: number; total?: number }) => {
+				fetched = e.total ? Math.min(1, e.loaded / e.total) : -1;
+			};
 			doc = await loading.promise;
 			total = doc.numPages;
 			status = 'ready';
@@ -229,10 +235,21 @@
 		{/if}
 	{/if}
 
-	<div class="scroller" hidden={status === 'error'}>
+	{#if status === 'loading'}
+		<div class="wrap opening" role="status" aria-live="polite">
+			<span class="spin" aria-hidden="true"></span>
+			<div>
+				<b>Opening {book.title}</b>
+				<span class="sub">{fetched >= 0 ? `${Math.round(fetched * 100)}% loaded` : 'Getting the book ready'}. On a slow connection this can take a moment.</span>
+				{#if fetched >= 0}<span class="meter"><i style:width={`${fetched * 100}%`}></i></span>{/if}
+			</div>
+		</div>
+	{/if}
+
+	<div class="scroller" hidden={status !== 'ready'}>
 		<div class="sheet" bind:this={sheetEl} style:--ratio={book.page_ratio}>
 			{#each pages as n (n)}
-				<div class="pg" data-n={n}><span class="pn">{n}</span></div>
+				<div class="pg" data-n={n}><span class="pn"><span class="spin small" aria-hidden="true"></span>{n}</span></div>
 			{/each}
 		</div>
 	</div>
@@ -386,9 +403,76 @@
 		position: absolute;
 		inset: 0;
 		display: grid;
-		place-items: center;
+		align-content: center;
+		justify-items: center;
+		gap: var(--s-2);
 		font: 500 14px var(--font-mono);
 		color: var(--ink-3);
+	}
+
+	.opening {
+		display: flex;
+		align-items: center;
+		gap: var(--s-4);
+		margin-top: var(--s-7);
+		max-width: 560px;
+	}
+
+	.opening b {
+		display: block;
+		font-weight: 500;
+	}
+
+	.sub {
+		display: block;
+		margin-top: 2px;
+		color: var(--ink-3);
+		font-size: var(--fs-small);
+	}
+
+	.meter {
+		display: block;
+		height: 4px;
+		margin-top: var(--s-3);
+		border-radius: 2px;
+		background: var(--line);
+		overflow: hidden;
+	}
+
+	.meter i {
+		display: block;
+		height: 100%;
+		background: var(--bk);
+		transition: width var(--dur) ease;
+	}
+
+	.spin {
+		flex: none;
+		width: 40px;
+		height: 40px;
+		border: 4px solid var(--line);
+		border-top-color: var(--bk);
+		border-radius: 50%;
+		animation: spin 0.9s linear infinite;
+	}
+
+	.spin.small {
+		width: 28px;
+		height: 28px;
+		border-width: 3px;
+	}
+
+	@keyframes spin {
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	/* Reduced motion: no spinning; the ring stays as a static mark beside the words. */
+	@media (prefers-reduced-motion: reduce) {
+		.spin {
+			animation: none;
+		}
 	}
 
 	.end {
