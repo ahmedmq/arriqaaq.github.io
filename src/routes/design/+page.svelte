@@ -6,6 +6,8 @@
 	import PixelCover from '$lib/components/ui/PixelCover.svelte';
 	import Flower from '$lib/components/ui/Flower.svelte';
 	import PostRow from '$lib/components/ui/PostRow.svelte';
+	import Book3D from '$lib/components/books/Book3D.svelte';
+	import { books } from '$lib/content';
 
 	let { data } = $props();
 
@@ -119,6 +121,18 @@
 		<div class="rows"><PostRow post={data.sample} /></div>
 	</section>
 
+	<section>
+		<h2 class="h">Books <span>3D book, shelf colours, the two actions</span></h2>
+		<div class="book-demo">
+			{#each books.slice(0, 3) as b}
+				<div class="bk-cell bk--{b.shelf}">
+					<Book3D book={b} />
+					<div class="bk-actions"><a class="btn btn--bk" href="/books/{b.slug}/read/">Read now</a><a class="btn btn--ghost" href="/books/{b.slug}/">Book details</a></div>
+				</div>
+			{/each}
+		</div>
+	</section>
+
 	<section class="prose-demo">
 		<h2 class="h">Quotes <span>classified at build time</span></h2>
 		<div class="prose subject--fiqh">
@@ -142,6 +156,25 @@
 </div>
 
 <style>
+	.book-demo {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--s-6);
+	}
+
+	.bk-cell {
+		display: grid;
+		gap: var(--s-3);
+		justify-items: center;
+		--bh: 200px;
+		--wmax: 180px;
+	}
+
+	.bk-actions {
+		display: flex;
+		gap: var(--s-2);
+	}
+
 	.kit {
 		padding-block: var(--s-7) var(--s-8);
 	}

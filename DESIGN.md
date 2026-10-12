@@ -303,6 +303,20 @@ existing classes (`.chip`, `.tabs`, `.btn`, `.scroll-x`) for controls.
 - **Recovering old content:** the Ghost export is at `../arriqaaq-website/arriqaaq.ghost.2026-05-03-16-49-49.json` (pages marked `draft` were never migrated), and its images are at `https://storage.ghost.io/c/ce/b6/ceb66798-429b-432a-a02d-1c148871e2cf/content/images/…`.
 - `health.arriqaaq.com` and `ilm.arriqaaq.com` are offline. Never link to them.
 
+## Books
+
+Arriqaaq's own books live at `/books/`. They are always free: every book is read on the site, and downloaded only from the reader or its details page. Never a price, cart, rating or sign-up. **No human portraits or images of living beings**: authors appear by name and one line from our own posts, never a photo.
+
+Modelled on Ruqaya's Bookshelf (ruqayasbookshelf.com), kept white: books are objects standing on the page, not cards.
+
+- **Data:** one file per book, `content/books/<slug>.yaml` (schema in `content/books/_README.md`). Everything on a book page comes from the book's launch post or its PDF. The PDF lives at `static/books/<slug>.pdf`. Run `npm run books:render` after adding or changing a PDF: it renders the cover and the six pages the 3D book turns through into `static/images/books/<slug>/` and writes `content/books/media.json`. Commit the output. The site build needs neither poppler nor ImageMagick.
+- **Shelf colours** (`--bk-hadith` purple, `--bk-tafsir` pink, `--bk-family` blue, `--bk-history` ink, `--bk-children` green): the spine, the Read now button and small accents. Text on a spine or button is white. No new hues.
+- **`/books/` (the shelf):** covers stand alone on the white page, big, as real 3D books (`Book3D`, CSS 3D, sized by cover ratio and page count through `--bh` and `--wmax`). No cords, ledges, frames or lines around them, only a soft contact shadow (`--shade`). Three to a row on desktop, two on phones. Each has exactly two actions side by side: **Read now** (the reader) and **Book details**.
+- **`/books/<slug>/` (details):** short on purpose. The book (three.js, `BookScene`: a lit hardcover that opens, turns through three spreads, flips back, closes and loops; drag to turn it; the button stops it; the CSS book is the fallback), **Read now**, downloads (PDF, Academia, paperback), then the pull quote, what's inside, a details table, and "Pairs well with". It never repeats the book's pages.
+- **`/books/<slug>/read/` (the reader):** the whole book on the site. `PdfReader` draws pages with PDF.js, only those near the screen, in one scroll. Sticky bar: back, page n of N, a page slider (its own row on phones), zoom, download. Zoomed pages scroll sideways. It remembers the page in `localStorage`. Editions (English, Urdu) switch in place.
+- **Loading cost:** three.js loads only on a details page and PDF.js only in the reader, both after the page is usable. Reduced motion and Save-Data keep the CSS book. Without JavaScript the shelf and details work, and the reader offers the PDF link.
+- **Mobile:** two covers per row, Read now and Book details side by side; the reader is one column at full width with a pinch-free zoom control.
+
 ## Courses
 
 A course is an ordered route over existing posts, defined in

@@ -1,4 +1,4 @@
-import { posts, pages, tags, authors, courses, POSTS_PER_PAGE } from '$lib/content';
+import { posts, pages, tags, authors, courses, books, POSTS_PER_PAGE } from '$lib/content';
 import { SITE_URL } from '$lib/site';
 
 export const prerender = true;
@@ -14,9 +14,11 @@ export function GET() {
 	const urls: { loc: string; lastmod?: string | null }[] = [
 		{ loc: `${SITE_URL}/`, lastmod: latest(posts) },
 		{ loc: `${SITE_URL}/articles/`, lastmod: latest(posts) },
-		{ loc: `${SITE_URL}/courses/` }
+		{ loc: `${SITE_URL}/courses/` },
+		{ loc: `${SITE_URL}/books/` }
 	];
 	for (const c of courses) urls.push({ loc: `${SITE_URL}/courses/${c.slug}/` });
+	for (const b of books) urls.push({ loc: `${SITE_URL}/books/${b.slug}/` });
 
 	// Pagination — mirror src/routes/page/[n]/+page.ts exactly.
 	const featuredCount = posts.filter((p) => p.featured).slice(0, 3).length;

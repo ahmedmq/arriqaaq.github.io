@@ -7,6 +7,7 @@
 	import FlowerVine from '$lib/components/reading/FlowerVine.svelte';
 	import SectionPill from '$lib/components/reading/SectionPill.svelte';
 	import LessonNav from '$lib/components/reading/LessonNav.svelte';
+	import PostBooks from '$lib/components/books/PostBooks.svelte';
 	import WidgetHydrator from '$lib/components/reading/WidgetHydrator.svelte';
 	import PostRow from '$lib/components/ui/PostRow.svelte';
 	import Newsletter from '$lib/components/Newsletter.svelte';
@@ -110,6 +111,7 @@
 		{/if}
 
 		<div class="wrap">
+			{#if isPost}<PostBooks slug={data.post.slug} tags={data.post.tags} />{/if}
 			{#if place}
 				<ReviewCard slugs={courseSlugs} exclude={data.post.slug} />
 			{/if}

@@ -36,6 +36,7 @@ const TAGS_FILE = resolve(ROOT, 'content/tags.yaml');
 const AUTHORS_FILE = resolve(ROOT, 'content/authors.yaml');
 const SETTINGS_FILE = resolve(ROOT, 'content/settings.yaml');
 const COURSES_DIR = resolve(ROOT, 'content/courses');
+const BOOKS_DIR = resolve(ROOT, 'content/books');
 const OUT_DIR = resolve(ROOT, 'src/lib/generated');
 
 const RESERVED_SLUGS = new Set([
@@ -393,6 +394,62 @@ async function main() {
 		throw new Error('Course manifest errors:\n  ' + courseErrors.join('\n  '));
 	}
 
+
+	// Books: one YAML per book (content/books/*.yaml, schema in DESIGN.md → Books).
+	// Cover and preview images are rendered ahead of time by `npm run books:render`
+	// and recorded in content/books/media.json; this step only validates and joins.
+	const SHELVES = new Set(['hadith', 'tafsir', 'family', 'history', 'children']);
+	const mediaPath = resolve(BOOKS_DIR, 'media.json');
+	const bookMedia: Record<string, any> = existsSync(mediaPath) ? JSON.parse(readFileSync(mediaPath, 'utf8')) : {};
+	const bookErrors: string[] = [];
+	const hostOf = (u: string) => new URL(u).hostname.replace(/^www\./, '');
+	const books = (existsSync(BOOKS_DIR) ? readdirSync(BOOKS_DIR) : [])
+		.filter((f) => /\.ya?ml$/.test(f))
+		.sort()
+		.map((f) => {
+			const b: any = yaml.load(readFileSync(resolve(BOOKS_DIR, f), 'utf8'));
+			const post: any = postBySlugOut.get(b.post);
+			if (!post) bookErrors.push(`${f}: post "${b.post}" does not exist`);
+			if (!SHELVES.has(b.shelf)) bookErrors.push(`${f}: unknown shelf "${b.shelf}"`);
+			const m = bookMedia[b.slug];
+			if (!m) bookErrors.push(`${f}: no entry in media.json, run npm run books:render`);
+			const hosted = (p: string) => existsSync(resolve(ROOT, 'static' + p));
+			// Every book is read on the site, from its own PDF in static/books/.
+			const pdfs = (b.editions ?? [{ lang: null, pdf: b.pdf }]).map((e: any) => {
+				if (!e.pdf || !hosted(e.pdf)) bookErrors.push(`${f}: ${e.pdf ?? 'no pdf'} is not in static/`);
+				return { lang: e.lang ?? null, ar: !!e.ar, href: e.pdf };
+			});
+			const external = b.read ? { label: /academia\.edu$/.test(hostOf(b.read)) ? 'Also on Academia' : 'Also online', href: b.read } : null;
+			for (const n of b.preview ?? []) if (m?.pdf && !m.previews.includes(n)) bookErrors.push(`${f}: preview page ${n} not rendered`);
+			return {
+				slug: b.slug,
+				title: b.title,
+				line: b.line,
+				authors: b.authors,
+				illustrator: b.illustrator ?? null,
+				shelf: b.shelf,
+				year: b.year,
+				year_note: b.year_note ?? null,
+				extra: b.extra ?? null,
+				pages: m?.pages ?? b.pages ?? null,
+				cover: m?.cover ?? null,
+				ratio: m?.ratio ?? 0.667,
+				page_ratio: m?.page_ratio ?? m?.ratio ?? 0.707,
+				pdfs,
+				external,
+				print: b.print ?? null,
+				previews: (m?.previews ?? []).map((n: number) => ({ n, src: `/images/books/${b.slug}/p-${n}.jpg` })),
+				cover_is_page_one: b.page_one_is_cover ?? (!b.cover?.image && (b.cover_page ?? 1) === 1 && !!m?.pdf),
+				quote: b.quote ?? null,
+				quote_cite: b.quote_cite ?? null,
+				inside: b.inside ?? [],
+				post: b.post,
+				post_title: post?.title?.replace(/^[^A-Za-z]+/, '') ?? b.post
+			};
+		});
+	if (bookErrors.length) throw new Error('Book manifest errors:\n  ' + bookErrors.join('\n  '));
+	writeFileSync(resolve(OUT_DIR, 'books.json'), JSON.stringify(books, null, '\t'));
+
 	writeFileSync(resolve(OUT_DIR, 'courses.json'), JSON.stringify(courses, null, '\t'));
 	writeFileSync(resolve(OUT_DIR, 'posts.json'), JSON.stringify(posts, null, '\t'));
 	writeFileSync(resolve(OUT_DIR, 'pages.json'), JSON.stringify(pages, null, '\t'));
@@ -413,7 +470,7 @@ async function main() {
 	writeFileSync(resolve(OUT_DIR, 'markdown.json'), JSON.stringify(markdown, null, '\t'));
 
 	console.log(
-		`Parsed: ${posts.length} posts, ${pages.length} pages, ${tagsOut.length} tags, ${authors.length} authors, ${courses.length} courses`
+		`Parsed: ${posts.length} posts, ${pages.length} pages, ${tagsOut.length} tags, ${authors.length} authors, ${courses.length} courses, ${books.length} books`
 	);
 }
 

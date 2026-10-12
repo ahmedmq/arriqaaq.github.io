@@ -1,0 +1,25 @@
+slug: blissful-union
+title: The Blissful Union
+line: Marriages are made in heaven, but the journey is covered on Earth.
+authors: [Syed Nooruzuha Barmaver, Umm Amra Noora Jukaku]
+shelf: family
+year: 2016
+year_note: First published 2016, third edition
+post: book-launch-blissful-union-now-available-in-urdu
+extra: Introduction by Shaikh Dr. Mohammed Eyada Al-Kobaisi, Grand Mufti, Islamic Affairs, Dubai.
+editions:
+  - { lang: English, pdf: /books/blissful-union-english.pdf }
+  - { lang: Urdu, ar: true, pdf: /books/blissful-union-urdu.pdf }
+cover: { image: static/images/2026/04/blissful-union-cover.png }
+page_one_is_cover: true   # the PDF's first page is the cover, so the opened book starts at page 2
+preview: [1, 2, 3, 12, 13, 14, 15]  # the cover page, then the six pages the 3D book turns through
+quote: Marriage is one of the most discussed aspects of life, yet it is often one of the least understood.
+inside:
+  - Preparing for marriage
+  - Choosing a righteous spouse
+  - Building love and companionship
+  - Rights and responsibilities of husband and wife
+  - Communication within marriage
+  - Marital intimacy according to the Qur'an and Sunnah
+  - Correcting common misconceptions
+  - Strengthening family life through authentic Islamic guidance

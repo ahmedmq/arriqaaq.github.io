@@ -69,6 +69,12 @@
 	--subj-hadith: var(--purple);
 	--subj-fiqh: var(--blue);
 	--subj-tafsir: var(--pink);
+	/* Book shelves (DESIGN.md → Books): the colour of a book's spine and accents. */
+	--bk-hadith: var(--purple);
+	--bk-tafsir: var(--pink);
+	--bk-family: var(--blue);
+	--bk-history: var(--ink);
+	--bk-children: var(--green);
 
 	/* ---- Type -------------------------------------------------------------
 	   Reading settings copy the OpenAI article template: 17px / 28px,
@@ -128,6 +134,9 @@
 	--r-pill: 999px; /* tabs, buttons */
 
 	--shadow-1: 0 1px 2px rgba(13, 12, 19, 0.05), 0 8px 24px -14px rgba(13, 12, 19, 0.16);
+	/* Neutral shadow for objects standing on a shelf (never a coloured wash). */
+	--shade: rgba(13, 12, 19, 0.16);
+	--shade-soft: rgba(13, 12, 19, 0.07);
 	--shadow-2: 0 2px 6px rgba(13, 12, 19, 0.06), 0 24px 48px -24px rgba(13, 12, 19, 0.28);
 	--ring: 0 0 0 3px color-mix(in srgb, var(--purple) 35%, transparent);
 

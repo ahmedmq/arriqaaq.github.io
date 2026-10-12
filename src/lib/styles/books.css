@@ -1,0 +1,175 @@
+/* ==========================================================================
+   Books (DESIGN.md → Books): a real 3D book, a hanging shelf, the page-turning
+   "Look inside". Neutrals plus the shelf colour on the spine; no wood, no tints.
+   Sizes are pure CSS: set --bh (book height) and --wmax, the rest follows from
+   the cover ratio and the page count.
+   ========================================================================== */
+
+.bk--hadith { --bk: var(--bk-hadith); --bk-ink: var(--purple-ink); }
+.bk--tafsir { --bk: var(--bk-tafsir); --bk-ink: var(--pink-ink); }
+.bk--family { --bk: var(--bk-family); --bk-ink: var(--blue-ink); }
+.bk--history { --bk: var(--bk-history); --bk-ink: var(--ink); }
+.bk--children { --bk: var(--bk-children); --bk-ink: var(--green-ink); }
+
+/* ---- The 3D book ------------------------------------------------------- */
+.b3 {
+	--w: min(calc(var(--bh, 210px) * var(--ratio)), var(--wmax, 999px));
+	--h: calc(var(--w) / var(--ratio));
+	--d: clamp(8px, calc(4px + var(--pages) * 0.06px), 22px);
+	--rx: 4deg;
+	--ry: 24deg;
+	perspective: 1200px;
+	display: grid;
+	place-items: center;
+	position: relative;
+	min-height: calc(var(--h) + 14px);
+}
+
+.b3-obj {
+	position: relative;
+	width: var(--w);
+	height: var(--h);
+	transform-style: preserve-3d;
+	transform: rotateX(var(--rx)) rotateY(var(--ry));
+	transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.b3::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: 2px;
+	width: calc(var(--w) * 1.08);
+	height: 14px;
+	transform: translateX(-50%);
+	border-radius: 50%;
+	background: radial-gradient(closest-side, var(--shade), transparent);
+	z-index: -1;
+}
+
+.b3-face { position: absolute; backface-visibility: hidden; }
+
+.b3-front {
+	inset: 0;
+	transform: translateZ(calc(var(--d) / 2));
+	border-radius: 2px 5px 5px 2px;
+	overflow: hidden;
+	background: var(--surface-2) center / cover no-repeat;
+	box-shadow: inset 3px 0 0 var(--shade), inset 7px 0 7px -5px var(--shade);
+}
+
+.b3-back {
+	inset: 0;
+	transform: rotateY(180deg) translateZ(calc(var(--d) / 2));
+	background: var(--bk);
+	border-radius: 5px 2px 2px 5px;
+}
+
+.b3-spine {
+	top: 0;
+	height: 100%;
+	width: var(--d);
+	left: calc(50% - var(--d) / 2);
+	transform: rotateY(-90deg) translateZ(calc(var(--w) / 2));
+	background: var(--bk);
+	display: grid;
+	place-items: center;
+	overflow: hidden;
+}
+
+.b3-spine span {
+	writing-mode: vertical-rl;
+	transform: rotate(180deg);
+	color: var(--on-colour);
+	font: 600 9px/1 var(--font-sans);
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.b3-pages {
+	top: 3px;
+	height: calc(100% - 6px);
+	width: calc(var(--d) - 2px);
+	left: calc(50% - var(--d) / 2 + 1px);
+	transform: rotateY(90deg) translateZ(calc(var(--w) / 2 - 3px));
+	background: repeating-linear-gradient(90deg, var(--page) 0 2px, var(--line) 2px 3px);
+}
+
+.b3-top {
+	left: 0;
+	width: calc(100% - 3px);
+	height: calc(var(--d) - 2px);
+	top: calc(50% - var(--d) / 2 + 1px);
+	transform: rotateX(90deg) translateZ(calc(var(--h) / 2 - 1px));
+	background: repeating-linear-gradient(0deg, var(--page) 0 2px, var(--line) 2px 3px);
+}
+
+/* No cover image yet: a plain colour cover with the title, white on colour. */
+.typecover {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 12% 10%;
+	background: var(--bk);
+	color: var(--on-colour);
+}
+.typecover b {
+	font-weight: 500;
+	letter-spacing: -0.03em;
+	line-height: 1.05;
+	font-size: calc(var(--w) * 0.11);
+}
+.typecover small {
+	font: 500 calc(var(--w) * 0.05) / 1.3 var(--font-mono);
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+/* The cover leaf that swings open on the book page. */
+.b3-leaf {
+	inset: 0;
+	transform-style: preserve-3d;
+	transform-origin: left center;
+	transform: translateZ(calc(var(--d) / 2 + 0.5px));
+	transition: transform 1.1s var(--ease-out);
+}
+.b3-leaf .b3-front { transform: none; }
+.b3-leaf .leaf-in {
+	position: absolute;
+	inset: 0;
+	transform: rotateY(180deg);
+	backface-visibility: hidden;
+	background: var(--page) center / contain no-repeat;
+	box-shadow: inset 0 0 0 1px var(--line);
+	border-radius: 5px 2px 2px 5px;
+}
+.b3-first {
+	inset: 0;
+	transform: translateZ(calc(var(--d) / 2));
+	background: var(--page) center / contain no-repeat;
+	box-shadow: inset 0 0 0 1px var(--line);
+}
+.b3.open .b3-obj { --rx: 0deg; --ry: 0deg; transform: translateX(calc(var(--w) / 2)) rotateX(0) rotateY(0); }
+.b3.open .b3-leaf { transform: translateZ(calc(var(--d) / 2 + 0.5px)) rotateY(-178deg); }
+.b3.open .b3-pages, .b3.open .b3-spine, .b3.open .b3-top { opacity: 0; }
+
+/* ---- Standing books -------------------------------------------------------
+   Covers stand alone on the white page with a soft contact shadow: no cords, no
+   ledge lines (owner rule). A row of books just sits on one baseline. */
+.hshelf { position: relative; }
+.hshelf-books {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	gap: clamp(16px, 4vw, 40px);
+}
+
+.bk-link { display: block; color: inherit; text-decoration: none; }
+.bk-link .b3-obj { --ry: 26deg; }
+.bk-link:hover .b3-obj, .bk-link:focus-visible .b3-obj { --ry: 8deg; }
+
+.btn--bk { background: var(--bk); border-color: var(--bk); color: var(--on-colour); }
+.btn--bk:hover { background: var(--bk); filter: brightness(1.08); }

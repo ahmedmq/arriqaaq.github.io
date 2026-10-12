@@ -13,7 +13,8 @@
 				{ label: 'Usul al-Fiqh course', href: '/courses/usul-al-fiqh/' },
 				{ label: 'Subjects', href: '/#subjects' },
 				{ label: 'All articles', href: '/articles/' },
-				{ label: 'Other courses', href: '/courses/' }
+				{ label: 'Other courses', href: '/courses/' },
+				{ label: 'Books', href: '/books/' }
 			]
 		},
 		{
@@ -80,6 +81,7 @@
 
 		<div class="bottom">
 			<span>© {year} Arriqaaq</span>
+			<a href={`${base}/books/`}>Books</a>
 			<a href={`${base}/privacy/`}>Privacy</a>
 			<a href={`${base}/rss.xml`}>RSS</a>
 			<a href={`${base}/llms.txt`}>llms.txt</a>

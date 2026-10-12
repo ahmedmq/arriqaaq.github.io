@@ -4,7 +4,8 @@ import tagsRaw from './generated/tags.json';
 import authorsRaw from './generated/authors.json';
 import settingsRaw from './generated/settings.json';
 import coursesRaw from './generated/courses.json';
-import type { Author, Course, CoursePlace, Post, SiteSettings, Subject, Tag } from './types';
+import booksRaw from './generated/books.json';
+import type { Author, Book, Course, CoursePlace, Post, SiteSettings, Subject, Tag } from './types';
 
 export const posts = postsRaw as Post[];
 export const pages = pagesRaw as Post[];
@@ -12,6 +13,8 @@ export const tags = tagsRaw as Tag[];
 export const authors = authorsRaw as Author[];
 export const settings = settingsRaw as SiteSettings;
 export const courses = coursesRaw as Course[];
+export const books = booksRaw as Book[];
+export const getBook = (slug: string) => books.find((b) => b.slug === slug);
 
 export const POSTS_PER_PAGE = 9;
 

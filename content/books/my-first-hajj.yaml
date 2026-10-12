@@ -1,0 +1,17 @@
+slug: my-first-hajj
+title: My First Hajj
+line: A sacred journey, for children.
+authors: [Zahra Venkat]
+illustrator: Ayesha Baig
+shelf: children
+year: 2024
+post: my-first-hajj
+pdf: /books/my-first-hajj.pdf
+cover_page: 1
+preview: [1, 3, 4, 5, 6, 7, 8]  # the cover page, then the six pages the 3D book turns through
+quote: In accordance with Islamic principles, the book does not contain any images of living souls.
+inside:
+  - Putting on the Ihram
+  - Circling the Kaaba
+  - Reflection and prayer at Mount Arafat
+  - Udhiyyah

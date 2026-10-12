@@ -3,6 +3,7 @@
 	import '$lib/styles/base.css';
 	import '$lib/styles/prose.css';
 	import '$lib/styles/widgets.css';
+	import '$lib/styles/books.css';
 	import SiteHeader from '$lib/components/site/SiteHeader.svelte';
 	import SiteFooter from '$lib/components/site/SiteFooter.svelte';
 

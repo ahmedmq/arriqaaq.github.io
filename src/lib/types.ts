@@ -89,3 +89,35 @@ export type CoursePlace = {
 	prev: CourseLesson | null;
 	next: CourseLesson | null;
 };
+
+export type BookShelf = 'hadith' | 'tafsir' | 'family' | 'history' | 'children';
+
+export type Book = {
+	slug: string;
+	title: string;
+	line: string;
+	authors: string[];
+	illustrator: string | null;
+	shelf: BookShelf;
+	year: number;
+	year_note: string | null;
+	extra: string | null;
+	pages: number | null;
+	cover: string | null;
+	/** cover width / height */
+	ratio: number;
+	/** page width / height of the PDF */
+	page_ratio: number;
+	/** The PDF(s) the book is read from and downloaded as. More than one means editions (English, Urdu). */
+	pdfs: { lang: string | null; ar: boolean; href: string }[];
+	/** Where else it is online (Academia). Shown only as a download choice. */
+	external: { label: string; href: string } | null;
+	print: { label: string; href: string } | null;
+	previews: { n: number; src: string }[];
+	cover_is_page_one: boolean;
+	quote: string | null;
+	quote_cite: string | null;
+	inside: string[];
+	post: string;
+	post_title: string;
+};

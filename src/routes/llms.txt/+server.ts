@@ -18,6 +18,7 @@ export function GET() {
 		'',
 		'- Learning or explaining Usul al-Fiqh (principles of Islamic jurisprudence): fetch the course roadmap at `/courses/usul-al-fiqh/`.',
 		'- Finding an article on Tafsir, Aqeedah, Hadith, Tajweed or Arabic grammar: search `/llms.txt` for the topic, then fetch the post as markdown.',
+		'- Arriqaaq\'s own free books (hadith, tafsir, history, marriage, children): the shelf is at `/books/`, each book has a details page at `/books/<slug>/` and a PDF at `/books/<slug>.pdf`.',
 		'- Quoting or summarising an Arriqaaq post with a canonical URL: use its `index.md` mirror and cite the post URL.',
 		'- Islamic education, homeschooling, children\'s activities, health and technology writing from Arriqaaq: browse `/tag/<slug>/`.',
 		'',

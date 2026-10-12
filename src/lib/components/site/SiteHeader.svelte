@@ -9,6 +9,7 @@
 
 	const links = [
 		{ href: '/courses/', label: 'Courses', match: '/courses/' },
+		{ href: '/books/', label: 'Books', match: '/books/' },
 		{ href: '/#subjects', label: 'Subjects', match: '#' },
 		{ href: '/articles/', label: 'Articles', match: '/articles/' },
 		{ href: '/about/', label: 'About', match: '/about/' }

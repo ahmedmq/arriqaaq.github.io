@@ -8,6 +8,7 @@
 	import SubjectCards from '$lib/components/home/SubjectCards.svelte';
 	import ChapterCarousel from '$lib/components/home/ChapterCarousel.svelte';
 	import CourseCard from '$lib/components/course/CourseCard.svelte';
+	import BookShelf from '$lib/components/home/BookShelf.svelte';
 	import PostRow from '$lib/components/ui/PostRow.svelte';
 	import Newsletter from '$lib/components/Newsletter.svelte';
 	import { reveal } from '$lib/actions';
@@ -68,6 +69,8 @@
 		</div>
 	</div>
 </section>
+
+<BookShelf />
 
 <section class="section latest" aria-labelledby="latest-h">
 	<div class="wrap">
