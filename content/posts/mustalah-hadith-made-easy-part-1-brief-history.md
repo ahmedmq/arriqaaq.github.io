@@ -36,6 +36,8 @@ One of the answers lies in something we often overlook when we read a hadith: th
 Abdullah bin al-Mubarak, one of the great scholars of the early generations, said:
 
 > “The Isnaad (chain of narration) is part of the Deen (religion). Were it not for the Isnaad, anyone could say whatever they wanted.”
+>
+> ([Sahih Muslim, Introduction 32](https://sunnah.com/muslim/introduction/31))
 
 Anyone could say whatever they wanted.
 
@@ -78,10 +80,10 @@ Its importance comes from the importance of the noble Prophetic hadith itself: t
 
 We will study this science through *Min Atyab al-Minah fi Ilm al-Mustalah*, written by Shaykh Abdul Muhsin Al-Abbad and Shaykh Abdul Kareem al-Murad. It was chosen for two reasons:
 
-1. It is not too simple, like Nukhbat al-Fikr, and not too detailed, like Ikhtisar Uloom al-Hadith. It is short and concise for a reader.
+1. It is not too simple, like Nukhbat al-Fikr, and not too detailed, like *Al-Ba'ith al-Hathith Sharh Ikhtisar 'Ulum al-Hadith*. It is short and concise for a reader.
 2. It is taught in institutes of knowledge in Madinah, under the guidance of the Islamic University of Madinah, and in other schools like Jamia Salafiyyah Banaras.
 
-We will meet both of them further down.
+We will meet both books further down.
 
 :::pause
 - In one line, what does Mustalah al-Hadith do?
@@ -90,9 +92,9 @@ We will meet both of them further down.
 - Which two things rest upon this science?
 
   The derivation of rulings from the Sunnah is based upon it, and through it proper emulation of the Messenger (ﷺ) is achieved.
-- Why was *Min Atyab al-Minah* chosen over Nukhbat al-Fikr or Ikhtisar Uloom al-Hadith?
+- Why was *Min Atyab al-Minah* chosen over Nukhbat al-Fikr or *Al-Ba'ith al-Hathith*?
 
-  It is not too simple, like Nukhbat al-Fikr, and not too detailed, like Ikhtisar Uloom al-Hadith. It is short and concise for a reader.
+  It is not too simple, like Nukhbat al-Fikr, and not too detailed, like *Al-Ba'ith al-Hathith Sharh Ikhtisar 'Ulum al-Hadith*. It is short and concise for a reader.
 :::
 
 ---
@@ -101,7 +103,7 @@ We will meet both of them further down.
 
 ### Hadith were being written from the time of the Sahabah
 
-Written manuscripts of hadith (each one is called a *sahifa*) were present since the time of the Sahabah. Two of them are:
+Written manuscripts of hadith were present since the time of the Sahabah. Two of them are:
 
 - **As-Sahifa as-Sadiqa**, by Abdullah ibn Amr al-As.
 - **As-Sahifa as-Sahiha**, by Hammam ibn Munabbah, a student of Abu Hurayrah.
@@ -119,6 +121,8 @@ Try it yourself. Take a narrator out of the chain below and see what happens.
 This noble science emerged early, after the spread of narrations. Statements related to it are found among the successors (the Tabi'een) and those after them. Muhammad bin Sireen said:
 
 > “They did not used to ask about the chain of narration, but when the turmoil (fitnah) occurred, they said: ‘Name your men for us.’ Then they would look to the people of Sunnah and accept their narrations, and look to the people of innovation and reject their narrations.”
+>
+> ([Sahih Muslim, Introduction 27](https://sunnah.com/muslim/introduction/26))
 
 Step through it, one part at a time.
 
@@ -129,9 +133,9 @@ Now go back to the words of Abdullah bin al-Mubarak at the start of this post: t
 The recording of hadith preceded the systematic documentation of hadith terminology. So it is no surprise that the formal writing of hadith terminology came later than the recording of hadith itself. Perhaps the earliest scholars did not feel the need to compile this discipline separately at that time, but later generations required it, and that is how its documentation began.
 
 :::pause
-- What is a *sahifa*?
+- Who wrote As-Sahifa as-Sahiha, and whose student was he?
 
-  A written manuscript of hadith. They were present since the time of the Sahabah.
+  Hammam ibn Munabbah, a student of Abu Hurayrah.
 - What did Muhammad bin Sireen say changed when the fitnah occurred?
 
   They began to say: "Name your men for us." Then they accepted the narrations of the people of Sunnah and rejected the narrations of the people of innovation.
@@ -171,7 +175,7 @@ The first to author a work in this noble science was Imam al-Shafi'i (d. 204 AH)
 - strengthening narrations by seeking additional chains, and
 - the fundamentals of narration.
 
-In simpler terms, this one book spoke about what makes a hadith authentic, what makes a narrator reliable, and how narrations are received and strengthened.
+In simpler terms, this one book spoke about what makes a hadith authentic, what makes a narrator reliable, and how narrations are strengthened.
 
 **Why was Kitab ar-Risalah written?** Abdurrahman Mahdi (d. 198 AH), a student of Imam Malik, Sufyan at-Thawree and Sufyan ibn Uyainah, came to Basra in Iraq, at a time when Imam al-Shafi'i was living in Baghdad. The madhab of Imam al-Shafi'i was the madhab of Ahlul Hadith (to act on a hadith), while in Iraq at that time the madhab of Ahl ul Ray (the people of opinion) was prevalent and dominant. So when Abdurrahman Mahdi went to Basra, people noticed certain strange things about him. He was acting on hadith, but this was very strange to the people living there, for example in not doing wudhu after hijamah (cupping).
 
@@ -180,8 +184,10 @@ So Abdurrahman Mahdi wrote a letter to Imam al-Shafi'i, requesting him to write 
 **He wrote it twice.** This is why scholars list it in the index of his works as two separate books: *Al-Risalah al-Qadimah* (the Old Risalah) and *Al-Risalah al-Jadidah* (the New Risalah). The Old Risalah was based on the letter of Abdurrahman bin Mahdi. Shaykh Ahmad Shakir (the editor of the book) said in his introduction to Al-Risalah:
 
 > “As for the Al-Risalah al-Qadimah (The Old Risalah), the most plausible view in my opinion is that he wrote it […] in response to the request of Abdurrahman bin Mahdi, the great Imam and scholar of Hadith, about whom Al-Shafi'i said: ‘I do not know anyone like him in the world.’ When Al-Shafi'i returned to Egypt, he recompiled the Risalah. Whatever the case may be, the Al-Risalah al-Qadimah (The Old Risalah) has been lost, and what people have today is only the Al-Risalah al-Jadidah (The New Risalah). From our examination of Al-Shafi'i's existing books written in Egypt, it appears that he recompiled it from memory because he did not have all his books with him. It also seems to me that he rewrote the book ‘Al-Risalah’ after composing most of the books found in ‘Al-Umm.’ He dictated it to Al-Rabee al-Muradi. Al-Shafi'i did not name it ‘Al-Risalah’ himself; rather, he referred to it simply as ‘Al-Kitab’ (The Book). It appears that it was called ‘Al-Risalah’ (The Epistle) in his time because it was sent to Imam Abdurrahman bin Mahdi, may Allah have mercy on him, who said about it: ‘When I read Al-Shafi'i's Risalah, it astonished me, for I saw the words of an intelligent, eloquent, and sincere man. I frequently supplicate for him.’”
+>
+> ([Ahmad Shakir, introduction to *Al-Risalah*, pp. 10–12](https://archive.org/details/AAskZad-1136222))
 
-So Kitab ar-Risalah was revised again by Imam al-Shafi'i when he was in Egypt, and Ar-Rabee ibn Sulayman al-Muradi, who was present with him, narrated the book. Ismaaeel Ibn Yahyaa al-Muzanee (d. 264 AH), also known as Imam Muzni, a companion and disciple of Imam al-Shafi'i and the author of the famous book on aqeedah called Sharhus-Sunnah, revised this book 500 times. He said that each time he read it, he found new benefits in it.
+So Kitab ar-Risalah was revised again by Imam al-Shafi'i when he was in Egypt, and Ar-Rabee ibn Sulayman al-Muradi, who was present with him, narrated the book. Ismaaeel Ibn Yahyaa al-Muzanee (d. 264 AH), also known as Imam Muzni, a companion and disciple of Imam al-Shafi'i and the author of the famous book on aqeedah called Sharhus-Sunnah, read this book 500 times. He said that each time he read it, he found new benefits in it. In another narration, he said he had been studying it for fifty years, and every time he looked into it he benefited something he had not known. ([al-Nawawi, *Al-Majmu Sharh al-Muhadhdhab*, 1/9](https://shamela.ws/book/2186/8))
 
 **Points of benefit:**
 
@@ -191,7 +197,7 @@ So Kitab ar-Risalah was revised again by Imam al-Shafi'i when he was in Egypt, a
 
 ### al-Humaydi (d. 219 AH)
 
-After him, al-Humaydi, Abdullah bin al-Zubayr (d. 219 AH), the author of *Al-Musnad* and a teacher of al-Bukhari, wrote on this subject. al-Khatib al-Baghdadi, in *Al-Kifayah*, mentions through a chain that al-Humaydi had a treatise on hadith terminology.
+After him, al-Humaydi, Abdullah bin al-Zubayr (d. 219 AH), the author of *Al-Musnad* and a teacher of al-Bukhari, wrote on this subject. al-Khatib al-Baghdadi, in *Al-Kifayah*, mentions through a chain that al-Humaydi had a treatise on hadith terminology. (His sayings from *Al-Kifayah* are gathered in [Ahmad al-Aqtash, *Risalat Abi Bakr al-Humaydi fi Mustalah al-Hadith*](https://ketabonline.com/ar/books/102397).)
 
 ### Imam Muslim (d. 261 AH)
 
@@ -212,7 +218,7 @@ His book *Al-Tamyeez* also touches on hadith terminology, because of his reputat
 
 ### Imam Abu Dawood (d. 275 AH)
 
-Next, Imam Abu Dawood al-Sijistani (d. 275 AH) discussed some terminological issues in his *Risalah ila Ahl Makkah*, the Risalah to the People of Mecca, describing his Sunan. He addressed the mursal hadith and its ruling, the number of Sunnah narrations, the validity of ghareeb (rare) hadith, shadh (irregular) narrations, authentic hadith, interrupted (munqati) and mudallas narrations with examples, the wording of hearing (samaa), and ma'lool hadith (hadith with hidden defects). His discussion of these types is concise.
+Next, Imam Abu Dawood al-Sijistani (d. 275 AH) discussed some terminological issues in his *Risalah ila Ahl Makkah*, the Risalah to the People of Mecca, describing his Sunan. He addressed the mursal hadith and its ruling, the number of hadith in his Sunan (about four thousand eight hundred), the validity of ghareeb (rare) hadith, shadh (irregular) narrations, authentic hadith, interrupted (munqati) and mudallas narrations with examples, the wording of hearing (samaa), and ma'lool hadith (hadith with hidden defects). His discussion of these types is concise. ([*Risalat Abi Dawud ila Ahl Makkah*](https://shamela.ws/book/6013))
 
 ### Imam al-Tirmidhi (d. 279 AH)
 
@@ -236,7 +242,7 @@ His *Al-Jami al-Kabeer* also contains many key terminological discussions, and h
 
 After them, al-Hafiz Muhammad bin Hibban al-Busti (d. 354 AH) addressed hadith terminology in several works.
 
-- In the introduction to ***Al-Thiqaat*** he listed the narrators whose reports are acceptable and outlined their conditions, stating: “Anyone mentioned in this book, if free from the five traits I mentioned, is reliable, and their narration may be used as evidence.”
+- In the introduction to ***Al-Thiqaat*** he listed the narrators whose reports are acceptable and outlined their conditions, stating: “Anyone mentioned in this book, if free from the five traits I mentioned, is reliable, and their narration may be used as evidence.” (Ibn Hibban, introduction to *Al-Thiqaat*)
 - In ***Al-Majrooheen*** he listed twenty types of narrator criticism in the introduction.
 - His greatest work, ***Al-Saheeh ala al-Taqaseem wa al-Anwa***, includes key terminological discussions in its valuable introduction. He summarised his conditions for authenticity, defended his methodology, and classified reports based on their chains. He also discussed differences in elevation (raf) and stopping (waqf), connected (mawsool) and mursal narrations, ziyadah al-thiqaat in chains and texts, narrations by innovators and the rulings on narrating from them, mukhtaliteen (those who mix up narrations), mudallis narrators, and the integrity of the Sahabah.
 
@@ -266,21 +272,19 @@ By the fourth century after the Hijrah, the sciences and arts had matured and th
 1. *Al-Muhaddith al-Fasil bayn al-Rawi wa al-Waiee*, by Abu Muhammad al-Hasan bin Abdurrahman bin Khallad al-Ramahurmuzi (d. 360 AH).
 2. *Marifat Ulum al-Hadith*, by Abu Abdullah al-Hakim al-Naysaburi (d. 405 AH). He could not complete the book.
 3. *Al-Mustakhraj ala Kitab al-Hakim*, by Abu Nuaym Ahmad bin Abdullah al-Asbahani (d. 430 AH). It completed the book above.
-4. *Al-Irshad fi Marifat Ulama al-Hadith*, by Abu Yala al-Khalili (d. 446 AH).
-5. *Al-Kifayah fee Ilm al-Riwayah*, by Abu Bakr Ahmad bin Ali al-Khatib al-Baghdadi (d. 463 AH).
-6. *Al-Jami li-Adab al-Shaykh wa al-Sami*, by al-Khatib al-Baghdadi.
-7. A book on high and low chains (al-uluww wa al-nuzool), by Muhammad bin Tahir al-Maqdisi (d. 507 AH).
-8. *Al-Ilma fi Dhabt ar-Riwayah wa Taqyeed as-Sama*, by Qadi Iyad (d. 544 AH).
-9. *Ma La Yasa al-Muhaddith Jahluh*, by Abu Hafs Umar al-Mayyanji (d. 580 AH).
-10. *Marifat Anwa Uloom al-Hadith* (also called *Uloom al-Hadith*), famously called *Muqaddimah Ibn al-Salah*, by Abu Amr Uthman Ibn al-Salah (d. 643 AH).
-11. *Nukhbat al-Fikar fee Mustalah Ahl al-Athar*, by Ibn Hajar al-Asqalani (d. 852 AH).
-12. *Mandhumah al-Bayquniyyah*, by Umar ibn Muhammad ibn Fatooh al-Bayqooni ad-Dimashqi.
-13. *Tadreeb al-Rawi fi Sharh Taqreeb al-Nawawi*, by Jalaluddin as-Suyuti.
-14. *Tawdhih al-Afkar*, sharh *Tanqih al-Anzar*, by Muhammad ibn Ismail al-Amir as-San'ani (d. 1182 AH).
-15. *Qawaid at-Tahdith*, by Jamaluddin al-Qasimi.
-16. *Tawjih an-Nazar*, by al-Jaza'iri.
+4. *Al-Kifayah fee Ilm al-Riwayah*, by Abu Bakr Ahmad bin Ali al-Khatib al-Baghdadi (d. 463 AH).
+5. *Al-Jami li-Adab al-Shaykh wa al-Sami*, by al-Khatib al-Baghdadi.
+6. *Al-Ilma fi Dhabt ar-Riwayah wa Taqyeed as-Sama*, by Qadi Iyad (d. 544 AH).
+7. *Ma La Yasa al-Muhaddith Jahluh*, by Abu Hafs Umar al-Mayyanji (d. 580 AH).
+8. *Marifat Anwa Uloom al-Hadith* (also called *Uloom al-Hadith*), famously called *Muqaddimah Ibn al-Salah*, by Abu Amr Uthman Ibn al-Salah (d. 643 AH).
+9. *Nukhbat al-Fikar fee Mustalah Ahl al-Athar*, by Ibn Hajar al-Asqalani (d. 852 AH).
+10. *Mandhumah al-Bayquniyyah*, by Umar ibn Muhammad ibn Fatooh al-Bayqooni ad-Dimashqi.
+11. *Tadreeb al-Rawi fi Sharh Taqreeb al-Nawawi*, by Jalaluddin as-Suyuti.
+12. *Tawdhih al-Afkar*, sharh *Tanqih al-Anzar*, by Muhammad ibn Ismail al-Amir as-San'ani (d. 1182 AH).
+13. *Qawaid at-Tahdith*, by Jamaluddin al-Qasimi.
+14. *Tawjih an-Nazar*, by al-Jaza'iri.
 
-The books from number 10 onward are the ones we meet in the sections below. Let's take the first nine one at a time.
+The first seven come one at a time below, and Ibn al-Salah and Ibn Hajar get sections of their own. Along the way, the Brief History adds two more scholars of this period: Abu Yala al-Khalili and al-Maqdisi.
 
 ### al-Ramahurmuzi (d. 360 AH)
 
@@ -294,13 +298,13 @@ Qadi al-Hasan bin Abdurrahman al-Ramahurmuzi authored his beneficial and brillia
 
 In simpler terms, this book is less about the types of hadith and more about how hadith is taught, written down and carried from teacher to student.
 
-He relied heavily on narrated reports from early scholars with full chains of transmission, and earned high praise from leading hadith authorities for this book. Imam al-Dhahabi said about it: “The author of Al-Muhaddith al-Fasil bayn al-Rawi wa al-Waiee, and what an excellent book it is! It is said that Al-Silafi (a renowned hadith scholar) would hardly ever part with his copy, meaning during a portion of his life.”
+He relied heavily on narrated reports from early scholars with full chains of transmission, and earned high praise from leading hadith authorities for this book. Imam al-Dhahabi said about it: “The author of Al-Muhaddith al-Fasil bayn al-Rawi wa al-Waiee, and what an excellent book it is! It is said that Al-Silafi (a renowned hadith scholar) would hardly ever part with his copy, meaning during a portion of his life.” (al-Dhahabi, *Siyar A'lam an-Nubala*, 16/73, as quoted in [*Iqd ad-Durar fi Sharh Mukhtasar Nukhbat al-Fikr*](https://shamela.ws/book/696/98))
 
 ### al-Hakim (d. 405 AH) and Abu Nuaym (d. 430 AH)
 
 Then came Abu Abdillah Muhammad bin Abdullah al-Hakim al-Naysaburi, who authored ***Marifat Ulum al-Hadith***. His work is far more valuable and refined than that of al-Ramahurmuzi, as it encompasses most branches of the hadith sciences, systematically categorising and detailing its various types. Some scholars even consider it the pioneering work in hadith terminology. But he did not refine it, and it did not cover everything.
 
-Following him, the Hafiz Abu Nuaym Ahmad bin Abdullah al-Asbahani expanded upon al-Hakim's work and critiqued some of its points in a book he titled ***Al-Mustakhraj ala Kitab al-Hakim***. However, as Ibn Hajar noted, he did not fully perfect it, leaving room for further refinement by later scholars.
+Following him, the Hafiz Abu Nuaym Ahmad bin Abdullah al-Asbahani expanded upon al-Hakim's work and critiqued some of its points in a book he titled ***Al-Mustakhraj ala Kitab al-Hakim***. However, as Ibn Hajar noted, he did not fully perfect it, leaving room for further refinement by later scholars. ([Ibn Hajar, *Nuzhat al-Nazar*, introduction](https://archive.org/details/NuzhatNathar))
 
 ### Abu Yala al-Khalili (d. 446 AH)
 
@@ -326,7 +330,7 @@ Then came al-Khatib al-Baghdadi (Abu Bakr Ahmad bin Ali), who authored two signi
 - ***Al-Kifayah fee Ilm al-Riwayah***, a foundational book on the principles of hadith transmission.
 - ***Al-Jami li-Adab al-Shaykh wa al-Sami***, a work on proper conduct in hadith learning and teaching.
 
-al-Khatib al-Baghdadi played a major role in hadith terminology, composing independent works on most branches of the hadith sciences. In the words of al-Hafiz Abu Bakr ibn Nuqtah, everyone who came after al-Khatib became dependent on his books. Fair-minded scholars agree that all later researchers relied on his writings, which makes him an indispensable reference in the field.
+al-Khatib al-Baghdadi played a major role in hadith terminology, composing independent works on most branches of the hadith sciences. In the words of al-Hafiz Abu Bakr ibn Nuqtah, everyone who came after al-Khatib became dependent on his books ([Ibn Hajar, *Nuzhat al-Nazar*, introduction](https://archive.org/details/NuzhatNathar); [*Min Atyab al-Minah*, introduction](https://archive.org/details/ma3rifa_mail)). Fair-minded scholars agree that all later researchers relied on his writings, which makes him an indispensable reference in the field.
 
 ### al-Maqdisi, Qadi Iyad and al-Mayyanji
 
@@ -340,7 +344,7 @@ These were the foundational works that addressed the science of Mustalah al-Hadi
 - *Hilyatul Awliya wa Tabaqat al-Asfiya* (The Beauty of the Righteous and the Ranks of the Elite), by Abu Nuaym al-Asbahani, is a famous book.
 - Four famous huffaz (hadith masters) lived during the same time, in the West and in the East. West: Ibn Hazm and Ibn Abd al-Barr. East: al-Khatib al-Baghdadi and al-Bayhaqi.
 - al-Bayhaqi has a famous book on usool al-hadith and fiqh combined, called *Al-Madkhal ila Ilm al-Sunan*.
-- Whoever came after al-Khatib al-Baghdadi took benefit from his book *Al-Kifayah*. Ibn Hajar al-Asqalani says that al-Khatib al-Baghdadi wrote a book in every science and branch of hadith.
+- Whoever came after al-Khatib al-Baghdadi took benefit from his book *Al-Kifayah*. Ibn Hajar al-Asqalani says that al-Khatib al-Baghdadi wrote a book in every science and branch of hadith ([*Nuzhat al-Nazar*, introduction](https://archive.org/details/NuzhatNathar)).
 
 :::pause
 - By which century had the terminology settled?
@@ -349,7 +353,7 @@ These were the foundational works that addressed the science of Mustalah al-Hadi
 - What is al-Ramahurmuzi's book mostly about?
 
   Less about the types of hadith, and more about how hadith is taught, written down and carried from teacher to student.
-- In the words of Ibn Nuqtah, whose books did everyone after him depend on?
+- In the words of Ibn Nuqtah, whose books did everyone after al-Khatib depend on?
 
   al-Khatib al-Baghdadi's.
 :::
@@ -364,7 +368,7 @@ This book became one of the finest and most esteemed works in hadith terminology
 
 Some scholars abridged it, like al-Nawawi in his *Irshad* and al-Bulqini in his *Mahasin*. Some versified it, like al-Iraqi in his *Alfiyyah*. Some supplemented it, and some objected to it.
 
-Simply put, Ibn al-Salah's book became the book that everyone after him wrote around.
+Simply put, Ibn al-Salah's book became the central reference that later works revolved around.
 
 So there is a whole family of books around it: abridgments, commentaries and critical notes, and poetic versifications.
 
@@ -378,9 +382,9 @@ The full list is below. Tap a tab to choose a text, and a coloured chip to see o
 
 - Imam al-Nawawi (the author of the Forty Hadith) wrote two books on Uloom al-Hadith: *Irshad Tullab al-Haqaaiq* and *Al-Taqreeb*.
 - Ibn Kathir's *Ikhtisar Uloom al-Hadith* is one notable mention that is not present in the book we are studying, but it is very famous.
-- Al-Iraqi's *Alfiyyah* (*Al-Tabsirah wa al-Tadhkirah*) is a poem of 1000 lines on Ibn al-Salah's Muqaddimah, for easy memorisation. Al-Sakhawi, a student of Ibn Hajar, explained it in *Fath al-Mugheeth*. Al-Bulqini, a teacher of Ibn Hajar, wrote *Mahasin al-Istilah*, a concise form of Ibn al-Salah's book.
+- Al-Iraqi's *Alfiyyah* is a poem of 1000 lines on Ibn al-Salah's Muqaddimah, for easy memorisation. Al-Sakhawi, a student of Ibn Hajar, explained it in *Fath al-Mugheeth*. Al-Bulqini, a teacher of Ibn Hajar, wrote *Mahasin al-Istilah*, a concise form of Ibn al-Salah's book.
 - Ibn Hajar's *An-Nukat ala Ibn al-Salah* is now published with takhreej by Shaykh Rabi.
-- Ahmad Shakir's explanation of Ibn Kathir's book is *Al-Baith al-Hathith*. A copy of it exists with the notes of Shaykh al-Albani and Ali al-Halabi in it. Shaykh Muqbil also wrote an explanation of it, called *Al-Sayr al-Hathith*.
+- Ahmad Shakir's explanation of Ibn Kathir's book is *Al-Baith al-Hathith*. A copy of it exists with the notes of Shaykh al-Albani and Ali al-Halabi in it. Shaykh Muqbil also wrote an explanation of *Ikhtisar Uloom al-Hadith*, called *Al-Sayr al-Hathith*.
 
 :::pause
 - What is Ibn al-Salah's book famously called?
@@ -402,7 +406,7 @@ Two more short texts are worth knowing:
 - ***Mandhumah al-Bayquniyyah***, authored by Umar bin Muhammad al-Bayquni (d. 1080 AH). It is a short didactic poem of only 34 verses. Despite its brevity, it is one of the most famous and beneficial abridgments in hadith terminology. Nawab Siddiq Hasan Khan (d. 1307 AH) wrote a sharh on it called *Al-Arjuun fi Sharh al-Bayqoon*.
 - ***Qawaid al-Tahdith***, by Muhammad Jamal al-Deen al-Qasimi (d. 1332 AH). It is a well-researched and highly beneficial work on hadith principles.
 
-**Point of benefit:** Nawab Siddiq Hasan Khan wrote books in all fields of Islam. Shaykh Uzair Shams says he was an ummah in his own because of his works.
+**Point of benefit:** Nawab Siddiq Hasan Khan wrote books in all fields of Islam. Shaykh Uzair Shams says he was an ummah in his own because of his works. (Course notes, Class 1)
 
 :::pause
 - What is Ibn Hajar's own commentary on Nukhbat al-Fikar called?
@@ -442,3 +446,18 @@ We looked at where the science of Mustalah al-Hadith came from: the sahifas writ
 Simply put, the science was written down late, but the care for the chain began early.
 
 InshaAllah, in the next post we begin on the science itself, with the definitions and the first terms.
+
+---
+
+## Sources
+
+This lesson follows two documents: the course notes for Class 1, and the *Brief History of Mustalah al-Hadith* used with them. Each quotation and report is cited where it appears, and the original works it was checked against are listed here.
+
+- *Min Atyab al-Minah fi Ilm al-Mustalah*, Shaykh Abdul Muhsin Al-Abbad and Shaykh Abdul Kareem al-Murad, the introduction on the history of the science. [archive.org](https://archive.org/details/ma3rifa_mail)
+- Sahih Muslim, the Introduction (Muqaddimah): [Introduction 27](https://sunnah.com/muslim/introduction/26) (Muhammad bin Sireen) and [Introduction 32](https://sunnah.com/muslim/introduction/31) (Abdullah bin al-Mubarak).
+- Ibn Hajar al-Asqalani, *Nuzhat al-Nazar fee Tawdih Nukhbat al-Fikar*, the introduction. [archive.org](https://archive.org/details/NuzhatNathar)
+- al-Shafi'i, *Al-Risalah*, edited by Ahmad Shakir, the editor's introduction, pp. 10–12. [archive.org](https://archive.org/details/AAskZad-1136222)
+- al-Nawawi, *Al-Majmu Sharh al-Muhadhdhab*, 1/9. [shamela.ws](https://shamela.ws/book/2186/8)
+- Abu Dawood, *Risalat Abi Dawud ila Ahl Makkah*. [shamela.ws](https://shamela.ws/book/6013)
+- Ahmad al-Aqtash, *Risalat Abi Bakr al-Humaydi fi Mustalah al-Hadith*, gathered from al-Khatib's *Al-Kifayah*. [ketabonline.com](https://ketabonline.com/ar/books/102397)
+- al-Dhahabi, *Siyar A'lam an-Nubala*, 16/73, as quoted in *Iqd ad-Durar*. [shamela.ws](https://shamela.ws/book/696/98)

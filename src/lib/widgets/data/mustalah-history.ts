@@ -5,8 +5,8 @@
  *
  * Every line comes from the course notes (Class 1) and "Brief History of
  * Mustalah al-Hadith". Nothing is added from outside them. Dates are the
- * death years (AH) those two sources give. Where the two sources differ, the
- * Brief History is followed.
+ * death years (AH) those two sources give. Where they differ, the owner's decision is
+ * followed (the notes' Arabic page in most cases).
  */
 
 /** The palette hue each category wears. Amber is not used: it reads as orange. */
@@ -311,7 +311,7 @@ export const FAMILIES: Family[] = [
 				{ title: 'Manhaj Dhawi al-Nazar', by: 'al-Tarmasi', when: 'd. 1329 AH' }
 			],
 			explained: [
-				{ title: 'A modern explanation', by: 'Ahmad Shakir', when: 'd. 1377 AH', note: 'The Brief History lists the modern explanations after the poems.' },
+				{ title: 'A modern explanation', by: 'Ahmad Shakir', when: 'd. 1377 AH' },
 				{ title: 'A modern explanation', by: 'Muhammad Abdul Hameed', note: 'Printed.' },
 				{ title: 'A modern explanation', by: 'Muhammad bin Adam al-Ethiopee', note: '2 volumes, printed. There are others too.' }
 			]
@@ -399,7 +399,7 @@ export const QUIZ: Question[] = [
 		q: 'What did Abdullah bin al-Mubarak say the chain (isnad) is?',
 		options: ['A matter of style', 'Part of the religion', 'Needed only for the Sahabah'],
 		answer: 1,
-		why: '“The chain of narration is part of the religion. Were it not for the chain, anyone could say whatever they wanted.”'
+		why: '“The chain of narration is part of the religion. Were it not for the chain, anyone could say whatever they wanted.” (Sahih Muslim, Introduction 32)'
 	},
 	{
 		q: 'Which book is a fiqh book that also deals with usul al-fiqh, yet has some benefits on the hadith sciences?',
@@ -445,7 +445,7 @@ export const MILESTONES: Milestone[] = [
 	{ ah: 204, work: 'Al-Risalah', who: 'Imam al-Shafi’i', line: 'The first to author a work in this noble science.' },
 	{ ah: 279, work: 'Al-Ilal as-Sagheer', who: 'Imam al-Tirmidhi', line: 'Placed at the end of his Al-Jami al-Kabeer.' },
 	{ ah: 360, work: 'Al-Muhaddith al-Fasil', who: 'al-Ramahurmuzi', line: 'Singled out the science of mustalah for authorship, in a rudimentary state.' },
-	{ ah: 463, work: 'Al-Kifayah fee Ilm al-Riwayah', who: 'al-Khatib al-Baghdadi', line: 'Everyone who came after al-Khatib became dependent on his books.' },
+	{ ah: 463, work: 'Al-Kifayah fee Ilm al-Riwayah', who: 'al-Khatib al-Baghdadi', line: 'In the words of Ibn Nuqtah, everyone who came after al-Khatib became dependent on his books.' },
 	{ ah: 643, work: 'Muqaddimah Ibn al-Salah', who: 'Ibn al-Salah', line: 'Compiled what had been scattered; a turning point in the field.' },
 	{ ah: 852, work: 'Nukhbat al-Fikar', who: 'Ibn Hajar al-Asqalani', line: 'Scholars turned to it for its conciseness, organisation and accuracy.' }
 ];

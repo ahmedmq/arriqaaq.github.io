@@ -20,7 +20,7 @@ export const CHAIN = {
 		'As-Sahifa as-Sahiha: every hadith in it is present in Bukhari and Muslim, and its sanad is very short.',
 	quote:
 		'The (Isnaad) chain of narration is part of the (Deen) religion. Were it not for the chain (Isnaad), anyone could say whatever they wanted.',
-	by: 'Abdullah bin al-Mubarak'
+	by: 'Abdullah bin al-Mubarak (Sahih Muslim, Introduction 32)'
 };
 
 export const FITNAH = {
@@ -32,5 +32,5 @@ export const FITNAH = {
 			text: 'Then they would look to the people of Sunnah and accept their narrations, and look to the people of innovation and reject their narrations.'
 		}
 	],
-	by: 'Muhammad bin Sireen'
+	by: 'Muhammad bin Sireen (Sahih Muslim, Introduction 27)'
 };

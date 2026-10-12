@@ -71,7 +71,11 @@ function classifyQuote(node: any, text: string): 'quran' | 'hadith' | 'note' | '
 	// followed by the author's explanation).
 	const paras = node.children.filter((c: any) => c.type === 'element' && c.tagName === 'p').map((p: any) => textOf(p).replace(/\s+/g, ' ').trim());
 	const tails = [t.slice(-170), ...paras.map((p: string) => p.slice(-170))];
-	const hadithEvidence = HADITH_HEAD.test(t) || hasSunnahLink(node) || tails.some((x: string) => HADITH_NUM_TAIL.test(x) || HADITH_ONLY_TAIL.test(x) || HADITH_GRADE_TAIL.test(x));
+	// A reference to the Introduction (Muqaddimah) of a collection, such as
+	// "Sahih Muslim, Introduction 32", cites a scholar's statement narrated
+	// there, not a hadith, so it is not hadith evidence.
+	const introRef = tails.some((x: string) => /\b(?:introduction|muqaddimah)\b/i.test(x));
+	const hadithEvidence = !introRef && (HADITH_HEAD.test(t) || hasSunnahLink(node) || tails.some((x: string) => HADITH_NUM_TAIL.test(x) || HADITH_ONLY_TAIL.test(x) || HADITH_GRADE_TAIL.test(x)));
 	const quranEvidence = /﴿/.test(t) || QURAN_HEAD.test(t) || tails.some((x: string) => QURAN_TAIL.test(x) || QURAN_NUM_TAIL.test(x));
 	if (quranEvidence && !hadithEvidence) return 'quran';
 	if (hadithEvidence) return 'hadith';
@@ -211,7 +215,7 @@ function extractCitation(bq: any): string | null {
  * sentence of its own), take it out and return its text for the <cite>.
  * "Abdullah bin al-Mubarak", "— Imam al-Shafi'i", "(Majmoo al-Fatawa 20/306)".
  */
-function extractAttribution(node: any): string | null {
+function extractAttribution(node: any): any[] | null {
 	const ps = node.children.filter((c: any) => c.type === 'element' && c.tagName === 'p');
 	if (ps.length < 2) return null;
 	const last = ps[ps.length - 1];
@@ -222,7 +226,18 @@ function extractAttribution(node: any): string | null {
 	const sentence = /[.!?:”"’']$/.test(raw);
 	if (!(wrapped || dashed || !sentence)) return null;
 	node.children = node.children.filter((c: any) => c !== last);
-	return raw.replace(/^[—–-]\s*/, '').replace(/^[(\[]\s*|\s*[)\]]\.?$/g, '');
+	// Keep the paragraph's nodes (a citation may carry a link to the book);
+	// only strip a leading dash and the wrapping brackets from its text.
+	const kids = JSON.parse(JSON.stringify(last.children));
+	const texts: any[] = [];
+	visit({ type: 'root', children: kids }, 'text', (t: any) => {
+		if (t.value.trim()) texts.push(t);
+	});
+	const firstText = texts[0];
+	if (firstText) firstText.value = firstText.value.replace(/^\s*[—–-]\s*/, '').replace(/^\s*[(\[]\s*/, '');
+	const lastText = texts[texts.length - 1];
+	if (lastText) lastText.value = lastText.value.replace(/\s*[)\]]\.?\s*$/, '');
+	return kids.filter((c: any) => c.type !== 'text' || c.value !== '');
 }
 
 export default function rehypeReading() {
@@ -264,7 +279,8 @@ export default function rehypeReading() {
 				}
 			}
 			if (cite) {
-				node.children.push({ type: 'element', tagName: 'cite', properties: { className: ['q-cite'] }, children: [{ type: 'text', value: cite }] });
+				const children = typeof cite === 'string' ? [{ type: 'text', value: cite }] : cite;
+				node.children.push({ type: 'element', tagName: 'cite', properties: { className: ['q-cite'] }, children });
 			}
 			return SKIP;
 		});

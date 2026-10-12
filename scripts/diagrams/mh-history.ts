@@ -18,8 +18,8 @@ function historyPath(): string {
 		{ x: 0, w: 212, o: { hue: 'green', label: '01 · Since the Sahabah', title: 'Hadith written in sahifas', meta: 'As-Sahifa as-Sadiqa · As-Sahifa as-Sahiha' }, link: 'Then' },
 		{ x: 148, w: 212, o: { hue: 'purple', label: '02 · The first works', title: 'Al-Risalah of al-Shafi’i', meta: 'Muslim’s introduction · al-Tirmidhi’s Al-Ilal as-Sagheer' }, link: 'Then' },
 		{ x: 0, w: 212, o: { hue: 'blue', label: '03 · The later days', title: 'Books on the science itself', meta: 'al-Ramahurmuzi · al-Hakim · al-Khatib al-Baghdadi' }, link: 'Gathered by' },
-		{ x: 120, w: 240, o: { hue: 'pink', label: '04 · The turning point', title: 'Ibn al-Salah', titleSize: 19, meta: 'Muqaddimah Ibn al-Salah' }, link: 'Abridged and versified' },
-		{ x: 0, w: 240, o: { hue: 'pink', label: '05 · After Ibn al-Salah', title: 'Nukhbat al-Fikar and Al-Bayquniyyah', meta: 'Ibn Hajar · 34 verses' } }
+		{ x: 120, w: 240, o: { hue: 'pink', label: '04 · The turning point', title: 'Ibn al-Salah', titleSize: 19, meta: 'Muqaddimah Ibn al-Salah' }, link: 'Then' },
+		{ x: 0, w: 240, o: { hue: 'pink', label: '05 · After Ibn al-Salah', title: 'Nukhbat al-Fikar and Al-Bayquniyyah', meta: 'Ibn Hajar · al-Bayquni' } }
 	];
 	const GAP = 62;
 	let out = defs;
