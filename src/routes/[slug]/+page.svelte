@@ -6,6 +6,7 @@
 	import Toc from '$lib/components/reading/Toc.svelte';
 	import FlowerVine from '$lib/components/reading/FlowerVine.svelte';
 	import SectionPill from '$lib/components/reading/SectionPill.svelte';
+	import SectionRail from '$lib/components/reading/SectionRail.svelte';
 	import LessonNav from '$lib/components/reading/LessonNav.svelte';
 	import PostBooks from '$lib/components/books/PostBooks.svelte';
 	import WidgetHydrator from '$lib/components/reading/WidgetHydrator.svelte';
@@ -95,6 +96,7 @@
 	{/if}
 	{#if isPost}
 		<FlowerVine {article} />
+		<SectionRail />
 		<SectionPill {article} {place} />
 		{#if data.html.includes('data-sch=')}
 			<ScholarCards {article} html={data.html} slug={data.post.slug} />

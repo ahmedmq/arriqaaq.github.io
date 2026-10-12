@@ -6,6 +6,7 @@
 	import { reading } from '$lib/reading.svelte';
 	import Flower from '$lib/components/ui/Flower.svelte';
 	import PagefindUI from '$lib/components/PagefindUI.svelte';
+	import SectionSheet from '$lib/components/reading/SectionSheet.svelte';
 
 	const links = [
 		{ href: '/courses/', label: 'Courses', match: '/courses/' },
@@ -21,7 +22,9 @@
 
 	const path = $derived(page.url.pathname);
 	const isActive = (m: string) => m !== '#' && path.startsWith(base + m);
-	const showSection = $derived(reading.past && reading.section !== '');
+	// Before the first section the label reads "Introduction", so it never disappears mid-article.
+	const showSection = $derived(reading.past && reading.entries.length > 1);
+	const sectionLabel = $derived(reading.index >= 0 ? reading.section : 'Introduction');
 
 	$effect(() => {
 		path; // close the sheet on navigation
@@ -48,10 +51,17 @@
 		</a>
 
 		{#if showSection}
-			<span class="section" aria-live="polite">
-				<span class="section-n">{String(reading.index + 1).padStart(2, '0')}</span>
-				<span class="section-t">{reading.section}</span>
-			</span>
+			<button
+				type="button"
+				class="section"
+				aria-haspopup="dialog"
+				aria-label={`${reading.index >= 0 ? `Section ${reading.index + 1} of ${reading.total}: ` : ''}${sectionLabel}. Open contents`}
+				onclick={() => (reading.sheet = true)}
+			>
+				{#if reading.index >= 0}<span class="section-n">{String(reading.index + 1).padStart(2, '0')}</span>{/if}
+				<span class="section-t">{sectionLabel}</span>
+				<svg class="section-c" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+			</button>
 		{/if}
 
 		<nav class="links" aria-label="Primary">
@@ -98,6 +108,7 @@
 {/if}
 
 <PagefindUI bind:open={searchOpen} />
+<SectionSheet />
 
 <style>
 	.site-header {
@@ -146,10 +157,18 @@
 	/* Current section replaces the wordmark on phones. */
 	.section {
 		display: flex;
-		align-items: baseline;
+		align-items: center;
 		gap: 8px;
 		min-width: 0;
 		flex: 1;
+		min-height: var(--tap);
+		padding: 0;
+		border: 0;
+		background: none;
+		color: inherit;
+		text-align: left;
+		cursor: pointer;
+		font: inherit;
 		font-size: var(--fs-small);
 		font-weight: 500;
 		animation: fade-up var(--dur) var(--ease-out);
@@ -160,6 +179,13 @@
 		font-variant-numeric: tabular-nums;
 		font-size: 11px;
 		color: var(--pink-ink);
+	}
+
+	.section-c {
+		flex: none;
+		width: 16px;
+		height: 16px;
+		color: var(--ink-3);
 	}
 
 	.section-t {

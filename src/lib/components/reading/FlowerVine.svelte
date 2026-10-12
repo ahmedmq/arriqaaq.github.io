@@ -39,6 +39,7 @@
 				text: texts[i]
 			}));
 			reading.total = heads.length;
+			reading.entries = heads.map((hd, i) => ({ id: hd.id, text: texts[i] }));
 		};
 
 		const update = () => {
@@ -53,6 +54,7 @@
 			reading.index = idx;
 			reading.section = idx >= 0 ? (texts[idx] ?? '') : '';
 			reading.past = r.top < 0;
+			reading.progress = progress;
 		};
 		const queue = () => (raf ||= requestAnimationFrame(update));
 
