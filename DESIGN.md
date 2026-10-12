@@ -259,6 +259,8 @@ Anything below can go straight into a post's markdown:
 | Interactive widget | `[[WIDGET:name]]`: register it in `scripts/widgets.ts` and implement `src/lib/widgets/<name>.ts` exporting `init(el)`. `WidgetHydrator` loads it only on posts that use it. Build controls from `.tabs`, `.segmented`, `.chip` and `.btn` |
 | Image | `::image{src=… width=wide|full caption=…}`, for real photos only, never for diagrams |
 | Questions after a section | `:::pause` with a list: each item is a question, the indented paragraph under it is the answer; an item with no answer is a "Think about it" prompt. Renders as native `<details>` (works without JS); `src/lib/pause.ts` adds "I knew it / Not yet", saved in the reader's browser. Answers come from the post's own words |
+| Scholar cards | Automatic in posts tagged `hadith`: `scripts/rehype-scholars.ts` marks the first mention of each scholar per section; `ScholarCards.svelte` opens a card (bottom sheet on phones, popover on desktop) with the death year, the works, and the other posts that mention him. Data: `src/lib/data/scholars.ts` |
+| Come-back review | Automatic: "Not yet" answers in Pause boxes are kept in the browser (`$lib/review`) and asked again by `ReviewCard` at the top of the course's other lessons and on the course page |
 
 Every rich element must work at 375px, respect reduced motion, and render
 something meaningful before JS runs (a caption or a static frame).

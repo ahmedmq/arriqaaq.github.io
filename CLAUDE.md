@@ -27,6 +27,7 @@ component classes in `src/lib/styles/base.css`; article body in `src/lib/styles/
 - Courses are defined in `content/courses/*.yaml` (schema in DESIGN.md → Courses).
 - Copy: headings max 5–6 words, about what Arriqaaq actually offers; no emojis; never ask for money.
 - Writing or editing any teaching post (Usul al-Fiqh, Mustalah Hadith, courses): read [`VOICE.md`](VOICE.md) first. It is the voice and teaching-method contract, derived from the whole Usul series.
+- Any part of the Mustalah Hadith Made Easy series: also follow `.claude/skills/mustalah-post/SKILL.md` (sources verbatim, a `:::pause` box after every section, scholar cards, widgets, diagrams, Instagram card, and the checks). Every part uses the same style without being asked.
 - Never touch the team member pages' drawings, `/magazine/`, `/lettersfromthesoul/` or the `/ilm/` post's images. Never change what an original image says.
 - No broken links, images or anchors: `npm run check:links` must pass. `health.arriqaaq.com` and `ilm.arriqaaq.com` are offline; never link to them.
 - A push to `main` deploys the live site. Work on a branch, and push only with the owner's go-ahead.
