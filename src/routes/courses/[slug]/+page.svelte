@@ -10,6 +10,7 @@
 	import { doneSet, onProgress } from '$lib/progress';
 	import { reveal } from '$lib/actions';
 	import { rng } from '$lib/art';
+	import ReviewCard from '$lib/components/reading/ReviewCard.svelte';
 
 	let { data } = $props();
 	const course = $derived(data.course);
@@ -81,6 +82,10 @@
 		</div>
 	</header>
 
+	<div class="wrap review-slot">
+		<ReviewCard slugs={lessons.map((l) => l.slug)} heading="Questions to review" />
+	</div>
+
 	<div class="wrap wrap--wide">
 		<ol class="rail">
 			{#each course.modules as m, mi}
@@ -124,6 +129,14 @@
 </div>
 
 <style>
+	.review-slot {
+		margin-top: var(--s-6);
+	}
+
+	.review-slot:empty {
+		display: none;
+	}
+
 	/* ---- Coloured band (arriqaaqlabs roadmap header) ------------------- */
 
 	.band {

@@ -417,7 +417,11 @@ Two more short texts are worth knowing:
 
 ## The whole story, in order
 
-That was a lot of names. Here are the main works on one line, in order, each period in its own colour. Just keep scrolling: each work lights up as you reach it, and the bar at the top shows where you are in the whole story. Tap a coloured chip to jump to a period.
+Before you see it all laid out, try this. Here are six milestones, shuffled. Tap the one you think came first, then the next, and so on. Then check your order and see them on a ruler drawn to scale.
+
+[[WIDGET:mh-order]]
+
+Now here are all the main works on one line, in order, each period in its own colour. Just keep scrolling: each work lights up as you reach it, and the bar at the top shows where you are in the whole story. Tap a coloured chip to jump to a period.
 
 [[WIDGET:mh-timeline]]
 

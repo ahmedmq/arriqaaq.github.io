@@ -6,7 +6,10 @@
  * which questions to look at again. Without JavaScript the boxes are plain
  * <details> and still work.
  */
+import { addReview, removeReview } from '$lib/review';
+
 type Mark = 'knew' | 'notyet';
+type Lesson = { slug: string; title: string };
 
 function load(key: string): Record<string, Mark> {
 	try {
@@ -24,7 +27,7 @@ function save(key: string, marks: Record<string, Mark>) {
 	}
 }
 
-function enhance(node: HTMLElement): () => void {
+function enhance(node: HTMLElement, lesson?: Lesson): () => void {
 	const key = `pause:${location.pathname}`;
 	const marks = load(key);
 	const cleanups: (() => void)[] = [];
@@ -44,7 +47,7 @@ function enhance(node: HTMLElement): () => void {
 				: `${items.length} question${items.length === 1 ? '' : 's'}`;
 		};
 
-		const apply = (li: HTMLLIElement, id: string, mark: Mark | undefined) => {
+		const apply = (li: HTMLLIElement, id: string, mark: Mark | undefined, store = true) => {
 			li.classList.toggle('is-knew', mark === 'knew');
 			li.classList.toggle('is-notyet', mark === 'notyet');
 			if (mark) li.dataset.mark = mark;
@@ -54,9 +57,24 @@ function enhance(node: HTMLElement): () => void {
 				btn.setAttribute('aria-pressed', String(on));
 				btn.classList.toggle('is-dim', !!mark && !on);
 			});
+			if (!store) return refresh();
 			if (mark) marks[id] = mark;
 			else delete marks[id];
 			save(key, marks);
+			// "Not yet" questions come back later (next lesson, course page).
+			if (lesson) {
+				const rid = `${lesson.slug}#${id}`;
+				if (mark === 'notyet') {
+					addReview({
+						id: rid,
+						slug: lesson.slug,
+						title: lesson.title,
+						q: li.querySelector('.pause-text')?.innerHTML ?? '',
+						a: li.querySelector('.pause-a')?.innerHTML ?? '',
+						at: Date.now()
+					});
+				} else removeReview(rid);
+			}
 			refresh();
 		};
 
@@ -85,7 +103,7 @@ function enhance(node: HTMLElement): () => void {
 			};
 			details.addEventListener('toggle', onToggle);
 
-			if (marks[id]) apply(li, id, marks[id]);
+			if (marks[id]) apply(li, id, marks[id], false);
 			cleanups.push(() => {
 				rate.removeEventListener('click', onRate);
 				details.removeEventListener('toggle', onToggle);
@@ -98,13 +116,14 @@ function enhance(node: HTMLElement): () => void {
 	return () => cleanups.forEach((c) => c());
 }
 
-/** Pass the article HTML so the boxes are set up again when it changes. */
-export function pauses(node: HTMLElement, _html?: string) {
-	let stop = enhance(node);
+/** Pass the lesson (and its HTML, so the boxes are set up again when the
+ *  article changes). With a lesson, "Not yet" questions join the review. */
+export function pauses(node: HTMLElement, opts: { html?: string; lesson?: Lesson } = {}) {
+	let stop = enhance(node, opts.lesson);
 	return {
-		update() {
+		update(next: { html?: string; lesson?: Lesson } = {}) {
 			stop();
-			queueMicrotask(() => (stop = enhance(node)));
+			queueMicrotask(() => (stop = enhance(node, next.lesson)));
 		},
 		destroy: () => stop()
 	};

@@ -14,11 +14,14 @@
 	import { coursePlace, subjectForPost } from '$lib/content';
 	import { reveal } from '$lib/actions';
 	import { pauses } from '$lib/pause';
+	import ReviewCard from '$lib/components/reading/ReviewCard.svelte';
+	import ScholarCards from '$lib/components/reading/ScholarCards.svelte';
 
 	let { data } = $props();
 	const isPost = $derived(data.post.type === 'post');
 	const place = $derived(isPost ? coursePlace(data.post.slug) : null);
 	const subject = $derived(subjectForPost(data.post));
+	const courseSlugs = $derived(place ? place.course.modules.flatMap((m) => m.lessons.map((l) => l.slug)) : []);
 	let article: HTMLElement | undefined = $state();
 	const seoDescription = $derived(
 		(data.post.custom_excerpt ?? data.post.plaintext.slice(0, 200)).replace(/\s+/g, ' ').trim()
@@ -92,6 +95,9 @@
 	{#if isPost}
 		<FlowerVine {article} />
 		<SectionPill {article} {place} />
+		{#if data.html.includes('data-sch=')}
+			<ScholarCards {article} html={data.html} slug={data.post.slug} />
+		{/if}
 	{/if}
 
 	<article bind:this={article} data-pagefind-body>
@@ -104,10 +110,13 @@
 		{/if}
 
 		<div class="wrap">
+			{#if place}
+				<ReviewCard slugs={courseSlugs} exclude={data.post.slug} />
+			{/if}
 			{#if isPost && data.post.toc?.length > 1}
 				<Toc entries={data.post.toc} />
 			{/if}
-			<div class="prose" use:reveal={{ selector: 'blockquote, h2' }} use:pauses={data.html}>
+			<div class="prose" use:reveal={{ selector: 'blockquote, h2' }} use:pauses={{ html: data.html, lesson: place ? { slug: data.post.slug, title: data.post.title } : undefined }}>
 				{@html data.html}
 			</div>
 			<p class="fix" data-pagefind-ignore>

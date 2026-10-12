@@ -675,3 +675,188 @@
 		opacity: 1;
 	}
 }
+
+/* ---- Put the story in order (mh-order) ---------------------------------------
+   Tap cards into numbered slots, check, then see them on a true-scale ruler. */
+
+.wo-slots {
+	display: grid;
+	gap: 6px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.wo-slot {
+	display: grid;
+	grid-template-columns: 28px 1fr;
+	align-items: center;
+	gap: var(--s-2);
+	min-height: 52px;
+}
+
+.wo-n {
+	display: grid;
+	place-items: center;
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	background: var(--surface-2);
+	color: var(--ink-2);
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+}
+
+.wo-slot.is-filled .wo-n {
+	background: var(--h);
+	color: var(--h-on);
+}
+
+.wo-empty {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	min-height: 48px;
+	padding: 0 var(--s-3);
+	border: 2px dashed var(--line-strong);
+	border-radius: var(--r-sm);
+	color: var(--ink-3);
+}
+
+.wo-body,
+.wo-card {
+	position: relative;
+	display: grid;
+	gap: 1px;
+	width: 100%;
+	min-height: 48px;
+	padding: var(--s-2) var(--s-3);
+	border: 0;
+	border-radius: var(--r-sm);
+	text-align: left;
+	font: inherit;
+	cursor: pointer;
+}
+
+.wo-body {
+	padding-right: 36px;
+	background: var(--h);
+	color: var(--h-on);
+}
+
+.wo-card {
+	background: var(--surface);
+	color: var(--ink);
+	box-shadow: inset 0 0 0 1px var(--line);
+	transition: transform var(--dur-fast) ease;
+}
+
+.wo-card:active {
+	transform: scale(0.98);
+}
+
+.wo-work {
+	font-weight: 600;
+}
+
+.wo-who {
+	font-size: 0.8125rem;
+}
+
+.wo-x {
+	position: absolute;
+	right: 12px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 1.125rem;
+}
+
+.wo-fix {
+	font-size: 0.8125rem;
+	font-weight: 600;
+}
+
+.wo-pool {
+	display: grid;
+	gap: 6px;
+	padding-top: var(--s-2);
+	border-top: 1px solid var(--line);
+}
+
+.wo-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--s-2);
+}
+
+.wo-lead {
+	font-weight: 500;
+}
+
+.wo-ruler {
+	position: relative;
+	margin-left: 4px;
+	border-left: 3px solid var(--ink);
+}
+
+.wo-tick {
+	position: absolute;
+	left: -3px;
+	transform: translateY(-50%);
+	padding-left: 10px;
+	font-family: var(--font-mono);
+	font-size: 10px;
+	color: var(--ink-3);
+}
+
+.wo-tick::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 7px;
+	height: 1px;
+	background: var(--ink);
+}
+
+.wo-mark {
+	position: absolute;
+	left: 56px;
+	right: 0;
+	display: flex;
+	align-items: center;
+	gap: var(--s-2);
+	transform: translateY(-50%);
+}
+
+.wo-pin {
+	position: absolute;
+	left: -64px;
+	width: 13px;
+	height: 13px;
+	border-radius: 50%;
+	background: var(--h);
+	box-shadow: 0 0 0 3px var(--page);
+}
+
+.wo-lbl {
+	padding: 4px 8px;
+	border-radius: var(--r-sm);
+	background: var(--h);
+	color: var(--h-on);
+	font-size: 0.8125rem;
+	line-height: 1.3;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.wo-ruler .wo-mark {
+		opacity: 0;
+		translate: 0 -16px;
+		transition: opacity 400ms ease var(--d), translate 400ms ease var(--d);
+	}
+
+	.wo-ruler.is-in .wo-mark {
+		opacity: 1;
+		translate: 0 0;
+	}
+}

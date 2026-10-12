@@ -19,7 +19,13 @@
 			const r = el.getBoundingClientRect();
 			const vh = window.innerHeight;
 			const read = (vh - r.top) / Math.max(1, r.height); // 1 = bottom of article on screen
-			visible = read > 0.85;
+			// Step aside while an interactive widget sits behind the pill, so its
+			// controls stay tappable on phones.
+			const blocked = [...el.querySelectorAll<HTMLElement>('[data-widget]')].some((w) => {
+				const b = w.getBoundingClientRect();
+				return b.bottom > vh - 120 && b.top < vh;
+			});
+			visible = read > 0.85 && !blocked;
 		};
 		const queue = () => (raf ||= requestAnimationFrame(update));
 		update();

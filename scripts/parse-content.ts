@@ -25,6 +25,8 @@ import remarkGhostCards from './remark-ghost-cards.js';
 import remarkEmbedTokens, { createEmbedState, type EmbedState } from './remark-embed-tokens.js';
 import rehypeHeadingIds, { createHeadingState, type TocEntry } from './rehype-heading-ids.js';
 import rehypeReading, { stripEmoji } from './rehype-reading.js';
+import rehypeScholars from './rehype-scholars.js';
+import { SCHOLARS, scholarPattern, matchedScholar } from '../src/lib/data/scholars.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -74,7 +76,7 @@ type ParsedPost = {
 	widgets: string[];
 };
 
-function createProcessor(embedState: EmbedState, headingState: { toc: TocEntry[] }) {
+function createProcessor(embedState: EmbedState, headingState: { toc: TocEntry[] }, scholars = false) {
 	return unified()
 		.use(remarkParse)
 		.use(remarkDirective)
@@ -84,6 +86,7 @@ function createProcessor(embedState: EmbedState, headingState: { toc: TocEntry[]
 		.use(rehypeRaw)
 		.use(rehypeHighlight, { languages: allLanguages, detect: false })
 		.use(rehypeReading)
+		.use(rehypeScholars, { enabled: scholars })
 		.use(rehypeHeadingIds, headingState)
 		.use(rehypeStringify, { allowDangerousHtml: true });
 }
@@ -160,7 +163,7 @@ async function parseFile(file: string): Promise<ParsedFile> {
 	const parsed = matter(raw);
 	const embedState = createEmbedState();
 	const headingState = createHeadingState();
-	const processor = createProcessor(embedState, headingState);
+	const processor = createProcessor(embedState, headingState, ((parsed.data.tags ?? []) as string[]).includes('hadith'));
 	const tree = await processor.run(processor.parse(localiseGhostImages(joinDirectiveLines(parsed.content))));
 	const html = processor.stringify(tree as any).toString();
 	const plaintext = htmlToPlaintext(html);
@@ -396,6 +399,17 @@ async function main() {
 	writeFileSync(resolve(OUT_DIR, 'tags.json'), JSON.stringify(tagsOut, null, '\t'));
 	writeFileSync(resolve(OUT_DIR, 'authors.json'), JSON.stringify(authors, null, '\t'));
 	writeFileSync(resolve(OUT_DIR, 'settings.json'), JSON.stringify(settings, null, '\t'));
+	// Scholar cards: for each scholar, the posts that mention him by name.
+	const scholarPosts: Record<string, { slug: string; title: string }[]> = Object.fromEntries(SCHOLARS.map((sc) => [sc.id, []]));
+	for (const post of posts) {
+		const ids = new Set<string>();
+		for (const m of post.plaintext.matchAll(scholarPattern())) {
+			const sc = matchedScholar(m);
+			if (sc) ids.add(sc.id);
+		}
+		for (const id of ids) scholarPosts[id].push({ slug: post.slug, title: post.title });
+	}
+	writeFileSync(resolve(OUT_DIR, 'scholars.json'), JSON.stringify(scholarPosts, null, '\t'));
 	writeFileSync(resolve(OUT_DIR, 'markdown.json'), JSON.stringify(markdown, null, '\t'));
 
 	console.log(

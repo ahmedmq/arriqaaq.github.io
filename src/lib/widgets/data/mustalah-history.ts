@@ -432,3 +432,20 @@ export const QUIZ: Question[] = [
 		why: 'West: Ibn Hazm and Ibn Abd al-Barr. East: al-Khatib al-Baghdadi and al-Bayhaqi.'
 	}
 ];
+
+/* ------------------------------------------------------------------ */
+/* Put the story in order                                               */
+/* ------------------------------------------------------------------ */
+
+/** Six milestones the reader puts in order before seeing the timeline.
+ *  Every line and date is from the lesson; listed here in the right order. */
+export type Milestone = { ah: number; work: string; who: string; line: string };
+
+export const MILESTONES: Milestone[] = [
+	{ ah: 204, work: 'Al-Risalah', who: 'Imam al-Shafi’i', line: 'The first to author a work in this noble science.' },
+	{ ah: 279, work: 'Al-Ilal as-Sagheer', who: 'Imam al-Tirmidhi', line: 'Placed at the end of his Al-Jami al-Kabeer.' },
+	{ ah: 360, work: 'Al-Muhaddith al-Fasil', who: 'al-Ramahurmuzi', line: 'Singled out the science of mustalah for authorship, in a rudimentary state.' },
+	{ ah: 463, work: 'Al-Kifayah fee Ilm al-Riwayah', who: 'al-Khatib al-Baghdadi', line: 'Everyone who came after al-Khatib became dependent on his books.' },
+	{ ah: 643, work: 'Muqaddimah Ibn al-Salah', who: 'Ibn al-Salah', line: 'Compiled what had been scattered; a turning point in the field.' },
+	{ ah: 852, work: 'Nukhbat al-Fikar', who: 'Ibn Hajar al-Asqalani', line: 'Scholars turned to it for its conciseness, organisation and accuracy.' }
+];

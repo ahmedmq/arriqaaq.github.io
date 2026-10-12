@@ -21,7 +21,7 @@
  * it when it starts. Keep the data in one module under src/lib/widgets/data/
  * so the widget and its fallback can never disagree.
  */
-import { CATS, TIMELINE, FAMILIES, GROUPS, QUIZ, type GroupKey } from '../src/lib/widgets/data/mustalah-history.js';
+import { CATS, TIMELINE, FAMILIES, GROUPS, QUIZ, MILESTONES, type GroupKey } from '../src/lib/widgets/data/mustalah-history.js';
 import { CHAIN, FITNAH } from '../src/lib/widgets/data/mustalah-chain.js';
 
 export type WidgetMeta = { g: string; t: string; s: string; f?: () => string };
@@ -60,7 +60,16 @@ const quizFallback = () =>
 			`<li>${esc(q.q)} (${q.options.map(esc).join(' / ')})<details><summary>Answer</summary>${esc(q.options[q.answer])}. ${esc(q.why)}</details></li>`
 	).join('')}</ol></div>`;
 
+const orderFallback = () =>
+	`<div class="wd-static"><ol>${MILESTONES.map((m) => `<li><strong>${esc(m.work)}</strong> <span>${esc(m.who)} · d. ${m.ah} AH</span><br>${esc(m.line)}</li>`).join('')}</ol></div>`;
+
 export const widgets: Record<string, WidgetMeta> = {
+	'mh-order': {
+		g: '',
+		t: 'Put the story in order',
+		s: 'Six milestones, shuffled. Tap them into order, then see them on a ruler drawn to scale.',
+		f: orderFallback
+	},
 	'mh-timeline': {
 		g: '',
 		t: 'The story of the science, in order',
