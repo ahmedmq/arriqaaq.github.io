@@ -231,7 +231,7 @@ By the fourth century after the Hijrah, the sciences and arts had matured and th
 6. *Al-Jami li-Adab al-Shaykh wa al-Sami*, by al-Khatib al-Baghdadi.
 7. A book on high and low chains (al-uluww wa al-nuzool), by Muhammad bin Tahir al-Maqdisi (d. 507 AH).
 8. *Al-Ilma fi Dhabt ar-Riwayah wa Taqyeed as-Sama*, by Qadi Iyad (d. 544 AH).
-9. *Ma La Yasa al-Muhaddith Jahluh*, by Abu Hafs Umar al-Mayyanji (d. 581 AH).
+9. *Ma La Yasa al-Muhaddith Jahluh*, by Abu Hafs Umar al-Mayyanji (d. 580 AH).
 10. *Marifat Anwa Uloom al-Hadith* (also called *Uloom al-Hadith*), famously called *Muqaddimah Ibn al-Salah*, by Abu Amr Uthman Ibn al-Salah (d. 643 AH).
 11. *Nukhbat al-Fikar fee Mustalah Ahl al-Athar*, by Ibn Hajar al-Asqalani (d. 852 AH).
 12. *Mandhumah al-Bayquniyyah*, by Umar ibn Muhammad ibn Fatooh al-Bayqooni ad-Dimashqi.
@@ -290,7 +290,7 @@ al-Khatib al-Baghdadi played a major role in hadith terminology, composing indep
 
 ### al-Maqdisi, Qadi Iyad and al-Mayyanji
 
-Following him, al-Hafiz Abu al-Fadl Muhammad bin Tahir al-Maqdisi (d. 507 AH) wrote a book on higher and lower chains of narration (al-uluww wa an-nuzool). Later, Qadi Iyad (d. 544 AH) composed *Al-Ilma fi Dhabt ar-Riwayah wa Taqyeed as-Sama*, and Abu Hafs al-Mayyanji (d. 581 AH) wrote a concise treatise titled *Ma La Yasa al-Muhaddith Jahluh*.
+Following him, al-Hafiz Abu al-Fadl Muhammad bin Tahir al-Maqdisi (d. 507 AH) wrote a book on higher and lower chains of narration (al-uluww wa an-nuzool). Later, Qadi Iyad (d. 544 AH) composed *Al-Ilma fi Dhabt ar-Riwayah wa Taqyeed as-Sama*, and Abu Hafs al-Mayyanji (d. 580 AH) wrote a concise treatise titled *Ma La Yasa al-Muhaddith Jahluh*.
 
 These were the foundational works that addressed the science of Mustalah al-Hadith, and they remained the primary references until the arrival of Ibn al-Salah.
 
@@ -334,7 +334,7 @@ The full list is below. Tap a tab to choose a text, and a coloured chip to see o
 
 ## Nukhbat al-Fikar, and the short texts
 
-Among the comprehensive abridgments in this field is a concise treatise by the Imam, the Hafiz, Abu al-Fadl Ahmad bin Ali bin Hajar al-Asqalani al-Misri (d. 852 AH), titled ***Nukhbat al-Fikar fee Mustalah Ahl al-Athar***. He then authored a commentary on it, titled ***Nuzhat al-Nazar fee Tawdih Nukhbat al-Fikar***. Scholars turned their attention to it, relying on it for its conciseness, organisation and accuracy. Nukhbat al-Fikr and its explanation became the focus of study and consideration among hadith scholars, resulting in numerous commentaries, abridgments, annotations and poetic renderings. One of those explanations of Nukhbat al-Fikr was written by Ibn Hajar's own son.
+Among the comprehensive abridgments in this field is a concise treatise by the Imam, the Hafiz, Abu al-Fadl Ahmad bin Ali bin Hajar al-Asqalani al-Misri (d. 852 AH), titled ***Nukhbat al-Fikar fee Mustalah Ahl al-Athar***. He then authored a commentary on it, titled ***Nuzhat al-Nazar fee Tawdih Nukhbat al-Fikar***. Scholars turned their attention to it, relying on it for its conciseness, organisation and accuracy. Nukhbat al-Fikr and its explanation became the focus of study and consideration among hadith scholars, resulting in numerous commentaries, abridgments, annotations and poetic renderings. Those who explained Nukhbat al-Fikr include Ibn Hajar himself, his son Muhammad ibn Ahmad ibn Hajar, Abdul-Rauf al-Munawi and Muhammad Sadiq bin Abdul-Hadi as-Sindi.
 
 Two more short texts are worth knowing:
 

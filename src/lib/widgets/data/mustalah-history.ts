@@ -152,8 +152,8 @@ const entries: Entry[] = [
 	},
 	{
 		cat: 'books',
-		ah: 581,
-		when: 'd. 581 AH',
+		ah: 580,
+		when: 'd. 580 AH',
 		who: 'Abu Hafs al-Mayyanji',
 		work: 'Ma La Yasa al-Muhaddith Jahluh',
 		note: 'A concise treatise.'
@@ -325,11 +325,11 @@ export const FAMILIES: Family[] = [
 		groups: {
 			explained: [
 				{ title: 'Nuzhat al-Nazar fee Tawdih Nukhbat al-Fikar', by: 'Ibn Hajar al-Asqalani', note: 'The explanation of Nukhbat al-Fikr written by Ibn Hajar himself.' },
-				{ title: 'An explanation of Nukhbat al-Fikr', by: 'Ibn Hajar’s son' },
+				{ title: 'An explanation of Nukhbat al-Fikr', by: 'Muhammad ibn Ahmad ibn Hajar', note: 'Ibn Hajar’s son.' },
 				{ title: 'Annotations on the explanation of Nukhbat al-Fikr', by: 'Zain al-Din Qasim bin Qutlubugha al-Hanafi', when: 'd. 879 AH', note: 'A student of the author.' },
 				{ title: 'Mustalahat Ahl al-Athar', by: 'Mulla Ali al-Qari', when: 'd. 1014 AH' },
 				{ title: 'Al-Yawaqit wa al-Durar', by: 'Muhammad Abdul-Raouf al-Munawi al-Haddadi', when: 'd. 1031 AH' },
-				{ title: 'Im’an al-Nazar fi Tawdih Nukhbat al-Fikr', by: 'Muhammad Akram bin Abdul-Rahman al-Sindhi' },
+				{ title: 'An explanation of Nukhbat al-Fikr', by: 'Muhammad Sadiq bin Abdul-Hadi as-Sindi' },
 				{ title: 'Bahjat al-Nazar', by: 'Abu al-Hasan al-Sindi', when: 'd. 1138 AH' }
 			],
 			sharh: [
