@@ -395,6 +395,8 @@ button.chip:hover {
 	scrollbar-width: none;
 	overscroll-behavior-x: contain;
 	scroll-snap-type: x proximity;
+	/* Snap chips to the gutter, not the raw edge, so the first one sits inside the margin. */
+	scroll-padding-inline: var(--gutter);
 	margin-inline: calc(-1 * var(--gutter));
 	padding-inline: var(--gutter);
 	/* Fade only the trailing edge: the row starts flush with the gutter. */
