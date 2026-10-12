@@ -30,6 +30,30 @@ with the owner's go-ahead.
   editorial or "sources differ" notes in the post. When the notes' Arabic
   page conflicts with an English document, the owner has said to follow the
   Arabic page.
+- Follow `.claude/skills/source-check/SKILL.md` (where to check, how to
+  cite, the `npm run check:citations` gate).
+- **Nothing without a citation.** Every quotation, report ("X said",
+  "as Ibn Hajar noted"), number, date and attribution carries a citation
+  where it appears, in parentheses after it: work, volume/page or hadith
+  number, and a **link** when the passage is online (sunnah.com, shamela.ws,
+  turath.io, archive.org, ketabonline.com). Use the sunnah.com URL whose
+  page shows the cited number (its URLs use the in-book number, e.g.
+  Introduction 27 is `/muslim/introduction/26`). End every part with a
+  `## Sources` list of the works checked, each with its link.
+- **Check the original, not the translation.** When the docx or notes give
+  no citation, or the wording is unclear, find the passage in the original
+  book: search archive.org, shamela.ws or turath.io, download the PDF or
+  text into `references/books/` (git-ignored) and read the page itself
+  (render scanned pages as images). Cite the edition and page you read.
+  If a page was confirmed through another book quoting it, say so ("as
+  quoted in ...").
+- **Never invent.** If the documents do not say it, do not add it, and do
+  not "fix" a source from memory. If the original cannot be found, keep the
+  line as the documents have it, cite the documents, and tell the owner the
+  primary source is still unconfirmed.
+- Audit every part before showing it: an independent read-only agent
+  lists every claim, quote and widget/card line that is not in the sources
+  or lacks a citation; resolve each one (cite, fix to the source, or ask).
 - The course book is *Min Atyab al-Minah fi Ilm al-Mustalah* by Shaykh
   Abdul Muhsin Al-Abbad and Shaykh Abdul Kareem al-Murad.
 
@@ -71,18 +95,20 @@ not build a second version of something the post already has.
 
 ## 5. Checks before showing the owner
 
-1. `npm run parse`. Then check the scholar matches (no book titles, no
+1. `npm run check:citations` passes: every quote and report has a
+   citation with a link where one exists, and the part ends with `## Sources`.
+2. `npm run parse`. Then check the scholar matches (no book titles, no
    namesakes such as Ibn Qudamah al-Maqdisi) by listing `data-sch` spans
    in `src/lib/generated/posts.json` and the counts in
    `src/lib/generated/scholars.json`.
-2. `npx svelte-check --tsconfig ./tsconfig.json`, then
+3. `npx svelte-check --tsconfig ./tsconfig.json`, then
    `npm run build && npm run check:links`. A build can stop the dev server;
    restart it. A new widget file needs a dev-server restart to load.
-3. In the browser at 390px and 1280px, with Playwright and system Chrome:
+4. In the browser at 390px and 1280px, with Playwright and system Chrome:
    open every Pause answer and mark it, tap scholar names (bottom sheet on
    phones), play every widget to its end, check there is no horizontal
    overflow, and check without JavaScript.
-4. Adversarial review for accuracy against the sources, references and
+5. Adversarial review for accuracy against the sources, references and
    tone, after each part. Reviewer agents must not edit files.
-5. Show the owner before committing new kinds of interactivity. Commit
+6. Show the owner before committing new kinds of interactivity. Commit
    with the attribution line; never push without the go-ahead.

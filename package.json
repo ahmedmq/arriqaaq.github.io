@@ -18,7 +18,9 @@
 		"og": "tsx scripts/generate-og.mts",
 		"instagram": "tsx scripts/generate-instagram.mts",
 		"check:links": "tsx scripts/check-links.ts",
-		"preview:diagrams": "tsx scripts/preview-diagrams.mts"
+		"preview:diagrams": "tsx scripts/preview-diagrams.mts",
+		"check:citations": "tsx scripts/check-citations.ts",
+		"check:release": "npm run check:links && npm run check:citations"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^3.0.10",
