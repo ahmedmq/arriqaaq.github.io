@@ -152,8 +152,8 @@ const entries: Entry[] = [
 	},
 	{
 		cat: 'books',
-		ah: 580,
-		when: 'd. 580 AH',
+		ah: 581,
+		when: 'd. 581 AH',
 		who: 'Abu Hafs al-Mayyanji',
 		work: 'Ma La Yasa al-Muhaddith Jahluh',
 		note: 'A concise treatise.'

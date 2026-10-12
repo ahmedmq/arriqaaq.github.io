@@ -38,7 +38,7 @@ export const SCHOLARS: Scholar[] = [
 	{ id: 'khatib', name: 'al-Khatib al-Baghdadi (Abu Bakr Ahmad bin Ali)', ah: 463, line: 'In the words of Ibn Nuqtah, everyone who came after al-Khatib became dependent on his books.', works: ['Al-Kifayah fee Ilm al-Riwayah', 'Al-Jami li-Adab al-Shaykh wa al-Sami'], match: 'al-Khatib(?: al-Baghdadi)?' },
 	{ id: 'maqdisi', name: 'al-Hafiz Abu al-Fadl Muhammad bin Tahir al-Maqdisi', ah: 507, works: ['A book on higher and lower chains (al-uluww wa an-nuzool)'], match: '(?<=Tahir )al-Maqdisi' },
 	{ id: 'iyad', name: 'Qadi Iyad', ah: 544, works: ['Al-Ilma fi Dhabt ar-Riwayah wa Taqyeed as-Sama'], match: 'Qadi Iyad' },
-	{ id: 'mayyanji', name: 'Abu Hafs Umar al-Mayyanji', ah: 580, works: ['Ma La Yasa al-Muhaddith Jahluh'], match: 'al-Mayyanji' },
+	{ id: 'mayyanji', name: 'Abu Hafs Umar al-Mayyanji', ah: 581, works: ['Ma La Yasa al-Muhaddith Jahluh'], match: 'al-Mayyanji' },
 	{ id: 'ibnsalah', name: 'Abu Amr Uthman bin al-Salah al-Shahrazuri', ah: 643, born: 577, line: 'A scholar residing in Damascus. His book marked a turning point in the field.', works: ['Marifat Anwa Uloom al-Hadith, famously called Muqaddimah Ibn al-Salah'], match: '(?:Ibn|bin) al-Salah' },
 	{ id: 'nawawi', name: 'Imam al-Nawawi', ah: 676, line: 'The author of the Forty Hadith.', works: ['Irshad Tullab al-Haqaaiq', 'Al-Taqreeb'], match: 'al-Nawawi' },
 	{ id: 'ibnkathir', name: 'Ibn Kathir', ah: 774, works: ['Ikhtisar Uloom al-Hadith'], match: 'Ibn Kathir' },

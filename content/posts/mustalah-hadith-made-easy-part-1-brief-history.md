@@ -183,7 +183,7 @@ So Abdurrahman Mahdi wrote a letter to Imam al-Shafi'i, requesting him to write 
 
 **He wrote it twice.** This is why scholars list it in the index of his works as two separate books: *Al-Risalah al-Qadimah* (the Old Risalah) and *Al-Risalah al-Jadidah* (the New Risalah). The Old Risalah was based on the letter of Abdurrahman bin Mahdi. Shaykh Ahmad Shakir (the editor of the book) said in his introduction to Al-Risalah:
 
-> “As for the Al-Risalah al-Qadimah (The Old Risalah), the most plausible view in my opinion is that he wrote it […] in response to the request of Abdurrahman bin Mahdi, the great Imam and scholar of Hadith, about whom Al-Shafi'i said: ‘I do not know anyone like him in the world.’ When Al-Shafi'i returned to Egypt, he recompiled the Risalah. Whatever the case may be, the Al-Risalah al-Qadimah (The Old Risalah) has been lost, and what people have today is only the Al-Risalah al-Jadidah (The New Risalah). From our examination of Al-Shafi'i's existing books written in Egypt, it appears that he recompiled it from memory because he did not have all his books with him. It also seems to me that he rewrote the book ‘Al-Risalah’ after composing most of the books found in ‘Al-Umm.’ He dictated it to Al-Rabee al-Muradi. Al-Shafi'i did not name it ‘Al-Risalah’ himself; rather, he referred to it simply as ‘Al-Kitab’ (The Book). It appears that it was called ‘Al-Risalah’ (The Epistle) in his time because it was sent to Imam Abdurrahman bin Mahdi, may Allah have mercy on him, who said about it: ‘When I read Al-Shafi'i's Risalah, it astonished me, for I saw the words of an intelligent, eloquent, and sincere man. I frequently supplicate for him.’”
+> “As for the Al-Risalah al-Qadimah (The Old Risalah), the most plausible view in my opinion is that he wrote it in Mecca in response to the request of Abdurrahman bin Mahdi, the great Imam and scholar of Hadith, about whom Al-Shafi'i said: ‘I do not know anyone like him in the world.’ When Al-Shafi'i returned to Egypt, he recompiled the Risalah. Whatever the case may be, the Al-Risalah al-Qadimah (The Old Risalah) has been lost, and what people have today is only the Al-Risalah al-Jadidah (The New Risalah). From our examination of Al-Shafi'i's existing books written in Egypt, it appears that he recompiled it from memory because he did not have all his books with him. It also seems to me that he rewrote the book ‘Al-Risalah’ after composing most of the books found in ‘Al-Umm.’ He dictated it to Al-Rabee al-Muradi. Al-Shafi'i did not name it ‘Al-Risalah’ himself; rather, he referred to it simply as ‘Al-Kitab’ (The Book). It appears that it was called ‘Al-Risalah’ (The Epistle) in his time because it was sent to Imam Abdurrahman bin Mahdi, may Allah have mercy on him, who said about it: ‘When I read Al-Shafi'i's Risalah, it astonished me, for I saw the words of an intelligent, eloquent, and sincere man. I frequently supplicate for him.’”
 >
 > ([Ahmad Shakir, introduction to *Al-Risalah*, pp. 10–12](https://archive.org/details/AAskZad-1136222))
 
@@ -275,7 +275,7 @@ By the fourth century after the Hijrah, the sciences and arts had matured and th
 4. *Al-Kifayah fee Ilm al-Riwayah*, by Abu Bakr Ahmad bin Ali al-Khatib al-Baghdadi (d. 463 AH).
 5. *Al-Jami li-Adab al-Shaykh wa al-Sami*, by al-Khatib al-Baghdadi.
 6. *Al-Ilma fi Dhabt ar-Riwayah wa Taqyeed as-Sama*, by Qadi Iyad (d. 544 AH).
-7. *Ma La Yasa al-Muhaddith Jahluh*, by Abu Hafs Umar al-Mayyanji (d. 580 AH).
+7. *Ma La Yasa al-Muhaddith Jahluh*, by Abu Hafs Umar al-Mayyanji (d. 581 AH).
 8. *Marifat Anwa Uloom al-Hadith* (also called *Uloom al-Hadith*), famously called *Muqaddimah Ibn al-Salah*, by Abu Amr Uthman Ibn al-Salah (d. 643 AH).
 9. *Nukhbat al-Fikar fee Mustalah Ahl al-Athar*, by Ibn Hajar al-Asqalani (d. 852 AH).
 10. *Mandhumah al-Bayquniyyah*, by Umar ibn Muhammad ibn Fatooh al-Bayqooni ad-Dimashqi.
@@ -330,11 +330,11 @@ Then came al-Khatib al-Baghdadi (Abu Bakr Ahmad bin Ali), who authored two signi
 - ***Al-Kifayah fee Ilm al-Riwayah***, a foundational book on the principles of hadith transmission.
 - ***Al-Jami li-Adab al-Shaykh wa al-Sami***, a work on proper conduct in hadith learning and teaching.
 
-al-Khatib al-Baghdadi played a major role in hadith terminology, composing independent works on most branches of the hadith sciences. In the words of al-Hafiz Abu Bakr ibn Nuqtah, everyone who came after al-Khatib became dependent on his books ([Ibn Hajar, *Nuzhat al-Nazar*, introduction](https://archive.org/details/NuzhatNathar); [*Min Atyab al-Minah*, introduction](https://archive.org/details/ma3rifa_mail)). Fair-minded scholars agree that all later researchers relied on his writings, which makes him an indispensable reference in the field.
+al-Khatib al-Baghdadi played a major role in hadith terminology, composing independent works on most branches of the hadith sciences. In the words of al-Hafiz Abu Bakr ibn Nuqtah, everyone who came after al-Khatib became dependent on his books ([Ibn Hajar, *Nuzhat al-Nazar*, ed. al-Ruhayli, p. 33](https://archive.org/details/NuzhatNathar); [*Min Atyab al-Minah*, introduction](https://archive.org/details/ma3rifa_mail)). Fair-minded scholars agree that all later researchers relied on his writings, which makes him an indispensable reference in the field.
 
 ### al-Maqdisi, Qadi Iyad and al-Mayyanji
 
-Following him, al-Hafiz Abu al-Fadl Muhammad bin Tahir al-Maqdisi (d. 507 AH) wrote a book on higher and lower chains of narration (al-uluww wa an-nuzool). Later, Qadi Iyad (d. 544 AH) composed *Al-Ilma fi Dhabt ar-Riwayah wa Taqyeed as-Sama*, and Abu Hafs al-Mayyanji (d. 580 AH) wrote a concise treatise titled *Ma La Yasa al-Muhaddith Jahluh*.
+Following him, al-Hafiz Abu al-Fadl Muhammad bin Tahir al-Maqdisi (d. 507 AH) wrote a book on higher and lower chains of narration (al-uluww wa an-nuzool). Later, Qadi Iyad (d. 544 AH) composed *Al-Ilma fi Dhabt ar-Riwayah wa Taqyeed as-Sama*, and Abu Hafs al-Mayyanji (d. 581 AH; [*Nuzhat al-Nazar*, ed. al-Ruhayli, p. 33, note 23](https://archive.org/details/NuzhatNathar)) wrote a concise treatise titled *Ma La Yasa al-Muhaddith Jahluh*.
 
 These were the foundational works that addressed the science of Mustalah al-Hadith, and they remained the primary references until the arrival of Ibn al-Salah.
 
@@ -455,7 +455,7 @@ This lesson follows two documents: the course notes for Class 1, and the *Brief 
 
 - *Min Atyab al-Minah fi Ilm al-Mustalah*, Shaykh Abdul Muhsin Al-Abbad and Shaykh Abdul Kareem al-Murad, the introduction on the history of the science. [archive.org](https://archive.org/details/ma3rifa_mail)
 - Sahih Muslim, the Introduction (Muqaddimah): [Introduction 27](https://sunnah.com/muslim/introduction/26) (Muhammad bin Sireen) and [Introduction 32](https://sunnah.com/muslim/introduction/31) (Abdullah bin al-Mubarak).
-- Ibn Hajar al-Asqalani, *Nuzhat al-Nazar fee Tawdih Nukhbat al-Fikar*, the introduction. [archive.org](https://archive.org/details/NuzhatNathar)
+- Ibn Hajar al-Asqalani, *Nuzhat al-Nazar fee Tawdih Nukhbat al-Fikar*, edited by Abdullah bin Dayfallah al-Ruhayli (Riyadh, 1st ed., 1422 AH / 2001), the introduction, pp. 32–34. [archive.org](https://archive.org/details/NuzhatNathar)
 - al-Shafi'i, *Al-Risalah*, edited by Ahmad Shakir, the editor's introduction, pp. 10–12. [archive.org](https://archive.org/details/AAskZad-1136222)
 - al-Nawawi, *Al-Majmu Sharh al-Muhadhdhab*, 1/9. [shamela.ws](https://shamela.ws/book/2186/8)
 - Abu Dawood, *Risalat Abi Dawud ila Ahl Makkah*. [shamela.ws](https://shamela.ws/book/6013)
