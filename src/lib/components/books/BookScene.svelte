@@ -19,6 +19,13 @@
 		if (matchMedia('(prefers-reduced-motion: reduce)').matches || conn?.saveData) return;
 		let dead = false;
 		const start = async () => {
+			try {
+				await go();
+			} catch (e) {
+				console.warn('3D book unavailable, using the CSS book:', e);
+			}
+		};
+		const go = async () => {
 			const { mountBookScene } = await import('$lib/books/book-scene');
 			if (dead) return;
 			const s = await mountBookScene(host, {

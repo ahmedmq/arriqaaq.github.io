@@ -18,6 +18,7 @@
 		"books:render": "tsx scripts/books-render.ts",
 		"og": "tsx scripts/generate-og.mts",
 		"instagram": "tsx scripts/generate-instagram.mts",
+		"instagram:books": "tsx scripts/instagram-books.mts",
 		"check:links": "tsx scripts/check-links.ts",
 		"preview:diagrams": "tsx scripts/preview-diagrams.mts",
 		"check:citations": "tsx scripts/check-citations.ts",

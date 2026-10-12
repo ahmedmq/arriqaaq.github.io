@@ -15,6 +15,9 @@
 	let total = $state(book.pages ?? 1);
 	let current = $state(1);
 	let status = $state<'loading' | 'ready' | 'error'>('loading');
+	let why = $state('');
+	// A mouse-and-keyboard browser has its own full PDF viewer; use it when ours cannot start.
+	let native = $state(false);
 	let resume = $state(0);
 	let sheetEl = $state<HTMLDivElement>();
 	// Position is saved only once the reader has moved, so opening the book never overwrites it.
@@ -131,8 +134,10 @@
 			const s = saved();
 			resume = s > 1 && s <= total ? s : 0;
 			current = 1;
-		} catch (e) {
-			console.error(e);
+		} catch (e: any) {
+			console.error('Reader could not start:', e);
+			why = String(e?.message ?? e ?? 'unknown error').slice(0, 240);
+			native = matchMedia('(pointer: fine)').matches;
 			status = 'error';
 		}
 	}
@@ -211,12 +216,20 @@
 
 	{#if status === 'error'}
 		<div class="wrap fail">
-			<p>The reader could not open this book in your browser.</p>
-			<a class="btn btn--bk" href={base + pdf.href}>Open the PDF</a>
+			<p><b>The reader could not start in this browser.</b> The book itself is fine: open it with your browser's own PDF viewer, or download it.</p>
+			<div class="actions">
+				<a class="btn btn--bk" href={base + pdf.href} target="_blank" rel="noopener">Open the PDF</a>
+				<a class="btn btn--ghost" href={base + pdf.href} download>Download PDF</a>
+				<a class="btn btn--ghost" href={`${base}/books/${book.slug}/`}>Book details</a>
+			</div>
+			{#if why}<p class="why">Technical detail: {why}</p>{/if}
 		</div>
+		{#if native}
+			<iframe class="native" src={`${base}${pdf.href}#view=FitH`} title={`${book.title}, PDF`}></iframe>
+		{/if}
 	{/if}
 
-	<div class="scroller">
+	<div class="scroller" hidden={status === 'error'}>
 		<div class="sheet" bind:this={sheetEl} style:--ratio={book.page_ratio}>
 			{#each pages as n (n)}
 				<div class="pg" data-n={n}><span class="pn">{n}</span></div>
@@ -321,6 +334,23 @@
 		display: grid;
 		gap: var(--s-3);
 		justify-items: start;
+		max-width: 640px;
+	}
+
+	.why {
+		font: 400 12px/1.5 var(--font-mono);
+		color: var(--ink-3);
+		overflow-wrap: anywhere;
+	}
+
+	.native {
+		display: block;
+		width: calc(100% - 2 * var(--gutter));
+		max-width: 960px;
+		height: 85vh;
+		margin: var(--s-4) auto 0;
+		border: 1px solid var(--line);
+		border-radius: var(--r);
 	}
 
 	.scroller {
