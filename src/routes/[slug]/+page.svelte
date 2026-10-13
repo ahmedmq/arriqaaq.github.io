@@ -17,7 +17,7 @@
 	import { reveal } from '$lib/actions';
 	import { pauses } from '$lib/pause';
 	import ReviewCard from '$lib/components/reading/ReviewCard.svelte';
-	import ScholarCards from '$lib/components/reading/ScholarCards.svelte';
+	import ReferenceCards from '$lib/components/reading/ReferenceCards.svelte';
 	import AnalyticsChoice from '$lib/components/site/AnalyticsChoice.svelte';
 	import { trackReading } from '$lib/analytics';
 
@@ -124,8 +124,8 @@
 		<FlowerVine {article} />
 		<SectionRail />
 		<SectionPill {article} {place} />
-		{#if data.html.includes('data-sch=')}
-			<ScholarCards {article} html={data.html} slug={data.post.slug} />
+		{#if data.html.includes('data-sch=') || data.html.includes('data-term=')}
+			<ReferenceCards {article} html={data.html} slug={data.post.slug} />
 		{/if}
 	{/if}
 

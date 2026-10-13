@@ -28,6 +28,7 @@ import rehypeReading, { stripEmoji } from './rehype-reading.js';
 import rehypeScholars from './rehype-scholars.js';
 import rehypeImages from './rehype-images.js';
 import { SCHOLARS, scholarPattern, matchedScholar } from '../src/lib/data/scholars.js';
+import { TERMS } from '../src/lib/data/glossary.js';
 import { parse as parseHtml } from 'node-html-parser';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -523,6 +524,12 @@ async function main() {
 		for (const id of ids) scholarPosts[id].push({ slug: post.slug, title: post.title });
 	}
 	writeFileSync(resolve(OUT_DIR, 'scholars.json'), JSON.stringify(scholarPosts, null, '\t'));
+	// Glossary: for each term, the posts where it is marked (hadith posts only,
+	// so "munkar" in a fiqh post is not counted).
+	const termPosts: Record<string, { slug: string; title: string }[]> = Object.fromEntries(
+		TERMS.map((t) => [t.id, posts.filter((p) => p.html.includes(`data-term="${t.id}"`)).map((p) => ({ slug: p.slug, title: p.title }))])
+	);
+	writeFileSync(resolve(OUT_DIR, 'terms.json'), JSON.stringify(termPosts, null, '\t'));
 	writeFileSync(resolve(OUT_DIR, 'markdown.json'), JSON.stringify(markdown, null, '\t'));
 
 	// Redirects: every old slug (frontmatter `redirect_from`) → its post. Used

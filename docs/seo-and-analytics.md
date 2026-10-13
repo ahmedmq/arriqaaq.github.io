@@ -64,7 +64,7 @@ Page views are sent by the router (`src/routes/+layout.svelte`), once per page, 
 | `book_read_progress` | 25/50/75/100% of a book's pages reached | `book_id`, `percent`, `page_number` |
 | `file_download` | PDF download (GA automatic) | `file_name` |
 | `search` | Site search or the /articles/ filter, after typing stops | `search_term`, `search_type` |
-| `select_content` | A search result clicked | `content_type`, `content_id` |
+| `select_content` | A search result clicked, or a scholar or term card opened in a lesson (`content_type` `scholar` or `term`) | `content_type`, `content_id` |
 | `share` | Share sheet or copy link on an article | `method`, `item_id` |
 | `comment_post` | A new giscus comment on the page | `content_id` |
 | `widget_interact` | First touch on an interactive widget | `widget_id`, `content_id` |

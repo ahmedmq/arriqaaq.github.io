@@ -1,44 +1,64 @@
 <script lang="ts">
-	// Scholar cards. Names marked at build time (scripts/rehype-scholars.ts)
-	// become tappable: a card opens with the scholar's name, death year, the
-	// works the lessons mention, and the other posts on the site that mention
-	// him. On phones it is a sheet from the bottom; on wider screens it opens
-	// under the name. Esc, the close button or a tap outside closes it.
-	// Without JavaScript the names are plain text.
+	// Scholar and term cards. Names and terms marked at build time
+	// (scripts/rehype-scholars.ts) become tappable. A scholar card shows the
+	// name, death year, the works the lessons mention and the other posts that
+	// mention him; a term card shows the course's meaning for it, the lesson
+	// that explains it and the other lessons that use it. On phones it is a
+	// sheet from the bottom; on wider screens it opens under the word. Esc, the
+	// close button or a tap outside closes it. Without JavaScript the words are
+	// plain text.
 	import { base } from '$app/paths';
 	import { SCHOLARS, type Scholar } from '$lib/data/scholars';
+	import { TERMS, type Term } from '$lib/data/glossary';
+	import { track } from '$lib/analytics';
+	import { coursePlace } from '$lib/content';
 	import appearances from '$lib/generated/scholars.json';
+	import termAppearances from '$lib/generated/terms.json';
 
 	type Props = { article: HTMLElement | undefined; html: string; slug: string };
 	let { article, html, slug }: Props = $props();
 
-	const BY_ID = new Map(SCHOLARS.map((s) => [s.id, s]));
-	const APPEARS = appearances as Record<string, { slug: string; title: string }[]>;
+	type Open = { kind: 'sch'; s: Scholar } | { kind: 'term'; t: Term };
+	type Appears = Record<string, { slug: string; title: string }[]>;
+	const SCHOLAR_BY_ID = new Map(SCHOLARS.map((s) => [s.id, s]));
+	const TERM_BY_ID = new Map(TERMS.map((t) => [t.id, t]));
+	const APPEARS = appearances as Appears;
+	const TERM_APPEARS = termAppearances as Appears;
+	const SEL = '.sch.is-on, .trm.is-on';
 
-	let open = $state<Scholar | null>(null);
+	let open = $state<Open | null>(null);
 	let sheet = $state(false);
 	let pos = $state({ top: 0, left: 0 });
 	let trigger: HTMLElement | null = null;
 	let card: HTMLElement | undefined = $state();
 
-	const others = $derived(open ? (APPEARS[open.id] ?? []).filter((p) => p.slug !== slug) : []);
+	const others = $derived(
+		!open ? [] : ((open.kind === 'sch' ? APPEARS[open.s.id] : TERM_APPEARS[open.t.id]) ?? []).filter((p) => p.slug !== slug)
+	);
+	// The lesson that explains the term, when it is not this one.
+	const explainedIn = $derived.by(() => {
+		if (open?.kind !== 'term' || open.t.later || open.t.lesson === slug) return undefined;
+		return coursePlace(open.t.lesson)?.lesson;
+	});
 
 	function show(el: HTMLElement) {
-		const s = BY_ID.get(el.dataset.sch ?? '');
-		if (!s) return;
+		const s = SCHOLAR_BY_ID.get(el.dataset.sch ?? '');
+		const t = TERM_BY_ID.get(el.dataset.term ?? '');
+		if (!s && !t) return;
 		trigger = el;
 		sheet = window.innerWidth < 640;
 		if (!sheet) {
 			const r = el.getBoundingClientRect();
 			const w = 340;
-			// Under the name, or above it when there is no room below.
+			// Under the word, or above it when there is no room below.
 			const below = window.innerHeight - r.bottom > 320;
 			pos = {
 				top: below ? r.bottom + 8 : Math.max(16, r.top - 8 - 320),
 				left: Math.max(16, Math.min(r.left, window.innerWidth - w - 16))
 			};
 		}
-		open = s;
+		open = s ? { kind: 'sch', s } : { kind: 'term', t: t! };
+		track('select_content', { content_type: s ? 'scholar' : 'term', content_id: s ? s.id : t!.id });
 		queueMicrotask(() => card?.querySelector<HTMLElement>('.close')?.focus({ preventScroll: true }));
 	}
 
@@ -51,19 +71,19 @@
 	$effect(() => {
 		if (!article) return;
 		void html; // set up again when the article changes
-		const names = [...article.querySelectorAll<HTMLElement>('.sch[data-sch]')];
-		for (const n of names) {
+		const words = [...article.querySelectorAll<HTMLElement>('.sch[data-sch], .trm[data-term]')];
+		for (const n of words) {
 			n.classList.add('is-on');
 			n.setAttribute('role', 'button');
 			n.setAttribute('tabindex', '0');
 			n.setAttribute('aria-haspopup', 'dialog');
 		}
 		const onClick = (e: Event) => {
-			const n = (e.target as HTMLElement).closest<HTMLElement>('.sch.is-on');
+			const n = (e.target as HTMLElement).closest<HTMLElement>(SEL);
 			if (n) show(n);
 		};
 		const onKey = (e: KeyboardEvent) => {
-			const n = (e.target as HTMLElement).closest<HTMLElement>('.sch.is-on');
+			const n = (e.target as HTMLElement).closest<HTMLElement>(SEL);
 			if (n && (e.key === 'Enter' || e.key === ' ')) {
 				e.preventDefault();
 				show(n);
@@ -83,10 +103,10 @@
 		const onKey = (e: KeyboardEvent) => e.key === 'Escape' && close();
 		const onDown = (e: PointerEvent) => {
 			const t = e.target as HTMLElement;
-			if (card?.contains(t) || t.closest('.sch.is-on')) return;
+			if (card?.contains(t) || t.closest(SEL)) return;
 			close();
 		};
-		// The desktop card is pinned to where the name was; scrolling closes it.
+		// The desktop card is pinned to where the word was; scrolling closes it.
 		const onScroll = () => !sheet && close();
 		window.addEventListener('keydown', onKey);
 		window.addEventListener('pointerdown', onDown);
@@ -112,21 +132,36 @@
 	>
 		<div class="head">
 			<div>
-				<span class="when">
-					{#if open.ah}d. {open.ah} AH{/if}{#if open.born} · born {open.born} AH{/if}
-				</span>
-				<strong id="sch-name">{open.name}</strong>
+				{#if open.kind === 'sch'}
+					<span class="when">
+						{#if open.s.ah}d. {open.s.ah} AH{/if}{#if open.s.born} · born {open.s.born} AH{/if}
+					</span>
+					<strong id="sch-name">{open.s.name}</strong>
+				{:else}
+					<span class="when">Term</span>
+					<strong id="sch-name">{open.t.term}</strong>
+				{/if}
 			</div>
 			<button class="close" onclick={close} aria-label="Close">×</button>
 		</div>
 		<div class="body">
-			{#if open.line}<p class="line">{open.line}</p>{/if}
-			<span class="label">Works mentioned in the lessons</span>
-			<ul>
-				{#each open.works as w}<li>{w}</li>{/each}
-			</ul>
+			{#if open.kind === 'sch'}
+				{#if open.s.line}<p class="line">{open.s.line}</p>{/if}
+				<span class="label">Works mentioned in the lessons</span>
+				<ul>
+					{#each open.s.works as w}<li>{w}</li>{/each}
+				</ul>
+			{:else}
+				{#if open.t.meaning}<p class="meaning">{open.t.meaning}</p>{/if}
+				{#if open.t.later}
+					<p class="line">It gets its own lesson later in the course.</p>
+				{:else if explainedIn}
+					<span class="label">Explained in</span>
+					<ul class="links"><li><a href={`${base}/${explainedIn.slug}/`}>Lesson {explainedIn.n}, {explainedIn.title}</a></li></ul>
+				{/if}
+			{/if}
 			{#if others.length}
-				<span class="label">Also mentioned in</span>
+				<span class="label">{open.kind === 'sch' ? 'Also mentioned in' : 'Also used in'}</span>
 				<ul class="links">
 					{#each others as p (p.slug)}<li><a href={`${base}/${p.slug}/`}>{p.title}</a></li>{/each}
 				</ul>
@@ -144,8 +179,19 @@
 		border-radius: 3px;
 	}
 
+	/* Terms: a dotted grey underline, so they read apart from scholars. */
+	:global(.prose .trm.is-on) {
+		text-decoration: underline dotted var(--ink-3);
+		text-decoration-thickness: 2px;
+		text-underline-offset: 4px;
+		cursor: pointer;
+		border-radius: 3px;
+	}
+
 	:global(.prose .sch.is-on:hover),
-	:global(.prose .sch.is-on:focus-visible) {
+	:global(.prose .sch.is-on:focus-visible),
+	:global(.prose .trm.is-on:hover),
+	:global(.prose .trm.is-on:focus-visible) {
 		color: var(--subject-ink, var(--purple-ink));
 		outline: none;
 	}
@@ -225,6 +271,13 @@
 	.line {
 		margin: 0;
 		color: var(--ink-2);
+	}
+
+	.meaning {
+		margin: 0;
+		font-size: 1.0625rem;
+		font-weight: 500;
+		color: var(--ink);
 	}
 
 	.label {

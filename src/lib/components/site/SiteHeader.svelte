@@ -263,6 +263,14 @@
 		}
 	}
 
+	/* From 1180px the "On this page" rail (SectionRail) shows the current
+	   section beside the article, so the header does not repeat it. */
+	@media (min-width: 1180px) {
+		.section {
+			display: none;
+		}
+	}
+
 	/* Full-screen menu sheet (phones). */
 	.sheet {
 		position: fixed;

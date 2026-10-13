@@ -21,6 +21,8 @@
  *    names the speaker or source ("Abdullah bin al-Mubarak", "(Majmoo
  *    al-Fatawa 20/306)") becomes the <cite> too.
  * 4. Sections: each h2 gets data-n="01", "02"… for its index marker.
+ * 5. External links (sunnah.com, shamela.ws, archive.org…) open in a new tab,
+ *    so a reader checking a source does not lose their place in the lesson.
  *
  * Must run BEFORE rehype-heading-ids so the contents list is emoji-free.
  */
@@ -84,6 +86,9 @@ function classifyQuote(node: any, text: string): 'quran' | 'hadith' | 'note' | '
 
 const CITATION =
 	/\s*[(\[]\s*((?:quran|qur.?[aâ]n|surah|surat|saheeh|sahih|sunan|jami|musnad|muwatta|bukhari|muslim|tirmidhi|abu dawud|abu dawood|nasa|nasaee|ibn majah|al-bukhari)[^()[\]]{0,90}?)\s*[)\]]\s*[.。]?\s*$/i;
+
+// An absolute link to any site other than arriqaaq.com.
+const EXTERNAL = /^https?:\/\/(?!(?:www\.)?arriqaaq\.com(?:[/:?#]|$))/i;
 
 const SKIP_TAGS = new Set(['code', 'pre', 'svg', 'script', 'style', 'figure', 'math']);
 
@@ -256,6 +261,10 @@ export default function rehypeReading() {
 				return;
 			}
 			if (tag === 'p' || tag === 'li') stripLeadingEmoji(node);
+			if (tag === 'a' && EXTERNAL.test(String(node.properties?.href ?? ''))) {
+				node.properties.target = '_blank';
+				node.properties.rel = ['noopener'];
+			}
 		});
 
 		visit(tree, 'element', (node: any) => {
