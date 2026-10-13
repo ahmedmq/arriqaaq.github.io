@@ -3,6 +3,7 @@ title: Usul-Al-Fiqh Made Easy (Part 22) - Ways of al-Istinbaat (Hanafiyyah)
 slug: istinbaat-hanafi-method
 redirect_from:
   - istinbaathanafi
+description: "Istinbaat according to the Hanafiyyah: the five Mubhath, or modes of Dalalah, through which the wording of the Quran and Sunnah conveys meaning."
 type: post
 published: "2025-10-20T09:30:26.000Z"
 updated: "2025-11-04T02:55:10.000Z"
@@ -24,6 +25,8 @@ In the previous section, we explored the **Ways of al-Istinbaat according to the
 The **Hanafiyyah** developed a framework based on **modes of** ***Dalalah***. There are five **Mubhath (مبحث)** (*“research topic”* or *“sub-discussion")* under this*,* each represents one **category of indication** through which meaning is derived.
 
 Each *mubhath* defines a way in which the wording of the Qur’an or Sunnah conveys meaning — directly, indirectly, by implication, or by necessary connection.
+
+**Simply put,** the Hanafiyyah derive rulings through five *Mubhath*, modes of *Dalalah*, each a way in which the wording of the Qur’an or Sunnah conveys meaning.
 
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Usul-Al-Fiqh Made Easy (Part 9) - What is Qiyas?
 slug: what-is-qiyas
+description: "Qiyas extends the ruling of an original case to a new case that shares the same effective cause. Learn its pillars, conditions, types and worked examples."
 type: post
 published: "2024-12-02T23:36:19.000Z"
 updated: "2025-11-04T02:52:43.000Z"
@@ -19,6 +20,8 @@ reading_time: 15
 Islamic law, or Shariah, is derived from four main sources: the Quran, the Sunnah (teachings and practices of Prophet Muhammad ﷺ), Ijma (scholarly consensus), and Ijtihad. While the Quran and Sunnah are the primary sources, Qiyas is important in extending the principles and rulings of Islam to new situations and issues that are not directly addressed in these texts. In this blog post, we will understand the concept of Qiyas, its components, conditions, types, and the scholarly debates surrounding its application.
 
 ::bookmark{url="/tag/fiqh/" title="Fiqh - Arriqaaq" description="Usul Al Fiqh Series Arriqaaq" author="Arriqaaq" publisher="Arriqaaq" icon="/images/icon/Flower-Fern-Business-logo-2-8.png" thumbnail="/images/thumbnail/Screenshot-2025-11-04-at-8.17.54---AM.png"}
+
+**Simply put,** qiyas is extending the ruling (hukm) of an original case (asl) to a new case (far') because the new case shares the same effective cause (illah) with the original case.
 
 ---
 

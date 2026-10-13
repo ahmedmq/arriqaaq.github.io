@@ -3,6 +3,7 @@ title: Usul-Al-Fiqh Made Easy (Part 19) - Amr (Command) and Nahi (Prohibition)
 slug: amr-and-nahi
 redirect_from:
   - amrnahi
+description: "Amr (command) and Nahi (prohibition) in usul al-fiqh: their linguistic and technical definitions and the ways each is used in the Quran and Sunnah."
 type: post
 published: "2025-10-11T05:30:57.000Z"
 updated: "2025-11-04T02:54:28.000Z"
@@ -23,6 +24,8 @@ In our ongoing study of *Usul al-Fiqh*, we have been learning how the *ulama* de
 ::bookmark{url="/mutlaq-and-muqayyad/" title="Usul-Al-Fiqh Made Easy (Part 18) - Mutlaq and Muqayyad (Absolute and Restricted)" description="Understanding Absolute (Mutlaq) and Restricted (Muqayyad)" author="Arriqaaq" publisher="Arriqaaq" icon="/images/icon/Flower-Fern-Business-logo-2-2.png" thumbnail="/images/thumbnail/Screenshot-2025-10-08-at-7.07.48---AM-1.png"}
 
 Now, we move to another fundamental topic in the study of rulings: **al-Amr (الأمر)** — *The Command*, its counterpart: **An-Nahi (النهي)** — *The Prohibition*. 
+
+**Simply put,** *Amr* is an instruction from one in authority to someone under that authority to do an action, and *Nahi* is a directive to abstain from a specific act: *Amr* implies “do,” *Nahi* implies “do not.”
 
 ---
 

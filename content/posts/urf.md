@@ -1,6 +1,7 @@
 ---
 title: Usul-Al-Fiqh Made Easy (Part 16) - What is Urf (الْعُرْف)?
 slug: urf
+description: "Urf is the recognized custom of people, a source of rulings when it does not contradict the Quran or Sunnah. Learn its types, conditions and legal maxims."
 type: post
 published: "2025-08-30T04:52:58.000Z"
 updated: "2025-11-04T02:54:00.000Z"
@@ -17,6 +18,8 @@ reading_time: 5
 ::bookmark{url="/tag/fiqh/" title="Fiqh - Arriqaaq" description="Usul Al Fiqh Series Arriqaaq" author="Arriqaaq" publisher="Arriqaaq" icon="/images/icon/Flower-Fern-Business-logo-2-8.png" thumbnail="/images/thumbnail/Screenshot-2025-11-04-at-8.17.54---AM.png"}
 
 In our ongoing study of *Usool al-Fiqh* (principles of Islamic Fiqh), we have systematically examined the various sources of *Al-Hukm* (Islamic rulings). We have covered the primary sources - the [Quran, Sunnah, and Ijma](/sources-of-al-hukm/) (scholarly consensus) - and explored different methodologies of *Ijtihad* including [*Qiyas*](/what-is-qiyas/) (analogical reasoning), [*Istihsan*](/istihsan/), [*Amal Ahlul Madina*](/sources-of-al-hukm/) (practice of the people of Madinah), [*Istishab*](/istishab/) (presumption of continuity), [*Sadd al-Dhara'i*](/sadd-ad-dharai/) (blocking the means), [Qawl as Sahabi](/qawl-as-sahabi/) (statement of the companions) and [*Masalih Mursalah*](/istislah/). Today, we examine another important source within *Ijtihad*: **Urf (custom)**.
+
+**Simply put,** Urf is the recognized custom of people, which the Shariah accepts as a source of rulings so long as it does not contradict the Quran or Sunnah.
 
 ---
 

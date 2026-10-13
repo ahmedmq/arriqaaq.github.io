@@ -42,11 +42,18 @@ export const breadcrumbLd = (trail: Crumb[]) => ({
 	}))
 });
 
-/** The publisher, shared by every page's structured data. */
+/**
+ * Arriqaaq: the publisher, and the author of the teaching posts. Shared by
+ * every page's structured data so search engines see one identity, described
+ * on /about/ and linked to its own profiles.
+ */
 export const ORGANIZATION_LD = {
 	'@type': 'Organization',
 	'@id': `${SITE_URL}/#organization`,
 	name: settings.title,
 	url: `${SITE_URL}/`,
-	logo: { '@type': 'ImageObject', url: absUrl(settings.logo ?? DEFAULT_OG_IMAGE) }
+	description: settings.description,
+	logo: { '@type': 'ImageObject', url: absUrl(settings.logo ?? DEFAULT_OG_IMAGE) },
+	sameAs: settings.navigation.map((n) => n.url).filter((u) => /instagram\.com|github\.com/.test(u)),
+	mainEntityOfPage: `${SITE_URL}/about/`
 };

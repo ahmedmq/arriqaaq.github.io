@@ -1,6 +1,7 @@
 ---
 title: Usul-Al-Fiqh Made Easy (Part 10) - Analysis of Arguments For and Against Qiyas
 slug: qiyas-debate
+description: "Qiyas is accepted by most classical scholars and rejected by the Zahiri school. This post weighs each side's evidence from the Quran, Sunnah and Ijma."
 type: post
 published: "2025-04-06T14:59:42.000Z"
 updated: "2025-11-04T02:52:56.000Z"
@@ -24,11 +25,13 @@ reading_time: 20
 
 In our journey through the study of Fiqh, this gentle wisdom offers a valuable reminder. When we encounter complex topics, there's a natural tendency to lean toward positions we've already embraced. Yet true understanding invites us to momentarily set aside our existing views, creating space to carefully examine both supporting and opposing arguments with equal attention - to be objective in our understanding without having any confirmation bias.
 
-Building on this approach, our [previous](/what-is-qiyas/) [articles](/sources-of-al-hukm/) explored various sources of Islamic law, including the fundamental sources like [Quran, Sunnah, and Ijma](/sources-of-al-hukm/). We then turned our focus to [Qiyas](/what-is-qiyas/), which you can read about in detail in our [last article](/what-is-qiyas/).
+Building on this approach, our previous articles on [what is Qiyas](/what-is-qiyas/) and the [sources of Al-Hukm](/sources-of-al-hukm/) explored various sources of Islamic law, including the fundamental sources like [Quran, Sunnah, and Ijma](/sources-of-al-hukm/). We then turned our focus to [Qiyas](/what-is-qiyas/), which you can read about in detail in our last article, [What is Qiyas?](/what-is-qiyas/).
 
 [[SVG:ijtihad-sources-map]]
 
 Now, in this article, we will examine the scholarly debate surrounding Qiyas. While most classical scholars accept Qiyas as a valid tool, critics like the Ẓāhirī school reject it entirely. This article examines both perspectives, evaluates their evidence, and clarifies how this debate shapes Islamic Fiqh.
+
+**Simply put,** the debate is over whether Qiyas is a valid tool: most classical scholars accept it, while critics like the Zahiri school reject it entirely.
 
 ---
 

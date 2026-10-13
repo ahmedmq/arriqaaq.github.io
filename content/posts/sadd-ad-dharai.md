@@ -3,6 +3,7 @@ title: Usul-Al-Fiqh Made Easy (Part 14) - What is Sadd ad-Dharai?
 slug: sadd-ad-dharai
 redirect_from:
   - saddzarai
+description: "Sadd al-Dhara'i means blocking permissible means that may lead to harm. Learn its types, where scholars differ, and its evidence in the Quran and Sunnah."
 type: post
 published: "2025-06-25T06:42:56.000Z"
 updated: "2025-11-04T02:53:42.000Z"
@@ -22,6 +23,8 @@ In our study of *Usool al-Fiqh*, we explored the various sources of Islamic ruli
 [[SVG:ijtihad-sources-map]]
 
 This principle involves blocking pathways that could lead to *Haram* before the prohibited act occurs. Though the concept appears simple, it has different use cases and scholars have varying views on its use as evidence in *Fiqh*.
+
+**Simply put,** Sadd al-Dhara'i means blocking the means: you prevent something which is permissible in itself because it may lead to something evil or harmful.
 
 ---
 

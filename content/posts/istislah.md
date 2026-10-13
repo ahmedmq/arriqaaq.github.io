@@ -1,6 +1,7 @@
 ---
 title: Usul-Al-Fiqh Made Easy (Part 13) - What is Istislaah (Masalih Al-Mursalah)?
 slug: istislah
+description: "Istislah (Masalih al-Mursalah) considers benefits the Sharia is silent on. Learn its conditions, the imams' positions and how it differs from bid'ah."
 type: post
 published: "2025-05-24T06:29:55.000Z"
 updated: "2025-11-04T12:30:48.000Z"
@@ -20,6 +21,8 @@ In our previous articles, we explored the various sources of Islamic rulings. We
 [[SVG:ijtihad-sources-map]]
 
 Before we can properly understand and appreciate the wisdom behind this important principle, we must take a step back and thoroughly examine the important objectives that Allah has established as the foundation of all Islamic shariah (law) rulings.
+
+**Simply put,** Istislah (Masalih Al-Mursalah) is the consideration of public interest: benefits about which the Sharia is silent, neither explicitly approving nor rejecting them, that serve to protect religion, life, intellect, lineage and property.
 
 ---
 

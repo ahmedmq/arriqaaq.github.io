@@ -4,6 +4,7 @@ title: >-
   Hadith and Ahlur Rai
 slug: usul-al-fiqh-made-easy-difference-between-ahlul-hadith-and-ahlul-rai-part-2
 seo_title: "Ahlul Hadith and Ahlur Rai | Usul al-Fiqh Part 2"
+description: "Ahlul Hadith and Ahlur Rai: why the scholars of Hijaz and Iraq split, and how their methods differ on qiyas, khabar ahad, hypothetical issues and more."
 type: post
 published: "2024-01-06T16:22:41.000Z"
 updated: "2025-11-04T02:50:28.000Z"
@@ -20,7 +21,9 @@ reading_time: 2
 
 ::bookmark{url="/tag/fiqh/" title="Fiqh - Arriqaaq" description="Usul Al Fiqh Series Arriqaaq" author="Arriqaaq" publisher="Arriqaaq" icon="/images/icon/Flower-Fern-Business-logo-2-8.png" thumbnail="/images/thumbnail/Screenshot-2025-11-04-at-8.17.54---AM.png"}
 
-The farther back you look, the further ahead you can see. In the [***last article***](/usul-al-fiqh-made-easy-introduction-part-1/), we explored the evolution of usul al-fiqh over time. In this article, we delve into how the two mainstream groups of fiqh evolved and examine the socio-political and geopolitical factors that contributed to this evolution.
+The farther back you look, the further ahead you can see. In [***Part 1, on the history and evolution of usul al-fiqh***](/usul-al-fiqh-made-easy-introduction-part-1/), we explored the evolution of usul al-fiqh over time. In this article, we delve into how the two mainstream groups of fiqh evolved and examine the socio-political and geopolitical factors that contributed to this evolution.
+
+**Simply put,** Ahlul Hadith (the people of Hijaz) and Ahlur Rai (the people of Iraq) differed in method: Ahlul Hadith combined the evidence of the Quran, Sunnah and athaar of the Sahabah and turned to qiyas only out of necessity, while Ahlur Rai used ijtihad and qiyas far more widely.
 
 ## **Introduction**
 
@@ -37,7 +40,7 @@ The narration of Hadeeths also increased during this period, driven by the growi
 
 ## **Ahlul Hadith and Ahlur Rai**
 
-During this early period of the Umayyad dynasty, Fiqh scholars underwent a division into two primary groups: Ahl ar-Ra’i (people of Iraq) and Ahl al-Hadeeth (people of Hijaz). We delved into these groups in our [previous](/usul-al-fiqh-made-easy-introduction-part-1/) blog. It is important to understand some of the geo politcal factors that led to this divide, some of which are outlined below. To provide context regarding the considerable distance between these two regions, here is a simple google search. 
+During this early period of the Umayyad dynasty, Fiqh scholars underwent a division into two primary groups: Ahl ar-Ra’i (people of Iraq) and Ahl al-Hadeeth (people of Hijaz). We delved into these groups in our [previous blog on the history of usul al-fiqh](/usul-al-fiqh-made-easy-introduction-part-1/). It is important to understand some of the geo politcal factors that led to this divide, some of which are outlined below. To provide context regarding the considerable distance between these two regions, here is a simple google search. 
 
 ::image{src="/images/2024/01/Screenshot-2024-01-07-at-6.40.46-AM.png"}
 

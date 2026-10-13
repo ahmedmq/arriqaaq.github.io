@@ -24,6 +24,7 @@
 		"preview:diagrams": "tsx scripts/preview-diagrams.mts",
 		"check:citations": "tsx scripts/check-citations.ts",
 		"indexnow": "tsx scripts/indexnow.ts",
+		"images:optimize": "tsx scripts/images-optimize.ts",
 		"check:release": "npm run check:links && npm run check:citations"
 	},
 	"devDependencies": {
@@ -46,6 +47,7 @@
 		"remark-frontmatter": "^5.0.0",
 		"remark-parse": "^11.0.0",
 		"remark-rehype": "^11.1.2",
+		"sharp": "^0.34.5",
 		"svelte": "^5.55.2",
 		"svelte-check": "^4.4.6",
 		"tsx": "^4.21.0",

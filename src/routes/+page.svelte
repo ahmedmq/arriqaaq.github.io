@@ -27,7 +27,6 @@
 	let active = $state<string | null>(null);
 	const shown = $derived(data.posts.filter((p) => !active || p.primary_tag === active).slice(0, 6));
 
-	const sameAs = settings.navigation.map((n) => n.url).filter((u) => /instagram\.com|github\.com/.test(u));
 	const jsonLd = [
 		{
 			'@context': 'https://schema.org',
@@ -43,8 +42,7 @@
 			'@context': 'https://schema.org',
 			...ORGANIZATION_LD,
 			description: settings.description,
-			image: `${SITE_URL}${DEFAULT_OG_IMAGE}`,
-			sameAs
+			image: `${SITE_URL}${DEFAULT_OG_IMAGE}`
 		}
 	];
 </script>

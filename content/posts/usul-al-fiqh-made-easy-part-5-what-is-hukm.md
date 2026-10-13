@@ -1,6 +1,7 @@
 ---
 title: Usul-Al-Fiqh Made Easy (Part 5) - What is Al-HUKM (Command)?
 slug: usul-al-fiqh-made-easy-part-5-what-is-hukm
+description: "Hukm in usul al-fiqh: what it means, its two types, and the categories of hukm taklifi (fard, mandoob, haraam, makrooh and mubah) with examples."
 type: post
 published: "2024-02-26T16:10:34.000Z"
 updated: "2025-11-04T02:51:40.000Z"
@@ -25,6 +26,8 @@ You've just finished your Isha prayer, and your mom casually asks if you prayed 
 Here's the deal: in Usul al Fiqh, amidst various madhaib, things get a bit tangled. The terms 'fard' and 'wajib' sometimes swap hats, and it can leave you feeling lost in a word maze.
 
 In this article, we will delve into the meaning of "Hukm" in Fiqh, particularly focusing on its different types and classifications, thereby understanding the usage of different terms.
+
+**Simply put,** a hukm is a command from Allah to the mukallaf: a demand to do or not to do something, a choice to do it or leave it, or a declaration that something is a cause, condition or impediment.
 
 ---
 

@@ -6,6 +6,7 @@ slug: sources-of-al-hukm
 redirect_from:
   - sources-of-al-hukm-quran-sunnah-ijmaa-and-ijtihaad-usul-al-fiqh-made-easy-part-7
 seo_title: "Sources of al-Hukm | Usul al-Fiqh Part 7"
+description: "Sources of al-Hukm: the Quran, the Sunnah, ijma and ijtihad, the four sources Islamic rulings come from, what each means and the proofs for ijma."
 type: post
 published: "2024-05-22T17:26:31.000Z"
 updated: "2025-11-04T02:52:13.000Z"
@@ -22,7 +23,9 @@ reading_time: 13
 
 Learning new subjects (or topics) can be a daunting task, and we totally understand it. However, there's a niche little approach that can ease this challenge: first principles thinking. This method involves deconstructing complex problems or concepts into their most fundamental elements or basic truths. By doing so, we gain a clearer understanding of the underlying principles at play. From these foundational truths, we can then reason more effectively to arrive at conclusions or solutions. Essentially, first principles thinking empowers us to approach learning with a simplified and logical framework, making it more accessible and manageable.
 
-Now that we've navigated through the intricacies of [Hukm](/usul-al-fiqh-made-easy-part-5-what-is-hukm/) in our [previous](/hukm-al-wadi/) [discussions](/hukm-al-wadi/), understanding its classification into Al-hukm at-taklifi and Al-hukm al-wad'i, it's time to delve deeper. But you must be wondering, what are the sources of deriving these rulings? Today, our focus shifts to precisely that. Using the lens of first principles thinking, let's unravel the sources that underpin Hukm, allowing us to grasp the framework of deriving rulings with clarity and insight.
+Now that we've navigated through the intricacies of [Hukm](/usul-al-fiqh-made-easy-part-5-what-is-hukm/) in our [previous discussions, on Hukm al-Wad'i](/hukm-al-wadi/), understanding its classification into Al-hukm at-taklifi and Al-hukm al-wad'i, it's time to delve deeper. But you must be wondering, what are the sources of deriving these rulings? Today, our focus shifts to precisely that. Using the lens of first principles thinking, let's unravel the sources that underpin Hukm, allowing us to grasp the framework of deriving rulings with clarity and insight.
+
+**Simply put,** the sources of Hukm are four: the Qur'an, the Sunnah, Ijma (scholarly consensus) and Ijtihaad.
 
 ---
 
@@ -65,7 +68,7 @@ Allah says in the Quran,
 
 > Verily, We, it is We Who have sent down the Dhikr (i.e. the Qur’ân) and surely, We will guard it (from corruption) (Quran 15:9)
 
-It was preserved orally as well as in written form. Entire Quran was written down from the Prophet’s **ﷺ**  dictation by group of Sahabah, most famous being Zaid bin Thabit. (Al-Itqan fee Uloom al-Quran of Suyuti 1/49). Mustafa Azami, mentions 65 Sahabah who used to write for the Prophet **ﷺ** . [**We have a detailed article related to this topic if you want to read it.**](/preservation-of-the-quran/)
+It was preserved orally as well as in written form. Entire Quran was written down from the Prophet’s **ﷺ**  dictation by group of Sahabah, most famous being Zaid bin Thabit. (Al-Itqan fee Uloom al-Quran of Suyuti 1/49). Mustafa Azami, mentions 65 Sahabah who used to write for the Prophet **ﷺ** . [**We have a detailed article on the preservation of the Quran if you want to read it.**](/preservation-of-the-quran/)
 
 ### **Miraculous nature of Quran**
 

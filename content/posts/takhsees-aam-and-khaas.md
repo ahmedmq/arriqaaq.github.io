@@ -3,6 +3,7 @@ title: Usul-Al-Fiqh Made Easy (Part 17) - What is Takhsees (Aam and Khaas)?
 slug: takhsees-aam-and-khaas
 redirect_from:
   - aamkhaas
+description: "Takhsees in usul al-fiqh: what Aam (general) and Khaas (specific) mean, the expressions of generality, and how a general ruling is narrowed down."
 type: post
 published: "2025-09-23T13:01:08.000Z"
 updated: "2025-11-04T02:54:09.000Z"
@@ -22,6 +23,8 @@ In our ongoing study of *Usool al-Fiqh* (principles of Islamic Fiqh), we have 
 Now, when you have the ***Nusus*** (Quran and Sunnah), the question is: what are the tools, what are the ways, how do we make *Istinbat (extracting the ruling from the evidence)* and *Istidlal (seeking evidence for a ruling)* from them? In the upcoming parts, inshallah, we’ll be focusing on that: different ways, different terminologies that scholars use to derive rulings from the Nusus.
 
 And when you understand these tools, you’ll also understand why differences occur. For we all have the same Quran and Sunnah, yet the paths of deduction may differ. Hence today, we examine the concepts of **General and Specific (العام والخاص - Aam and Khaas)** which is used to understand *Al-Hukm* (ruling) based on the Nusus.
+
+**Simply put,** Takhsees is when a general ruling (*Aam*) is narrowed down to apply to specific cases or individuals.
 
 ---
 

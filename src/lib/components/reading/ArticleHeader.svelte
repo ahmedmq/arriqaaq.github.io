@@ -75,7 +75,7 @@
 	{/if}
 
 	<div class="byline">
-		{#if author}<span class="who">By {author.name}</span>{/if}
+		{#if author}<span class="who">By <a href={`${base}/about/`} rel="author">{author.name}</a></span>{/if}
 		<span class="stats">{(post.words ?? 0).toLocaleString('en-US')} words</span>
 		<button class="share" onclick={share} aria-live="polite">
 			<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14 21 3M21 3h-6M21 3v6M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg>
@@ -212,6 +212,15 @@
 	.who {
 		color: var(--ink);
 		font-weight: 500;
+	}
+
+	.who a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.who a:hover {
+		text-decoration: underline;
 	}
 
 	.share {

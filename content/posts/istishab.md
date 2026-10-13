@@ -1,6 +1,7 @@
 ---
 title: Usul-Al-Fiqh Made Easy (Part 12) - What is الاستصحاب (Istishab)?
 slug: istishab
+description: "Istishab means maintaining the status quo until evidence proves otherwise. Learn its definition, the legal maxims built on it, and where scholars differ."
 type: post
 published: "2025-04-26T02:22:05.000Z"
 updated: "2025-11-04T02:53:24.000Z"
@@ -23,6 +24,8 @@ In our previous articles, we explored the various sources of Islamic rulings. We
 Before we continue, here is a simple diagram to remind you of the different categories of ijtihad.
 
 [[SVG:ijtihad-sources-map]]
+
+**Simply put,** Istishaab is maintaining the status quo: a situation that existed in the past is assumed to continue in the present until there is evidence to prove otherwise.
 
 ## Defining الاستصحاب (Istishaab)
 

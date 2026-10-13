@@ -1,6 +1,7 @@
 ---
 title: Usul-Al-Fiqh Made Easy (Part 24) - Taqleed
 slug: taqleed
+description: "Taqleed in usul al-fiqh: accepting a statement without evidence, how it differs from Ittiba, its types, the evidence against it, and Tamazhub."
 type: post
 published: "2025-10-24T09:30:47.000Z"
 updated: "2025-11-04T02:55:26.000Z"
@@ -20,6 +21,8 @@ Alhamdulillah, we now arrive at the final part of our journey through *Usool al-
 This topic serves as the natural conclusion to the study of *Ijtihaad*, for it deals with those who are unable to perform *Ijtihaad* themselves, and how they relate to the scholars who do. It addresses the delicate balance between reliance on qualified authority and blind adherence.
 
 In this final part, we will study the **linguistic and technical definitions** of *Taqleed*, the **different scholarly perspectives** surrounding it, its **types**, and the **distinction between Taqleed and Ittiba**. We will also examine the **prohibition of blind following** as expressed in the Qur’an, Sunnah, and statements of the early generations, and conclude with a reflection on the historical development of *Tamazhub* (the institutionalization of Madhahib) and its implications.
+
+**Simply put,** *Taqleed* is accepting the statement of someone other than the Prophet (صلى الله عليه وسلم) without evidence.
 
 ---
 

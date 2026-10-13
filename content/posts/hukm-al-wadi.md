@@ -1,6 +1,7 @@
 ---
 title: Usul-Al-Fiqh Made Easy (Part 6) - Understanding Al-HUKM Al-WAD'I
 slug: hukm-al-wadi
+description: "Hukm al-wad'i explained: how a ruling depends on its cause (sabab), condition (shart) and impediment (mani'), plus valid and void acts, rukhsah and azimah."
 type: post
 published: "2024-03-30T02:22:06.000Z"
 updated: "2025-11-04T02:52:01.000Z"
@@ -16,7 +17,9 @@ reading_time: 9
 
 ::bookmark{url="/tag/fiqh/" title="Fiqh - Arriqaaq" description="Usul Al Fiqh Series Arriqaaq" author="Arriqaaq" publisher="Arriqaaq" icon="/images/icon/Flower-Fern-Business-logo-2-8.png" thumbnail="/images/thumbnail/Screenshot-2025-11-04-at-8.17.54---AM.png"}
 
-In our [last blog](/usul-al-fiqh-made-easy-part-5-what-is-hukm/), we delved into the concept of Hukm, exploring its definition and classification into two fundamental categories: Al-hukm at-taklifi, encompassing obligatory rulings, and Al-hukm al-wad'i, which pertains to declaratory rulings. Today, our focus shifts to the latter category, Al-hukm al-wad'i, where we try to understand declaratory laws concerning human actions. 
+In our [last blog, on what Hukm is](/usul-al-fiqh-made-easy-part-5-what-is-hukm/), we delved into the concept of Hukm, exploring its definition and classification into two fundamental categories: Al-hukm at-taklifi, encompassing obligatory rulings, and Al-hukm al-wad'i, which pertains to declaratory rulings. Today, our focus shifts to the latter category, Al-hukm al-wad'i, where we try to understand declaratory laws concerning human actions. 
+
+**Simply put,** Al-Hukm Al-Wad'i declares how an act relates to a ruling: whether it is the cause (sabab), condition (sharth) or impediment (mani) for the hukm to apply.
 
 ## **What is Al-Hukm Al-Wad'i?**
 
@@ -244,6 +247,6 @@ The rukhsah is subject to specific conditions and guidelines, and it should not 
 
 ## Conclusion
 
-In this brief exploration, we touched upon the concept of Hukm. Yet, what exactly are the sources from which Hukm is derived, and what are its primary sources? InshaAllah, these are the inquiries we will delve into in [our upcoming blog post](/sources-of-al-hukm/), as we strive to comprehensively understand the different sources of Hukm.  
+In this brief exploration, we touched upon the concept of Hukm. Yet, what exactly are the sources from which Hukm is derived, and what are its primary sources? InshaAllah, these are the inquiries we will delve into in [our upcoming blog post on the sources of Hukm](/sources-of-al-hukm/), as we strive to comprehensively understand the different sources of Hukm.  
   
 **If you like our content, please subscribe to our blog!** *And Follow us on* [***Instagram***](https://www.instagram.com/arriqaaq/?ref=arriqaaq.com) *or* [***Telegram***](https://t.me/arriqaaq?ref=arriqaaq.com) *to stay up to date!*

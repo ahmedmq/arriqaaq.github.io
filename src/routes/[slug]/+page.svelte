@@ -90,7 +90,18 @@
 					},
 					breadcrumbLd(crumbs)
 				]
-			: breadcrumbLd(crumbs)
+			: data.post.slug === 'about'
+				? [
+						{
+							'@context': 'https://schema.org',
+							'@type': 'AboutPage',
+							url: postUrl('about'),
+							name: data.post.title,
+							mainEntity: ORGANIZATION_LD
+						},
+						breadcrumbLd(crumbs)
+					]
+				: breadcrumbLd(crumbs)
 	);
 </script>
 

@@ -6,6 +6,7 @@ slug: amr-and-nahi-scholarly-positions
 redirect_from:
   - analysisamrnahi
 seo_title: "Scholarly Positions on Amr and Nahi | Usul al-Fiqh Part 20"
+description: "Amr and Nahi: does a command in the Quran or Sunnah mean obligation, and a prohibition mean tahrim, by default? The evidence and the differing views."
 type: post
 published: "2025-10-15T06:30:14.000Z"
 updated: "2025-11-04T02:54:38.000Z"
@@ -20,7 +21,7 @@ reading_time: 11
 
 ::bookmark{url="/tag/fiqh/" title="Fiqh - Arriqaaq" description="Usul Al Fiqh Series Arriqaaq" author="Arriqaaq" publisher="Arriqaaq" icon="/images/icon/Flower-Fern-Business-logo-2-8.png" thumbnail="/images/thumbnail/Screenshot-2025-11-04-at-8.17.54---AM.png"}
 
-In the [previous](/mutlaq-and-muqayyad/) article, the discussion focused individually on *Amr* (command) and *Nahi* (prohibition). The present study combines the two and explores the *usuli* question: when Allah or His Messenger issue an *Amr* or a *Nahi* in the Qur’an or Sunnah, does that inherently denote *wujub* (obligation) or *tahrim* (prohibition)? Or can it also indicate *istihbab* (recommendation), *ibahah* (permissibility), or *karahah* (dislike)?
+In the [previous article, on Amr and Nahi](/amr-and-nahi/), the discussion focused individually on *Amr* (command) and *Nahi* (prohibition). The present study combines the two and explores the *usuli* question: when Allah or His Messenger issue an *Amr* or a *Nahi* in the Qur’an or Sunnah, does that inherently denote *wujub* (obligation) or *tahrim* (prohibition)? Or can it also indicate *istihbab* (recommendation), *ibahah* (permissibility), or *karahah* (dislike)?
 
 ::bookmark{url="/amr-and-nahi/" title="Usul-Al-Fiqh Made Easy (Part 19) - Amr (Command) and Nahi (Prohibition)" description="Understanding Amr and Nahi" author="Arriqaaq" publisher="Arriqaaq" icon="/images/icon/Flower-Fern-Business-logo-2-1.png" thumbnail="/images/thumbnail/Screenshot-2025-10-08-at-4.49.57---PM.png"}
 
@@ -29,6 +30,8 @@ In the [previous](/mutlaq-and-muqayyad/) article, the discussion focused individ
 The foundational *qaidah* (principle) among the *fuqaha* and *usuliyyun* of Ahl al-Hadith is that the *Amr* inherently dictates *wujub* (obligation) unless there exists a *dalil*—from the Nusus—indicating that the intent is *istihbab* (recommendation) or *ibahah* (permission). Likewise, the *Nahi* by default implies *tahrim* (prohibition) unless an evidence indicates *karahah* (dislike) instead.
 
 However, as will be seen in the subsequent sections, this principle has not been without debate according to other school of thoughts. Some scholars differentiated between commands in matters of *ibadah* and those in *adab* and *akhlaq*, while others took a position of *waqf*—suspending judgment until external evidences determine the ruling.
+
+**Simply put,** the question is this: when Allah or His Messenger give a command (*Amr*) or a prohibition (*Nahi*), does it by default mean obligation (*wujub*) or prohibition (*tahrim*), or can it also mean recommendation, permission or dislike?
 
 ---
 

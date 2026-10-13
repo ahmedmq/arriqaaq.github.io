@@ -3,6 +3,7 @@ title: Usul-Al-Fiqh Made Easy (Part 15) - What is Qawl as Sahabi?
 slug: qawl-as-sahabi
 redirect_from:
   - qawlassahabi
+description: "Qawl as-Sahabi is the statement of a Companion. Learn its seven categories and when a Companion's word is binding proof, preferred, or not evidence."
 type: post
 published: "2025-07-08T00:43:12.000Z"
 updated: "2025-11-04T02:53:52.000Z"
@@ -21,6 +22,8 @@ reading_time: 7
 In our ongoing study of *Usool al-Fiqh* (principles of Islamic Fiqh), we have systematically examined the various sources of *Al-Hukm* (Islamic rulings). We have covered the primary sources - the [Quran, Sunnah, and Ijma](/sources-of-al-hukm/) (scholarly consensus) - and explored different methodologies of *Ijtihad* including [*Qiyas*](/what-is-qiyas/) (analogical reasoning), [*Istihsan*](/istihsan/), [*Amal Ahlul Madina*](/sources-of-al-hukm/) (practice of the people of Madinah), [*Istishab*](/istishab/) (presumption of continuity), [*Sadd al-Dhara'i*](/sadd-ad-dharai/) (blocking the means), and [*Masalih Mursalah*](/istislah/). Today, we examine another important source within *Ijtihad*: **Statements of Companions (قول الصحابي - Qawl as-Sahabi)**.
 
 [[SVG:ijtihad-sources-map]]
+
+**Simply put,** Qawl as-Sahabi is the statement of a Companion, and it becomes binding proof only when it traces back to the Prophet ﷺ or when multiple Companions agree without opposition.
 
 ---
 

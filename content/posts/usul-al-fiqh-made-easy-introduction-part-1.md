@@ -1,6 +1,7 @@
 ---
 title: Usul-Al-Fiqh Made Easy (Part 1)- History And Evolution
 slug: usul-al-fiqh-made-easy-introduction-part-1
+description: "Usul al-fiqh explained from its roots: what the term means, and how it grew from the Companions to the Taba'een and the jurists who followed them."
 type: post
 published: "2023-12-31T00:11:34.000Z"
 updated: "2025-11-04T02:49:19.000Z"
@@ -28,6 +29,8 @@ Our attachment to a particular school of thought is often based on cultural or f
 So, the goal of these blog posts is to simplify these complexities and explore the topic of usul al-fiqh in a clear and interesting way. It's not about following a specific madhab, but rather understanding the fundamental principles in Hadith and how they are applied in different situations.
 
 > **Note**: If you're coming across terms like Ijtihaad, Qiyaas, Rai, or different types of hadith (ahaad, mutawaatir, etc.) for the first time in this article, it might be confusing. Don't get discouraged; this post is an introduction to the topic, aiming to provide a basic understanding of the subject's history, and the evolution of fiqh over time. InshaAllah, we will delve into each term more thoroughly in the upcoming posts.
+
+**Simply put,** usul al-fiqh is the body of evidence, principles and methods that scholars use to give rulings on issues.
 
 ---
 
@@ -241,7 +244,7 @@ Tareekh Fiqh al-Islami p81-82, Al-Meezan Sharani (1/152), Alam al-Muwaqqieen 3/1
 
 ## Conclusion
 
-This was a brief attempt to explore how usul al-fiqh evolved over time. But hold on! We're not finished with the history yet! InshaAllah, in the [next blog](/usul-al-fiqh-made-easy-difference-between-ahlul-hadith-and-ahlul-rai-part-2/), we'll delve into understanding the differences between the methodology of Ahlul hadith and Ahlul Rai, exploring why these differences emerged.   
+This was a brief attempt to explore how usul al-fiqh evolved over time. But hold on! We're not finished with the history yet! InshaAllah, in the [next blog, on Ahlul Hadith and Ahlur Rai](/usul-al-fiqh-made-easy-difference-between-ahlul-hadith-and-ahlul-rai-part-2/), we'll delve into understanding the differences between the methodology of Ahlul hadith and Ahlul Rai, exploring why these differences emerged.   
   
 After that inshaAllah, we'll start understanding the actual subject of usul al-fiqh, breaking down the technical details of each term you've encountered, and providing plenty of examples to make the subject easier to understand. Keep an eye out for more detailed explanations. If you have any questions, feel free to reach out!
 

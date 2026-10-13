@@ -1,6 +1,7 @@
 ---
 title: Mustalah Hadith Made Easy (Part 1) - A Brief History
 slug: mustalah-hadith-made-easy-part-1-brief-history
+description: "Mustalah al-Hadith tells authentic hadith from weak. How it began with the chain of narration, and the books on it up to Ibn al-Salah and Ibn Hajar."
 type: post
 published: "2026-10-11T00:00:00.000Z"
 updated: "2026-10-11T00:00:00.000Z"

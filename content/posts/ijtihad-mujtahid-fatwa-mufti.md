@@ -3,6 +3,7 @@ title: Usul-Al-Fiqh Made Easy (Part 23) - Ijtihaad, Mujtahid, Fatwaa and Mufti
 slug: ijtihad-mujtahid-fatwa-mufti
 redirect_from:
   - ijtihadfatwa
+description: "Ijtihad and the Mujtahid, Fatwa and the Mufti: what each term means, the types of Mujtahid, the ijtihad of laymen, and who may give a fatwa."
 type: post
 published: "2025-10-22T09:30:09.000Z"
 updated: "2025-11-04T02:55:19.000Z"
@@ -17,6 +18,8 @@ reading_time: 7
 ---
 
 ::bookmark{url="/tag/fiqh/" title="Fiqh - Arriqaaq" description="Usul Al Fiqh Series Arriqaaq" author="Arriqaaq" publisher="Arriqaaq" icon="/images/icon/Flower-Fern-Business-logo-2-8.png" thumbnail="/images/thumbnail/Screenshot-2025-11-04-at-8.17.54---AM.png"}
+
+**Simply put,** *Ijtihad* is exerting one’s utmost effort to derive legal rulings from the sources of Islamic law; the one who does it is a **Mujtahid**, and the one who gives a *Fatwa* is a **Mufti**.
 
 ### Ijtihaad and Mujtahid
 

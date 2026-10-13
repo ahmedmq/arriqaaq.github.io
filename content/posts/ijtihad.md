@@ -1,6 +1,7 @@
 ---
 title: Usul-Al-Fiqh Made Easy (Part 8) - IJTIHAD
 slug: ijtihad
+description: "Ijtihad in usul al-fiqh: its meaning and types, and a close look at Amal Ahl al-Madina, Imam Malik's view of it, its critics, and when it counts as proof."
 type: post
 published: "2024-07-14T09:36:02.000Z"
 updated: "2025-11-04T02:52:28.000Z"
@@ -15,6 +16,8 @@ reading_time: 15
 ---
 
 ::bookmark{url="/tag/fiqh/" title="Fiqh - Arriqaaq" description="Usul Al Fiqh Series Arriqaaq" author="Arriqaaq" publisher="Arriqaaq" icon="/images/icon/Flower-Fern-Business-logo-2-8.png" thumbnail="/images/thumbnail/Screenshot-2025-11-04-at-8.17.54---AM.png"}
+
+**Simply put,** ijtihad is the utmost effort a scholar makes to reach a ruling of Sharia from the evidence of the Quran, Sunnah and ijma, when an issue is not directly addressed in the nusus.
 
 ## **Explaining Ijtihad**
 

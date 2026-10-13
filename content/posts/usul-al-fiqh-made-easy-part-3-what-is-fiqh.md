@@ -1,6 +1,7 @@
 ---
 title: Usul-Al-Fiqh Made Easy (Part 3) - What Is USUL-AL-FIQH?
 slug: usul-al-fiqh-made-easy-part-3-what-is-fiqh
+description: "Usul al-fiqh defined: what fiqh and usul mean, and how usul al-fiqh differs from fiqh and from qawaid al-fiqh, with a plain example of each."
 type: post
 published: "2024-01-18T00:31:14.000Z"
 updated: "2025-11-04T02:50:58.000Z"
@@ -17,9 +18,11 @@ reading_time: 1
 
 ::bookmark{url="/tag/fiqh/" title="Fiqh - Arriqaaq" description="Usul Al Fiqh Series Arriqaaq" author="Arriqaaq" publisher="Arriqaaq" icon="/images/icon/Flower-Fern-Business-logo-2-8.png" thumbnail="/images/thumbnail/Screenshot-2025-11-04-at-8.17.54---AM.png"}
 
-After taking you through an exciting journey through the historic landscape of usul-al-fiqh in our [last](/usul-al-fiqh-made-easy-introduction-part-1/) [two](/usul-al-fiqh-made-easy-difference-between-ahlul-hadith-and-ahlul-rai-part-2/) articles, we can practically sense either the lingering echoes of your excitement or, perhaps, a state of perplexity. Undoubtedly, our previous exploration inundated you with a wave of unfamiliar terms. Hence, beginning with this article, we aim to address it directly by delving into the first and most pertinent question: ***What is fiqh?***
+After taking you through an exciting journey through the historic landscape of usul-al-fiqh in our last two articles, on [its history](/usul-al-fiqh-made-easy-introduction-part-1/) and [Ahlul Hadith and Ahlur Rai](/usul-al-fiqh-made-easy-difference-between-ahlul-hadith-and-ahlul-rai-part-2/), we can practically sense either the lingering echoes of your excitement or, perhaps, a state of perplexity. Undoubtedly, our previous exploration inundated you with a wave of unfamiliar terms. Hence, beginning with this article, we aim to address it directly by delving into the first and most pertinent question: ***What is fiqh?***
 
 [[SVG:usul-al-fiqh-terms]]
+
+**Simply put,** fiqh is the understanding of the legal rulings of Islamic law, and Usul al-Fiqh is the toolkit of principles and methods that helps scholars extract those rulings from the Quran and Hadith.
 
 ---
 

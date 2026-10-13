@@ -26,6 +26,7 @@ import remarkEmbedTokens, { createEmbedState, type EmbedState } from './remark-e
 import rehypeHeadingIds, { createHeadingState, type TocEntry } from './rehype-heading-ids.js';
 import rehypeReading, { stripEmoji } from './rehype-reading.js';
 import rehypeScholars from './rehype-scholars.js';
+import rehypeImages from './rehype-images.js';
 import { SCHOLARS, scholarPattern, matchedScholar } from '../src/lib/data/scholars.js';
 import { parse as parseHtml } from 'node-html-parser';
 
@@ -92,6 +93,7 @@ function createProcessor(embedState: EmbedState, headingState: { toc: TocEntry[]
 		.use(remarkEmbedTokens, embedState)
 		.use(remarkRehype, { allowDangerousHtml: true })
 		.use(rehypeRaw)
+		.use(rehypeImages)
 		.use(rehypeHighlight, { languages: allLanguages, detect: false })
 		.use(rehypeReading)
 		.use(rehypeScholars, { enabled: scholars })

@@ -1,6 +1,7 @@
 ---
 title: Usul-Al-Fiqh Made Easy (Part 4) - Books of Usool-Al-Fiqh
 slug: usul-al-fiqh-made-easy-part-4-books
+description: "Books of usul al-fiqh: the approaches scholars took in writing them, the story of Ar-Risalah by Imam Shafi'i, and the famous works of each approach."
 type: post
 published: "2024-01-20T11:10:00.000Z"
 updated: "2025-11-04T02:51:21.000Z"
@@ -26,6 +27,8 @@ In our love for the written word, we joyfully traverse the vast landscapes of li
 Yet, amid this love affair with literature, there exists a linguistic gap—a formidable barrier that separates us from the richness of the Arabic language and, consequently, the books written in it. This literary void is evident, particularly when we set our sights on Islamic literature, especially on topics like fiqh, tafseer, and hadith.
 
 Driven by a commitment to bridge this literary gap, we aim to highlight well known books in the field of usul al-fiqh in this part of the series.
+
+**Simply put,** this part covers the well-known books on usul al-fiqh and the approaches scholars took in writing them: the manhaj of Ahlul Hadith, of the Mutakallimeen, of Ahlul Rai, and a mix of the last two.
 
 ## Different Approaches In Books On Usul Al-Fiqh
 
@@ -108,7 +111,7 @@ The authority of Khabar Wahid is another crucial aspect explored in Al-Risalah. 
 
 Topics such as Sunnah, Ijma (consensus), and Qiyas (analogy) are discussed, along with Istihsan (juristic preference) and Ikhtilaf (disagreement). These chapters collectively provide a systematic framework for understanding Islamic jurisprudence and legal principles within the Ahlul Hadith school of thought.  
   
-As we've seen in [the](/usul-al-fiqh-made-easy-introduction-part-1/) [previous](/usul-al-fiqh-made-easy-difference-between-ahlul-hadith-and-ahlul-rai-part-2/) [blogs](/usul-al-fiqh-made-easy-part-3-what-is-fiqh/), the presence of contrasting madhab, namely Ahlul Hadith and Ahl ul Ray, during this period led to the development of the science of Usul-Al-Fiqh.
+As we've seen in the previous blogs, on [the history of usul al-fiqh](/usul-al-fiqh-made-easy-introduction-part-1/), [Ahlul Hadith and Ahlur Rai](/usul-al-fiqh-made-easy-difference-between-ahlul-hadith-and-ahlul-rai-part-2/) and [what usul al-fiqh is](/usul-al-fiqh-made-easy-part-3-what-is-fiqh/), the presence of contrasting madhab, namely Ahlul Hadith and Ahl ul Ray, during this period led to the development of the science of Usul-Al-Fiqh.
 
 > *It's important to note that Ar-Risalah follows the approach of Ahlul Hadith, not just the Shafi'i school. This highlights its broad relevance and importance in scholarly circles.*
 

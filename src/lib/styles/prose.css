@@ -411,8 +411,20 @@
 	margin-block: 2em;
 }
 
+/* Article images arrive as <picture> (WebP first, scripts/rehype-images.ts);
+   the wrapper is invisible to layout. height:auto keeps the ratio now that
+   each img carries width and height attributes. */
+.prose picture {
+	display: contents;
+}
+
+.prose img {
+	height: auto;
+}
+
 .prose .kg-image-card img,
-.prose > img {
+.prose > img,
+.prose > picture > img {
 	width: 100%;
 	border-radius: var(--r);
 	background: var(--surface);

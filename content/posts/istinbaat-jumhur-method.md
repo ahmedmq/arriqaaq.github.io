@@ -3,6 +3,7 @@ title: Usul-Al-Fiqh Made Easy (Part 21) - Ways of al-Istinbaat (Jumhoor)
 slug: istinbaat-jumhur-method
 redirect_from:
   - istinbaatmajority
+description: "Istinbaat according to the Jumhoor (majority): how language carries meaning, then Mantooq (what the text states) and Mafhoom (what it implies)."
 type: post
 published: "2025-10-19T09:30:41.000Z"
 updated: "2025-11-04T02:54:57.000Z"
@@ -17,6 +18,8 @@ reading_time: 13
 ---
 
 ::bookmark{url="/tag/fiqh/" title="Fiqh - Arriqaaq" description="Usul Al Fiqh Series Arriqaaq" author="Arriqaaq" publisher="Arriqaaq" icon="/images/icon/Flower-Fern-Business-logo-2-8.png" thumbnail="/images/thumbnail/Screenshot-2025-11-04-at-8.17.54---AM.png"}
+
+**Simply put,** *Istinbat* is extracting a ruling from the proof, and according to the Jumhoor (majority) it is based on what the text states (*Mantooq*) and what is understood from it (*Mafhoom*).
 
 ## How Language Conveys Meaning
 

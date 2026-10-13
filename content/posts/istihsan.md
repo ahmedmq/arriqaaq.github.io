@@ -1,6 +1,7 @@
 ---
 title: Usul-Al-Fiqh Made Easy (Part 11) - What is الاستحسان (Istihsan)?
 slug: istihsan
+description: "Istihsan means to consider something good or preferable. Learn its four definitions, how scholars judged each one, and how the term gets misapplied."
 type: post
 published: "2025-04-14T07:30:38.000Z"
 updated: "2025-11-04T02:53:12.000Z"
@@ -20,9 +21,11 @@ reading_time: 12
 
 ::bookmark{url="/tag/fiqh/" title="Fiqh - Arriqaaq" description="Usul Al Fiqh Series Arriqaaq" author="Arriqaaq" publisher="Arriqaaq" icon="/images/icon/Flower-Fern-Business-logo-2-8.png" thumbnail="/images/thumbnail/Screenshot-2025-11-04-at-8.17.54---AM.png"}
 
-In our [previous](/qiyas-debate/) article, we explored the concept of القياس (Qiyas - analogical reasoning) and the scholarly debate surrounding its validity as a source of Islamic fiqh. We examined how the majority of Muslim scholars, including those from the four major madhahib (schools), accept Qiyas as a legitimate tool for deriving ahkam (rulings), while the Zahiri school and scholars like Ibn Ḥazm reject it entirely.
+In our [previous article on the Qiyas debate](/qiyas-debate/), we explored the concept of القياس (Qiyas - analogical reasoning) and the scholarly debate surrounding its validity as a source of Islamic fiqh. We examined how the majority of Muslim scholars, including those from the four major madhahib (schools), accept Qiyas as a legitimate tool for deriving ahkam (rulings), while the Zahiri school and scholars like Ibn Ḥazm reject it entirely.
 
 Building on our understanding of usūl al-fiqh, we now turn our attention to another form of ijtihād that has generated significant scholarly debate: الاستحسان (Istihsan).
+
+**Simply put,** Istihsan literally means to consider something good or preferable, and the disagreement among scholars over it largely stems from different conceptions of what Istihsan actually means.
 
 ---
 
@@ -70,7 +73,7 @@ The fourth definition is:
 
 > "Particularization of the cause (Takhsis al-Illa), which involves situations where a ruling does not apply despite the presence of the underlying cause, typically due to a hindrance or impediment." (Al-Mahsul of al-Razi 6/173, al-Bahr al-Muheet of al-Zarkashi 4/390)
 
-Although we've explain this in detail in the [article before](/what-is-qiyas/) that, here is a revision to understand this definition more clearly:
+Although we've explain this in detail in the [article on Qiyas](/what-is-qiyas/) before that, here is a revision to understand this definition more clearly:
 
 1. **What is 'illa?** In fiqh, 'illa (cause or reason) is the specific attribute that triggers a ruling. It answers the question "why" a particular ruling exists. For instance, intoxication is the 'illa (cause) for the prohibition of wine - wine is forbidden *because* it intoxicates.
 2. **What is Takhsis al-Illa?** This means "making an exception to the cause" or "limiting when the cause applies." It recognizes that sometimes, even when the 'illa (cause) is present, the original ruling might not apply due to special circumstances.
