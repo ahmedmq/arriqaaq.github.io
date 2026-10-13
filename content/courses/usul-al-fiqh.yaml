@@ -35,7 +35,7 @@ modules:
   - title: Sources of the ruling
     blurb: The agreed sources, then each disputed source with the arguments on both sides.
     lessons:
-      - slug: sources-of-al-hukm-quran-sunnah-ijmaa-and-ijtihaad-usul-al-fiqh-made-easy-part-7
+      - slug: sources-of-al-hukm
         title: Qur'an, Sunnah, Ijma' and Ijtihad
       - slug: ijtihad
         title: Ijtihad
@@ -49,31 +49,31 @@ modules:
         title: Istishab
       - slug: istislah
         title: Istislah (al-Masalih al-Mursalah)
-      - slug: saddzarai
+      - slug: sadd-ad-dharai
         title: Sadd adh-Dhara'i
-      - slug: qawlassahabi
+      - slug: qawl-as-sahabi
         title: Qawl as-Sahabi
       - slug: urf
         title: "'Urf (custom)"
   - title: Reading the texts
     blurb: How general and specific, absolute and restricted, command and prohibition are understood.
     lessons:
-      - slug: aamkhaas
+      - slug: takhsees-aam-and-khaas
         title: Takhsis ('Aam and Khaas)
-      - slug: mutlaqmuqayyad
+      - slug: mutlaq-and-muqayyad
         title: Mutlaq and Muqayyad
-      - slug: amrnahi
+      - slug: amr-and-nahi
         title: Amr and Nahi
-      - slug: analysisamrnahi
+      - slug: amr-and-nahi-scholarly-positions
         title: Scholarly positions on Amr and Nahi
   - title: Deriving and following rulings
     blurb: The methods of istinbat in each school, and who may give or follow a fatwa.
     lessons:
-      - slug: istinbaatmajority
+      - slug: istinbaat-jumhur-method
         title: Istinbat (the majority)
-      - slug: istinbaathanafi
+      - slug: istinbaat-hanafi-method
         title: Istinbat (the Hanafis)
-      - slug: ijtihadfatwa
+      - slug: ijtihad-mujtahid-fatwa-mufti
         title: Ijtihad, Mujtahid, Fatwa and Mufti
       - slug: taqleed
         title: Taqlid

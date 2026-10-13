@@ -2,7 +2,10 @@
 title: >-
   📚 NEW COURSE! Explanation of “Raf Al Malam An Aimmaril Alam” (Exonerating the
   Great Imams from blame) by Shaykh Ibn Taimiyah
-slug: rafalmalam
+slug: raf-al-malam-course
+redirect_from:
+  - rafalmalam
+seo_title: "Raf Al Malam by Ibn Taymiyyah: New Course"
 type: post
 published: "2025-06-20T00:55:03.000Z"
 updated: "2025-06-20T00:55:25.000Z"

@@ -6,7 +6,7 @@
 	import Flower from '$lib/components/ui/Flower.svelte';
 </script>
 
-<Seo title={`Error — ${settings.title}`} />
+<Seo title={`Error — ${settings.title}`} noindex />
 
 <section class="error wrap wrap--measure">
 	<Flower size={48} petal="var(--line-strong)" centre="var(--amber)" />

@@ -71,3 +71,15 @@ export function notFoundMarkdown(origin, pathname) {
 Tip: every page has a markdown version at \`<page URL>index.md\`.
 `;
 }
+
+/**
+ * Where an old (renamed) post URL now lives, or null. `/old`, `/old/` and
+ * `/old/index.md` all map to the new slug; anything deeper is left alone.
+ * @param {string} pathname
+ * @param {Record<string, string>} redirects old slug → new slug
+ */
+export function redirectTarget(pathname, redirects) {
+	const m = /^\/([^/]+)\/?(index\.md)?$/.exec(pathname);
+	if (!m || !Object.hasOwn(redirects, m[1])) return null;
+	return `/${redirects[m[1]]}/${m[2] ?? ''}`;
+}

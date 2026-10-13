@@ -3,6 +3,7 @@ title: >-
   Copyright Infringement and Islamic Morality: A Critical Assessment of Online
   Sharing and Piracy
 slug: copyright-infringement-in-islam
+seo_title: "Copyright Infringement and Piracy in Islam"
 type: post
 published: "2023-02-25T23:07:44.000Z"
 updated: "2024-01-20T18:49:27.000Z"

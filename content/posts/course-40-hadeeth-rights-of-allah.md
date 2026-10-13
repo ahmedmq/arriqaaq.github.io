@@ -2,8 +2,10 @@
 title: >-
   📚 NEW COURSE! Explanation of the book “40 hadeeth on the Rights of Allah” by
   Shaikh Anees Al-Musabi
-slug: >-
-  new-course-explanation-of-the-book-40-hadeeth-on-the-rights-of-allah-by-shaikh-anees-al-musabi
+slug: course-40-hadeeth-rights-of-allah
+redirect_from:
+  - new-course-explanation-of-the-book-40-hadeeth-on-the-rights-of-allah-by-shaikh-anees-al-musabi
+seo_title: "40 Hadeeth on the Rights of Allah: Course for Sisters"
 type: post
 published: "2023-01-10T22:58:01.000Z"
 updated: "2024-01-20T11:11:49.000Z"

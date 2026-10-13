@@ -1,6 +1,8 @@
 ---
 title: Usul-Al-Fiqh Made Easy (Part 22) - Ways of al-Istinbaat (Hanafiyyah)
-slug: istinbaathanafi
+slug: istinbaat-hanafi-method
+redirect_from:
+  - istinbaathanafi
 type: post
 published: "2025-10-20T09:30:26.000Z"
 updated: "2025-11-04T02:55:10.000Z"

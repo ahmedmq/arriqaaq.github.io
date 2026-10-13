@@ -1,6 +1,8 @@
 ---
 title: Usul-Al-Fiqh Made Easy (Part 19) - Amr (Command) and Nahi (Prohibition)
-slug: amrnahi
+slug: amr-and-nahi
+redirect_from:
+  - amrnahi
 type: post
 published: "2025-10-11T05:30:57.000Z"
 updated: "2025-11-04T02:54:28.000Z"
@@ -18,7 +20,7 @@ reading_time: 8
 
 In our ongoing study of *Usul al-Fiqh*, we have been learning how the *ulama* derive rulings from the *nusus* (texts) of the Qur’an and the Sunnah — the process of *istinbaṭ* (extraction of rulings) and *istidlal* (deriving evidence). In the previous lesson, we studied *al-Mutlaq wal-Muqayyad* — the absolute and the restricted — understanding how a text may introduce a limitation to what was otherwise unrestricted.
 
-::bookmark{url="/mutlaqmuqayyad/" title="Usul-Al-Fiqh Made Easy (Part 18) - Mutlaq and Muqayyad (Absolute and Restricted)" description="Understanding Absolute (Mutlaq) and Restricted (Muqayyad)" author="Arriqaaq" publisher="Arriqaaq" icon="/images/icon/Flower-Fern-Business-logo-2-2.png" thumbnail="/images/thumbnail/Screenshot-2025-10-08-at-7.07.48---AM-1.png"}
+::bookmark{url="/mutlaq-and-muqayyad/" title="Usul-Al-Fiqh Made Easy (Part 18) - Mutlaq and Muqayyad (Absolute and Restricted)" description="Understanding Absolute (Mutlaq) and Restricted (Muqayyad)" author="Arriqaaq" publisher="Arriqaaq" icon="/images/icon/Flower-Fern-Business-logo-2-2.png" thumbnail="/images/thumbnail/Screenshot-2025-10-08-at-7.07.48---AM-1.png"}
 
 Now, we move to another fundamental topic in the study of rulings: **al-Amr (الأمر)** — *The Command*, its counterpart: **An-Nahi (النهي)** — *The Prohibition*. 
 

@@ -1,6 +1,8 @@
 ---
 title: Usul-Al-Fiqh Made Easy (Part 23) - Ijtihaad, Mujtahid, Fatwaa and Mufti
-slug: ijtihadfatwa
+slug: ijtihad-mujtahid-fatwa-mufti
+redirect_from:
+  - ijtihadfatwa
 type: post
 published: "2025-10-22T09:30:09.000Z"
 updated: "2025-11-04T02:55:19.000Z"

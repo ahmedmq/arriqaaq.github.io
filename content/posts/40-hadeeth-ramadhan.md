@@ -3,6 +3,7 @@ title: >-
   📚 NEW COURSE! Explanation of the book “40 hadeeth on Ramadhan” by Shaikh Saad
   bin Syed Ash-Shaal
 slug: 40-hadeeth-ramadhan
+seo_title: "40 Hadeeth on Ramadhan: Course by Shaikh Saad Ash-Shaal"
 type: post
 published: "2023-02-18T09:58:45.000Z"
 updated: "2024-01-20T11:10:58.000Z"

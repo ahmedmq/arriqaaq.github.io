@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { settings, getTagById, getAuthorById } from '$lib/content';
-	import { SITE_URL, postUrl, editUrl, ISSUES_URL } from '$lib/site';
+	import { SITE_URL, DEFAULT_OG_IMAGE, ORGANIZATION_LD, postUrl, editUrl, ISSUES_URL, absUrl, pageTitle, breadcrumbLd } from '$lib/site';
 	import Seo from '$lib/components/Seo.svelte';
 	import ArticleHeader from '$lib/components/reading/ArticleHeader.svelte';
 	import Toc from '$lib/components/reading/Toc.svelte';
@@ -25,62 +25,65 @@
 	const subject = $derived(subjectForPost(data.post));
 	const courseSlugs = $derived(place ? place.course.modules.flatMap((m) => m.lessons.map((l) => l.slug)) : []);
 	let article: HTMLElement | undefined = $state();
-	const seoDescription = $derived(
-		(data.post.custom_excerpt ?? data.post.plaintext.slice(0, 200)).replace(/\s+/g, ' ').trim()
-	);
+	const seoDescription = $derived(data.post.description || settings.description);
 	const author = $derived(
 		data.post.primary_author ? (getAuthorById(data.post.primary_author) ?? null) : null
 	);
+	const tagNames = $derived(data.post.tags.map((id) => getTagById(id)?.name).filter(Boolean) as string[]);
+	const abs = (u: string) => (u.startsWith('http') ? u : absUrl(u));
+	// Home › course (or topic) › post. The course roadmap is the hub for its lessons.
+	const crumbs = $derived(
+		place
+			? [{ name: place.course.title, path: `/courses/${place.course.slug}/` }, { name: data.post.title, path: `/${data.post.slug}/` }]
+			: data.post.primary_tag && getTagById(data.post.primary_tag)
+				? [
+						{ name: getTagById(data.post.primary_tag)!.name, path: `/tag/${getTagById(data.post.primary_tag)!.slug}/` },
+						{ name: data.post.title, path: `/${data.post.slug}/` }
+					]
+				: [{ name: data.post.title, path: `/${data.post.slug}/` }]
+	);
 	const jsonLd = $derived(
 		isPost
-			? {
-					'@context': 'https://schema.org',
-					'@type': 'BlogPosting',
-					headline: data.post.title,
-					description: seoDescription,
-					datePublished: data.post.published_at,
-					dateModified: data.post.updated_at,
-					wordCount: data.post.words,
-					url: postUrl(data.post.slug),
-					mainEntityOfPage: postUrl(data.post.slug),
-					publisher: {
-						'@type': 'Organization',
-						name: settings.title,
-						url: `${SITE_URL}/`,
-						...(settings.logo
+			? [
+					{
+						'@context': 'https://schema.org',
+						'@type': 'BlogPosting',
+						headline: data.post.title,
+						description: seoDescription,
+						datePublished: data.post.published_at,
+						dateModified: data.post.updated_at,
+						wordCount: data.post.words,
+						inLanguage: 'en',
+						url: postUrl(data.post.slug),
+						mainEntityOfPage: { '@type': 'WebPage', '@id': postUrl(data.post.slug) },
+						image: abs(data.post.feature_image ?? DEFAULT_OG_IMAGE),
+						isAccessibleForFree: true,
+						...(tagNames.length ? { keywords: tagNames.join(', '), articleSection: tagNames[0] } : {}),
+						...(place
 							? {
-									logo: {
-										'@type': 'ImageObject',
-										url: settings.logo.startsWith('http')
-											? settings.logo
-											: SITE_URL + settings.logo
-									}
+									isPartOf: {
+										'@type': 'Course',
+										name: place.course.title,
+										url: `${SITE_URL}/courses/${place.course.slug}/`
+									},
+									position: place.lesson.n
 								}
-							: {})
+							: {}),
+						publisher: ORGANIZATION_LD,
+						// The only author record is Arriqaaq itself, so it is the organisation.
+						author:
+							author && author.slug !== 'arriqaaq'
+								? { '@type': 'Person', name: author.name, url: `${SITE_URL}/author/${author.slug}/` }
+								: ORGANIZATION_LD
 					},
-					...(data.post.feature_image
-						? {
-								image: data.post.feature_image.startsWith('http')
-									? data.post.feature_image
-									: SITE_URL + data.post.feature_image
-							}
-						: {}),
-					...(author
-						? {
-								author: {
-									'@type': 'Person',
-									name: author.name,
-									url: `${SITE_URL}/author/${author.slug}/`
-								}
-							}
-						: {})
-				}
-			: null
+					breadcrumbLd(crumbs)
+				]
+			: breadcrumbLd(crumbs)
 	);
 </script>
 
 <Seo
-	title={`${data.post.title} — ${settings.title}`}
+	title={pageTitle(data.post.seo_title || data.post.title)}
 	description={seoDescription}
 	image={data.post.feature_image}
 	type={isPost ? 'article' : 'website'}
@@ -153,7 +156,7 @@
 				<p>Get the next lesson in your inbox.</p>
 				<Newsletter />
 			</div>
-			<Giscus />
+			<Giscus term={data.post.aliases[0] ? `${data.post.aliases[0]}/` : null} />
 		</section>
 	{/if}
 </div>

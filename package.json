@@ -9,7 +9,7 @@
 		"fetch-images": "tsx scripts/fetch-drive-images.ts",
 		"prepare-content": "npm run parse && tsx scripts/generate-agent-skills.ts",
 		"dev": "npm run prepare-content && vite dev",
-		"build": "npm run prepare-content && vite build && tsx scripts/write-404.ts && pagefind --site build",
+		"build": "npm run prepare-content && vite build && tsx scripts/write-404.ts && tsx scripts/write-redirects.ts && pagefind --site build",
 		"test": "node --test tests/*.test.js",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
@@ -23,6 +23,7 @@
 		"check:links": "tsx scripts/check-links.ts",
 		"preview:diagrams": "tsx scripts/preview-diagrams.mts",
 		"check:citations": "tsx scripts/check-citations.ts",
+		"indexnow": "tsx scripts/indexnow.ts",
 		"check:release": "npm run check:links && npm run check:citations"
 	},
 	"devDependencies": {

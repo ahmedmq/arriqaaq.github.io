@@ -1,6 +1,7 @@
 ---
 title: 🌟And When The Stars Shine - A Review Of Our Haiyyah Poem Competition
 slug: haiyyah-competition
+seo_title: "Al-Haiyyah Poem Competition Review"
 type: post
 published: "2021-04-16T05:52:12.000Z"
 updated: "2021-04-23T10:32:26.000Z"

@@ -2,8 +2,10 @@
 title: >-
   📚 NEW COURSE! Tazkiya an-Nafs (Purification Of Soul) through the Tafsir of
   Quran by Shaykh Noorul Hasan Madani
-slug: >-
-  new-course-tazkiya-an-nafs-purification-of-soul-through-the-tafsir-of-quran-by-shaykh-noorul-hasan-madani
+slug: course-tazkiya-an-nafs
+redirect_from:
+  - new-course-tazkiya-an-nafs-purification-of-soul-through-the-tafsir-of-quran-by-shaykh-noorul-hasan-madani
+seo_title: "Tazkiya an-Nafs Course by Shaykh Noorul Hasan Madani"
 type: post
 published: "2023-01-28T10:53:13.000Z"
 updated: "2024-01-22T22:17:52.000Z"

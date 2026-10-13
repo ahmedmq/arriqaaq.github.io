@@ -10,6 +10,7 @@
 	title={`Read ${data.book.title} — ${settings.title}`}
 	description={`Read ${data.book.title} by ${data.book.authors.join(' and ')} here, free.`}
 	image={data.book.cover}
+	noindex
 />
 
 {#key data.book.slug}

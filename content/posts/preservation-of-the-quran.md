@@ -3,6 +3,7 @@ title: >-
   Preservation of the Quran: Countering arguments by Orientalists, Christian
   Missionaries, and Islamophobes
 slug: preservation-of-the-quran
+seo_title: "Preservation of the Quran: Countering the Critics"
 type: post
 published: "2024-03-01T10:13:55.000Z"
 updated: "2024-03-01T13:06:31.000Z"

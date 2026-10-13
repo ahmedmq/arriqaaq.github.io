@@ -3,6 +3,7 @@ title: >-
   📕Our First Book Published: Ibn Hazm, The Life And Ideas Of A Spanish Genius
   By Syed Nooruzuha Barmaver
 slug: ibn-hazm
+seo_title: "Ibn Hazm: The Life and Ideas of a Spanish Genius"
 type: post
 published: "2021-04-16T06:01:56.000Z"
 updated: "2021-04-23T10:32:48.000Z"

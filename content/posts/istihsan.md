@@ -269,7 +269,7 @@ In the next article inshaAllah, we will go over what Istishaab means
 
 📝 **Overview: A detailed explanation of Hukm al-Wadi, its definitions, and its significance in Usul Al Fiqh.**
 
-7️⃣ [**Sources of Al-Hukm: Quran, Sunnah, Ijmaa, and Ijtihaad (Part 7)**](/sources-of-al-hukm-quran-sunnah-ijmaa-and-ijtihaad-usul-al-fiqh-made-easy-part-7/)
+7️⃣ [**Sources of Al-Hukm: Quran, Sunnah, Ijmaa, and Ijtihaad (Part 7)**](/sources-of-al-hukm/)
 
 📝 **Overview: Exploring the primary sources of Islamic law - Quran, Sunnah, Ijmaa, and Ijtihaad.**
 

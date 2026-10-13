@@ -2,11 +2,11 @@
 	import { base } from '$app/paths';
 	import Seo from '$lib/components/Seo.svelte';
 	import Archive from '$lib/components/ui/Archive.svelte';
-	import { settings } from '$lib/content';
+	import { pageTitle } from '$lib/site';
 	let { data } = $props();
 </script>
 
-<Seo title={`Page ${data.page} — ${settings.title}`} markdownAlt />
+<Seo title={pageTitle(`Older articles, page ${data.page}`)} description={`Older Arriqaaq articles, page ${data.page} of ${data.totalPages}: ${data.posts.slice(0, 3).map((p) => p.title).join('; ')}.`.slice(0, 160)} markdownAlt />
 
 <Archive eyebrow={`Page ${data.page} of ${data.totalPages}`} title="Older articles" posts={data.posts}>
 	{#snippet footer()}

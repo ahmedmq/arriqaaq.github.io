@@ -2,7 +2,7 @@
 	// The shelf: every Arriqaaq book standing on its own hanging shelf, as in
 	// Ruqaya's store, drawn in line on white. Phones get two to a row.
 	import { base } from '$app/paths';
-	import { settings } from '$lib/content';
+	import { pageTitle } from '$lib/site';
 	import type { BookShelf } from '$lib/types';
 	import { SHELVES } from '$lib/books/shelves';
 	import Seo from '$lib/components/Seo.svelte';
@@ -19,8 +19,8 @@
 </script>
 
 <Seo
-	title={`Books — ${settings.title}`}
-	description="Books written and published by Arriqaaq. Every one is free to read and share."
+	title={pageTitle('Free Islamic Books')}
+	description="Books written and published by Arriqaaq on hadith, tafsir, history, family and for children. Every one is free to read online and share."
 />
 
 <div class="wrap page">

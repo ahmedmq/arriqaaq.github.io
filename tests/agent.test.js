@@ -56,3 +56,15 @@ test('built output (when present): share card, 404 content, home JSON-LD', { ski
 	assert.match(readFileSync('build/404.html', 'utf8'), /data-agent-404[\s\S]*llms\.txt/);
 	assert.match(readFileSync('build/llms.txt', 'utf8'), /## When to use this site/);
 });
+
+import { redirectTarget } from '../functions/lib/agent.js';
+
+test('redirectTarget maps old slugs, with or without slash and the markdown mirror', () => {
+	const r = { saddzarai: 'sadd-ad-dharai' };
+	assert.equal(redirectTarget('/saddzarai/', r), '/sadd-ad-dharai/');
+	assert.equal(redirectTarget('/saddzarai', r), '/sadd-ad-dharai/');
+	assert.equal(redirectTarget('/saddzarai/index.md', r), '/sadd-ad-dharai/index.md');
+	assert.equal(redirectTarget('/saddzarai/x/', r), null);
+	assert.equal(redirectTarget('/sadd-ad-dharai/', r), null);
+	assert.equal(redirectTarget('/toString/', r), null);
+});

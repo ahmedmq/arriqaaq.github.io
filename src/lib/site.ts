@@ -18,3 +18,35 @@ export const ISSUES_URL = `${REPO_URL}/issues/new`;
 /** Edit link for a post or page source file on GitHub. */
 export const editUrl = (slug: string, type: 'post' | 'page') =>
 	`${REPO_URL}/edit/main/content/${type === 'post' ? 'posts' : 'pages'}/${slug}.md`;
+
+/**
+ * Page <title>: "Topic — Arriqaaq" when that fits in the ~60 characters
+ * Google shows, otherwise the topic alone so the useful words are not cut.
+ */
+export const pageTitle = (t: string) => {
+	const full = `${t} — ${settings.title}`;
+	return full.length <= 60 ? full : t;
+};
+
+export type Crumb = { name: string; path: string };
+
+/** schema.org BreadcrumbList for a trail of site paths (Home is added first). */
+export const breadcrumbLd = (trail: Crumb[]) => ({
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [{ name: 'Home', path: '/' }, ...trail].map((c, i) => ({
+		'@type': 'ListItem',
+		position: i + 1,
+		name: c.name,
+		item: absUrl(c.path)
+	}))
+});
+
+/** The publisher, shared by every page's structured data. */
+export const ORGANIZATION_LD = {
+	'@type': 'Organization',
+	'@id': `${SITE_URL}/#organization`,
+	name: settings.title,
+	url: `${SITE_URL}/`,
+	logo: { '@type': 'ImageObject', url: absUrl(settings.logo ?? DEFAULT_OG_IMAGE) }
+};

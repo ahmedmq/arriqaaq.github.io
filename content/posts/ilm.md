@@ -3,6 +3,7 @@ title: >-
   Introducing Ilm: Searching the Quran and Sunnah with Graph, Vector, Full-Text
   Search, and LLMs
 slug: ilm
+seo_title: "Ilm: Searching the Quran and Sunnah with Graph and LLMs"
 type: post
 published: "2026-04-10T02:02:52.000Z"
 updated: "2026-04-10T14:48:52.000Z"

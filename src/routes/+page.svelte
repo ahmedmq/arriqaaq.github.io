@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import { settings, courses, tags, getTagById } from '$lib/content';
-	import { SITE_URL, DEFAULT_OG_IMAGE } from '$lib/site';
+	import { SITE_URL, DEFAULT_OG_IMAGE, ORGANIZATION_LD } from '$lib/site';
 	import Seo from '$lib/components/Seo.svelte';
 	import Hero from '$lib/components/home/Hero.svelte';
 	import Manifesto from '$lib/components/home/Manifesto.svelte';
@@ -32,25 +32,24 @@
 		{
 			'@context': 'https://schema.org',
 			'@type': 'WebSite',
+			'@id': `${SITE_URL}/#website`,
 			name: settings.title,
 			url: `${SITE_URL}/`,
 			description: settings.description,
-			inLanguage: 'en'
+			inLanguage: 'en',
+			publisher: { '@id': ORGANIZATION_LD['@id'] }
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
-			name: settings.title,
-			url: `${SITE_URL}/`,
+			...ORGANIZATION_LD,
 			description: settings.description,
-			logo: `${SITE_URL}${DEFAULT_OG_IMAGE}`,
 			image: `${SITE_URL}${DEFAULT_OG_IMAGE}`,
 			sameAs
 		}
 	];
 </script>
 
-<Seo {jsonLd} markdownAlt />
+<Seo title={`${settings.title}: Islamic Courses, Articles and Books`} {jsonLd} markdownAlt />
 
 <Hero />
 <Manifesto />

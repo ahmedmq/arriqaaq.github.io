@@ -3,12 +3,16 @@
  * slugs marked complete. Every access is guarded because storage can throw
  * (private mode, blocked site data) and the page must still render.
  */
+import redirects from '$lib/generated/redirects.json';
+
 const KEY = 'arriqaaq:done:v1';
+const RENAMED = redirects as Record<string, string>;
 
 function read(): Set<string> {
 	try {
 		const raw = localStorage.getItem(KEY);
-		return new Set(raw ? (JSON.parse(raw) as string[]) : []);
+		// Lessons whose slug changed keep their mark under the new slug.
+		return new Set(raw ? (JSON.parse(raw) as string[]).map((s) => RENAMED[s] ?? s) : []);
 	} catch {
 		return new Set();
 	}

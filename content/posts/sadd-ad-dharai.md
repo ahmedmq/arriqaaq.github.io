@@ -1,6 +1,8 @@
 ---
 title: Usul-Al-Fiqh Made Easy (Part 14) - What is Sadd ad-Dharai?
-slug: saddzarai
+slug: sadd-ad-dharai
+redirect_from:
+  - saddzarai
 type: post
 published: "2025-06-25T06:42:56.000Z"
 updated: "2025-11-04T02:53:42.000Z"
@@ -15,7 +17,7 @@ reading_time: 7
 
 ::bookmark{url="/tag/fiqh/" title="Fiqh - Arriqaaq" description="Usul Al Fiqh Series Arriqaaq" author="Arriqaaq" publisher="Arriqaaq" icon="/images/icon/Flower-Fern-Business-logo-2-8.png" thumbnail="/images/thumbnail/Screenshot-2025-11-04-at-8.17.54---AM.png"}
 
-In our study of *Usool al-Fiqh*, we explored the various sources of Islamic rulings. We have covered [Quran, Sunnah, and Ijma](/sources-of-al-hukm-quran-sunnah-ijmaa-and-ijtihaad-usul-al-fiqh-made-easy-part-7/) as the primary sources, and examined various forms of *Ijtihad* including [*Qiyas*](/what-is-qiyas/) (analogical reasoning), [*Istihsan*](/istihsan/) (juristic preference), [*Amal Ahlul Madina*](/sources-of-al-hukm-quran-sunnah-ijmaa-and-ijtihaad-usul-al-fiqh-made-easy-part-7/) (practice of the people of Madinah), [*Istishab*](/istishab/) (presumption of continuity), and [*Istislah*](/istislah/) *(or Masalih Mursalah* (unspecified public interests)). Today, we turn our attention to another significant methodology of *Ijtihad*: **سد الذرائع (Sadd al-Dhara'i)**.
+In our study of *Usool al-Fiqh*, we explored the various sources of Islamic rulings. We have covered [Quran, Sunnah, and Ijma](/sources-of-al-hukm/) as the primary sources, and examined various forms of *Ijtihad* including [*Qiyas*](/what-is-qiyas/) (analogical reasoning), [*Istihsan*](/istihsan/) (juristic preference), [*Amal Ahlul Madina*](/sources-of-al-hukm/) (practice of the people of Madinah), [*Istishab*](/istishab/) (presumption of continuity), and [*Istislah*](/istislah/) *(or Masalih Mursalah* (unspecified public interests)). Today, we turn our attention to another significant methodology of *Ijtihad*: **سد الذرائع (Sadd al-Dhara'i)**.
 
 [[SVG:ijtihad-sources-map]]
 

@@ -11,11 +11,17 @@
  * 3. Link response headers (RFC 8288) on every page response, pointing
  *    agents at the machine-readable entry points.
  *
+ * 4. Permanent (301) redirects from renamed post slugs (frontmatter
+ *    `redirect_from`, generated into ./lib/redirects.js). Cloudflare's
+ *    _redirects file does not run for Function-routed requests, so they live
+ *    here.
+ *
  * Static assets (paths with a file extension, plus everything excluded in
  * static/_routes.json) pass through unchanged.
  */
 
-import { prefersMarkdown, addVary, notFoundMarkdown } from './lib/agent.js';
+import { prefersMarkdown, addVary, notFoundMarkdown, redirectTarget } from './lib/agent.js';
+import { REDIRECTS } from './lib/redirects.js';
 
 const LINK_HEADER = [
 	'</llms.txt>; rel="describedby"; type="text/markdown"',
@@ -27,6 +33,12 @@ const LINK_HEADER = [
 /** @param {{ request: Request, next: () => Promise<Response>, env: { ASSETS: { fetch: typeof fetch } } }} ctx */
 export async function onRequest({ request, next, env }) {
 	const url = new URL(request.url);
+
+	const moved = redirectTarget(url.pathname, REDIRECTS);
+	if (moved) {
+		const to = new URL(moved + url.search, url);
+		return new Response(null, { status: 301, headers: { Location: to.href, 'Cache-Control': 'public, max-age=86400' } });
+	}
 	const lastSegment = url.pathname.split('/').pop();
 	// Page URLs end in '/' (trailingSlash: 'always'); anything with a file
 	// extension is an asset.

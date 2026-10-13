@@ -39,8 +39,8 @@
 	let chip = $state(0);
 </script>
 
-<Seo title="Design system — Arriqaaq" description="The Arriqaaq UI kit: tokens and components." />
-<svelte:head><meta name="robots" content="noindex" /></svelte:head>
+<Seo title="Design system — Arriqaaq" description="The Arriqaaq UI kit: tokens and components." noindex />
+
 
 <div class="wrap kit" id="top">
 	<header class="section-head">

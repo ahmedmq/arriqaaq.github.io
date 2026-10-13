@@ -2,8 +2,10 @@
 title: >-
   Usul-Al-Fiqh Made Easy (Part 7) - Sources of HUKM (Quran, Sunnah, Ijmaa and
   Ijtihaad)
-slug: >-
-  sources-of-al-hukm-quran-sunnah-ijmaa-and-ijtihaad-usul-al-fiqh-made-easy-part-7
+slug: sources-of-al-hukm
+redirect_from:
+  - sources-of-al-hukm-quran-sunnah-ijmaa-and-ijtihaad-usul-al-fiqh-made-easy-part-7
+seo_title: "Sources of al-Hukm | Usul al-Fiqh Part 7"
 type: post
 published: "2024-05-22T17:26:31.000Z"
 updated: "2025-11-04T02:52:13.000Z"

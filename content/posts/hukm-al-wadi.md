@@ -244,6 +244,6 @@ The rukhsah is subject to specific conditions and guidelines, and it should not 
 
 ## Conclusion
 
-In this brief exploration, we touched upon the concept of Hukm. Yet, what exactly are the sources from which Hukm is derived, and what are its primary sources? InshaAllah, these are the inquiries we will delve into in [our upcoming blog post](/sources-of-al-hukm-quran-sunnah-ijmaa-and-ijtihaad-usul-al-fiqh-made-easy-part-7/), as we strive to comprehensively understand the different sources of Hukm.  
+In this brief exploration, we touched upon the concept of Hukm. Yet, what exactly are the sources from which Hukm is derived, and what are its primary sources? InshaAllah, these are the inquiries we will delve into in [our upcoming blog post](/sources-of-al-hukm/), as we strive to comprehensively understand the different sources of Hukm.  
   
 **If you like our content, please subscribe to our blog!** *And Follow us on* [***Instagram***](https://www.instagram.com/arriqaaq/?ref=arriqaaq.com) *or* [***Telegram***](https://t.me/arriqaaq?ref=arriqaaq.com) *to stay up to date!*

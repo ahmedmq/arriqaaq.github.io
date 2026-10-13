@@ -1,6 +1,8 @@
 ---
 title: 🦠 COVID-19 Crisis - What Can I Do?
 slug: covid-19-crisis-what-can-i-do
+redirect_from:
+  - covidcrisis
 type: post
 published: "2021-05-01T09:19:42.000Z"
 updated: "2021-05-01T09:19:42.000Z"

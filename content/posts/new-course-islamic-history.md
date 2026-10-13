@@ -1,6 +1,7 @@
 ---
 title: 📚 NEW COURSE! Explanation Of Islamic History by Shaikh Noorul Hasan Madani
 slug: new-course-islamic-history
+seo_title: "Islamic History Course by Shaikh Noorul Hasan Madani"
 type: post
 published: "2023-01-28T10:39:36.000Z"
 updated: "2024-03-15T17:05:26.000Z"

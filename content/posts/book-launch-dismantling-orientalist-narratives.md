@@ -2,8 +2,10 @@
 title: >-
   🖌️ Book Launch: Dismantling Orientalist Narratives & Status and Preservation
   of Ḥadīth - Answering the Orientalists
-slug: >-
-  book-launch-dismantling-orientalist-narratives-status-and-preservation-of-hadith-answering-the-orientalists
+slug: book-launch-dismantling-orientalist-narratives
+redirect_from:
+  - book-launch-dismantling-orientalist-narratives-status-and-preservation-of-hadith-answering-the-orientalists
+seo_title: "Book Launch: Dismantling Orientalist Narratives"
 type: post
 published: "2025-08-09T19:26:57.000Z"
 updated: "2025-08-10T00:56:35.000Z"

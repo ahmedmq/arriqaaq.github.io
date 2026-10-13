@@ -1,6 +1,9 @@
 ---
 title: "🌙 LaylatulQadr: A Night Worth A Thousand Months - How To Be Productive?"
-slug: laylatulqadr
+slug: laylatul-qadr
+redirect_from:
+  - laylatulqadr
+seo_title: "Laylatul Qadr: How To Be Productive in the Last Nights"
 type: post
 published: "2021-05-09T13:38:10.000Z"
 updated: "2024-03-31T17:12:13.000Z"

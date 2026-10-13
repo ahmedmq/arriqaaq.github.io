@@ -11,7 +11,8 @@
 		publishedAt = null,
 		updatedAt = null,
 		markdownAlt = false,
-		jsonLd = null
+		jsonLd = null,
+		noindex = false
 	}: {
 		title?: string;
 		description?: string;
@@ -21,6 +22,8 @@
 		updatedAt?: string | null;
 		markdownAlt?: boolean;
 		jsonLd?: object | object[] | null;
+		/** Keep the page out of search results but let crawlers follow its links. */
+		noindex?: boolean;
 	} = $props();
 
 	const canonical = $derived(SITE_URL + page.url.pathname);
@@ -46,7 +49,13 @@
 <svelte:head>
 	<title>{title}</title>
 	<meta name="description" content={description} />
+	{#if noindex}
+		<meta name="robots" content="noindex, follow" />
+	{:else}
+		<meta name="robots" content="max-image-preview:large, max-snippet:-1" />
+	{/if}
 	<link rel="canonical" href={canonical} />
+	<meta property="og:locale" content="en_US" />
 	<meta property="og:site_name" content={settings.title} />
 	<meta property="og:type" content={type} />
 	<meta property="og:title" content={title} />

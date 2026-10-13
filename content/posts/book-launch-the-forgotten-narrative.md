@@ -2,8 +2,10 @@
 title: >-
   🖼️ 🖌️ (New Book Launch) The Forgotten Narrative: Uncovering the Origins of
   Muslims of Indian Subcontinent
-slug: >-
-  new-book-launch-the-forgotten-narrative-uncovering-the-origins-of-muslims-of-indian-subcontinent-by-dr-syed-nooruzuha-barmaver
+slug: book-launch-the-forgotten-narrative
+redirect_from:
+  - new-book-launch-the-forgotten-narrative-uncovering-the-origins-of-muslims-of-indian-subcontinent-by-dr-syed-nooruzuha-barmaver
+seo_title: "The Forgotten Narrative: Origins of Subcontinent Muslims"
 type: post
 published: "2024-11-16T03:17:17.000Z"
 updated: "2024-11-16T03:22:39.000Z"

@@ -1,7 +1,9 @@
 ---
 title: "From Shaban to Ramadan: Building Atomic Habits for a Lasting Ramadan"
-slug: >-
-  from-shaban-to-ramadan-the-art-of-habit-building-and-preparing-for-the-month-of-fasting
+slug: from-shaban-to-ramadan
+redirect_from:
+  - from-shaban-to-ramadan-the-art-of-habit-building-and-preparing-for-the-month-of-fasting
+seo_title: "From Shaban to Ramadan: Building Atomic Habits"
 type: post
 published: "2023-02-28T14:57:08.000Z"
 updated: "2023-03-02T05:51:09.000Z"

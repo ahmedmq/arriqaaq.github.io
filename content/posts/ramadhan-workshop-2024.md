@@ -3,6 +3,7 @@ title: >-
   💗 RAMADHAN WORKSHOP! Getting the most out of the Greatest Month by Ustadhah
   Umm Muawiyah
 slug: ramadhan-workshop-2024
+seo_title: "Ramadhan Workshop: Getting the Most out of the Month"
 type: post
 published: "2024-02-14T07:58:42.000Z"
 updated: "2024-02-14T07:58:42.000Z"

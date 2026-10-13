@@ -4,7 +4,7 @@
 	// against a left rail on phones. Progress comes from this browser only.
 	import { base } from '$app/paths';
 	import { settings } from '$lib/content';
-	import { SITE_URL } from '$lib/site';
+	import { SITE_URL, ORGANIZATION_LD, pageTitle, breadcrumbLd } from '$lib/site';
 	import Seo from '$lib/components/Seo.svelte';
 	import PixelCover from '$lib/components/ui/PixelCover.svelte';
 	import { doneSet, onProgress } from '$lib/progress';
@@ -41,18 +41,34 @@
 		return out;
 	});
 
-	const jsonLd = $derived({
-		'@context': 'https://schema.org',
-		'@type': 'Course',
-		name: course.title,
-		description: course.tagline,
-		url: `${SITE_URL}/courses/${course.slug}/`,
-		provider: { '@type': 'Organization', name: settings.title, url: `${SITE_URL}/` },
-		hasCourseInstance: { '@type': 'CourseInstance', courseMode: 'online', courseWorkload: `PT${hours}H` }
-	});
+	// Course + its lessons as an ordered list (the hub for the series), and
+	// the breadcrumb trail.
+	const jsonLd = $derived([
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Course',
+			name: course.title,
+			description: course.tagline,
+			url: `${SITE_URL}/courses/${course.slug}/`,
+			inLanguage: 'en',
+			isAccessibleForFree: true,
+			educationalLevel: course.level ?? 'Beginner',
+			teaches: course.outcome,
+			provider: ORGANIZATION_LD,
+			offers: { '@type': 'Offer', category: 'Free', price: 0, priceCurrency: 'USD' },
+			hasCourseInstance: { '@type': 'CourseInstance', courseMode: 'online', courseWorkload: `PT${hours}H` },
+			hasPart: course.modules.flatMap((m) =>
+				m.lessons.map((l) => ({ '@type': 'LearningResource', position: l.n, name: l.title, url: `${SITE_URL}/${l.slug}/` }))
+			)
+		},
+		breadcrumbLd([
+			{ name: 'Courses', path: '/courses/' },
+			{ name: course.title, path: `/courses/${course.slug}/` }
+		])
+	]);
 </script>
 
-<Seo title={`${course.title} — Roadmap — ${settings.title}`} description={course.tagline} {jsonLd} />
+<Seo title={pageTitle(`${course.title}: Free Course`)} description={`${course.tagline} ${course.lesson_count} lessons, free, in order.`} {jsonLd} />
 
 <div class="roadmap subject--{course.subject}">
 	<header class="band">

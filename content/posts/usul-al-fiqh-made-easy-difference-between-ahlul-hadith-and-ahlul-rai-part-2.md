@@ -3,6 +3,7 @@ title: >-
   Usul-Al-Fiqh Made Easy (Part 2) - Difference In The Methodology of Ahlul
   Hadith and Ahlur Rai
 slug: usul-al-fiqh-made-easy-difference-between-ahlul-hadith-and-ahlul-rai-part-2
+seo_title: "Ahlul Hadith and Ahlur Rai | Usul al-Fiqh Part 2"
 type: post
 published: "2024-01-06T16:22:41.000Z"
 updated: "2025-11-04T02:50:28.000Z"

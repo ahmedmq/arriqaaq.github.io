@@ -2,7 +2,10 @@
 title: >-
   Usul-Al-Fiqh Made Easy (Part 18) - Mutlaq and Muqayyad (Absolute and
   Restricted)
-slug: mutlaqmuqayyad
+slug: mutlaq-and-muqayyad
+redirect_from:
+  - mutlaqmuqayyad
+seo_title: "Mutlaq and Muqayyad | Usul al-Fiqh Part 18"
 type: post
 published: "2025-10-08T12:04:52.000Z"
 updated: "2025-11-04T02:54:16.000Z"
@@ -20,7 +23,7 @@ In our ongoing study of *Usool al-Fiqh*, we have been learning how the *ulama d*
 
 ::bookmark{url="/tag/fiqh/" title="Fiqh - Arriqaaq" description="Usul Al Fiqh Series Arriqaaq" author="Arriqaaq" publisher="Arriqaaq" icon="/images/icon/Flower-Fern-Business-logo-2-8.png" thumbnail="/images/thumbnail/Screenshot-2025-11-04-at-8.17.54---AM.png"}
 
-In the [previous](/aamkhaas/) class, we discussed *Takhsees and* understandood how a ruling that is general (*aam*) can be narrowed by a specific (*khaas*) text.
+In the [previous](/takhsees-aam-and-khaas/) class, we discussed *Takhsees and* understandood how a ruling that is general (*aam*) can be narrowed by a specific (*khaas*) text.
 
 Now, *in this lesson*, we move to a closely related topic: **Al-Mutlaq wal-Muqayyad (المطلق والمقيد)** — the *Absolute* and the *Restricted,* where one text gives an *unrestricted* ruling, and another introduces a *restriction* or condition. 
 

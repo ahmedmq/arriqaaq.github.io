@@ -1,12 +1,29 @@
 <script lang="ts">
 	import { settings } from '$lib/content';
+	import { SITE_URL, pageTitle } from '$lib/site';
 	import Seo from '$lib/components/Seo.svelte';
 	import CourseCard from '$lib/components/course/CourseCard.svelte';
 
 	let { data } = $props();
+	// Course list markup: an ItemList of the courses on this page.
+	const jsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'ItemList',
+		itemListElement: data.courses.map((c, i) => ({
+			'@type': 'ListItem',
+			position: i + 1,
+			item: {
+				'@type': 'Course',
+				url: `${SITE_URL}/courses/${c.slug}/`,
+				name: c.title,
+				description: c.tagline,
+				provider: { '@type': 'Organization', name: settings.title, sameAs: `${SITE_URL}/` }
+			}
+		}))
+	};
 </script>
 
-<Seo title={`Courses — ${settings.title}`} description="Self-paced courses with a roadmap, plus Arriqaaq's live programmes." />
+<Seo title={pageTitle('Free Islamic Courses')} description="Free self-paced courses in Usul al-Fiqh and Mustalah Hadith with a lesson roadmap, plus Arriqaaq's live programmes in tafsir, hadith and Arabic." {jsonLd} />
 
 <div class="wrap">
 	<header class="head">

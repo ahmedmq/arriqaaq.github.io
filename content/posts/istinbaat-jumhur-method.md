@@ -1,6 +1,8 @@
 ---
 title: Usul-Al-Fiqh Made Easy (Part 21) - Ways of al-Istinbaat (Jumhoor)
-slug: istinbaatmajority
+slug: istinbaat-jumhur-method
+redirect_from:
+  - istinbaatmajority
 type: post
 published: "2025-10-19T09:30:41.000Z"
 updated: "2025-11-04T02:54:57.000Z"
@@ -433,7 +435,7 @@ However, **Ta’weel** (interpretation through specification) is applied based o
 Thus, the general statement in 2:228 is interpreted and specified by 33:49.  
 This is an example of **acceptable Ta’weel**, because the new meaning is supported by clear evidence and remains close to the apparent wording. This is a form of takhsees, which we have explained previously
 
-::bookmark{url="/aamkhaas/" title="Usul-Al-Fiqh Made Easy (Part 17) - What is Takhsees (Aam and Khaas)?" description="In our ongoing study of Usool al-Fiqh (principles of Islamic Fiqh), we have systematically studied Al-Hukm, examined the various types and sources of Al-Hukm, as well as the different types of Ijtihad. Now, when you have the Nusus (Quran and Sunnah), the question is: what are the tools, what are" author="Arriqaaq" publisher="Arriqaaq" icon="/images/icon/Flower-Fern-Business-logo-2-3.png" thumbnail="/images/thumbnail/Screenshot-2025-09-23-at-6.36.03---PM.png"}
+::bookmark{url="/takhsees-aam-and-khaas/" title="Usul-Al-Fiqh Made Easy (Part 17) - What is Takhsees (Aam and Khaas)?" description="In our ongoing study of Usool al-Fiqh (principles of Islamic Fiqh), we have systematically studied Al-Hukm, examined the various types and sources of Al-Hukm, as well as the different types of Ijtihad. Now, when you have the Nusus (Quran and Sunnah), the question is: what are the tools, what are" author="Arriqaaq" publisher="Arriqaaq" icon="/images/icon/Flower-Fern-Business-logo-2-3.png" thumbnail="/images/thumbnail/Screenshot-2025-09-23-at-6.36.03---PM.png"}
 
 ---
 

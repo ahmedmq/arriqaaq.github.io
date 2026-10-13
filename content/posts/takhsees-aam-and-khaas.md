@@ -1,6 +1,8 @@
 ---
 title: Usul-Al-Fiqh Made Easy (Part 17) - What is Takhsees (Aam and Khaas)?
-slug: aamkhaas
+slug: takhsees-aam-and-khaas
+redirect_from:
+  - aamkhaas
 type: post
 published: "2025-09-23T13:01:08.000Z"
 updated: "2025-11-04T02:54:09.000Z"

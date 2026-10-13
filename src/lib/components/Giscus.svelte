@@ -2,8 +2,11 @@
 	import { onMount } from 'svelte';
 	import { GISCUS } from '$lib/giscus-config';
 
-	type Props = { mapping?: string };
-	let { mapping = 'pathname' }: Props = $props();
+	// `term`: when a post's slug changed, pass its old giscus term (the old
+	// pathname without the leading slash, e.g. "saddzarai/") so the thread that
+	// already exists keeps showing instead of a new empty one.
+	type Props = { mapping?: string; term?: string | null };
+	let { mapping = 'pathname', term = null }: Props = $props();
 
 	let mountEl: HTMLDivElement | undefined = $state();
 
@@ -17,10 +20,11 @@
 		s.dataset.repoId = GISCUS.repoId;
 		s.dataset.category = GISCUS.category;
 		s.dataset.categoryId = GISCUS.categoryId;
-		s.dataset.mapping = mapping;
+		s.dataset.mapping = term ? 'specific' : mapping;
+		if (term) s.dataset.term = term;
 		s.dataset.strict = '0';
 		s.dataset.reactionsEnabled = '1';
-		s.dataset.emitMetadata = '0';
+		s.dataset.emitMetadata = '1'; // lets analytics see when a comment is posted
 		s.dataset.inputPosition = 'top';
 		s.dataset.theme = 'light';
 		s.dataset.lang = 'en';

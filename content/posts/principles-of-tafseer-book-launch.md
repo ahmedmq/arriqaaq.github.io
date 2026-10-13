@@ -1,6 +1,8 @@
 ---
 title: "🖌️ Book Launch: Summary of Principles of Tafseer"
-slug: principlesoftafseer
+slug: principles-of-tafseer-book-launch
+redirect_from:
+  - principlesoftafseer
 type: post
 published: "2025-08-19T09:16:35.000Z"
 updated: "2025-08-19T12:33:24.000Z"

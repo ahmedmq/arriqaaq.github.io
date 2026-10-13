@@ -10,7 +10,7 @@ featured: false
 reading_time: 1
 ---
 
-## **1)** [**40 hadith on Rights of Allah** (FOR SISTERS ONLY)](/new-course-explanation-of-the-book-40-hadeeth-on-the-rights-of-allah-by-shaikh-anees-al-musabi/)
+## **1)** [**40 hadith on Rights of Allah** (FOR SISTERS ONLY)](/course-40-hadeeth-rights-of-allah/)
 
 ::image{src="/images/2023/01/Front-Cover--1--1.png"}
 

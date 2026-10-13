@@ -39,3 +39,4 @@ vite.config.ts.timestamp-*
 
 # Agent worktrees
 /.claude/worktrees/
+.indexnow-urls.json

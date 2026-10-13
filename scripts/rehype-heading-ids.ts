@@ -47,6 +47,19 @@ function lastTextNode(node: any): any | null {
 
 export default function rehypeHeadingIds(state: HeadingState) {
 	return (tree: any) => {
+		// The page title is the only h1. Bodies that use '#' headings (older
+		// imported posts) shift every heading down one level, keeping their
+		// hierarchy and putting those sections in the TOC.
+		let hasH1 = false;
+		visit(tree, 'element', (node: any) => {
+			if (node.tagName === 'h1') hasH1 = true;
+		});
+		if (hasH1) {
+			visit(tree, 'element', (node: any) => {
+				const m = /^h([1-5])$/.exec(node.tagName);
+				if (m) node.tagName = `h${Number(m[1]) + 1}`;
+			});
+		}
 		const seen = new Set<string>();
 		visit(tree, 'element', (node: any) => {
 			if (!HEADING.has(node.tagName)) return;

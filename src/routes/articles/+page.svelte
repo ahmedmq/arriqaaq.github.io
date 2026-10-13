@@ -1,7 +1,8 @@
 <script lang="ts">
 	// All articles, newest first, with every topic as a filter chip (with its
 	// post count) and an instant search over titles and excerpts.
-	import { settings, tags } from '$lib/content';
+	import { tags } from '$lib/content';
+	import { pageTitle } from '$lib/site';
 	import Seo from '$lib/components/Seo.svelte';
 	import Archive from '$lib/components/ui/Archive.svelte';
 
@@ -19,7 +20,7 @@
 	});
 </script>
 
-<Seo title={`Articles — ${settings.title}`} description="Every article on Arriqaaq, newest first, by topic." />
+<Seo title={pageTitle('All Articles')} description="Every Arriqaaq article, newest first: Usul al-Fiqh, Mustalah Hadith, tafsir, book launches, podcasts, health, homeschooling and technology." />
 
 <Archive eyebrow="Articles" title="Every article, newest first." posts={shown}>
 	{#snippet toolbar()}

@@ -4,7 +4,7 @@
 	// the reader at /books/<slug>/read/, so there is no preview to scroll through.
 	import { base } from '$app/paths';
 	import { books, settings } from '$lib/content';
-	import { SITE_URL } from '$lib/site';
+	import { SITE_URL, pageTitle, breadcrumbLd } from '$lib/site';
 	import { bookAuthors } from '$lib/data/book-authors';
 	import { shelfLabel } from '$lib/books/shelves';
 	import Seo from '$lib/components/Seo.svelte';
@@ -29,7 +29,7 @@
 	);
 	const people = $derived([...book.authors, ...(book.illustrator ? [book.illustrator] : [])]);
 	const languages = $derived(book.pdfs.length > 1 ? book.pdfs.map((p) => p.lang).join(' and ') : 'English');
-	const jsonLd = $derived({
+	const jsonLd = $derived([breadcrumbLd([{ name: 'Books', path: '/books/' }, { name: book.title, path: `/books/${book.slug}/` }]), {
 		'@context': 'https://schema.org',
 		'@type': 'Book',
 		name: book.title,
@@ -42,11 +42,11 @@
 		isAccessibleForFree: true,
 		publisher: { '@type': 'Organization', name: settings.title, url: `${SITE_URL}/` },
 		...(book.cover ? { image: `${SITE_URL}${book.cover}` } : {})
-	});
+	}]);
 </script>
 
 <Seo
-	title={`${book.title} — Books — ${settings.title}`}
+	title={pageTitle(`${book.title}: Free Book`)}
 	description={`${book.line} By ${book.authors.join(' and ')}. Free to read.`}
 	image={book.cover}
 	{jsonLd}

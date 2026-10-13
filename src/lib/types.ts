@@ -43,6 +43,12 @@ export type Post = {
 	words: number;
 	diagram_count: number;
 	widgets: string[];
+	/** Meta description (frontmatter `description`, else derived at build). */
+	description: string;
+	/** <title> text (frontmatter `seo_title`, else derived at build). */
+	seo_title: string;
+	/** Old slugs that redirect here (frontmatter `redirect_from`). */
+	aliases: string[];
 };
 
 export type SiteSettings = {
