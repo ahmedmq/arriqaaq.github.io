@@ -14,6 +14,33 @@
 		<script>
 			document.documentElement.classList.add('js');
 		</script>
+		<script>
+			// Google Analytics 4 (src/lib/analytics.ts sends the events). Nothing
+			// loads unless PUBLIC_GA_ID is set at build time. Consent defaults come
+			// first: analytics is off for the EEA, UK and Switzerland until the
+			// visitor accepts (ConsentBanner), ads features are off everywhere, and
+			// a stored choice (privacy page or banner) always wins.
+			(function () {
+				var id = '%sveltekit.env.PUBLIC_GA_ID%';
+				if (!/^G-[A-Z0-9]+$/.test(id)) return;
+				window.dataLayer = window.dataLayer || [];
+				window.gtag = function () { dataLayer.push(arguments); };
+				var off = { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' };
+				gtag('consent', 'default', Object.assign({ analytics_storage: 'denied', wait_for_update: 500, region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH'] }, off));
+				gtag('consent', 'default', Object.assign({ analytics_storage: 'granted' }, off));
+				var c = null;
+				try { c = localStorage.getItem('arriqaaq:consent'); } catch (e) {}
+				if (c === 'granted' || c === 'denied') gtag('consent', 'update', { analytics_storage: c });
+				gtag('set', 'ads_data_redaction', true);
+				gtag('js', new Date());
+				// Page views are sent by the router (afterNavigate), never automatically.
+				gtag('config', id, { send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false });
+				var s = document.createElement('script');
+				s.async = true;
+				s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+				document.head.appendChild(s);
+			})();
+		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

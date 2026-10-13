@@ -1,6 +1,7 @@
 <script lang="ts">
 	// Article header (OpenAI template): centred date and topic, big title,
 	// dek, then an author/share row. Lessons get a course banner on top.
+	import { track } from '$lib/analytics';
 	import { base } from '$app/paths';
 	import type { CoursePlace, Post } from '$lib/types';
 	import { getTagById, getAuthorById } from '$lib/content';
@@ -28,9 +29,12 @@
 	async function share() {
 		const url = location.href;
 		try {
-			if (navigator.share) await navigator.share({ title: post.title, url });
-			else {
+			if (navigator.share) {
+				await navigator.share({ title: post.title, url });
+				track('share', { method: 'share_sheet', content_type: 'article', item_id: post.slug });
+			} else {
 				await navigator.clipboard.writeText(url);
+				track('share', { method: 'copy_link', content_type: 'article', item_id: post.slug });
 				copied = true;
 				setTimeout(() => (copied = false), 1800);
 			}

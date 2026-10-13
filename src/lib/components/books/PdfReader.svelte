@@ -3,6 +3,7 @@
 	// PDF.js, only the ones near the screen, in one continuous scroll. Page jump,
 	// zoom (pages scroll sideways when zoomed), remembers where the reader stopped.
 	// PDF.js loads on this page only. Downloads are offered here and nowhere else.
+	import { track } from '$lib/analytics';
 	import { onMount, tick } from 'svelte';
 	import { base } from '$app/paths';
 	import type { Book } from '$lib/types';
@@ -165,6 +166,24 @@
 	}
 
 	$effect(() => { if (status === 'ready' && moved) save(current); });
+
+	// Analytics: the book opened, then how far into it the reader got.
+	let reported = new Set<number>();
+	$effect(() => {
+		if (status !== 'ready') return;
+		reported = new Set();
+		track('book_open', { book_id: book.slug, edition: book.pdfs[ed]?.lang ?? 'default', pages: total });
+	});
+	$effect(() => {
+		if (status !== 'ready' || !moved || !total) return;
+		const pct = (current / total) * 100;
+		for (const mark of [25, 50, 75, 100]) {
+			if (pct >= mark && !reported.has(mark)) {
+				reported.add(mark);
+				track('book_read_progress', { book_id: book.slug, percent: mark, page_number: current });
+			}
+		}
+	});
 
 	onMount(() => {
 		const want = new URLSearchParams(location.search).get('ed')?.toLowerCase();

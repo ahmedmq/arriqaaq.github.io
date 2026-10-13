@@ -3,6 +3,7 @@
 	// post count) and an instant search over titles and excerpts.
 	import { tags } from '$lib/content';
 	import { pageTitle } from '$lib/site';
+	import { track } from '$lib/analytics';
 	import Seo from '$lib/components/Seo.svelte';
 	import Archive from '$lib/components/ui/Archive.svelte';
 
@@ -11,6 +12,13 @@
 
 	let active = $state<string | null>(null);
 	let query = $state('');
+	// Analytics: the filter query once typing pauses.
+	$effect(() => {
+		const q = query.trim().toLowerCase();
+		if (q.length < 2) return;
+		const t = setTimeout(() => track('search', { search_term: q, search_type: 'articles' }), 1200);
+		return () => clearTimeout(t);
+	});
 	const norm = (s: string) => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '');
 	const shown = $derived.by(() => {
 		const q = norm(query.trim());

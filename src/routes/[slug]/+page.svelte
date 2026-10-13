@@ -18,6 +18,8 @@
 	import { pauses } from '$lib/pause';
 	import ReviewCard from '$lib/components/reading/ReviewCard.svelte';
 	import ScholarCards from '$lib/components/reading/ScholarCards.svelte';
+	import AnalyticsChoice from '$lib/components/site/AnalyticsChoice.svelte';
+	import { trackReading } from '$lib/analytics';
 
 	let { data } = $props();
 	const isPost = $derived(data.post.type === 'post');
@@ -25,6 +27,16 @@
 	const subject = $derived(subjectForPost(data.post));
 	const courseSlugs = $derived(place ? place.course.modules.flatMap((m) => m.lessons.map((l) => l.slug)) : []);
 	let article: HTMLElement | undefined = $state();
+	// Reading depth and completion for posts (analytics; no-op without GA).
+	$effect(() => {
+		if (!article || !isPost) return;
+		return trackReading(article, {
+			content_id: data.post.slug,
+			content_group: place ? 'lesson' : 'article',
+			course_id: place?.course.slug,
+			lesson_number: place?.lesson.n
+		});
+	});
 	const seoDescription = $derived(data.post.description || settings.description);
 	const author = $derived(
 		data.post.primary_author ? (getAuthorById(data.post.primary_author) ?? null) : null
@@ -126,6 +138,7 @@
 			<div class="prose" use:reveal={{ selector: 'blockquote, h2' }} use:pauses={{ html: data.html, lesson: place ? { slug: data.post.slug, title: data.post.title } : undefined }}>
 				{@html data.html}
 			</div>
+			{#if data.post.slug === 'privacy'}<AnalyticsChoice />{/if}
 			<p class="fix" data-pagefind-ignore>
 				Found a mistake or something to improve?
 				<a href={editUrl(data.post.slug, data.post.type)} target="_blank" rel="noreferrer">Suggest a fix</a>

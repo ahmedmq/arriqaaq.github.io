@@ -144,6 +144,8 @@ mapping from tags to subjects lives in `subjectForTag()` in
 | `home/*` | `Hero`, `HeroTree`, `Manifesto`, `SubjectCards`, `ChapterCarousel`, the landing page sections. |
 | `reading/WidgetHydrator.svelte` | Mounts `[[WIDGET:name]]` interactives on the posts that use them. |
 | `CourseCard.svelte` | Course summary. |
+| `site/ConsentBanner.svelte` | Analytics consent, shown only to visitors in the EEA, UK and Switzerland while GA is configured. A white card fixed above the bottom edge, `.btn--ghost` Decline and `.btn` Accept; on phones the two buttons share the full width. |
+| `site/AnalyticsChoice.svelte` | `.segmented` On/Off for analytics in this browser, shown at the end of `/privacy/`. |
 | `reading/*` | Article chrome: `ArticleHeader`, `Toc`, `FlowerVine`, `SectionPill` (the light "Up next" pill, shown only at the end of an article), `LessonNav`. |
 
 ## Interaction and motion
@@ -156,8 +158,9 @@ mapping from tags to subjects lives in `subjectForTag()` in
   `--ease-out`. All of them collapse to 0 under `prefers-reduced-motion`.
   Scroll-driven pieces (manifesto, vine) render in their final state when
   motion is reduced or JS is off.
-- `localStorage` is for course progress only (`src/lib/progress.ts`), and
-  every access is guarded.
+- `localStorage` is for course progress (`src/lib/progress.ts`), the
+  reading aids built on it, and the analytics consent choice
+  (`src/lib/analytics.ts`). Every access is guarded.
 
 ## Imagery
 

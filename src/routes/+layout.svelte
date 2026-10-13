@@ -6,9 +6,33 @@
 	import '$lib/styles/books.css';
 	import SiteHeader from '$lib/components/site/SiteHeader.svelte';
 	import SiteFooter from '$lib/components/site/SiteFooter.svelte';
+	import ConsentBanner from '$lib/components/site/ConsentBanner.svelte';
+	import { afterNavigate } from '$app/navigation';
+	import { page } from '$app/state';
+	import { PUBLIC_GSC_VERIFICATION } from '$env/static/public';
+	import { coursePlace } from '$lib/content';
+	import { GA_ID, pageView, contentGroup, startAnalytics } from '$lib/analytics';
 
 	let { children } = $props();
+
+	// One page_view per page, on first load and after every client-side
+	// navigation. GA's own history-change page views must stay off (docs/seo-and-analytics.md).
+	afterNavigate((nav) => {
+		if (!GA_ID) return;
+		startAnalytics();
+		// page (not nav.to) has the route on the first load as well.
+		const route = page.route.id ?? null;
+		const slug = page.params.slug;
+		const group = contentGroup(route, route === '/[slug]' && !!slug && !!coursePlace(slug));
+		pageView(group, nav.type === 'enter' ? document.referrer : nav.from?.url.href);
+	});
 </script>
+
+<svelte:head>
+	{#if PUBLIC_GSC_VERIFICATION}
+		<meta name="google-site-verification" content={PUBLIC_GSC_VERIFICATION} />
+	{/if}
+</svelte:head>
 
 <a class="skip" href="#main">Skip to content</a>
 <SiteHeader />
@@ -16,6 +40,7 @@
 	{@render children()}
 </main>
 <SiteFooter />
+<ConsentBanner />
 
 <style>
 	.skip {

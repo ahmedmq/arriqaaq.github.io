@@ -7,6 +7,7 @@
  * <details> and still work.
  */
 import { addReview, removeReview } from '$lib/review';
+import { track } from '$lib/analytics';
 
 type Mark = 'knew' | 'notyet';
 type Lesson = { slug: string; title: string };
@@ -94,7 +95,9 @@ function enhance(node: HTMLElement, lesson?: Lesson): () => void {
 				const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('button');
 				if (!btn) return;
 				const m = btn.dataset.mark as Mark;
-				apply(li, id, li.dataset.mark === m ? undefined : m);
+				const next = li.dataset.mark === m ? undefined : m;
+				apply(li, id, next);
+				if (next) track('self_check', { content_id: location.pathname, question_id: id, result: next });
 			};
 			rate.addEventListener('click', onRate);
 

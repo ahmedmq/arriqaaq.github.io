@@ -3,12 +3,12 @@ title: 🔐 Privacy
 slug: privacy
 type: page
 published: "2021-04-16T05:05:49.000Z"
-updated: "2024-01-20T11:50:15.000Z"
+updated: "2026-10-13T00:00:00.000Z"
 featured: false
 reading_time: 7
 ---
 
-We do not use any tracking cookies of any kind.​
+We do not use advertising or tracking cookies of any kind. We use Google Analytics to see which articles, lessons and books help readers; [Analytics](#analytics) at the end of this page explains what it records and lets you turn it off.
 
 We are committed to our users’ rights to privacy. We promise to share transparently all aspects of how the Arriqaaq website work in regards to privacy, terms, and personal data, and we are in full support of efforts to ensure your protection online.​
 
@@ -153,3 +153,13 @@ This Privacy Policy is effective as of August 18th, 2020.
 ​
 
 If you have any thoughts or questions about this Privacy Policy please email [arriqaaq321@gmail.com](mailto:arriqaaq321@gmail.com).
+
+## Analytics {#analytics}
+
+We use Google Analytics 4 to understand which articles, lessons and books are useful, so we know what to write and teach next. It records the pages you view, how far you read an article or book on this site, searches you make in the site's search, lessons you mark complete, and your device type, browser and approximate country. Google Analytics does not log or store your IP address. It sets first-party cookies (named `_ga`) to tell a returning visit from a new one.
+
+Advertising features, Google signals and ad personalisation are switched off. We do not sell this data or share it with anyone.
+
+We also use Cloudflare Web Analytics, which counts page views without cookies and without identifying you.
+
+If you are in the European Economic Area, the United Kingdom or Switzerland, analytics cookies are only set after you choose Accept. Everywhere else they are on by default. You can turn analytics on or off for this browser at any time:

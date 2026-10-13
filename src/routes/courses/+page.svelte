@@ -6,7 +6,7 @@
 
 	let { data } = $props();
 	// Course list markup: an ItemList of the courses on this page.
-	const jsonLd = {
+	const jsonLd = $derived({
 		'@context': 'https://schema.org',
 		'@type': 'ItemList',
 		itemListElement: data.courses.map((c, i) => ({
@@ -20,7 +20,7 @@
 				provider: { '@type': 'Organization', name: settings.title, sameAs: `${SITE_URL}/` }
 			}
 		}))
-	};
+	});
 </script>
 
 <Seo title={pageTitle('Free Islamic Courses')} description="Free self-paced courses in Usul al-Fiqh and Mustalah Hadith with a lesson roadmap, plus Arriqaaq's live programmes in tafsir, hadith and Arabic." {jsonLd} />

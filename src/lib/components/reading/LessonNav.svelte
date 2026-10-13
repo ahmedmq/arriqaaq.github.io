@@ -3,7 +3,8 @@
 	// previous and next lessons and a link back to the course roadmap.
 	import { base } from '$app/paths';
 	import type { CoursePlace } from '$lib/types';
-	import { isDone, setDone, onProgress } from '$lib/progress';
+	import { isDone, setDone, onProgress, doneSet } from '$lib/progress';
+	import { track } from '$lib/analytics';
 
 	type Props = { place: CoursePlace; slug: string };
 	let { place, slug }: Props = $props();
@@ -16,6 +17,20 @@
 	});
 
 	const isLast = $derived(!place.next);
+
+	// Course funnel for analytics: tutorial_begin (first lesson marked in this
+	// course), lesson_complete, tutorial_complete (every lesson marked).
+	function toggle() {
+		const next = !done;
+		const lessons = place.course.modules.flatMap((m) => m.lessons.map((l) => l.slug));
+		const before = lessons.filter((l) => doneSet().has(l)).length;
+		setDone(slug, next);
+		if (!next) return;
+		const params = { course_id: place.course.slug, lesson_id: slug, lesson_number: place.lesson.n };
+		if (before === 0) track('tutorial_begin', params);
+		track('lesson_complete', params);
+		if (before + 1 === lessons.length) track('tutorial_complete', params);
+	}
 </script>
 
 <section class="lesson-nav subject--{place.course.subject}" aria-label="Course navigation">
@@ -24,7 +39,7 @@
 			<span class="eyebrow">Lesson {place.lesson.n} of {place.course.lesson_count}</span>
 			<p>{done ? 'Marked complete. It will show as done on the roadmap.' : 'Finished reading? Mark it to track your route.'}</p>
 		</div>
-		<button class={done ? 'btn btn--ghost' : 'btn btn--subject'} aria-pressed={done} onclick={() => setDone(slug, !done)}>
+		<button class={done ? 'btn btn--ghost' : 'btn btn--subject'} aria-pressed={done} onclick={toggle}>
 			{#if done}<span aria-hidden="true">✓</span> Completed{:else}Mark as complete{/if}
 		</button>
 	</div>

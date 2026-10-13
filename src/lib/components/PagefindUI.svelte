@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { track } from '$lib/analytics';
+	let searchTimer: ReturnType<typeof setTimeout> | undefined;
 	import { onMount, tick } from 'svelte';
 	import { base } from '$app/paths';
 
@@ -65,7 +67,18 @@
 				showImages: false,
 				showSubResults: true,
 				resetStyles: false,
-				autofocus: true
+				autofocus: true,
+				// Analytics: the settled query (after a pause in typing), not each keystroke.
+				processTerm: (term: string) => {
+					clearTimeout(searchTimer);
+					if (term.trim().length > 1)
+						searchTimer = setTimeout(() => track('search', { search_term: term.trim().toLowerCase(), search_type: 'site' }), 1200);
+					return term;
+				}
+			});
+			mountEl.addEventListener('click', (e) => {
+				const a = (e.target as HTMLElement).closest<HTMLAnchorElement>('a.pagefind-ui__result-link');
+				if (a) track('select_content', { content_type: 'search_result', content_id: new URL(a.href, location.href).pathname });
 			});
 			initialized = true;
 			await tick();
