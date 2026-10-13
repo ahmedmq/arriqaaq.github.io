@@ -160,6 +160,4 @@ We use Google Analytics 4 to understand which articles, lessons and books are us
 
 Advertising features, Google signals and ad personalisation are switched off. We do not sell this data or share it with anyone.
 
-We also use Cloudflare Web Analytics, which counts page views without cookies and without identifying you.
-
 If you are in the European Economic Area, the United Kingdom or Switzerland, analytics cookies are only set after you choose Accept. Everywhere else they are on by default. You can turn analytics on or off for this browser at any time:

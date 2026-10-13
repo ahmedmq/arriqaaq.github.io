@@ -6,7 +6,10 @@
  *   tsx scripts/indexnow.ts diff    before deploy: compare build/sitemap.xml
  *                                   with the live one, write the new or
  *                                   changed URLs (and renamed ones) to
- *                                   .indexnow-urls.json
+ *                                   .indexnow-urls.json and the request body
+ *                                   to .indexnow-request.json (the deploy
+ *                                   workflow sends that body with curl once
+ *                                   the new site is live)
  *   tsx scripts/indexnow.ts submit  after deploy: send that list
  *   tsx scripts/indexnow.ts all     after deploy: send every sitemap URL
  *                                   (first run, or after a site-wide change)
@@ -26,13 +29,16 @@ function parseSitemap(xml: string): Map<string, string> {
 	return out;
 }
 
+// One request takes up to 10,000 URLs.
+const body = (urls: string[]) =>
+	JSON.stringify({ host: HOST, key: KEY, keyLocation: `${SITE}/${KEY}.txt`, urlList: urls.slice(0, 10000) });
+
 async function submit(urls: string[]) {
 	if (!urls.length) return console.log('indexnow: nothing changed');
-	// One request takes up to 10,000 URLs.
 	const res = await fetch('https://api.indexnow.org/indexnow', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json; charset=utf-8' },
-		body: JSON.stringify({ host: HOST, key: KEY, keyLocation: `${SITE}/${KEY}.txt`, urlList: urls.slice(0, 10000) })
+		body: body(urls)
 	});
 	console.log(`indexnow: ${urls.length} URLs → HTTP ${res.status}`);
 	// 200/202 = accepted. Anything else is reported but never fails a deploy.
@@ -53,7 +59,9 @@ if (mode === 'diff') {
 	// URLs that left the sitemap (renamed or removed) are submitted too, so
 	// engines see the redirect or the 404 quickly.
 	const gone = [...live.keys()].filter((u) => !next.has(u));
-	writeFileSync(LIST, JSON.stringify([...changed, ...gone], null, '\t'));
+	const urls = [...changed, ...gone];
+	writeFileSync(LIST, JSON.stringify(urls, null, '\t'));
+	writeFileSync(resolve(ROOT, '.indexnow-request.json'), urls.length ? body(urls) : '');
 	console.log(`indexnow: ${changed.length} new or changed, ${gone.length} gone`);
 } else if (mode === 'submit') {
 	await submit(existsSync(LIST) ? JSON.parse(readFileSync(LIST, 'utf8')) : []);

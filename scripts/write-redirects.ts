@@ -1,9 +1,10 @@
 /**
  * Post-build: a small page at each old (renamed) post URL that sends the
- * reader to the new one. On Cloudflare Pages functions/_middleware.js answers
- * these paths with a real 301 first, so the pages are the fallback for any
- * host without it (the GitHub Pages workflow). Google treats an instant meta
- * refresh as a permanent redirect, and the canonical points at the new URL.
+ * reader to the new one. GitHub Pages (the live host) cannot send a 301, and
+ * Google treats an instant meta refresh as a permanent redirect; the
+ * canonical points at the new URL too. No noindex: that could make Google
+ * drop the old URL instead of following it. (functions/_middleware.js gives
+ * a real 301 only if the site is ever served from Cloudflare Pages.)
  */
 import { mkdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -25,7 +26,6 @@ for (const [from, to] of Object.entries(redirects)) {
 <meta charset="utf-8">
 <title>Moved to /${to}/</title>
 <link rel="canonical" href="${url}">
-<meta name="robots" content="noindex">
 <meta http-equiv="refresh" content="0; url=/${to}/">
 <script>location.replace('/${to}/' + location.search + location.hash)</script>
 </head>

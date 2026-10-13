@@ -1,14 +1,17 @@
 # SEO and analytics
 
 What the site does for search and measurement, why, and the one-time setup
-the owner does in Google, Microsoft and Cloudflare. Everything here is free.
+the owner does in Google and Microsoft. Everything here is free.
+
+The site is served by **GitHub Pages** (`.github/workflows/deploy.yml`) and
+the domain's DNS is managed at **Wix**.
 
 ## 1. One-time setup (owner)
 
 All of these IDs are **public**: they end up in every page's HTML. They are
 not secrets, so a public repo is fine. Do not commit them to code. Add them
 in GitHub → repo → **Settings → Secrets and variables → Actions → Variables**
-(the *Variables* tab, not *Secrets*). Both deploy workflows read them at
+(the *Variables* tab, not *Secrets*). The deploy workflow reads them at
 build time. An empty variable turns that tool off.
 
 | Variable | What | Needed? |
@@ -17,7 +20,7 @@ build time. An empty variable turns that tool off.
 | `PUBLIC_CLARITY_ID` | Microsoft Clarity project ID | Optional (heatmaps, recordings) |
 | `PUBLIC_GSC_VERIFICATION` | Search Console meta-tag token | Only if you skip DNS verification |
 
-The only real secret is `CLOUDFLARE_API_TOKEN`, which is already under *Secrets*.
+Nothing in this setup is a secret. GitHub Pages deploys with the workflow's built-in token.
 
 ### Google Analytics 4
 1. analytics.google.com → Admin → **Create property** "Arriqaaq", your time zone → Web stream, URL `https://arriqaaq.com`. Copy the **Measurement ID** into `PUBLIC_GA_ID`.
@@ -34,15 +37,13 @@ The only real secret is `CLOUDFLARE_API_TOKEN`, which is already under *Secrets*
 
 ### Google Search Console
 1. search.google.com/search-console → Add property → **Domain** `arriqaaq.com`.
-2. Copy the TXT record → Cloudflare dashboard → DNS → Add record: type TXT, name `@`, paste. Back in Search Console press Verify. With DNS verification there is no token for the site.
+2. Copy the TXT record → Wix → **Domains** → arriqaaq.com → **Manage DNS records** → TXT → Add record: host name empty (or `@`), value the `google-site-verification=…` text. Save, wait a few minutes, then press Verify in Search Console. With DNS verification there is no token for the site.
+   (Alternative: choose a *URL prefix* property `https://arriqaaq.com/`, pick the **HTML tag** method, and put only the `content="…"` value in `PUBLIC_GSC_VERIFICATION`.)
 3. Sitemaps → submit `https://arriqaaq.com/sitemap.xml`.
 4. After the slug change ships: URL Inspection → test a few old URLs (for example `/saddzarai/`) to confirm the 301, and request indexing of the new ones.
 
 ### Bing Webmaster Tools
 bing.com/webmasters → **Import from Google Search Console**. It verifies by itself. Bing also feeds ChatGPT search, Copilot and DuckDuckGo.
-
-### Cloudflare Web Analytics (cookieless)
-Cloudflare dashboard → Workers & Pages → `arriqaaq` → Metrics → **Web Analytics → Enable**. There is no code and no token. It counts every visitor, including those who decline GA, so use it for the headline number.
 
 ### Microsoft Clarity (optional)
 clarity.microsoft.com → New project → copy the ID from `clarity.ms/tag/<ID>` into `PUBLIC_CLARITY_ID`. It loads only where analytics consent applies. If you turn it on, add a line about it to `/privacy/`. Microsoft asks that it not be used on sites aimed at children; the children's books are for parents to read with them.
@@ -95,13 +96,13 @@ Vitals), the June 2025 rich-result simplification, Backlinko's CTR study
 (titles of 40–60 characters), and the GEO paper (Aggarwal et al., KDD 2024)
 on being cited by AI answer engines.
 
-- **Readable slugs.** 18 cryptic or overlong slugs were renamed (`saddzarai` → `sadd-ad-dharai`, …). Old slugs go in frontmatter `redirect_from`. `functions/_middleware.js` answers them with a **301**, because Cloudflare's `_redirects` file does not run for Function-routed requests. The build also writes meta-refresh pages for other hosts (`scripts/write-redirects.ts`). Giscus threads and course progress follow the rename. **To rename a post:** move the file, change `slug:`, add the old slug under `redirect_from:`, and update links (the build fails if a course lesson or book points at a missing post).
+- **Readable slugs.** 18 cryptic or overlong slugs were renamed (`saddzarai` → `sadd-ad-dharai`, …). Old slugs go in frontmatter `redirect_from`. GitHub Pages cannot send a 301, so the build writes a page at each old URL with an instant meta refresh and a canonical to the new one (`scripts/write-redirects.ts`), which Google treats as a permanent redirect. (`functions/_middleware.js` would give a real 301 only if the site moved to Cloudflare Pages.) Giscus threads and course progress follow the rename. **To rename a post:** move the file, change `slug:`, add the old slug under `redirect_from:`, and update links (the build fails if a course lesson or book points at a missing post).
 - **Titles** lead with the topic and fit in about 60 characters. Series parts are automatic ("What is Istihsan? | Usul al-Fiqh Part 11"). Set `seo_title:` in frontmatter to override. The h1 on the page is unchanged.
 - **Descriptions** come from frontmatter `description:`, else a long enough `excerpt:`, else the first real paragraphs (no bookmark cards, no basmala), cut on a word at 160 characters. For important posts, write a `description:` by hand: one or two sentences saying what the reader will learn.
 - **One h1 per page.** Body `#` headings shift down one level.
 - **Structured data:** BlogPosting (image, dates, course membership, organisation author), BreadcrumbList, Course with its lessons, ItemList of courses, Book, Organization and WebSite. FAQ, HowTo and the sitelinks search box are retired, so they are not used.
 - **Index hygiene:** `noindex, follow` on topic pages with fewer than 3 articles, the author page (it repeats /articles/), book reader pages and errors. The sitemap lists only indexable URLs, once each, with images.
-- **IndexNow:** the deploy workflow compares the new sitemap with the live one and pings Bing, Yandex and others with what changed. Run `npm run indexnow all` once after the first deploy.
+- **IndexNow:** the deploy workflow's build job compares the new sitemap with the live one, and a last job pings Bing, Yandex and others with what changed once the deploy is live. Run `npm run build && npm run indexnow all` once after the first deploy to send every URL.
 
 ### Next, in order of value
 1. **Author identity (E-E-A-T).** Teaching posts are signed "Arriqaaq". A named teacher with a short bio and credentials (an author page with `Person` markup) is the strongest trust signal Google documents for religious and educational content. This needs the owner's decision.
