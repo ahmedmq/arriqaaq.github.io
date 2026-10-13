@@ -62,6 +62,13 @@ with the owner's go-ahead.
 - Title: `Mustalah Hadith Made Easy (Part N) - <Topic>`; slug
   `mustalah-hadith-made-easy-part-N-<topic>`; excerpt `Understanding <topic>`;
   tag `hadith`; add the lesson to `content/courses/mustalah-hadith.yaml`.
+- `description:` in frontmatter, 120 to 155 characters, topic first, taken
+  from the part's own words (it is the Google snippet). The search title is
+  automatic ("<Topic> | Mustalah Hadith Part N"). No "Simply put" line is
+  added to the body: the body stays the owner's sources (CLAUDE.md → SEO and
+  analytics). Link the previous part by its topic, not "previous".
+- A new widget or interactive piece sends its events with `track()` from
+  `src/lib/analytics.ts` and is added to `docs/seo-and-analytics.md`.
 - VOICE.md method: hook question, plain restatements ("In simpler terms",
   "Simply put") after dense sourced passages, reassurance Notes ("Don't
   worry about these terms..."), "Point(s) of benefit" kept as the notes have

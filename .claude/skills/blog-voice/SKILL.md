@@ -51,7 +51,10 @@ Sections separated by `* * *`, each credited to its writer.
 ```yaml
 ---
 title: Title Here (emojis allowed for announcements)
-slug: kebab-case-slug
+slug: kebab-case-slug            # short words joined by hyphens; never rename without redirect_from
+description: >-                  # 120-155 chars, topic first, from the post's own words (Google snippet)
+  What the reader learns, in one or two plain sentences.
+seo_title: Topic first, under 60 characters   # only when the title is longer; series parts are automatic
 type: post
 published: "2026-08-23T00:00:00.000Z"
 updated: "2026-08-23T00:00:00.000Z"
@@ -68,7 +71,10 @@ reading_time: 8
 ```
 
 `reading_time` is minutes, roughly words / 200. Images live under
-`/images/YYYY/MM/`. Authors are keys from `content/authors.yaml`.
+`/images/YYYY/MM/`; after adding any, run `npm run images:optimize` and
+commit the `.webp` files and `content/images.json`. Authors are keys from
+`content/authors.yaml`. A renamed post keeps its old slug in
+`redirect_from:` (a list). SEO rules in full: CLAUDE.md → SEO and analytics.
 
 ## Custom directives and formatting
 
@@ -135,11 +141,16 @@ the voice authority it defers to.
 
 ## Checklist before saving
 
-1. Frontmatter complete and valid YAML; `reading_time` estimated.
+1. Frontmatter complete and valid YAML; `reading_time` estimated;
+   `description:` written (120-155 characters); `seo_title:` if the title
+   passes 60 characters.
 2. Voice matches the post type's example post.
 3. Every ayah/hadith has a real citation or a TODO marker.
 4. Humanizer pass done with voice samples.
 5. File saved as `content/posts/<slug>.md`.
+6. Body headings start at `##`; internal links name their target, never
+   "previous" or "here"; teaching posts (not Mustalah) have a
+   `**Simply put,**` line near the top restating the post's own definition.
 
 ## Presentation rules (from DESIGN.md → Reading)
 

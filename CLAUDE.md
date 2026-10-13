@@ -34,6 +34,55 @@ component classes in `src/lib/styles/base.css`; article body in `src/lib/styles/
 - No broken links, images or anchors: `npm run check:links` must pass. `health.arriqaaq.com` and `ilm.arriqaaq.com` are offline; never link to them.
 - A push to `main` deploys the live site. Work on a branch, and push only with the owner's go-ahead.
 
+## SEO and analytics: every new post, page or feature
+
+Live since October 2026; the full reference (setup, event list, reports) is
+[`docs/seo-and-analytics.md`](docs/seo-and-analytics.md). The site is hosted on
+**GitHub Pages** (DNS at Wix); Cloudflare is not used, so `functions/` is inert.
+
+**Every new post** (frontmatter schema in the `blog-voice` skill):
+- `description:` 120–155 characters, the topic term first, one or two plain
+  sentences taken from the post's own words. It is the snippet under the Google
+  result; without it one is derived from the first paragraphs.
+- `seo_title:` only when `<title>` would pass ~60 characters: topic first.
+  Series parts ("… Made Easy (Part N) - Topic") get "Topic | Series Part N"
+  automatically. The h1 on the page is never changed for SEO.
+- Slug: short words joined by hyphens (`sadd-ad-dharai`, not `saddzarai`).
+  **Never rename a published slug without** moving its old slug into
+  `redirect_from:`; the build writes a redirect page there
+  (`scripts/write-redirects.ts`) and the build fails on collisions.
+- Body headings start at `##`; the title is the page's only h1.
+- Teaching posts: a `**Simply put,**` line near the top (before the first
+  `---` or `##`) restating the post's own main definition or question, adding
+  nothing the post does not say. Not in Mustalah posts, whose bodies stay the
+  owner's sources (`mustalah-post` skill).
+- Internal links name their target ("the previous part, on Istihsan"), never
+  bare "previous", "here", "last article". Series parts link to the part
+  before and after.
+- New images: `npm run images:optimize`, then commit the `.webp` files and
+  `content/images.json`. Give images real `alt` text.
+
+**Every new route or page:** use `Seo` with `pageTitle()`, a unique
+`description` and `breadcrumbLd()` (`src/lib/site.ts`); pass `noindex` for thin,
+duplicate or utility pages and keep them out of `src/routes/sitemap.xml`,
+which lists only indexable URLs. Structured data reuses `ORGANIZATION_LD`
+(Arriqaaq is the author and publisher; the byline links to `/about/`).
+
+**Analytics (Google Analytics 4, `G-PR7SY7B3XT`):**
+- Loaded once in `src/app.html` with Consent Mode; page views come from
+  `afterNavigate` in `src/routes/+layout.svelte`. Never add another gtag
+  snippet, and never send `page_view` anywhere else.
+- New interactive features (widgets, quizzes, readers, forms, buttons that
+  matter) send events with `track()` from `src/lib/analytics.ts`: snake_case,
+  at most 40 characters, reusing an existing event or Google's recommended
+  names where one fits. Add each new event and its parameters to the table in
+  `docs/seo-and-analytics.md`.
+- IDs (`PUBLIC_GA_ID`, `PUBLIC_CLARITY_ID`, `PUBLIC_GSC_VERIFICATION`) are
+  public and live in GitHub Actions *variables*, never in code. Any new
+  tracking tool needs the consent check and a line on `/privacy/`.
+- IndexNow pings Bing and others from the deploy workflow; nothing to run
+  per post.
+
 ## Design changes: mobile is a first-class target
 
 About 90% of readers are on phones. Any design or UI change must be verified to render
