@@ -24,7 +24,16 @@
 		return onProgress(sync);
 	});
 	const doneCount = $derived(lessons.filter((l) => done.has(l.slug)).length);
+	const complete = $derived(doneCount === lessons.length);
 	const next = $derived(lessons.find((l) => !done.has(l.slug)) ?? lessons[0]);
+	// One label for the main action, shared by the band and the outcome card.
+	const action = $derived(
+		complete
+			? 'Read again from lesson 1'
+			: doneCount > 0
+				? `Continue with lesson ${next.n}`
+				: `Start with lesson 1: ${lessons[0].title}`
+	);
 
 	// Pixel field in the band's top-right corner (arriqaaqlabs roadmap band).
 	// White blocks over the solid subject colour, denser toward the corner.
@@ -86,15 +95,18 @@
 		<p class="tagline">{course.tagline}</p>
 		<span class="summary">{course.lesson_count} lessons · {course.modules.length} steps · about {hours} hours</span>
 
-		{#if doneCount > 0}
 		<div class="start">
+			{#if doneCount > 0}
 				<div class="prog" aria-label={`${doneCount} of ${course.lesson_count} lessons complete`}>
 					<span class="bar"><i style:width={`${(100 * doneCount) / course.lesson_count}%`}></i></span>
 					<span class="eyebrow">{doneCount} of {course.lesson_count} complete</span>
 				</div>
-			<a class="btn btn--on-band" href={`${base}/${next.slug}/`}>Continue with lesson {next.n} <span class="arrow">→</span></a>
+			{/if}
+			{#if complete}
+				<p class="finished">You have read every lesson. New lessons will show here when they are published.</p>
+			{/if}
+			<a class="btn btn--on-band" href={`${base}/${next.slug}/`}>{action} <span class="arrow">→</span></a>
 		</div>
-		{/if}
 		</div>
 	</header>
 
@@ -135,11 +147,9 @@
 		</ol>
 
 		<section class="outcome" use:reveal data-reveal>
-			<span class="eyebrow">At the end of this course</span>
+			<span class="eyebrow">{complete ? 'Course complete' : 'At the end of this course'}</span>
 			<p>{course.outcome}</p>
-			<a class="btn" href={`${base}/${next.slug}/`}>
-				{doneCount > 0 ? `Continue with lesson ${next.n}` : `Start with lesson 1: ${lessons[0].title}`} <span class="arrow">→</span>
-			</a>
+			<a class="btn" href={`${base}/${next.slug}/`}>{action} <span class="arrow">→</span></a>
 		</section>
 	</div>
 </div>
@@ -264,6 +274,17 @@
 		display: grid;
 		gap: 8px;
 		width: min(100%, 320px);
+	}
+
+	.finished {
+		max-width: 26rem;
+		font-size: var(--fs-small);
+		line-height: 1.45;
+		text-wrap: balance;
+	}
+
+	.start .btn {
+		white-space: normal;
 	}
 
 	.bar {
